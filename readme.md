@@ -33,4 +33,4 @@ Conoce al apasionado equipo detrás de Isabel Bicicleteria:
 5. *Lourdes Montenegro* – 25 años – Santiago del Estero.
 6. *Gustavo Bonahora* - 22 años - Santiago del Estero.
 
-¡Gracias por elegir Isabel Bicicleteria para tus aventuras en bicicleta! ¡Pedalea con nosotros hacia nuevas alturas!🚴‍♂🚴‍♀
+¡Gracias por elegir Isabel Bicicleteria para tus aventuras en bicicleta! ¡Pedalea con nosotros hacia nuevas alturas!🚴‍♂🚴‍♀🚴‍♂🚴‍♀
