@@ -30,7 +30,7 @@ Conoce al apasionado equipo detrás de Isabel Bicicleteria:
 2. *Rocío Espeche* – 26 años – Frías, Santiago del Estero.
 3. *Matías Mercado* – 27 años – Capital, Santiago del Estero.
 4. *Milton Coria* – 20 años – Ojo de Agua, Santiago del Estero.
-5. *Lourdes Montenegro* – 25 años – Santiago del Estero.
+5. *Lourdes Montenegro* – 25 años – Capital, Santiago del Estero.
 6. *Roberto Gustavo Bonahora* - 22 años - Santiago del Estero.
 
 ¡Gracias por elegir Isabel Bicicleteria para tus aventuras en bicicleta! ¡Pedalea con nosotros hacia nuevas alturas!🚴‍♂🚴‍♀🚴‍♂🚴‍♀🚴‍♂🚴‍♀🚴‍♂🚴‍♀
