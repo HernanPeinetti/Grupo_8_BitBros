@@ -11,14 +11,21 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-/* ************ Footer ************ */
-.headerContainer {
-    color: #595959;
-    background-color: white;
+/* ************ Header ************ */
+header {
     width: 100%;
     height: 8rem;
+}
+.headerContainer {
+    color: #595959;
+    position: fixed;
+    width: 100%;
+    height: 8rem;
+    z-index: 20;
     border-bottom: 2px solid #f2f2f2;
+    background-color: #ffffff;
     display: flex;
+    top: 0;
     flex-wrap: wrap;
     align-items: center;
 }
