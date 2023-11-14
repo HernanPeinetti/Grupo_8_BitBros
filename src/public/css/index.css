@@ -34,14 +34,9 @@ header {
     display: flex;
     justify-content: center;
 }
-.logoHeader h2 a {
+.logoHeader h2 {
     font-size: 22px;
     color: #595959;
-    transition: 0.2s all;
-    text-decoration: none;
-}
-.logoHeader h2 a:hover {
-    color: #000000;
 }
 
 .searchHeader {
@@ -135,6 +130,27 @@ header {
     transition: 150ms color;
 }
 .linkMenu:hover {
+    color: #000000;
+}
+
+.menuCarrito {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 2rem;
+}
+.menuCarrito div {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+.aMenuCarrito {
+    color: #595959;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s all;
+}
+.aMenuCarrito:hover {
     color: #000000;
 }
 
