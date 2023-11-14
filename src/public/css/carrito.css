@@ -1,5 +1,53 @@
-.main-carrito{
- height: 40rem;
- 
+body {
+    background-color: #f6f6f6;
+    color: #272727;
+}
 
+.articulo {
+    display: flex;
+    padding: 2rem;
+    background-color: white;
+    margin-bottom: 5px;
+    border-radius: 7px;
+}
+
+.h3-pedido {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.articulo-img img {
+    height: 10rem;
+
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+
+}
+
+.p-carrito {
+    text-align: center;
+    color: #8a8a8a;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.seccion-carrito {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.contenedor-resumen {
+    width: 30%;
+
+}
+
+.contenedor-pedido {
+    width: 70%;
 }
