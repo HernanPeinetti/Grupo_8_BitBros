@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css" />
+</head>
+<body>
+    <header>
+        <div class="headerContainer">
+            <div class="logoHeader">
+                <h2>Isabel Bicicleteria</h2>
+            </div>
+            <nav class="menuCarrito">
+                <div>
+                    <a class="aMenuCarrito" href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+                </div>
+                <div>
+                    <a class="aMenuCarrito" href="/"><i class="fa-regular fa-circle-question"></i> Atención al Cliente</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <main>
+            <form action="/" class="registro">
+    
+                <div class="datospersonales">
+                    <p class="titulo">DATOS PERSONALES</p>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" required>
+                    <input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario" required>
+                    <input type="email" name="email" id="email" placeholder="E-Mail" required>
+                    <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" required>
+                    <input type="tel" name="telefono" id="telefono" placeholder="Telefono" required>
+                    <input type="text" name="domicilio" id="domicilio" placeholder="Domicilio" required>
+                </div>
+    
+                <div class="fecha">
+                    <p>Fecha de Nacimiento</p>
+                    <input class="fechaitem" type="date" name="Fecha" min="1923-01-01" max="2005-01-01" required>
+                </div>
+    
+                <div class="perfil">
+                    <p class="titulo">PERFIL DEL USUARIO</p>
+    
+                    <div class="item-perfil"><input type="radio" name="medio-de-pago" value="Comprador">
+                        <label for="Comprador">Comprador</label>
+                    </div>
+    
+                    <div class="item-perfil"><input type="radio" name="medio-de-pago" value="Vendedor">
+                        <label for="Vendedor">Servicio Mecanico</label>
+                    </div>
+                </div>
+    
+                <div class="intereses">
+                    <p class="titulo">INTERESES</p>
+    
+                    <div class="item-intereses"><input type="checkbox" name="intereses" value="Indumentaria">
+                        <label for="Electro">Electro</label>
+                    </div>
+    
+                    <div class="item-intereses"><input type="checkbox" name="intereses" value="Repuestos">
+                        <label for="Moda">Moda</label>
+                    </div>
+    
+                    <div class="item-intereses"><input type="checkbox" name="intereses" value="Accesorios">
+                        <label for="Hogar">Hogar</label>
+                    </div>
+    
+                    <div class="item-intereses"><input type="checkbox" name="intereses" value="Rodados">
+                        <label for="Jugueteria">Jugueteria</label>
+                    </div>
+    
+                    <div class="item-intereses"><input type="checkbox" name="intereses" value="Mecanica">
+                        <label for="Vida Sana">Vida Sana</label>
+                    </div>
+                </div>
+                
+                <div  class="imagen-de-perfil">
+                    <label> Seleccionar una imagen de perfil: </label>
+                    <input type="file" name="avatar" accept=".jpg" >
+                </div>
+    
+                <div  class="botones">
+                    <form action="/" class="register">
+                    <button type="submit">Enviar</button>
+                    <button type="reset">Cancelar</button></form>
+                </div>
+    
+            </form>
+    
+        </main>
+    
+    </main>
+
+    <footer>
+        <div class="ayudaFooter">
+            <h4 class="h4AyudaFooter">Necesitas ayuda?</h4>
+            <a href="" class="btnAyudaFooter">Contáctanos</a>
+        </div>
+        <div class="redesFooter">
+            <div class="divRedesFooter">
+                <a href="" class="aRedesFooter">
+                    <i class="fa-brands fa-instagram icono-instagram"></i>
+                </a>
+                <a href="" class="aRedesFooter">
+                    <i class="fa-brands fa-facebook icono-facebook"></i>
+                </a>
+                <a href="" class="aRedesFooter">
+                    <i class="fa-brands fa-youtube icono-youtube"></i>
+                </a>
+                <a href="" class="aRedesFooter">
+                    <i class="fa-brands fa-x-twitter icono-twitter"></i>
+                </a>
+            </div>
+        </div>
+        <div class="chatFooter">
+            <a href="" class="btnChatFooter">
+                <i class="fa-solid fa-comment"></i>
+            </a>
+        </div>
+
+    </footer>
+</body>

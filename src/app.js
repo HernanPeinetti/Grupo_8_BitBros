@@ -12,6 +12,14 @@ app.get("/producto", (req, res) => {
     res.sendFile(path.resolve(__dirname,("./views/productDetail.html")))
 })
 
+app.get("/carrito", (req, res) => {
+    res.sendFile(path.resolve("src/views", "productCart.html"));
+});
+
+app.get("/log", (req, res) => {
+    res.sendFile(path.resolve("src/views", "log.html"));
+}); 
+
 app.listen(3000, () => {
     console.log("Servidor levantado en http://localhost:3000");
 });
