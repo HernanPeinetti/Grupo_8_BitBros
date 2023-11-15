@@ -13,7 +13,7 @@
         <header class="headerContainer">
             <div class="logoHeader">
                 <h2>
-                    <a href="#">Isabel Bicicleteria</a>
+                    <a href="/">Isabel Bicicleteria</a>
                 </h2>
             </div>
             <div class="searchHeader">
@@ -25,11 +25,11 @@
                     <i class="fa-regular fa-heart icono-user"></i>
                     <p class="contador-user">12</p>
                 </a>
-                <a class="a-user" href="">
+                <a class="a-user" href="/log">
                     <i class="fa-regular fa-user icono-user"></i>
                     <p class="p-login">Login</p>
                 </a>
-                <a class="a-user" href="">
+                <a class="a-user" href="/carrito">
                     <i class="fa-solid fa-cart-shopping icono-user"></i>
                     <p class="contador-user">2</p>
                 </a>
@@ -37,7 +37,7 @@
             <nav class="menuHeader">
                 <ul class="listaMenu">
                     <li>
-                        <a class="linkMenu" href="">Bicicletas</a>
+                        <a class="linkMenu" href="/producto">Bicicletas</a>
                     </li>
                     <li>
                         <a class="linkMenu" href="">Accesorios</a>
@@ -102,12 +102,15 @@
                         </div>
                         <button class="changeColor"> Cambiar</button>
                     </div>
-                    <div class="addToCart">
-                        <p class=" containerCart">
-                            <i class="fa-solid fa-cart-shopping"></i>AGREGAR AL CARRITO
-                        </p>
+                    <a href="/carrito">
+                        <div class="addToCart">
+                            <p href="/carrito" class=" containerCart">
+                                <i class="fa-solid fa-cart-shopping"></i>AGREGAR AL CARRITO
+                            </p>
+    
+                        </div>
+                    </a>
 
-                    </div>
                     <div class="infoContainer">
                         <p class="available">
                             <i class="fa-solid fa-circle-check"></i> Disponible
