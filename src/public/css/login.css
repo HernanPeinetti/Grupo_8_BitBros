@@ -1,14 +1,209 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
 * {
-    padding: 0;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: var(--gray-light)
 }
 
-body {
-    background-color: #ffffff;
-    font-family: "Roboto", sans-serif;
+:root {
+    --yellow: #eac926;
+    --blue: #03264c;
+    --blue-light: #1259c3;
+    --gray-dark: #666;
+    --gray-light: #ebebeb;
+    --green: #39b54a;
+}
+
+main {
+    background-color: var(--gray-light);
+}
+
+.registro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datospersonales {
+    width: 90%;
+    margin: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+.datospersonales input {
+    height: 2.1rem;
+    margin: 7px;
+    border: 0px;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.fecha {
+    width: 90%;
+}
+
+.fechaitem {
+    height: 2.1rem;
+    margin: 7px;
+    border: 0px;
+    border-radius: 0.5rem;
+    text-align: center;
+    width: 95%;
+}
+
+.perfil {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.perfil p {
+    width: 100%;
+}
+
+.item-perfil {
+    margin: 15px;
+}
+
+.intereses {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.intereses input {
+    margin: 7px;
+}
+
+.item-intereses {
+    margin: 5px;
+    font-size: 15px;
+}
+
+.titulo {
+    width: 100%;
+    margin-top: 15px;
+    font-weight: 900;
+}
+
+.imagen-de-perfil {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin: 5px;
+    justify-content: center;
+    width: 90%;
+    font-size: 15px;
+
+}
+
+.imagen-de-perfil label {
+    font-weight: 900;
+    width: 80%;
+    font-size: 14px;
+}
+
+.imagen-de-perfil input {
+    font-size: 10px;
+}
+
+.botones {
+    margin: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.botones button {
+    width: 5rem;
+    background-color: #1259c3;
+    color: white;
+    font-weight: 900;
+}
+
+/* Solo para tablet*/
+
+@media only screen and (min-width: 515px) {
+
+    .datospersonales input {
+        font-weight: 900;
+    }
+
+    .perfil {
+        justify-content: space-evenly;
+    }
+
+    .imagen-de-perfil{ 
+        width: auto;
+    }
+
+    .imagen-de-perfil label { 
+        width: 100%;
+    }
+
+    .imagen-de-perfil input {
+        font-size: 15px;
+    }
+
+
+
+
+}
+
+/* Solo para escritorio*/
+
+@media only screen and (min-width: 769px) {
+   
+
+    .datospersonales {
+        display: block;
+    }
+
+    .datospersonales input {
+        height: 2.5rem;
+        width: 60%;
+    }
+
+    .fechaitem {
+        width: 60%;
+    }
+
+    .perfil {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap
+    }
+
+    .item-perfil {
+        margin: 15px;
+    }
+
+    .intereses {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+    .item-intereses {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .botones {
+        justify-content: center;
+    }
+
+    .botones button {
+        margin: 20px;
+    }
+
 }
 
 /* ************ Header ************ */
@@ -155,7 +350,9 @@ header {
 }
 
 /* ************* Main ************* */
-
+.mainHome {
+    height: 100rem;
+}
 
 /* ************ Footer ************ */
 .footerContainer {
