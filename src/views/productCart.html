@@ -18,76 +18,92 @@
             </div>
             <nav class="menuCarrito">
                 <div>
-                    <a class="aMenuCarrito" href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+                    <a class="aMenuCarrito" href="javascript:history.back()">
+                        <i class="fa-solid fa-arrow-left"></i> Volver a la tienda
+                    </a>
                 </div>
                 <div>
-                    <a class="aMenuCarrito" href="/"><i class="fa-regular fa-circle-question"></i> Atención al Cliente</a>
+                    <a class="aMenuCarrito" href="/">
+                        <i class="fa-regular fa-circle-question"></i> Atención al Cliente
+                    </a>
                 </div>
             </nav>
         </div>
     </header>
+
     <main class="main-carrito">
-
         <h1>Carrito de Compras</h1>
-        <p class="p-carrito">Los gastos de envio y códigos de descuento se confirman al finalizar la compra</p>
-<section class="seccion-carrito">
+        <p class="p-carrito">Los gastos de envío y códigos de descuento se confirman al finalizar la compra</p>
 
+        <section class="seccion-carrito">
+            <div class="contenedor-pedido">
+                <h3 class="h3-pedido">Su pedido</h3>
 
+                <article class="articulo">
+                    <div class="articulo-img">
+                        <img src="/images/inflador.jpg" alt="">
+                    </div>
+                    <div>
+                        <a href="/producto">
+                            <h4>Inflador de pie marca giyo</h4>
+                        </a>
+                        <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
+                        <p>Envío: 2-4 días</p>
+                        <form action="tu_script.php" method="post">
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                            <input type="submit" value="Agregar al Carrito">
+                        </form>
+                    </div>
+                    <div class="eliminar">
+                        <button>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                        <h5>$14.000</h5>
+                    </div>
+                </article>
 
+                <article class="articulo">
+                    <div class="articulo-img">
+                        <img src="/images/luz-delantera.jpg" alt="">
+                    </div>
+                    <div>
+                        <h4>Luz delantera tipo mini</h4>
+                        <p>Con carga USB, color rosa</p>
+                        <p>Envío: 2-4 días</p>
+                        <form action="tu_script.php" method="post">
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                            <input type="submit" value="Agregar al Carrito">
+                        </form>
+                    </div>
+                    <div class="eliminar">
+                        <button>
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                        <h5>$4.000</h5>
+                    </div>
+                </article>
 
-<div class="contenedor-pedido">
-    <h3 class="h3-pedido">Su pedido</h3>
-    <article class="articulo">
-        <div class="articulo-img"> <img src="/images/inflador.jpg" alt=""> </div>
-        <div>
-            <a href="/producto"><h4>Inflador de pie marca giyo</h4></a>
-            <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
-            <p>Envio: 2-4 días</p>
-        </div>
-        <div>
-            <button>
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-            <h5>$14.000</h5>
-        </div>
-    </article>
-    <article class="articulo">
-        <div class="articulo-img"> <img src="/images/luz-delantera.jpg" alt=""></div>
-        <div>
-            <h4>Luz delantera tipo mini</h4>
-            <p>Con carga USB, color rosa</p>
-            <p>Envio: 2-4 días</p>
-        </div>
-        <div>
-            <button>
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-            <h5>$4.000</h5>
-        </div>
-    </article>
-</div>
-<div class="contenedor-resumen">
+            </div>
 
-    <article> </article>
-    <article>
-        <p> Total </p>
-        <p> $18.000 </p>
-    </article>
-    <article>
-        <p>CÓDIGO DE DESCUENTO / GIF CARD </p>
-        <p>></p> 
-    </article>
-
-</div>
-
-
-</section>
-
+            <div id="resumen">
+                <h3 class="resumen">Resumen</h3>
+                <ul id="resumen-lista">
+                    <!-- Aquí se mostrará la lista de artículos seleccionados -->
+                </ul>
+                <p>Total: $<span id="resumen-total">0</span></p>
+            </div>
+            
+        </section>
     </main>
 
+
+
+    
     <footer class="footerContainer">
         <div class="ayudaFooter">
-            <h4 class="h4AyudaFooter">Necesitas ayuda?</h4>
+            <h4 class="h4AyudaFooter">¿Necesitas ayuda?</h4>
             <a href="" class="btnAyudaFooter">Contáctanos</a>
         </div>
         <div class="redesFooter">
