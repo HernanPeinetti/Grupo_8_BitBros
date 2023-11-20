@@ -19,8 +19,8 @@ app.get("/register", (req, res) => {
     res.sendFile(path.resolve("src/views", "register.html"));
 });
 
-app.get("/log", (req, res) => {
-    res.sendFile(path.resolve("src/views", "log.html"));
+app.get("/login", (req, res) => {
+    res.sendFile(path.resolve("src/views", "login.html"));
 }); 
 
 app.listen(3000, () => {
