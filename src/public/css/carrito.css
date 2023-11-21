@@ -14,14 +14,12 @@ body {
 
 }
 
-
 .aMenuCarrito {
     margin-right: 1rem;
     text-decoration: none;
     color: #272727;
     font-weight: 500;
 }
-
 
 h1 {
     padding: 2rem 2rem 1rem 2rem;
@@ -118,9 +116,10 @@ h4 {
     border: 1px solid #D0C8E0;
     text-align: center;
 }
+
 .descuento {
     color: #D0C8E0;
-    
+
 }
 
 .h3-pedido {
@@ -138,7 +137,8 @@ h4 {
     padding: 0.5rem;
     border-top: 2px solid #f6f6f6;
 }
-.boton button{
+
+.articulo button {
     background-color: #3B82BF;
     color: #FFF;
     border-radius: 7px;
@@ -146,9 +146,10 @@ h4 {
     width: 140px;
     font-size: 12px;
     font-weight: 900;
-    position: absolute;
+    position: relative;
 
 }
+
 .imagen {
     width: 35%;
     height: 100%;
@@ -173,13 +174,15 @@ h4 {
     position: relative;
 
 }
+
 .precio i {
     position: absolute;
     right: 0;
-;
+    ;
 
 }
-.precio-parrafo{
+
+.precio-parrafo {
     top: 70px;
     position: relative;
     left: 10px;
@@ -187,26 +190,28 @@ h4 {
     text-align: center;
 }
 
-.descuento{
-position: relative;
-right: 0;
-top: 70px;
-left: 10px;
-font-size: 11px;
-text-align: center;
+.descuento {
+    position: relative;
+    right: 0;
+    top: 70px;
+    left: 10px;
+    font-size: 11px;
+    text-align: center;
 
 }
+
 .articulo img {
     height: 7rem;
     padding: 1rem;
     border-radius: 7px;
     justify-content: center;
 }
-.total-final{
+
+.total-final {
     color: #434343
-    
 }
-.descuento-aplicado p{
+
+.descuento-aplicado p {
     color: #D0C8E0;
 }
 
@@ -215,75 +220,69 @@ main {
     flex-wrap: wrap;
 }
 
-
-
-
-
-
-
-.devoluciones{
-    background-color: white;
-    border-top: 1px #aeaeae solid;
-
-    padding: 40px;
-    font-weight: 800;
-    font-size: 30px;
-    cursor: pointer;
-    display: flex;
-    color: #9C9C9C;
-
-    font-family: Roboto;
-    font-size: 12px;
-height: 24px;
-
-justify-content: center;
-text-align: center;
-
-}
-.metodos-de-pago{
-
-    background-color: white;
-    border-top: 1px #aeaeae solid;
-
-    padding: 40px;
-    font-weight: 800;
+.devoluciones {
+    background-color: #F6F6F6;
+ 
+    font-weight: 400;
     color: #9C9C9C;
     font-size: 12px;
     cursor: pointer;
-    text-align: center;
-
+    padding: 0.5rem;
 }
-.acordeon h2{
-    display: flex;
-padding: 3rem;
-height: 18px;
-flex-direction: column;
-justify-content: center;
-flex-shrink: 0;
-color: #434343;
-font-weight: 700;
-line-height: normal;
-text-align: center;
-font-size: 15px;
-}
-.entrega{
-    background-color: white;
-    border-top: 1px #aeaeae solid;
 
-    padding: 20px;
-    font-weight: 800;
+.metodos-de-pago {
+    background-color: #F6F6F6;
+
+    font-weight: 400;
     color: #9C9C9C;
     font-size: 12px;
-    justify-content: center;
-    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.compras h2 {
+    display: flex;
+    color: #434343;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 15px;
+    padding-top: 1rem;
     
-
 }
-.acordeon{
+
+.entrega {
+    background-color: #F6F6F6;
+
+    font-weight: 400;
+    color: #9C9C9C;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.compras {
+    display: flex;
+    background-color: #F6F6F6;
+    border-radius: 7px;
     width: 300px;
-    padding: 10px;
-    list-style: none;
-    justify-content: center;
-  
+    margin: auto;
+
+
+
+}
+
+.lista-compras {
+    padding: 0.2rem;
+    background-color: #F6F6F6;
     
+}
+
+
+ul {
+    list-style: none;
+    padding-left: 0.5rem;
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
