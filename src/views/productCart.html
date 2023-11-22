@@ -5,113 +5,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
-    <link rel="stylesheet" href="/css/index.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,100&display=swap');
+    </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="/css/carrito.css" />
 </head>
 
 <body>
-    <header>
-        <div class="headerContainer">
-            <div class="logoHeader">
-                <h2>Isabel Bicicleteria</h2>
-            </div>
-            <nav class="menuCarrito">
-                <div>
-                    <a class="aMenuCarrito" href="javascript:history.back()"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
-                </div>
-                <div>
-                    <a class="aMenuCarrito" href="/"><i class="fa-regular fa-circle-question"></i> Atención al Cliente</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+
+    <h1>Carro de Compras</h1>
+    <h3>Los gastos de envío y códigos de descuento se confirman al finalizar la compra</h3>
+
     <main class="main-carrito">
+        <div class="contenedor-pedido">
+            <article class="articulo">
+                <div class="imagen"> <img src="/images/inflador.jpg" alt=""></div>
+                <div class="descripcion">
+                    <a class="link-producto" href="/producto">
+                        <h4>Inflador de pie marca giyo</h4>
+                        <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
+                    </a>
+                    <p>Envío: 2-4 días</p>
+                    <div class="cantidad-selector">
+                        <label for="cantidad"></label>
+                        <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
+                    </div>
+                </div>
+                <div class="precio"><i class="fa-solid fa-trash" style="color: #a88af0;"></i>
+                    <p class="descuento">$15600</p>
+                    <p class="precio-parrafo">$14400</p>
+                </div>
+            </article>
+            <article class="articulo">
+                <div class="imagen"> <img src="/IMAGES/LUZ-DELANTERA.JPG" alt=""></div>
+                <div class="descripcion">
+                    <a class="link-producto" href="/producto">
+                        <h4>Luz delantera</h4>
+                        <p>Disponible en: rosa y blanco</p>
+                    </a>
+                    <p>Envío: 2-4 días</p>
+                    <div class="cantidad-selector">
+                        <label for="cantidad"></label>
+                        <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
+                    </div>
+                </div>
+                <div class="precio"><i class="fa-solid fa-trash" style="color: #a88af0;"></i>
+                    <p class="descuento">$17200</p>
+                    <p class="precio-parrafo">$16300</p>
+                </div>
+            </article>
 
-        <h1>Carrito de Compras</h1>
-        <p class="p-carrito">Los gastos de envio y códigos de descuento se confirman al finalizar la compra</p>
-<section class="seccion-carrito">
+            <article class="articulo">
 
+                <div class="descripcion">
 
+                    <h4>Artículos en el carrito <p class="precio-parrafo-final">$156.900</p>
+                    </h4>
+                    <div class="descuento-aplicado">
+                        <p>Descuento aplicado</p>
+                        <p class="descuento-final">$16.000</p>
+                    </div>
 
+                    <p class="total-final">Total $18.000</p>
 
-<div class="contenedor-pedido">
-    <h3 class="h3-pedido">Su pedido</h3>
-    <article class="articulo">
-        <div class="articulo-img"> <img src="/images/inflador.jpg" alt=""> </div>
-        <div>
-            <a href="/producto"><h4>Inflador de pie marca giyo</h4></a>
-            <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
-            <p>Envio: 2-4 días</p>
+                </div>
+                <div class="boton"> <button>COMPRAR</button></div>
+            </article>
+            <article class="acordeon">
+                <h2>Compras seguras y faciles</h2>
+                <div class="devoluciones">
+                    <div>Devoluciones gratuitas durante 30 días
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                </div>
+                <div class="metodos-de-pago">
+                    <div>Metodos de pago convenientes
+                        <div>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="entrega">
+                    <div>Entrega a domicilio o puntos claves
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+                </div>
+            </article>
         </div>
-        <div>
-            <button>
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-            <h5>$14.000</h5>
         </div>
-    </article>
-    <article class="articulo">
-        <div class="articulo-img"> <img src="/images/luz-delantera.jpg" alt=""></div>
-        <div>
-            <h4>Luz delantera tipo mini</h4>
-            <p>Con carga USB, color rosa</p>
-            <p>Envio: 2-4 días</p>
-        </div>
-        <div>
-            <button>
-                <i class="fa-solid fa-trash-can"></i>
-            </button>
-            <h5>$4.000</h5>
-        </div>
-    </article>
-</div>
-<div class="contenedor-resumen">
 
-    <article> </article>
-    <article>
-        <p> Total </p>
-        <p> $18.000 </p>
-    </article>
-    <article>
-        <p>CÓDIGO DE DESCUENTO / GIF CARD </p>
-        <p>></p> 
-    </article>
-
-</div>
-
-
-</section>
 
     </main>
 
-    <footer class="footerContainer">
-        <div class="ayudaFooter">
-            <h4 class="h4AyudaFooter">Necesitas ayuda?</h4>
-            <a href="" class="btnAyudaFooter">Contáctanos</a>
-        </div>
-        <div class="redesFooter">
-            <div class="divRedesFooter">
-                <a href="" class="aRedesFooter">
-                    <i class="fa-brands fa-instagram icono-instagram"></i>
-                </a>
-                <a href="" class="aRedesFooter">
-                    <i class="fa-brands fa-facebook icono-facebook"></i>
-                </a>
-                <a href="" class="aRedesFooter">
-                    <i class="fa-brands fa-youtube icono-youtube"></i>
-                </a>
-                <a href="" class="aRedesFooter">
-                    <i class="fa-brands fa-x-twitter icono-twitter"></i>
-                </a>
-            </div>
-        </div>
-        <div class="chatFooter">
-            <a href="" class="btnChatFooter">
-                <i class="fa-solid fa-comment"></i>
-            </a>
-        </div>
-    </footer>
 </body>
 
 </html>

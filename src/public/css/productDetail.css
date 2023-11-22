@@ -132,51 +132,27 @@ body {
 
 /* ************* Main ************* */
 .mainHome{
-    height: 100rem;
-    position: relative;
-    top: 10px;
-    padding: 30px;
-}
-
-.sub-Section{
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
+    height: auto;
+    padding: 25px;
 }
 
 .section1{
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    
-}
-
-.imageContainer{
-    background-color: #ffffff;
-    width: 800px;
-    height: 550px;
-    display: flex;
-    border:#54545450 1px solid;
-    
-}
-
-.detailSection{
-    min-width: 500px;
-    min-height: auto;
-    display: block;
-    background-color: #ffffff;
-    padding: 10px;
-    margin: 10px;
-    font-weight: 500;
-    display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     
 }
+
 .titleContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.nombre{
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 15px;
 }
 
 /* corazon */
@@ -216,13 +192,28 @@ body {
 
 /* fin corazon */
 
-.nombre{
-    font-weight: 700;
-    font-size: 30px;
+.imageContainer{
+    background-color: #ffffff;
+    width: 100vw;
+    height: auto;
+    display: flex;
+    border:#54545450 1px solid;
+}
+
+
+/* seccion de precio, detalles y otros */
+.detailSection{
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .precio{
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 600;
 }
 
@@ -230,12 +221,14 @@ body {
     font-size: medium;
     font-weight: lighter;
     color:#595959;
+    margin-bottom: 15px;
 }
 
 .stars{
     font-weight: 100;
     display: flex;
     flex-direction: row;
+    margin-bottom: 15px;
 }
 
 .pickColorContainer{
@@ -243,9 +236,11 @@ body {
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
-    border: 1px #595959 solid;
-    border-radius: 0.2rem;
+    border: 1px #aeaeae solid;
+    border-radius: 0.4rem;
     padding: 5px;
+    margin-bottom: 15px;
+    width: 270px;
 }
 
 .Color{
@@ -268,17 +263,21 @@ body {
     cursor:pointer;
     margin-bottom: 15px;
 }
+
+
 .addToCart{
     font-weight: bold;
     font-size: small;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
     color: white;
-    background-color: #595959;
-    border-radius: 0.2rem;
+    background-color: #3B82BF;
+    border-radius: 0.4rem;
     padding: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 270px;
 }
+
+
 
 .addToCart:hover{
     background-color: #000000;
@@ -290,8 +289,9 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 15px;
+    font-size: 12px;
     color: #595959;
+    margin-bottom: 15px;
 }
 .available{
     font-weight: lighter;
@@ -311,7 +311,8 @@ body {
     font-size: 15px;
     color:#aeaeae;
 }
-/* parte de la descripcion del producto */
+/* fin de seccion de detalles */
+
 .acordeon{
     padding: 10px;
     cursor: pointer;
@@ -327,20 +328,20 @@ summary{
 .productDetailContainer{
     background-color: white;
     border-top: 1px #aeaeae solid;
-    width: 50%;
+    width: 100%;
     padding: 40px;
     font-weight: 800;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
 }
 
 .medidasContainer{
     background-color: white;
     border-top: 1px #aeaeae solid;
-    width: 50%;
+    width: 100%;
     padding: 40px;
     font-weight: 800;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -348,10 +349,10 @@ summary{
     background-color: white;
     border-top: 1px #aeaeae solid;
     border-bottom: 1px #aeaeae solid;
-    width: 50%;
     padding: 40px;
+    width: 100%;
     font-weight: 800;
-    font-size: 30px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -359,7 +360,7 @@ summary{
     width: 100%;
     padding: 20px;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 15px;
     text-align: left;
 }
 
@@ -520,3 +521,157 @@ summary{
     background-color: #000000;
     color: #ffffff;
 }
+
+
+/* SMARTPHONES PORTRAIT */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+}
+
+
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 481px) and (max-width: 768px ) {
+
+
+}
+
+
+/* TABLET LANDSCAPE / SMALL-DESKTOP´S */
+@media only screen and (min-width: 769px) and (max-width: 1024px ){
+    .section1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+} 
+
+/* DESKTOP */
+
+@media only screen and (min-width: 1025px){
+    
+    .section1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .imageContainer{
+        width: 800px;
+        height: auto;
+    }
+    .detailSection{
+        min-width: 500px;
+        min-height: auto;
+        display: block;
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 10px;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border: solid 1px #aeaeae;
+        border-radius: 0.2rem;
+    }
+
+    .nombre{
+        font-weight: 700;
+        font-size: 30px;
+    }
+    
+    .precio{
+        font-size: 50px;
+        font-weight: 600;
+    }
+    
+    .impuestos{
+        font-size: medium;
+        font-weight: lighter;
+        color:#595959;
+    }
+    
+    .stars{
+        font-weight: 100;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .pickColorContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        border: 1px #aeaeae solid;
+        border-radius: 0.4rem;
+        padding: 5px;
+        width: 100%;
+    }
+    
+    .Color{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    
+    .changeColor{
+        display: flex;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        margin-right: 50px;
+        background-color: white;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        cursor:pointer;
+        margin-bottom: 15px;
+    }
+    
+    
+    .addToCart{
+        font-weight: bold;
+        font-size: small;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: white;
+        background-color: #3B82BF;
+        border-radius: 0.2rem;
+        padding: 15px;
+        width: 100%;
+    }
+    
+    
+    
+    .addToCart:hover{
+        background-color: #000000;
+        transition: 0.3s linear;
+        cursor: pointer;
+    }
+    
+    .infoContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 15px;
+        color: #595959;
+    }
+    .available{
+        font-weight: lighter;
+        font-size: 15px;
+        color: rgb(75, 212, 75);
+    }
+    .shortDescription{
+        font-size: 100px;
+        font-weight: 500;
+        font-size: 20px;
+        color:#595959;
+    }
+    .listDescription{
+        list-style: none;
+        font-size: 75px;
+        font-weight: 400;
+        font-size: 15px;
+        color:#aeaeae;
+    }
+} 
