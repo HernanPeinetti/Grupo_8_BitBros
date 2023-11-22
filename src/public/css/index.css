@@ -74,6 +74,11 @@ body {
     overflow-x: scroll;
 }
 
+.grupo-articulos a{
+    text-decoration: none;
+    color: #434343;
+}
+
 article{
     margin-right: 1.4rem;
     display: flex;
