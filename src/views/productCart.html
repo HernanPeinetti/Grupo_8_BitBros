@@ -11,7 +11,6 @@
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
 
-    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/carrito.css" />
 </head>
 
@@ -47,10 +46,9 @@
             </nav>
         </div>
     </header>
-    <h1>Carro de Compras</h1>
-    <h3>Los gastos de envío y códigos de descuento se confirman al finalizar la compra</h3>
-
     <main class="main-carrito">
+        <h1>Carro de Compras</h1>
+    <h3>Los gastos de envío y códigos de descuento se confirman al finalizar la compra</h3>
         <div class="contenedor-pedido">
             <article class="articulo">
                 <div class="imagen"> <img src="/images/inflador.jpg" alt=""></div>
@@ -70,67 +68,60 @@
                     <p class="precio-parrafo">$14400</p>
                 </div>
             </article>
-            <article class="articulo">
-                <div class="imagen"> <img src="/IMAGES/LUZ-DELANTERA.JPG" alt=""></div>
-                <div class="descripcion">
-                    <a class="link-producto" href="/producto">
-                        <h4>Luz delantera</h4>
-                        <p>Disponible en: rosa y blanco</p>
-                    </a>
-                    <p>Envío: 2-4 días</p>
-                    <div class="cantidad-selector">
-                        <label for="cantidad"></label>
-                        <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
+            <div class="contenedor-pedido">
+                <article class="articulo">
+                    <div class="imagen"> <img src="/images/inflador.jpg" alt=""></div>
+                    <div class="descripcion">
+                        <a class="link-producto" href="/producto">
+                            <h4>Inflador de pie marca giyo</h4>
+                            <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
+                        </a>
+                        <p>Envío: 2-4 días</p>
+                        <div class="cantidad-selector">
+                            <label for="cantidad"></label>
+                            <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
+                        </div>
                     </div>
-                </div>
-                <div class="precio"><i class="fa-solid fa-trash" style="color: #a88af0;"></i>
-                    <p class="descuento">$17200</p>
-                    <p class="precio-parrafo">$16300</p>
-                </div>
-            </article>
-
+                    <div class="precio"><i class="fa-solid fa-trash" style="color: #a88af0;"></i>
+                        <p class="descuento">$15600</p>
+                        <p class="precio-parrafo">$14400</p>
+                    </div>
+                </article>
             <article class="articulo">
-
                 <div class="descripcion">
-
                     <h4>Artículos en el carrito <p class="precio-parrafo-final">$156.900</p>
                     </h4>
                     <div class="descuento-aplicado">
                         <p>Descuento aplicado</p>
                         <p class="descuento-final">$16.000</p>
                     </div>
-
                     <p class="total-final">Total $18.000</p>
-
                 </div>
-                <div class="boton"> <button>COMPRAR</button></div>
+                <button>COMPRAR</button>
             </article>
-            <article class="acordeon">
-                <h2>Compras seguras y faciles</h2>
-                <div class="devoluciones">
-                    <div>Devoluciones gratuitas durante 30 días
-                        <i class="fa-solid fa-arrow-down"></i>
-                    </div>
+        </div>
 
-                </div>
-                <div class="metodos-de-pago">
-                    <div>Metodos de pago convenientes
-                        <div>
-                            <i class="fa-solid fa-arrow-down"></i>
+        <div class="compras">
+                <ul>
+                    <li class="lista-compras"> <h2>Compras seguras y fáciles</h2></li>
+                    <li class="devoluciones"><i class="fa-solid fa-rotate-left" style="color: #3b82bf;"></i>  Devoluciones gratuitas durante 30 días
+                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
+                    
+                    </li>
+                    <li class="metodos-de-pago">
+                            <i class="fa-regular fa-credit-card" style="color: #3b82bf;"></i>  Métodos de pago
+                            convenientes
+                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
+                    
+                    </li>
+                    <li class="entrega">
+                            <i class="fa-solid fa-truck" style="color: #3b82bf;"></i>  Entrega a domicilio o puntos
+                            claves
+                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
                         </div>
-                    </div>
-                </div>
-
-                <div class="entrega">
-                    <div>Entrega a domicilio o puntos claves
-                        <i class="fa-solid fa-arrow-down"></i>
-                    </div>
-                </div>
-            </article>
+                    </li>
+                </ul>
         </div>
-        </div>
-
-
     </main>
 
     <footer>
@@ -149,5 +140,4 @@
         </div>
     </footer>
 </body>
-
 </html>

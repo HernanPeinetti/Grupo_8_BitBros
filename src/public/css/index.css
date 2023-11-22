@@ -11,6 +11,7 @@ body {
     font-family: "Roboto", sans-serif;
     width: 100vw;
     color: #434343;
+    overflow-x: hidden;
 }
 
 header {
@@ -458,7 +459,7 @@ footer {
         height: 45px;
         transition: 0.3s all;
     }
-    .footerContacto button:hover {
+    .btnFooterContacto:hover {
         color: white;
         background-color: #A88AF0;
     }

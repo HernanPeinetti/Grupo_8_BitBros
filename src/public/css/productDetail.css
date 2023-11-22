@@ -272,6 +272,7 @@ summary{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    overflow-x: scroll;
 }
 
 .fondoCompartido{
@@ -406,6 +407,8 @@ summary{
 
 /* SMARTPHONES PORTRAIT */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+
+    
 }
 
 
@@ -517,7 +520,7 @@ summary{
         justify-content: space-evenly;
         color: white;
         background-color: #3B82BF;
-        border-radius: 0.2rem;
+        border-radius: 0.4rem;
         padding: 15px;
         width: 100%;
     }
@@ -555,4 +558,5 @@ summary{
         font-size: 15px;
         color:#aeaeae;
     }
+
 } 
