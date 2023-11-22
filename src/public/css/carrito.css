@@ -10,8 +10,6 @@ body {
     background-color: #f6f6f6;
     color: #272727;
     font-style: normal;
-
-
 }
 
 
@@ -215,7 +213,9 @@ main {
     flex-wrap: wrap;
 }
 
-
+.main-carrito {
+    height: 65rem;
+}
 
 
 

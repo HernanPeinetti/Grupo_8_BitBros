@@ -13,6 +13,69 @@ body {
     color: #434343;
 }
 
+header {
+    height: 60px;
+    width: 100%;
+}
+.headerContainer {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    border-bottom: 1px solid #ECECEC;
+    background: #FFF;
+    height: 60px;
+    width: 100%;
+}
+.headerLogo {
+    width: 50%;
+}
+.headerLogo img {
+    width: 125px;
+    margin-left: 0.5rem;
+}
+.headerUser {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.headerUserLink {
+    color: #8A97CA;
+    margin-right: 0.7rem;
+    font-size: 18px;
+}
+.userButton {
+    background-color: #00000000;
+    border: 0;
+    color: #8A97CA;
+    margin-right: 0.7rem;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+.p-user {
+    display: none;
+}
+.headerNav {
+    display: none;
+}
+
+.headerSearch {
+    display: none;
+}
+.a-volver {
+    color: #434343;
+    font-weight: 500;
+    text-decoration: none;
+}
+.a-volver i {
+    margin-right: 0.5rem;
+}
+.a-volver:hover {
+    text-decoration: underline;
+}
+
 .banner{
     display: flex;
 }
@@ -160,7 +223,187 @@ article img{
     font-size: 11px;
 }
 
+footer {
+    width: 100%;
+    height: 198px;
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footerRedes {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerRedes a {
+    color: #434343;
+    margin: 0 0.5rem 0 0.5rem;
+    transition: 0.3s all;
+}
+.footerRedes a:hover {
+    color: #A88AF0;
+}
+.footerRedes i {
+    font-size: 30px;
+}
+.footerContacto {
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footerContactoH3 {
+    margin-left: 0.5rem;
+    font-size: 16px;
+}
+.btnFooterContacto {
+    margin-left: 0.5rem;
+    width: 125px;
+    border: 0;
+    margin-top: 0.3rem;
+    height: 40px;
+    font-weight: 600;
+    color: #434343;
+    border-radius: 5px;
+    background-color: #D0C8E0;
+}
+.footerChat {
+    width: 50%;
+    height: 30px;
+    height: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.btnChat {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5rem;
+    color: #D0C8E0;
+    text-decoration: none;
+    background-color: #3A3A3A;
+}
+
 @media (min-width: 768px){
+    header {
+        height: 140px;
+        width: 100%;
+    }
+    .headerContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 140px;
+        width: 100%;
+    }
+    .headerLogo {
+        width: 25%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+    }
+    .headerLogo img {
+        width: 160px;
+        margin-left: 0.5rem;
+    }
+    .headerUser {
+        width: 25%;
+        height: 70%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .a-user {
+        margin-left: 1rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    
+    .a-user:hover p {
+        text-decoration: underline;
+    }
+    .p-user {
+        display: block;
+        margin-left: 0.5rem;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .userButton {
+        display: none;
+    }
+    .headerUserLink {
+        color: #8A97CA;
+        font-size: 24px;
+        transition: 0.3s all;
+    }
+    .headerUserLink:hover {
+        color: #7580ac;
+    }
+    .headerNav {
+        width: 75%;
+        height: 30%;
+        display: flex;
+    }
+    .headerNav ul {
+        width: 100%;
+        display: flex;
+        list-style: none;
+        justify-content: center;
+    }
+    .headerNav ul li {
+        margin: 0 0.3rem 0 0.3rem;
+    }
+    .navLink {
+        color: #434343;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        text-decoration: none;
+        transition: 0.3s all;
+    }
+    .navLink:hover {
+        color: #181818;
+        text-decoration: underline;
+    }
+    .headerSearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 70%;
+    }
+    .headerSearch form {
+        width: 100%;
+        position: relative;
+    }
+    .inputSearch {
+        width: 100%;
+        margin: auto;
+        height: 40px;
+        padding: 0 0.5rem 0 2rem;
+        border-radius: 5px;
+        border: 1px solid #8A97CA;
+        background: #FFF;
+        outline: none;
+    }
+    .i-search {
+        position: absolute;
+        left: 8px;
+        top: 11px;
+        color: #8A97CA;
+    }
+
     .banner img{
         width: 75vw;
         margin: 1.5rem auto;
@@ -188,6 +431,55 @@ article img{
     .productos-seleccionados{
         font-size: 20px;
     }
+
+    footer {
+        width: 100%;
+        height: 200px;
+    }
+    .footerRedes {
+        width: 25%;
+        height: 100%;
+    }
+    .footerRedes a i {
+        font-size: 32px;
+    }
+    .footerContacto {
+        width: 25%;
+        height: 100%;
+        order: -1;
+    }
+    .footerContactoH3 {
+        font-size: 19px;
+    }
+    .btnFooterContacto {
+        cursor: pointer;
+        width: 155px;
+        font-size: 14px;
+        height: 45px;
+        transition: 0.3s all;
+    }
+    .footerContacto button:hover {
+        color: white;
+        background-color: #A88AF0;
+    }
+    .footerChat {
+        width: 25%;
+        height: 100%;
+    }
+    .btnChat {
+        width: 52px;
+        height: 52px;
+        font-size: 20px;
+        transition: 0.3s all;
+    }
+    .btnChat:hover {
+        background-color: #181818;
+        color: #A88AF0;
+    }
+    .btnChat i {
+        position: relative;
+        top: 2px;
+    }
 }
 
 @media(min-width: 1060px){
@@ -198,5 +490,13 @@ article img{
     .categorias h3{
         top: 5.3rem;
         left: 3.7rem;
+    }
+
+    .headerNav ul li {
+        margin: 0 0.5rem 0 0.5rem;
+    }
+
+    .footerRedes a i {
+        font-size: 35px;
     }
 }

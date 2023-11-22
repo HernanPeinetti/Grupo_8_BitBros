@@ -1,78 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap");
+
+header a {
+  position: relative;
+  left: 5%;
+  top: 75px;
+  color: white;
+  text-decoration: none;
+}
+header a:hover {
+  text-decoration: underline;
+}
+header a i {
+  margin-right: 0.5rem;
+}
 body {
-    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('../images/background-login.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+}
+main {
+    height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background-image: url('../images/background-login.jpg');
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .container {
+}
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.7
+    ); /* Fondo blanco semitransparente */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px); /* Agrega un efecto de desenfoque al fondo del formulario */
-  }
-  
-  h2 {
+    backdrop-filter: blur(
+        5px
+    ); /* Agrega un efecto de desenfoque al fondo del formulario */
+}
+
+h2 {
     text-align: center;
     color: #333;
     text-transform: uppercase;
-  }
-  
-  form {
+}
+
+form {
     width: 100%;
     max-width: 400px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-  }
-  
-  label {
+}
+
+label {
     margin-top: 15px;
     color: #555;
     font-size: 14px;
-  }
-  
-  input {
+}
+
+input {
     padding: 12px;
     margin-top: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
-  }
-  
-  button {
+}
+
+button {
     padding: 12px;
-    background-color: #A88AF0;
+    background-color: #a88af0;
     color: #fff;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
-  }
-  
-  button:hover {
-    background-color: #B98AF0;
-  }
-  
-  .social-buttons {
+}
+
+button:hover {
+    background-color: #b98af0;
+}
+
+.social-buttons {
     margin-top: 25px;
     display: flex;
     justify-content: space-between;
-  }
-  
-  .facebook, .google {
+}
+
+.facebook,
+.google {
     flex: 1;
     padding: 12px;
     font-size: 14px;
@@ -81,60 +114,64 @@ body {
     border: none;
     border-radius: 6px;
     cursor: pointer;
-  }
-  
-  .facebook {
+}
+
+.facebook {
     background-color: #3b5998;
     color: #fff;
     margin-right: 10px;
-  }
-  
-  .google {
+}
+
+.google {
     background-color: #dd4b39;
     color: #fff;
-  }
-  
-  .forgot-password {
+}
+
+.forgot-password {
     text-align: center;
     margin-top: 15px;
     color: #555;
-  }
-  
-  .forgot-password a {
+}
+
+.forgot-password a {
     color: #007bff;
     text-decoration: none;
-  }
-  
-  .forgot-password a:hover {
+}
+
+.forgot-password a:hover {
     text-decoration: underline;
-  }
-  
-  .register-link {
+}
+
+.register-link {
     text-align: center;
     margin-top: 20px;
     color: #555;
-  }
-  
-  .register-link a {
+}
+
+.register-link a {
     color: #007bff;
     text-decoration: none;
-  }
-  
-  .register-link a:hover {
+}
+
+.register-link a:hover {
     text-decoration: underline;
-  }
-  
-  
+}
+
 /* Media query para cambiar el diseño de los botones cuando la resolución sea mayor a 360px */
-@media screen and (max-width: 361px) {
+@media screen and (max-width: 768px) {
     .social-buttons {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
-    .facebook, .google {
-      width: 100%;
-      margin-bottom: 10px;
+
+    .facebook,
+    .google {
+        width: 100%;
+        margin-bottom: 10px;
     }
-  }
-  
+
+    header a {
+        left: 5%;
+        top: 30px;
+      }
+}
