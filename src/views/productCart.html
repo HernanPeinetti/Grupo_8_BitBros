@@ -8,17 +8,47 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,100&display=swap');
     </style>
+    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="/css/carrito.css" />
 </head>
 
 <body>
-
-    <h1>Carro de Compras</h1>
-    <h3>Los gastos de envío y códigos de descuento se confirman al finalizar la compra</h3>
-
+    <header>
+        <div class="headerContainer">
+            <div class="headerLogo">
+                <a href="/"><img src="/icon/logo.svg" alt="logo"></a>
+            </div>
+            <div class="headerSearch">
+                <form action="">
+                    <input class="inputSearch" type="search" placeholder="Buscar productos">
+                    <i class="fa-solid fa-magnifying-glass i-search"></i>
+                </form>
+            </div>
+            <div class="headerUser">
+                <button class="userButton">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <a href="/carrito" class="headerUserLink a-carrito">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a href="/login" class="headerUserLink a-user">
+                    <i class="fa-regular fa-user"></i>
+                    <p class="p-user">Iniciar Sesión</p>
+                </a>
+                <button class="userButton">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <nav class="headerNav">
+                <a class="a-volver" href="/"><i class="fa-solid fa-arrow-left"></i>Volver a la tienda</a>
+            </nav>
+        </div>
+    </header>
     <main class="main-carrito">
+        <h1>Carro de Compras</h1>
+    <h3>Los gastos de envío y códigos de descuento se confirman al finalizar la compra</h3>
         <div class="contenedor-pedido">
             <article class="articulo">
                 <div class="imagen"> <img src="/images/inflador.jpg" alt=""></div>
@@ -33,74 +63,79 @@
                         <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
                     </div>
                 </div>
-                <div class="precio"><i class="fa-solid fa-trash" style="color: #a88af0;"></i>
+                <div class="precio"><a href="#"><i class="fa-solid fa-trash" style="color: #a88af0;"></i></a>
                     <p class="descuento">$15600</p>
                     <p class="precio-parrafo">$14400</p>
                 </div>
             </article>
-            <article class="articulo">
-                <div class="imagen"> <img src="/IMAGES/LUZ-DELANTERA.JPG" alt=""></div>
-                <div class="descripcion">
-                    <a class="link-producto" href="/producto">
-                        <h4>Luz delantera</h4>
-                        <p>Disponible en: rosa y blanco</p>
-                    </a>
-                    <p>Envío: 2-4 días</p>
-                    <div class="cantidad-selector">
-                        <label for="cantidad"></label>
-                        <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
+            <div class="contenedor-pedido">
+                <article class="articulo">
+                    <div class="imagen"> <img src="/images/inflador.jpg" alt=""></div>
+                    <div class="descripcion">
+                        <a class="link-producto" href="/producto">
+                            <h4>Inflador de pie marca giyo</h4>
+                            <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
+                        </a>
+                        <p>Envío: 2-4 días</p>
+                        <div class="cantidad-selector">
+                            <label for="cantidad"></label>
+                            <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
+                        </div>
                     </div>
-                </div>
-                <div class="precio"><i class="fa-solid fa-trash" style="color: #a88af0;"></i>
-                    <p class="descuento">$17200</p>
-                    <p class="precio-parrafo">$16300</p>
-                </div>
-            </article>
-
+                    <div class="precio"><a href="#"><i class="fa-solid fa-trash" style="color: #a88af0;"></i></a>
+                        <p class="descuento">$15600</p>
+                        <p class="precio-parrafo">$14400</p>
+                    </div>
+                </article>
             <article class="articulo">
-
                 <div class="descripcion">
-
                     <h4>Artículos en el carrito <p class="precio-parrafo-final">$156.900</p>
                     </h4>
                     <div class="descuento-aplicado">
                         <p>Descuento aplicado</p>
                         <p class="descuento-final">$16.000</p>
                     </div>
-
                     <p class="total-final">Total $18.000</p>
-
                 </div>
-                <div class="boton"> <button>COMPRAR</button></div>
-            </article>
-            <article class="acordeon">
-                <h2>Compras seguras y faciles</h2>
-                <div class="devoluciones">
-                    <div>Devoluciones gratuitas durante 30 días
-                        <i class="fa-solid fa-arrow-down"></i>
-                    </div>
-
-                </div>
-                <div class="metodos-de-pago">
-                    <div>Metodos de pago convenientes
-                        <div>
-                            <i class="fa-solid fa-arrow-down"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="entrega">
-                    <div>Entrega a domicilio o puntos claves
-                        <i class="fa-solid fa-arrow-down"></i>
-                    </div>
-                </div>
+                <a href="#"><button>COMPRAR</button></a>
             </article>
         </div>
+
+        <div class="compras">
+                <ul>
+                    <li class="lista-compras"> <h2>Compras seguras y fáciles</h2></li>
+                    <a href="#"><li class="devoluciones"><i class="fa-solid fa-rotate-left" style="color: #3b82bf;"></i>  Devoluciones gratuitas durante 30 días
+                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
+                    </li></a>
+                   <a href="#"><li class="metodos-de-pago">
+                            <i class="fa-regular fa-credit-card" style="color: #3b82bf;"></i>  Métodos de pago
+                            convenientes
+                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
+                    
+                    </li></a> 
+                   <a href="#"> <li class="entrega">
+                            <i class="fa-solid fa-truck" style="color: #3b82bf;"></i>  Entrega a domicilio o puntos
+                            claves
+                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
+                    </li></a>
+                </ul>
         </div>
-
-
     </main>
 
+    <footer>
+        <div class="footerRedes">
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footerContacto">
+            <h3 class="footerContactoH3">Necesitas ayuda?</h3>
+            <button class="btnFooterContacto">Contáctanos</button>
+        </div>
+        <div class="footerChat">
+            <a class="btnChat" href=""><i class="fa-solid fa-message"></i></a>
+        </div>
+    </footer>
 </body>
-
 </html>

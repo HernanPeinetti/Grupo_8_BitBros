@@ -6,56 +6,63 @@
         <meta name="MobileOptimized" content="width=device-width, initial-scale=1.0">
         <title>Isabel Bicicleteria - Home</title>
 
+        <link rel="stylesheet" href="/css/index.css">
         <link rel="stylesheet" href="/css/productDetail.css" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
     </head>
     <body>
-        <header class="headerContainer">
-            <div class="logoHeader">
-                <h2>
-                    <a href="/">Isabel Bicicleteria</a>
-                </h2>
+        <header>
+            <div class="headerContainer">
+                <div class="headerLogo">
+                    <a href="/"><img src="/icon/logo.svg" alt="logo"></a>
+                </div>
+                <div class="headerSearch">
+                    <form action="">
+                        <input class="inputSearch" type="search" placeholder="Buscar productos">
+                        <i class="fa-solid fa-magnifying-glass i-search"></i>
+                    </form>
+                </div>
+                <div class="headerUser">
+                    <button class="userButton">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <a href="/carrito" class="headerUserLink a-carrito">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                    <a href="/login" class="headerUserLink a-user">
+                        <i class="fa-regular fa-user"></i>
+                        <p class="p-user">Iniciar Sesión</p>
+                    </a>
+                    <button class="userButton">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+                <nav class="headerNav">
+                    <ul>
+                        <li>
+                            <a href="/" class="navLink">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="/" class="navLink">Bicicletas</a>
+                         </li>
+                        <li>
+                            <a href="/" class="navLink">Accesorios</a>
+                        </li>
+                        <li>
+                            <a href="/" class="navLink">Indumentaria</a>
+                        </li>
+                        <li>
+                            <a href="/" class="navLink">Repuestos</a>
+                        </li>
+                        <li>
+                            <a href="/" class="navLink">Nosotros</a>
+                        </li>
+                        <li>
+                            <a href="/" class="navLink">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-            <div class="searchHeader">
-                <input class="inputSearch" type="search" placeholder="Bucar productos"/>
-                <i class="fa-solid fa-magnifying-glass icono-search"></i>
-            </div>
-            <div class="userHeader">
-                <a class="a-user" href="">
-                    <i class="fa-regular fa-heart icono-user"></i>
-                    <p class="contador-user">12</p>
-                </a>
-                <a class="a-user" href="/log">
-                    <i class="fa-regular fa-user icono-user"></i>
-                    <p class="p-login">Login</p>
-                </a>
-                <a class="a-user" href="/carrito">
-                    <i class="fa-solid fa-cart-shopping icono-user"></i>
-                    <p class="contador-user">2</p>
-                </a>
-            </div>
-            <nav class="menuHeader">
-                <ul class="listaMenu">
-                    <li>
-                        <a class="linkMenu" href="/producto">Bicicletas</a>
-                    </li>
-                    <li>
-                        <a class="linkMenu" href="">Accesorios</a>
-                    </li>
-                    <li>
-                        <a class="linkMenu" href="">Indumentaria</a>
-                    </li>
-                    <li>
-                        <a class="linkMenu" href="">Repuestos</a>
-                    </li>
-                    <li>
-                        <a class="linkMenu" href="">Servicios</a>
-                    </li>
-                    <li>
-                        <a class="linkMenu" href="">Contacto</a>
-                    </li>
-                </ul>
-            </nav>
         </header>
 
         <main class="mainHome">
@@ -217,31 +224,19 @@
             </div>    
         </main>
 
-        <footer class="footerContainer">
-            <div class="ayudaFooter">
-                <h4 class="h4AyudaFooter">Necesitas ayuda?</h4>
-                <a href="" class="btnAyudaFooter">Contáctanos</a>
+        <footer>
+            <div class="footerRedes">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
             </div>
-            <div class="redesFooter">
-                <div class="divRedesFooter">
-                    <a href="" class="aRedesFooter">
-                        <i class="fa-brands fa-instagram icono-instagram"></i>
-                    </a>
-                    <a href="" class="aRedesFooter">
-                        <i class="fa-brands fa-facebook icono-facebook"></i>
-                    </a>
-                    <a href="" class="aRedesFooter">
-                        <i class="fa-brands fa-youtube icono-youtube"></i>
-                    </a>
-                    <a href="" class="aRedesFooter">
-                        <i class="fa-brands fa-x-twitter icono-twitter"></i>
-                    </a>
-                </div>
+            <div class="footerContacto">
+                <h3 class="footerContactoH3">Necesitas ayuda?</h3>
+                <button class="btnFooterContacto">Contáctanos</button>
             </div>
-            <div class="chatFooter">
-                <a href="" class="btnChatFooter">
-                    <i class="fa-solid fa-comment"></i>
-                </a>
+            <div class="footerChat">
+                <a class="btnChat" href=""><i class="fa-solid fa-message"></i></a>
             </div>
         </footer>
     </body>
