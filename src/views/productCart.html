@@ -8,7 +8,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,100&display=swap');
     </style>
-    
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="/css/carrito.css" />
@@ -48,80 +48,90 @@
     </header>
     <main class="main-carrito">
         <h1>Carro de Compras</h1>
-    <h3>Los gastos de envío y códigos de descuento se confirman al finalizar la compra</h3>
-        <div class="contenedor-pedido">
-            <article class="articulo">
-                <div class="imagen"> <img src="/images/inflador.jpg" alt=""></div>
-                <div class="descripcion">
-                    <a class="link-producto" href="/producto">
-                        <h4>Inflador de pie marca giyo</h4>
-                        <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
-                    </a>
-                    <p>Envío: 2-4 días</p>
-                    <div class="cantidad-selector">
-                        <label for="cantidad"></label>
-                        <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
-                    </div>
-                </div>
-                <div class="precio"><a href="#"><i class="fa-solid fa-trash" style="color: #a88af0;"></i></a>
-                    <p class="descuento">$15600</p>
-                    <p class="precio-parrafo">$14400</p>
-                </div>
-            </article>
-            <div class="contenedor-pedido">
-                <article class="articulo">
-                    <div class="imagen"> <img src="/images/inflador.jpg" alt=""></div>
-                    <div class="descripcion">
-                        <a class="link-producto" href="/producto">
-                            <h4>Inflador de pie marca giyo</h4>
-                            <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
-                        </a>
-                        <p>Envío: 2-4 días</p>
-                        <div class="cantidad-selector">
-                            <label for="cantidad"></label>
-                            <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
-                        </div>
-                    </div>
-                    <div class="precio"><a href="#"><i class="fa-solid fa-trash" style="color: #a88af0;"></i></a>
-                        <p class="descuento">$15600</p>
-                        <p class="precio-parrafo">$14400</p>
-                    </div>
-                </article>
-            <article class="articulo">
-                <div class="descripcion">
-                    <h4>Artículos en el carrito <p class="precio-parrafo-final">$156.900</p>
-                    </h4>
-                    <div class="descuento-aplicado">
-                        <p>Descuento aplicado</p>
-                        <p class="descuento-final">$16.000</p>
-                    </div>
-                    <p class="total-final">Total $18.000</p>
-                </div>
-                <a href="#"><button>COMPRAR</button></a>
-            </article>
-        </div>
+        <h3>Los gastos de envío y códigos de descuento se confirman al finalizar la compra</h3>
+        <div class="contenedor">
+            <div class="contenedor-sin-boton">
+        <h2 class="contenedor-pedido">Su pedido</h2>
 
+        <article class="articulo">
+            <div class="imagen"><img src="/images/inflador.jpg" alt=""></div>
+            <div class="descripcion">
+                <a class="link-producto" href="/producto">
+                    <h4>Inflador de pie marca giyo</h4>
+                    <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
+                </a>
+                <p>Envío: 2-4 días</p>
+                <div class="cantidad-selector">
+                    <label for="cantidad"></label>
+                    <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
+                </div>
+            </div>
+            <div class="precio">
+                <a href="#"><i class="fa-solid fa-trash" style="color: #a88af0;"></i></a>
+                <p class="descuento">$15600</p>
+                <p class="precio-parrafo">$14400</p>
+            </div>
+        </article>
+        <article class="articulo">
+            <div class="imagen"><img src="/images/inflador.jpg" alt=""></div>
+            <div class="descripcion">
+                <a class="link-producto" href="/producto">
+                    <h4>Inflador de pie marca giyo</h4>
+                    <p>Tipo adaptativo apto para: moto, bici, pelotas, auto, etc.</p>
+                </a>
+                <p>Envío: 2-4 días</p>
+                <div class="cantidad-selector">
+                    <label for="cantidad"></label>
+                    <input type="number" value="1" id="cantidad" name="cantidad" min="1" max="10">
+                </div>
+            </div>
+            <div class="precio">
+                <a href="#"><i class="fa-solid fa-trash" style="color: #a88af0;"></i></a>
+                <p class="descuento">$15600</p>
+                <p class="precio-parrafo">$14400</p>
+            </div>
+        </article>
+    </div>
+        <div class="articulo-en-el-carrito">
+            <div class="descripcion">
+                <h4>Artículos en el carrito <p class="precio-parrafo-final">$156.900</p>
+                </h4>
+                <div class="descuento-aplicado">
+                    <p>Descuento aplicado</p>
+                    <p class="descuento-final">$16.000</p>
+                </div>
+                <p class="total-final">Total $18.000</p>
+            </div>
+            <a href="#"><button>COMPRAR</button></a>
+        </div>
+</div>
         <div class="compras">
-                <ul>
-                    <li class="lista-compras"> <h2>Compras seguras y fáciles</h2></li>
-                    <a href="#"><li class="devoluciones"><i class="fa-solid fa-rotate-left" style="color: #3b82bf;"></i>  Devoluciones gratuitas durante 30 días
-                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
-                    </li></a>
-                   <a href="#"><li class="metodos-de-pago">
-                            <i class="fa-regular fa-credit-card" style="color: #3b82bf;"></i>  Métodos de pago
-                            convenientes
-                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
-                    
-                    </li></a> 
-                   <a href="#"> <li class="entrega">
-                            <i class="fa-solid fa-truck" style="color: #3b82bf;"></i>  Entrega a domicilio o puntos
-                            claves
-                            <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
-                    </li></a>
-                </ul>
+            <ul>
+                <li class="lista-compras">
+                    <h2>Compras seguras y fáciles</h2>
+                </li>
+                <a href="#">
+                    <li class="devoluciones">
+                        <i class="fa-solid fa-rotate-left" style="color: #3b82bf;"></i>
+                        Devoluciones gratuitas durante 30 días
+                        <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="metodos-de-pago">
+                        <i class="fa-regular fa-credit-card" style="color: #3b82bf;"></i> Métodos de pago convenientes
+                        <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="entrega">
+                        <i class="fa-solid fa-truck" style="color: #3b82bf;"></i> Entrega a domicilio o puntos claves
+                        <i class="fa-solid fa-chevron-down" style="color: #3b82bf;"></i>
+                    </li>
+                </a>
+            </ul>
         </div>
     </main>
-
     <footer>
         <div class="footerRedes">
             <a href=""><i class="fa-brands fa-instagram"></i></a>
@@ -138,4 +148,5 @@
         </div>
     </footer>
 </body>
+
 </html>
