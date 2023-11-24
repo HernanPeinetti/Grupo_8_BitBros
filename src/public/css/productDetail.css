@@ -75,7 +75,7 @@ body {
 
 .imageContainer{
     background-color: #ffffff;
-    width: 100vw;
+    width: 90vw;
     height: auto;
     display: flex;
     border:#54545450 1px solid;
@@ -284,7 +284,6 @@ summary{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
     margin-bottom: 10px;
 }
 
@@ -407,13 +406,43 @@ summary{
 
 /* SMARTPHONES PORTRAIT */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .subTitle p{
+        display: none;
+    }
 
-    
+    .fondoCompartido{
+        border: #595959 1px solid;
+        border-radius: 0.2em;
+        width: 300px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
 }
 
 
 /* TABLETS PORTRAIT */
 @media only screen and (min-width: 481px) and (max-width: 768px ) {
+    .imageContainer{
+        max-width: 450px;
+        height: auto;
+        align-self: center;
+    }
+    .detailSection{
+        min-height: auto;
+        display: block;
+        background-color: #ffffff;
+        padding: 20px;
+        margin: 10px;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-self: center;
+    }
 
 
 }
@@ -426,12 +455,25 @@ summary{
         flex-direction: row;
         justify-content: space-around;
     }
+    .nombre{
+        display: flex;
+        align-self: flex-end;
+    }
+    
 } 
 
 /* DESKTOP */
 
 @media only screen and (min-width: 1025px){
-    
+    .titleContainer{
+        align-self: center;
+        justify-content: space-around;
+    }
+
+    [for="heart"] {
+        font-size: 3em;
+    }
+
     .section1{
         display: flex;
         flex-direction: row;
@@ -558,5 +600,16 @@ summary{
         font-size: 15px;
         color:#aeaeae;
     }
+
+    .medidasContainer{
+        width: 50%;
+    }
+    .reseñasContainer{
+        width: 50%;
+    }
+    .productDetailContainer{
+        width: 50%;
+    }
+
 
 } 
