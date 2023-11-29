@@ -138,14 +138,6 @@ main{
     margin-top: 6px;
 }
 
-/* .-pedido {
-    justify-content: center;
-}
-
-.contenedor-pedido article {
-    flex-shrink: 0;
-    background-color: #ffffff;
-} */
 
 .cantidad-selector {
     text-align: left;
@@ -264,10 +256,6 @@ main {
     flex-wrap: wrap;
 }
 
-.main-carrito {
-    height: 40rem;
-}
-
 .metodos-de-pago {
     background-color: white;
     padding: 40px;
@@ -308,7 +296,13 @@ main {
 .compras a {
     text-decoration: none;
 }
-
+.compras.seguras{
+    
+    border-radius: 7px;
+    padding: 0.5rem;
+    border-top: 2px solid #f6f6f6;
+    margin: 1rem 0 1rem 1rem 0;
+}
 .contenedor-pedido {
     font-size: 20px;
     text-align: center;
@@ -328,9 +322,9 @@ main {
     display: flex;
     background-color: #F6F6F6;
     border-radius: 7px;
-    width: 19rem;
-    margin: auto;
+    width: 100%;
     height: auto;
+    margin: 1rem 0 1rem 1rem;
 }
 
 .compras li {
@@ -340,6 +334,7 @@ main {
 .lista-compras {
     padding: 0.2rem;
     background-color: #F6F6F6;
+    font-size: 21px;
 }
 
 
@@ -356,16 +351,15 @@ main {
     margin: 1rem 0 1.5rem 2rem;
     color: #434343;
 }
-
+.contenedor-productos{
+    flex-wrap: wrap;
+}
 @media (min-width: 1200px) {
 
-    .logo {
-        width: 250px;
-    }
-    
     .contenedor-todo{
         display: flex;
         flex-direction: column;
+    
     }
 
     .contenedor-sin-compras-seguras{
@@ -375,7 +369,7 @@ main {
 
 .contenedor{
     display: flex;
-    width: 60rem;
+    width: 80%;
 }
 
 .contenedor-sin-boton{
@@ -404,7 +398,6 @@ main {
         font-size: 18px;
         font-weight: 400;
         margin: 0;
-
     }
 
     .articulo {
@@ -428,14 +421,6 @@ main {
         margin-top: 2rem;
     }
 
-    .compras-seguras{
-        position:relative;
-    }
-
-    .compras{
-        position: absolute;
-        left: 0;
-    }
     .compras a {
         font-weight: 100;
         font-size: large;
@@ -453,10 +438,24 @@ main {
         display: flex;
     }
 }
-
-
-
-
+@media(min-width: 768px){
+    .contenedor{
+        width: auto;
+    }
+.contenedor-sin-boton{
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: none;
+}
+.compras.seguras{
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+.compras{
+    width: 100%;
+}
+}
 
 
 /* footer */
