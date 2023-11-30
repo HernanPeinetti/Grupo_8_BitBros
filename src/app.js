@@ -4,24 +4,12 @@ const path = require("path");
 const app = express();
 app.use(express.static(path.resolve("src/public")));
 
-app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname,("./views/index.html")))
-})
+//ROUTES 
+const mainRoutes = require('./routes/main.routes.js')
+const productRoutes = require('./routes/product.routes.js')
 
-app.get("/producto", (req, res) => {
-    res.sendFile(path.resolve(__dirname,("./views/productDetail.html")))
-})
-
-app.get("/carrito", (req, res) => {
-    res.sendFile(path.resolve("src/views", "productCart.html"));
-});
-app.get("/register", (req, res) => {
-    res.sendFile(path.resolve("src/views", "register.html"));
-});
-
-app.get("/login", (req, res) => {
-    res.sendFile(path.resolve("src/views", "login.html"));
-}); 
+app.use('/', mainRoutes)
+app.use('/products', mainRoutes)
 
 app.listen(3000, () => {
     console.log("Servidor levantado en http://localhost:3000");
