@@ -9,7 +9,7 @@ const mainRoutes = require('./routes/main.routes.js')
 const productRoutes = require('./routes/product.routes.js')
 
 app.use('/', mainRoutes)
-app.use('/products', mainRoutes)
+app.use('/producto', productRoutes)
 
 app.listen(3000, () => {
     console.log("Servidor levantado en http://localhost:3000");
