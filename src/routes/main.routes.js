@@ -3,7 +3,6 @@ const ruoter = express.Router();
 const controllers = require('../controllers/main.controllers');
 
 // VISTA HOME 
-
 ruoter.get("/", controllers.home)
 
 // VISTA CARRITO
