@@ -2,16 +2,16 @@ const path = require('path');
 
 const controllers = {
     home: (req, res) => {
-        res.sendFile(path.resolve(__dirname, ("../views/index.html")))
+        res.render('index.ejs')
     },
     carrito: (req, res) => {
-        res.sendFile(path.resolve("src/views", "productCart.html"));
+        res.render('productCart.ejs')
     },
     register: (req, res) => {
-        res.sendFile(path.resolve("src/views", "register.html"));
+        res.render('register.ejs')
     },
     login: (req, res) => {
-        res.sendFile(path.resolve("src/views", "login.html"));
+        res.render('login.ejs')
     },
 };
 
