@@ -11,60 +11,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet"/>
     </head>
     <body>
-        <header>
-            <div class="headerContainer">
-                <div class="headerLogo">
-                    <a href="/"><img src="/icon/logo.svg" alt="logo"></a>
-                </div>
-                <div class="headerSearch">
-                    <form action="">
-                        <input class="inputSearch" type="search" placeholder="Buscar productos">
-                        <i class="fa-solid fa-magnifying-glass i-search"></i>
-                    </form>
-                </div>
-                <div class="headerUser">
-                    <button class="userButton">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                    <a href="/carrito" class="headerUserLink a-carrito">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                    <a href="/login" class="headerUserLink a-user">
-                        <i class="fa-regular fa-user"></i>
-                        <p class="p-user">Iniciar Sesión</p>
-                    </a>
-                    <button class="userButton">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-                <nav class="headerNav">
-                    <ul>
-                        <li>
-                            <a href="/" class="navLink">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="/" class="navLink">Bicicletas</a>
-                         </li>
-                        <li>
-                            <a href="/" class="navLink">Accesorios</a>
-                        </li>
-                        <li>
-                            <a href="/" class="navLink">Indumentaria</a>
-                        </li>
-                        <li>
-                            <a href="/" class="navLink">Repuestos</a>
-                        </li>
-                        <li>
-                            <a href="/" class="navLink">Nosotros</a>
-                        </li>
-                        <li>
-                            <a href="/" class="navLink">Contacto</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-
+        <%- include('./partials/header') %>
         <main class="mainHome">
 
             <nav class="sub-Section">
@@ -224,20 +171,6 @@
             </div>    
         </main>
 
-        <footer>
-            <div class="footerRedes">
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-                <a href=""><i class="fa-brands fa-youtube"></i></a>
-            </div>
-            <div class="footerContacto">
-                <h3 class="footerContactoH3">Necesitas ayuda?</h3>
-                <button class="btnFooterContacto">Contáctanos</button>
-            </div>
-            <div class="footerChat">
-                <a class="btnChat" href=""><i class="fa-solid fa-message"></i></a>
-            </div>
-        </footer>
+        <%- include('./partials/footer.ejs') %>
     </body>
 </html>
