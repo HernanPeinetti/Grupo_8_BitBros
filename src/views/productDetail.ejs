@@ -41,27 +41,37 @@
                         <p>$14.000 ARS</p>
                          <span class="impuestos">$11.060  ARS precio sin impuestos</span>
                     </div>
-                        
-                    <p class="stars">
+
+                    <div class="stars">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                         <span>(12)</span>
-                    </p>
-    
+                    </div>
+
+                    <div class="stockSection">
+                        <p>Cantidad</p>
+                        <div class="cantidad">
+                            <input type="number" placeholder="1" step="1" min="1" max="10" id="number"/>
+                        </div>
+                    </div>
+
                     <div class="pickColorContainer">
                         <div class="Color">
-                            <p>Color:</p>
-                            <p>Black</p>
+                            <p>Elegí el color:</p>
                         </div>
-                        <button class="changeColor"> Cambiar</button>
+                        <select name="pickColor" class="changeColor">
+                            <option value="black">Negro</option>
+                            <option value="red">Rojo</option>
+                            <option value="green">Verde</option>
+                        </select>
                     </div>
     
                     <a href="/carrito">
                         <div class="addToCart">
-                            <p href="/carrito" class=" containerCart">
+                            <p href="/carrito" class="containerCart">
                                 <i class="fa-solid fa-cart-shopping"></i>AGREGAR AL CARRITO
                             </p>
                         </div>
@@ -91,8 +101,11 @@
 
             <div class="acordeon">
                 <details class="productDetailContainer">
-                    <summary>Detalles del producto
-                        <i class="fa-solid fa-arrow-down"></i>   
+                    <summary>Detalles del Productos
+                        <div id="arrows">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
+   
                     </summary>
                     <div class="contenido">Marca : GIYO
                         <li>Modelo: GF35-P</li>
@@ -102,7 +115,7 @@
                 </details> 
                 <details class="medidasContainer">
                     <summary>Tamaño y medidas
-                        <div>
+                        <div id="arrows">
                             <i class="fa-solid fa-arrow-down"></i>
                         </div>
                     </summary>
@@ -110,11 +123,38 @@
                 </details>
                 <details class="reseñasContainer">
                     <summary>Reseñas
-                        <i class="fa-solid fa-arrow-down"></i> 
+                        <div id="arrows">
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </div>
                     </summary>
                     <div class="contenido">El Inflador Giyo Bomba Taller con manómetro 160 psi amarillo es un potente inflador con el que podrás inflar ruedas de cualquier tamaño y presión. Especialmente indicado para inflar ruedas de bicicletas de carretera que necesitan mayor presión de inflado, aunque también podrás inflar ruedas de bicicletas de montaña, bicicletas infantiles, ruedas de carros, sillas de ruedas, etc…</div>
                 </details>
+                
             </div>
+
+            <div class="punctuationStars">
+                <p>Puntuá este producto:</p>
+                <form>
+                    <div class="clasificacion">
+                        <input id="radio1" type="radio" name="estrellas" value="5">
+                        <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                        <input id="radio2" type="radio" name="estrellas" value="4">
+                        <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                        <input id="radio3" type="radio" name="estrellas" value="3">
+                        <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                        <input id="radio4" type="radio" name="estrellas" value="2">
+                        <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                        <input id="radio5" type="radio" name="estrellas" value="1">
+                        <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                    </div>
+                </form>
+                <a class="sendStars">
+                    <p class="containerStars">
+                        Enviar
+                    </p>
+                </a>
+            </div>
+            
 
             <div class="prodRelacionados">
 
