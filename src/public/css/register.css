@@ -5,29 +5,28 @@
 }
 
 body {
-    height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     background-image: url('../images/background-register.jpg'); 
     background-size: cover;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
 }
 
 main {
-    height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    height: 100vh;
 }
   
   .container {
     display: flex;
-    height: 675px;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
     padding: 30px;
@@ -130,9 +129,13 @@ main {
       align-items: center;
   }
   
-  .container {
-    height: 85%;
-  }
+  
+body {
+  background-repeat: repeat-y;
+}
+main {
+  height: 55rem;
+}
     .facebook, .google {
       width: 100%;
       margin-bottom: 10px;

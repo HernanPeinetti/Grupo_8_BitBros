@@ -10,7 +10,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
 }
 main {
@@ -155,6 +155,10 @@ button:hover {
         width: 100%;
         margin-bottom: 10px;
     }
+
+      main {
+        height: 55rem;
+      }
 
     header a {
         left: 5%;
