@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap");
-
 * {
     padding: 0;
     margin: 0;
@@ -249,7 +247,7 @@ summary{
 
 .prodRelacionados{
     background-color: white;
-    width: 95%;
+    width: 100%;
     padding: 40px;
     font-weight: 800;
     font-size: 30px;
@@ -402,6 +400,16 @@ summary{
 .btnChatFooter:hover {
     background-color: #000000;
     color: #ffffff;
+}
+
+article{
+    margin-right: 1.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+article img{
+    width: 7rem;
 }
 
 

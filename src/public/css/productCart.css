@@ -6,90 +6,12 @@
 
 
 body {
-    font-family: Roboto;
     background-color: #f6f6f6;
     color: #272727;
-
+    font-family: "Roboto", sans-serif;
 }
-
-header {
-    height: 60px;
-    width: 100%;
-}
-
-.headerContainer {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    z-index: 1;
-    border-bottom: 1px solid #ECECEC;
-    background: #FFF;
-    height: 60px;
-    width: 100%;
-}
-
-.headerLogo {
-    width: 50%;
-}
-
-.headerLogo img {
-    width: 125px;
-    margin-left: 0.5rem;
-}
-
-.headerUser {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.headerUserLink {
-    color: #8A97CA;
-    margin-right: 0.7rem;
-    font-size: 18px;
-}
-
-.userButton {
-    background-color: #00000000;
-    border: 0;
-    color: #8A97CA;
-    margin-right: 0.7rem;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-}
-
-.p-user {
-    display: none;
-}
-
-.headerNav {
-    display: none;
-}
-
-.headerSearch {
-    display: none;
-}
-
-.a-volver {
-    color: #434343;
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.a-volver i {
-    margin-right: 0.5rem;
-}
-
-.a-volver:hover {
-    text-decoration: underline;
-}
-
-/* header */
 
 main body {
-    font-family: Roboto;
     font-size: 15px;
 }
 
@@ -531,7 +453,6 @@ margin-bottom: 1rem;
         left: 5%;
         height: 70px;
         margin-top: 20px;
-        font-size: 16px;
         justify-content: center;
         display: flex;
         align-items: center;
@@ -539,7 +460,7 @@ margin-bottom: 1rem;
     }
 
     .precio-final-off p {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .precio-total {

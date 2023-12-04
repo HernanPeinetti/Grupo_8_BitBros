@@ -4,28 +4,14 @@
     padding: 0;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;800&display=swap");
-
-header a {
-  position: relative;
-  left: 5%;
-  top: 75px;
-  color: white;
-  text-decoration: none;
-}
-header a:hover {
-  text-decoration: underline;
-}
-header a i {
-  margin-right: 0.5rem;
-}
 body {
-    height: 100vh;
-    overflow: hidden;
-    background-image: url('../images/background-login.jpg');
-    background-size: cover;
-    background-position: center;
-    font-family: 'Roboto', sans-serif;
+  background-image: url('../images/background-login.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
 }
 main {
     height: 100vh;
