@@ -99,7 +99,7 @@ body {
 .impuestos{
     font-size: medium;
     font-weight: lighter;
-    color:#595959;
+    color:#aeaeae;
     margin-bottom: 15px;
 }
 
@@ -110,14 +110,31 @@ body {
     margin-bottom: 15px;
 }
 
+.stockSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: white;
+    border: 1px #8A97CA solid;
+    border-radius: 0.4rem;
+    padding: 8px;
+    margin-bottom: 15px;
+    width: 270px;
+}
+
+#number{
+    border: none;
+    font-size: 20px;
+}
+
 .pickColorContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
-    border: 1px #aeaeae solid;
+    border: 1px #8A97CA solid;
     border-radius: 0.4rem;
-    padding: 5px;
+    padding: 8px;
     margin-bottom: 15px;
     width: 270px;
 }
@@ -127,6 +144,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+    margin-top: 10px ;
 }
 
 .changeColor{
@@ -140,7 +158,9 @@ body {
     justify-content: flex-end;
     align-items: center;
     cursor:pointer;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 
@@ -169,7 +189,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     font-size: 12px;
-    color: #595959;
+    color: #8A97CA;
     margin-bottom: 15px;
 }
 .available{
@@ -197,16 +217,22 @@ body {
     cursor: pointer;
     list-style: none;
 }
+
+#arrows:active{
+    transform: rotate(90deg);
+}
+
 summary{
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: #8678a7;
 }
 
 .productDetailContainer{
     background-color: white;
-    border-top: 1px #aeaeae solid;
+    border-top: 1.5px #8A97CA solid;
     width: 100%;
     padding: 40px;
     font-weight: 800;
@@ -216,7 +242,7 @@ summary{
 
 .medidasContainer{
     background-color: white;
-    border-top: 1px #aeaeae solid;
+    border-top: 1.5px #8A97CA solid;
     width: 100%;
     padding: 40px;
     font-weight: 800;
@@ -226,8 +252,8 @@ summary{
 
 .reseñasContainer{
     background-color: white;
-    border-top: 1px #aeaeae solid;
-    border-bottom: 1px #aeaeae solid;
+    border-top: 1.5px #8A97CA solid;
+    border-bottom: 1.5px #8A97CA solid;
     padding: 40px;
     width: 100%;
     font-weight: 800;
@@ -274,7 +300,7 @@ summary{
 }
 
 .fondoCompartido{
-    border: #D0C8E0 1px solid;
+    border: #D0C8E0 2px solid;
     border-radius: 0.2em;
     width: 300px;
     height: auto;
@@ -299,7 +325,7 @@ summary{
 } */
 
 .fondoCompartido:hover{
-    box-shadow: 0px 0px 10px rgb(32, 32, 32);
+    box-shadow: 0px 0px 10px #8A97CA;
 }
 
 .subTitle{
@@ -307,9 +333,91 @@ summary{
 }
 
 .subTitle p{
-    font-weight: 300;
+    font-weight: 400;
     font-size: 20px;
-    color: #595959;
+    color: #aeaeae;
+}
+
+/* Añadir pntuacion */
+.punctuationStars {
+    background-color: white;
+    border-bottom: 1px #8A97CA solid;
+    padding: 40px;
+    width: 100%;
+    font-weight: 800;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.punctuationStars p{
+    margin-bottom: 20px;
+}
+
+#form {
+    width: 250px;
+    height: 50px;
+}
+  
+#form div {
+    text-align: center;
+}
+  
+#form label {
+    font-size: 150px;
+}
+  
+input[type="radio"] {
+    display: none;
+}
+  
+label {
+    color: grey;
+    font-size: 40px;
+    cursor: pointer;
+}
+  
+.clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+label:hover,
+label:hover ~ label {
+    color: orange;
+}
+  
+input[type="radio"]:checked ~ label {
+    color: orange;
+}
+
+.sendStars{
+    font-weight: bold;
+    font-size: small;
+    color: white;
+    background-color: #8A97CA;
+    border-radius: 0.4rem;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.sendStars:hover{
+    background-color: #495069;
+}
+
+.containerStars{
+    margin-top: 10px;
+    font-size: 15px;
 }
 
 /* ************ Footer ************ */
@@ -431,12 +539,22 @@ article img{
         margin-bottom: 20px;
     }
 
+    .stockSection{
+        width: 250px;
+    }
+    
     .pickColorContainer{
         width: 250px;
     }
     .addToCart{
         width: 250px;
     }
+
+    label {
+        font-size: 25px;
+    }
+
+
 }
 
 
@@ -512,7 +630,7 @@ article img{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        border: solid 1px #aeaeae;
+        border: solid 1px #8A97CA;
         border-radius: 0.2rem;
     }
 
@@ -543,9 +661,9 @@ article img{
         flex-direction: row;
         justify-content: space-between;
         background-color: white;
-        border: 1px #aeaeae solid;
+        border: 1px #8A97CA solid;
         border-radius: 0.4rem;
-        padding: 5px;
+        padding: 10px;
         width: 100%;
     }
     
@@ -554,6 +672,7 @@ article img{
         flex-direction: column;
         justify-content: space-between;
         gap: 10px;
+        margin-top: 10px;
     }
     
     .changeColor{
@@ -568,6 +687,7 @@ article img{
         align-items: center;
         cursor:pointer;
         margin-bottom: 15px;
+        margin-top: 10px;
     }
     
     
@@ -581,6 +701,18 @@ article img{
         background-color: #3B82BF;
         border-radius: 0.4rem;
         padding: 15px;
+        width: 100%;
+    }
+
+    .stockSection{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: white;
+        border: 1px #8A97CA solid;
+        border-radius: 0.4rem;
+        padding: 8px;
+        margin-bottom: 15px;
         width: 100%;
     }
     
@@ -619,13 +751,17 @@ article img{
     }
 
     .medidasContainer{
-        width: 50%;
+        width: 60%;
     }
     .reseñasContainer{
-        width: 50%;
+        width: 60%;
     }
     .productDetailContainer{
-        width: 50%;
+        width: 60%;
+    }
+
+    .punctuationStars {
+        width: 60%;
     }
 
 
