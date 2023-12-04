@@ -9,10 +9,11 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 //ROUTES 
-const mainRoutes = require('./routes/main.routes.js')
+const indexRoutes = require('./routes/index.routes.js')
 const productRoutes = require('./routes/product.routes.js')
+const userRoutes = require('./routes/user.routes.js')
 
-app.use('/', mainRoutes, productRoutes)
+app.use('/', indexRoutes, productRoutes, userRoutes)
 
 app.listen(3000, () => {
     console.log("Servidor levantado en http://localhost:3000");

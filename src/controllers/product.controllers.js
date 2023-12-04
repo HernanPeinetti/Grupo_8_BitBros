@@ -1,11 +1,14 @@
 const path = require('path')
 
-const controllersProducts = {
+const controllersProduct = {
 
-    // http://localhost:3000/producto  
     producto: (req, res) => {
         res.render('productDetail.ejs')
     },
+
+    carrito: (req, res) => {
+        res.render('productCart.ejs')
+    },
 }
 
-module.exports = controllersProducts
+module.exports = controllersProduct
