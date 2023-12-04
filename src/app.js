@@ -9,9 +9,9 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 //ROUTES 
-const indexRoutes = require('./routes/index.routes.js')
-const productRoutes = require('./routes/product.routes.js')
-const userRoutes = require('./routes/user.routes.js')
+const indexRoutes = require('./routes/main.routes.js')
+const productRoutes = require('./routes/products.routes.js')
+const userRoutes = require('./routes/users.routes.js')
 
 app.use('/', indexRoutes, productRoutes, userRoutes)
 

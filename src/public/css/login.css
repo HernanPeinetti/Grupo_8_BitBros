@@ -8,8 +8,6 @@ body {
   background-image: url('../images/background-login.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
 }
