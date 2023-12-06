@@ -1,6 +1,30 @@
-# Isabel Bicicleteria
+<h1 align="center">Welcome to Isabel Bicicleteria 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
+  </a>
+</p>
 
-Bienvenido a *Isabel Bicicleteria*, tu destino confiable para todas las necesidades ciclistas en Santiago del Estero y sus alrededores.
+> Bienvenido a *Isabel Bicicleteria*, tu destino confiable para todas las necesidades ciclistas en Santiago del Estero y sus alrededores.
+
+## Install
+
+```sh
+npm install
+```
+
+## Usage
+
+```sh
+npm run start
+```
+
+## Run tests
+
+```sh
+npm run dev
+```
 
 ## Acerca de
 
@@ -24,14 +48,12 @@ Hemos tomado inspiración de otros líderes en la industria del ciclismo. ¡Echa
 
 ## Equipo
 
-Conoce al apasionado equipo detrás de Isabel Bicicleteria:
-
-1. *Hernán Peinetti* – 27 años – La Banda, Santiago del Estero.
-2. *Rocío Espeche* – 26 años – Frías, Santiago del Estero.
-3. *Matías Mercado* – 27 años – Capital, Santiago del Estero.
-4. *Milton Coria* – 20 años – Ojo de Agua, Santiago del Estero.
-5. *Lourdes Montenegro* – 25 años – Capital, Santiago del Estero.
-6. *Roberto Gustavo Bonahora* - 22 años - Santiago del Estero.
+* **Hernán Peinetti** – 27 años – La Banda, Santiago del Estero.
+* **Rocío Espeche** – 26 años – Frías, Santiago del Estero.
+* **Matías Mercado** – 27 años – Capital, Santiago del Estero.
+* **Milton Coria** – 20 años – Ojo de Agua, Santiago del Estero.
+* **Lourdes Montenegro** – 25 años – Capital, Santiago del Estero.
+* **Roberto Gustavo Bonahora** - 22 años - Santiago del Estero.
 
 **Trello - Tablero de trabajo**
 
