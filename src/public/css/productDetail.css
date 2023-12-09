@@ -10,9 +10,10 @@ body {
 }
 
 /* ************* Main ************* */
-.mainHome {
+.mainDetail {
     height: auto;
     padding: 25px;
+    margin: auto;
 }
 
 .section1 {
@@ -75,7 +76,6 @@ body {
     width: 90vw;
     height: auto;
     display: flex;
-    border: #54545450 1px solid;
 }
 
 /* seccion de precio, detalles y otros */
@@ -280,15 +280,9 @@ summary {
 /* fin parte de la desc. prod. */
 
 .prodRelacionados {
-    background-color: white;
-    width: 100%;
-    padding: 40px;
-    font-weight: 800;
-    font-size: 30px;
-    margin-top: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .titleProdRel {
@@ -296,30 +290,56 @@ summary {
     justify-items: center;
     margin-bottom: 20px;
 }
-
-.seccionImagenes {
-    margin-top: 20px;
+.grupo-articulos{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    margin-top: 1.5rem;
     overflow-x: scroll;
+    justify-content: space-between;
 }
 
-.fondoCompartido {
-    border: #d0c8e0 2px solid;
-    border-radius: 0.2em;
-    width: 300px;
-    height: auto;
+.grupo-articulos a{
+    text-decoration: none;
+    color: #434343;
+}
+
+article{
+    margin: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    padding: 15px;
+    box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.10);
 }
 
-.fondoCompartido:hover {
-    box-shadow: 0px 0px 10px #8a97ca;
+article img{
+    width: 9rem;
+    height: 8rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.detalle-productos{
+    width: 7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-producto{
+    font-size: 15px;
+    height: 2rem;
+    width: 7rem;
+    margin: 5px 0 5px 5px;
+}
+
+.descripcion{
+    font-size: 15px;
+    opacity: 0.8;
+    height: 4.5rem;
+    width: 7rem;
+    margin: 0 0 5px 5px;
+}
+
+.precio{
+    font-size: 15px;
+    margin: 0 0 5px 5px;
 }
 
 .subTitle {
@@ -414,18 +434,8 @@ input[type="radio"]:checked ~ label {
     font-size: 15px;
 }
 
-article {
-    margin-right: 1.4rem;
-    display: flex;
-    flex-direction: column;
-}
-
-article img {
-    width: 7rem;
-}
-
 /* SMARTPHONES PORTRAIT */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+/* @media (min-width: 320px){
     .subTitle p {
         display: none;
     }
@@ -445,10 +455,10 @@ article img {
     label {
         font-size: 25px;
     }
-}
+} */
 
 /* TABLETS PORTRAIT */
-@media only screen and (min-width: 481px) and (max-width: 768px) {
+/* @media (min-width: 480px){
     .subTitle p {
         display: none;
     }
@@ -469,24 +479,40 @@ article img {
         justify-content: space-evenly;
         align-self: center;
     }
-}
+} */
 
 /* TABLET LANDSCAPE / SMALL-DESKTOP´S */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) {
+    .mainDetail {
+        width: 75vw;
+    }
+    .imageContainer {
+        width: 30rem;
+    }
+    .imageContainer img {
+        object-fit: cover;
+        object-position: center;
+    }
+   
     .section1 {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
     }
     .nombre {
         display: flex;
         align-self: flex-end;
     }
+    article img{
+        width: 10rem;
+        height: 9rem;
+    }
 }
 
 /* DESKTOP */
 
-@media only screen and (min-width: 1025px) {
+@media (min-width: 1024px) {
+    
     .titleContainer {
         align-self: center;
         justify-content: space-around;
@@ -502,13 +528,9 @@ article img {
         justify-content: space-around;
     }
 
-    .imageContainer {
-        width: 800px;
-        height: auto;
-    }
+    
     .detailSection {
-        min-width: 500px;
-        min-height: auto;
+        width: 450px;
         display: block;
         background-color: #ffffff;
         padding: 20px;
@@ -517,17 +539,17 @@ article img {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        border: solid 1px #8a97ca;
         border-radius: 0.2rem;
     }
-
+    .imageContainer {
+        width: 45rem;
+    }
     .nombre {
         font-weight: 700;
         font-size: 30px;
     }
 
     .precio {
-        font-size: 50px;
         font-weight: 600;
     }
 
@@ -613,17 +635,8 @@ article img {
         color: #aeaeae;
     }
 
-    .medidasContainer {
-        width: 60%;
-    }
-    .reseñasContainer {
-        width: 60%;
-    }
-    .productDetailContainer {
-        width: 60%;
-    }
-
-    .punctuationStars {
-        width: 60%;
+    article img{
+        width: 11.5rem;
+        height: 10.5rem;
     }
 }

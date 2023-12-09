@@ -5,7 +5,7 @@
 
     <body>
         <%- include('../partials/header') %>
-        <main class="mainHome">
+        <main class="mainDetail">
 
             <nav class="sub-Section">
                 <a href=""> Productos </a>
@@ -25,7 +25,7 @@
             
             <div class="section1">
                 <div class="imageContainer"> 
-                    <img src="../images/inflador.jpg"  alt="inflador" width="100%">
+                    <img src="/images/inflador.jpg"  alt="inflador" width="100%">
                 </div>
 
                 <div class="detailSection">
@@ -155,52 +155,81 @@
 
                 <p class="titleProdRel">Productos relacionados</p>
             
-                <div class="seccionImagenes">
-            
-                    <article class="fondoCompartido">
-                        <div class="fondoImg">
-                            <a href="/"><img class="imgRel" src="../images/LUZ.jpg" alt="luz-delantera"></a>
+                <div class="grupo-articulos">
+                    <a href="/productos/detail/1">
+                        <article>
+                            <img src="/images/LUZ.jpg" alt="luz de bicicleta">
+                            <div class="detalles-producto">
+                                <h3 class="nombre-producto">Luz delantera tipo mini</h3>
+                                <p class="descripcion">Carga USB. Rosa o blanco</p>
+                            </div>
+                            <h4 class="precio">$4.000</h4>
+                        </article>
+                    </a>
+                    <article>
+                        <img src="/images/inflador.jpg" alt="inflador">
+                        <div class="detalles-producto">
+                            <h3 class="nombre-producto">Inflador de pie GIYO</h3>
+                            <p class="descripcion">Apto para moto, bici, auto, pelotas, etc.</p>
                         </div>
-                        <div class="subTitle">
-                            <a href="/"> Luz delantera</a>
-                            <p>Tipo mini</p>
-                            <p>$4.000 ARS</p>
-                        </div>
+                        <h4 class="precio">$14.000</h4>
                     </article>
-
-                    <article class="fondoCompartido">
-                        <div class="fondoImg">
-                            <a href="/"><img class="imgRel" src="../images/wethepeople.jpg" alt="wtp"></a>
+                    <article>
+                        <img src="/images/CAJA.jpg" alt="caja pedalera">
+                        <div class="detalles-producto">
+                            <h3 class="nombre-producto">Caja hollowtech a rulemanes</h3>
+                            <p class="descripcion">Marca FIRST. Rojo o negro. Compatible Shimano</p>
                         </div>
-                        <div class="subTitle">
-                           <a href="/">BMX WeThePeople R20</a>
-                           <p>Nova 2021 Black</p>
-                           <p>$184.400 ARS</p>
-                        </div>
+                        <h4 class="precio">$12.300,50</h4>
                     </article>
-
-                    <article class="fondoCompartido">
-                        <div class="fondoImg">
-                            <a href="/"><img class="imgRel" src="../images/CAJA.jpg" alt="caja-shimano"></a>
+                    <article>
+                        <img src="/images/horquilla-29er.jpg" alt="horquilla-29er">
+                        <div class="detalles-producto">
+                            <h3 class="nombre-producto">Horquilla 29er And-Es</h3>
+                            <p class="descripcion">Frente recto-Apto disco </p>
                         </div>
-                        <div class="subTitle">
-                            <a href="/">Caja First Hollowtech</a>
-                            <p>a rulemanes</p>
-                            <p>$12.300 ARS</p>
-                        </div>
+                        <h4 class="precio">$16.500</h4>
                     </article>
-
-                    <article class="fondoCompartido">
-                        <div class="fondoImg">
-                            <a href="/"><img class="imgRel" src="../images/rodado-29-shimano31.jpeg" alt="sars29"></a>
+                    <article>
+                        <img src="/images/manijas-freno-hidraulico.jpg" alt="manijas-freno-hidraulico">
+                        <div class="detalles-producto">
+                            <h3 class="nombre-producto">Frenos Hidraulicos Shimano m6100</h3>
+                            <p class="descripcion">Incluye manijas, calipers y ductos</p>
                         </div>
-                        <div class="subTitle">
-                            <a href="/">MTB SARS R29</a>
-                            <p>Big Shark 2x9 Vel</p>
-                            <p>$568.970 ARS</p>
-                        </div>
+                        <h4 class="precio">$110.000</h4>
                     </article>
-            
+                    <article>
+                        <img src="/images/maza-trasera-shimanotx506.jpg" alt="maza-trasera-shimanotx506">
+                        <div class="detalles-producto">
+                            <h3 class="nombre-producto">Maza trasera shimano TX506</h3>
+                            <p class="descripcion">Apta disco a tornillos - Piñon 9v</p>
+                        </div>
+                        <h4 class="precio">$23.600</h4>
+                    </article>
+                    <article>
+                        <img src="/images/pedales-aluminio.jpg" alt="pedales-aluminio">
+                        <div class="detalles-producto">
+                            <h3 class="nombre-producto">Pedales Aluminio</h3>
+                            <p class="descripcion">Solo en color negro</p>
+                        </div>
+                        <h4 class="precio">$4.400</h4>
+                    </article>
+                    <article>
+                        <img src="/images/piñon-9v-ruta.jpg" alt="piñon-9v-ruta">
+                        <div class="detalles-producto">
+                            <h3 class="nombre-producto">Piñon Ruta Shimano 9v</h3>
+                            <p class="descripcion">Piñon corrido apto ruta o gravel</p>
+                        </div>
+                        <h4 class="precio">$33.000</h4>
+                    </article>
+                    <article>
+                        <img src="/images/camara-deportiva.jpg" alt="camara-deportiva">
+                        <div class="detalles-producto">
+                            <h3 class="nombre-producto">Camara de filmacion HD</h3>
+                            <p class="descripcion">Con accesorios - Sin tarjeta de memoria</p>
+                        </div>
+                        <h4 class="precio">$150.300,50</h4>
+                    </article>
                 </div>
 
             </div>    

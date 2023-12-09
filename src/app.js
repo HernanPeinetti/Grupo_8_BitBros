@@ -9,12 +9,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 //ROUTES 
-const indexRoutes = require('./routes/main.routes.js')
+const mainRoutes = require('./routes/main.routes.js')
 const productRoutes = require('./routes/products.routes.js')
-const userRoutes = require('./routes/users.routes.js')
+const userRoutes = require('./routes/user.routes.js')
 const marketRoutes = require('./routes/market.routes.js')
 
-app.use('/', indexRoutes, productRoutes, userRoutes)
+app.use('/', mainRoutes, userRoutes)
+app.use('/productos', productRoutes) 
 app.use('/admin', marketRoutes)
 
 app.listen(3000, () => {
