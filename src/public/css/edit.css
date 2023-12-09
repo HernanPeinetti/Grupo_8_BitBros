@@ -81,6 +81,11 @@ button:hover {
     background-color: #b98af0;
 }
 
+button a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .botones-create {
     margin-top: 25px;
     display: flex;
@@ -150,4 +155,5 @@ button:hover {
     .container-create {
         width: 600px;
     }
+
 }
