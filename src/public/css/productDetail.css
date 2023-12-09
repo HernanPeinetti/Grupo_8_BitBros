@@ -10,25 +10,24 @@ body {
 }
 
 /* ************* Main ************* */
-.mainHome{
+.mainHome {
     height: auto;
     padding: 25px;
 }
 
-.section1{
+.section1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
 }
 
-.titleContainer{
+.titleContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.nombre{
+.nombre {
     font-weight: 700;
     font-size: 25px;
     margin-bottom: 15px;
@@ -40,48 +39,47 @@ body {
     position: absolute;
     left: -100vw;
 }
-  
+
 [for="heart"] {
     color: #aab8c2;
     cursor: pointer;
     font-size: 1.5em;
-    align-self: center;  
+    align-self: center;
     transition: color 0.2s ease-in-out;
 }
-  
+
 [for="heart"]:hover {
     color: grey;
 }
-  
+
 [for="heart"]::selection {
     color: none;
     background: transparent;
 }
-  
+
 [for="heart"]::moz-selection {
     color: none;
     background: transparent;
 }
-  
+
 [id="heart"]:checked + label {
     color: #e2264d;
     will-change: font-size;
-    animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
+    animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
 }
 
 /* fin corazon */
 
-.imageContainer{
+.imageContainer {
     background-color: #ffffff;
     width: 90vw;
     height: auto;
     display: flex;
-    border:#54545450 1px solid;
+    border: #54545450 1px solid;
 }
 
-
 /* seccion de precio, detalles y otros */
-.detailSection{
+.detailSection {
     background-color: #ffffff;
     padding: 10px;
     margin: 10px;
@@ -91,143 +89,148 @@ body {
     justify-content: space-between;
 }
 
-.precio{
+.precio {
     font-size: 30px;
     font-weight: 600;
 }
 
-.impuestos{
+.impuestos {
     font-size: medium;
     font-weight: lighter;
-    color:#aeaeae;
+    color: #aeaeae;
     margin-bottom: 15px;
 }
 
-.stars{
+.stars {
     font-weight: 100;
     display: flex;
     flex-direction: row;
     margin-bottom: 15px;
 }
 
-.stockSection{
+.stockSection {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     background-color: white;
-    border: 1px #8A97CA solid;
+    border: 1px #8a97ca solid;
     border-radius: 0.4rem;
     padding: 8px;
     margin-bottom: 15px;
-    width: 270px;
+    width: 100%;
+    height: 50px;
+    align-items: center;
 }
 
-#number{
+#number {
     border: none;
     font-size: 20px;
 }
 
-.pickColorContainer{
+.pickColorContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: white;
-    border: 1px #8A97CA solid;
+    border: 1px #8a97ca solid;
     border-radius: 0.4rem;
-    padding: 8px;
+    padding: 0 20px;
     margin-bottom: 15px;
-    width: 270px;
+    align-items: center;
+    width: 100%;
+    height: 50px;
 }
 
-.Color{
+.Color {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
-    margin-top: 10px ;
 }
 
-.changeColor{
+.changeColor {
     display: flex;
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    margin-right: 50px;
     background-color: white;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    cursor:pointer;
+    cursor: pointer;
     margin-bottom: 10px;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
-
-.addToCart{
-    font-weight: bold;
-    font-size: small;
-    color: white;
-    background-color: #3B82BF;
+.btnAddToCart {
+    width: 100%;
+    height: 50px;
     border-radius: 0.4rem;
-    padding: 15px;
-    margin-bottom: 15px;
-    text-align: center;
-    width: 270px;
-    border-color: #ffffff;
-}
-
-button a {
-    text-decoration: none;
-    color: white;
-    font-weight: 700;
-}
-
-.addToCart:hover{
-    background-color: #000000;
-    transition: 0.3s linear;
     cursor: pointer;
+    border: 0;
+    color: #ffffff;
+    background-color: #3b82bf;
+    margin-bottom: 15px;
+    transition: 0.3s all;
+}
+.btnAddToCart:hover {
+    background-color: #1F67A6;
+}
+.btnEditProduct {
+    width: 100%;
+    height: 50px;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 0;
+    color: #ffffff;
+    background-color: #a88af0;
+    margin-bottom: 15px;
+    transition: 0.3s all;
+}
+.btnEditProduct:hover {
+    background-color: #876ec1;
 }
 
-.infoContainer{
+.infoContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     font-size: 12px;
-    color: #8A97CA;
+    color: #8a97ca;
     margin-bottom: 15px;
 }
-.available{
+.available {
     font-weight: lighter;
     font-size: 15px;
     color: rgb(75, 212, 75);
 }
-.shortDescription{
+.shortDescription {
     font-size: 100px;
     font-weight: 500;
     font-size: 20px;
-    color:#595959;
+    color: #595959;
 }
-.listDescription{
+.listDescription {
     list-style: none;
     font-size: 75px;
     font-weight: 400;
     font-size: 15px;
-    color:#aeaeae;
+    color: #aeaeae;
 }
 /* fin de seccion de detalles */
 
-.acordeon{
+.acordeon {
     padding: 10px;
     cursor: pointer;
     list-style: none;
 }
 
-#arrows:active{
+#arrows:active {
     transform: rotate(90deg);
 }
 
-summary{
+summary {
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -235,9 +238,9 @@ summary{
     color: #8678a7;
 }
 
-.productDetailContainer{
+.productDetailContainer {
     background-color: white;
-    border-top: 1.5px #8A97CA solid;
+    border-top: 1.5px #8a97ca solid;
     width: 100%;
     padding: 40px;
     font-weight: 800;
@@ -245,9 +248,9 @@ summary{
     cursor: pointer;
 }
 
-.medidasContainer{
+.medidasContainer {
     background-color: white;
-    border-top: 1.5px #8A97CA solid;
+    border-top: 1.5px #8a97ca solid;
     width: 100%;
     padding: 40px;
     font-weight: 800;
@@ -255,10 +258,10 @@ summary{
     cursor: pointer;
 }
 
-.reseñasContainer{
+.reseñasContainer {
     background-color: white;
-    border-top: 1.5px #8A97CA solid;
-    border-bottom: 1.5px #8A97CA solid;
+    border-top: 1.5px #8a97ca solid;
+    border-bottom: 1.5px #8a97ca solid;
     padding: 40px;
     width: 100%;
     font-weight: 800;
@@ -266,7 +269,7 @@ summary{
     cursor: pointer;
 }
 
-.contenido{
+.contenido {
     width: 100%;
     padding: 20px;
     font-weight: 100;
@@ -276,7 +279,7 @@ summary{
 
 /* fin parte de la desc. prod. */
 
-.prodRelacionados{
+.prodRelacionados {
     background-color: white;
     width: 100%;
     padding: 40px;
@@ -288,15 +291,13 @@ summary{
     justify-content: space-between;
 }
 
-.titleProdRel{
+.titleProdRel {
     display: flex;
     justify-items: center;
     margin-bottom: 20px;
 }
 
-
-
-.seccionImagenes{
+.seccionImagenes {
     margin-top: 20px;
     display: flex;
     flex-direction: row;
@@ -304,8 +305,8 @@ summary{
     overflow-x: scroll;
 }
 
-.fondoCompartido{
-    border: #D0C8E0 2px solid;
+.fondoCompartido {
+    border: #d0c8e0 2px solid;
     border-radius: 0.2em;
     width: 300px;
     height: auto;
@@ -317,27 +318,15 @@ summary{
     padding: 15px;
 }
 
-/* .fondoImg{
-    border: #595959 1px solid;
-    width: 210px;
-    height: 310px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin-bottom: 10px;
-} */
-
-.fondoCompartido:hover{
-    box-shadow: 0px 0px 10px #8A97CA;
+.fondoCompartido:hover {
+    box-shadow: 0px 0px 10px #8a97ca;
 }
 
-.subTitle{
+.subTitle {
     font-size: 20px;
 }
 
-.subTitle p{
+.subTitle p {
     font-weight: 400;
     font-size: 20px;
     color: #aeaeae;
@@ -346,7 +335,7 @@ summary{
 /* Añadir pntuacion */
 .punctuationStars {
     background-color: white;
-    border-bottom: 1px #8A97CA solid;
+    border-bottom: 1px #8a97ca solid;
     padding: 40px;
     width: 100%;
     font-weight: 800;
@@ -357,7 +346,7 @@ summary{
     align-items: center;
 }
 
-.punctuationStars p{
+.punctuationStars p {
     margin-bottom: 20px;
 }
 
@@ -365,25 +354,25 @@ summary{
     width: 250px;
     height: 50px;
 }
-  
+
 #form div {
     text-align: center;
 }
-  
+
 #form label {
     font-size: 150px;
 }
-  
+
 input[type="radio"] {
     display: none;
 }
-  
+
 label {
     color: grey;
     font-size: 40px;
     cursor: pointer;
 }
-  
+
 .clasificacion {
     direction: rtl;
     unicode-bidi: bidi-override;
@@ -391,21 +380,21 @@ label {
     justify-content: center;
     align-items: center;
 }
-  
+
 label:hover,
 label:hover ~ label {
     color: orange;
 }
-  
+
 input[type="radio"]:checked ~ label {
     color: orange;
 }
 
-.sendStars{
+.sendStars {
     font-weight: bold;
     font-size: small;
     color: white;
-    background-color: #8A97CA;
+    background-color: #8a97ca;
     border-radius: 0.4rem;
     padding: 5px;
     margin-bottom: 10px;
@@ -416,124 +405,33 @@ input[type="radio"]:checked ~ label {
     cursor: pointer;
 }
 
-.sendStars:hover{
+.sendStars:hover {
     background-color: #495069;
 }
 
-.containerStars{
+.containerStars {
     margin-top: 10px;
     font-size: 15px;
 }
 
-/* ************ Footer ************ */
-.footerContainer {
-    height: 12rem;
-    display: flex;
-    align-items: center;
-}
-.ayudaFooter {
-    width: 33.3%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.h4AyudaFooter {
-    font-size: 20px;
-    color: #595959;
-}
-.btnAyudaFooter {
-    background-color: #595959;
-    border-radius: 0.5rem;
-    margin-top: 0.7rem;
-    color: #ededed;
-    font-weight: 800;
-    width: 11rem;
-    height: 2.7rem;
-    border: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: 0.2s all;
-}
-.btnAyudaFooter:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
-.redesFooter {
-    width: 33.3%;
-    display: flex;
-    justify-content: center;
-}
-.divRedesFooter {
-    width: 15rem;
-    display: flex;
-    justify-content: center;
-}
-.aRedesFooter {
-    margin: 0 0.8rem 0 0.8rem;
-    color: #595959;
-    font-size: 30px;
-    transition: 0.2s all;
-}
-.aRedesFooter i {
-    transition: 0.2s all !important;
-}
-.icono-instagram:hover {
-    color: #f16169;
-}
-.icono-facebook:hover {
-    color: #3a559f;
-}
-.icono-youtube:hover {
-    color: #ed3434;
-}
-.icono-twitter:hover {
-    color: #38b9fb;
-}
-.chatFooter {
-    width: 33.3%;
-    display: flex;
-    justify-content: center;
-}
-.btnChatFooter {
-    color: #ededed;
-    font-size: 24px;
-    width: 3.5rem;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    text-decoration: none;
-    background-color: #595959;
-    transition: 0.2s all;
-}
-.btnChatFooter:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-article{
+article {
     margin-right: 1.4rem;
     display: flex;
     flex-direction: column;
 }
 
-article img{
+article img {
     width: 7rem;
 }
 
-
 /* SMARTPHONES PORTRAIT */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
-    .subTitle p{
+    .subTitle p {
         display: none;
     }
 
-    .fondoCompartido{
-        border: #D0C8E0 1px solid;
+    .fondoCompartido {
+        border: #d0c8e0 1px solid;
         border-radius: 0.2em;
         width: 300px;
         height: auto;
@@ -544,36 +442,22 @@ article img{
         margin-bottom: 20px;
     }
 
-    .stockSection{
-        width: 250px;
-    }
-    
-    .pickColorContainer{
-        width: 250px;
-    }
-    .addToCart{
-        width: 250px;
-    }
-
     label {
         font-size: 25px;
     }
-
-
 }
 
-
 /* TABLETS PORTRAIT */
-@media only screen and (min-width: 481px) and (max-width: 768px ) {
-    .subTitle p{
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .subTitle p {
         display: none;
     }
-    .imageContainer{
+    .imageContainer {
         max-width: 450px;
         height: auto;
         align-self: center;
     }
-    .detailSection{
+    .detailSection {
         min-height: auto;
         display: block;
         background-color: #ffffff;
@@ -587,25 +471,23 @@ article img{
     }
 }
 
-
 /* TABLET LANDSCAPE / SMALL-DESKTOP´S */
-@media only screen and (min-width: 769px) and (max-width: 1024px ){
-    .section1{
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .section1 {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
-    .nombre{
+    .nombre {
         display: flex;
         align-self: flex-end;
     }
-    
-} 
+}
 
 /* DESKTOP */
 
-@media only screen and (min-width: 1025px){
-    .titleContainer{
+@media only screen and (min-width: 1025px) {
+    .titleContainer {
         align-self: center;
         justify-content: space-around;
     }
@@ -614,17 +496,17 @@ article img{
         font-size: 3em;
     }
 
-    .section1{
+    .section1 {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
     }
 
-    .imageContainer{
+    .imageContainer {
         width: 800px;
         height: auto;
     }
-    .detailSection{
+    .detailSection {
         min-width: 500px;
         min-height: auto;
         display: block;
@@ -635,139 +517,113 @@ article img{
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        border: solid 1px #8A97CA;
+        border: solid 1px #8a97ca;
         border-radius: 0.2rem;
     }
 
-    .nombre{
+    .nombre {
         font-weight: 700;
         font-size: 30px;
     }
-    
-    .precio{
+
+    .precio {
         font-size: 50px;
         font-weight: 600;
     }
-    
-    .impuestos{
+
+    .impuestos {
         font-size: medium;
         font-weight: lighter;
-        color:#595959;
+        color: #595959;
     }
-    
-    .stars{
+
+    .stars {
         font-weight: 100;
         display: flex;
         flex-direction: row;
     }
-    
-    .pickColorContainer{
+
+    .pickColorContainer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         background-color: white;
-        border: 1px #8A97CA solid;
+        border: 1px #8a97ca solid;
         border-radius: 0.4rem;
-        padding: 10px;
+        padding: 0 20px;
         width: 100%;
     }
-    
-    .Color{
+
+    .Color {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         gap: 10px;
-        margin-top: 10px;
     }
-    
-    .changeColor{
+
+    .changeColor {
         display: flex;
         border-top: 0;
         border-left: 0;
         border-right: 0;
-        margin-right: 50px;
         background-color: white;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        cursor:pointer;
+        cursor: pointer;
         margin-bottom: 15px;
         margin-top: 10px;
     }
-    
-    
-    .addToCart{
-        font-weight: bold;
-        font-size: small;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        color: white;
-        background-color: #3B82BF;
-        border-radius: 0.4rem;
-        padding: 15px;
-        width: 100%;
-    }
 
-    .stockSection{
+    .stockSection {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         background-color: white;
-        border: 1px #8A97CA solid;
+        border: 1px #8a97ca solid;
         border-radius: 0.4rem;
         padding: 8px;
         margin-bottom: 15px;
         width: 100%;
     }
-    
-    
-    
-    .addToCart:hover{
-        background-color: #000000;
-        transition: 0.3s linear;
-        cursor: pointer;
-    }
-    
-    .infoContainer{
+
+    .infoContainer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         font-size: 15px;
         color: #595959;
     }
-    .available{
+    .available {
         font-weight: lighter;
         font-size: 15px;
         color: rgb(75, 212, 75);
     }
-    .shortDescription{
+    .shortDescription {
         font-size: 100px;
         font-weight: 500;
         font-size: 20px;
-        color:#595959;
+        color: #595959;
     }
-    .listDescription{
+    .listDescription {
         list-style: none;
         font-size: 75px;
         font-weight: 400;
         font-size: 15px;
-        color:#aeaeae;
+        color: #aeaeae;
     }
 
-    .medidasContainer{
+    .medidasContainer {
         width: 60%;
     }
-    .reseñasContainer{
+    .reseñasContainer {
         width: 60%;
     }
-    .productDetailContainer{
+    .productDetailContainer {
         width: 60%;
     }
 
     .punctuationStars {
         width: 60%;
     }
-
-
-} 
+}
