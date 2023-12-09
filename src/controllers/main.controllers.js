@@ -9,7 +9,7 @@ const controllers = {
     carrito: (req, res) => {
         res.render('carrito.ejs')
     },
-    
+
 };
 
 
