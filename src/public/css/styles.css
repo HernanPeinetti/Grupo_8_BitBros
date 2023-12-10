@@ -31,6 +31,7 @@ header {
     margin-right: 0.7rem;
     font-size: 18px;
 }
+
 .userButton {
     background-color: #00000000;
     border: 0;
@@ -234,6 +235,10 @@ footer {
     .navLink:hover {
         color: #181818;
         text-decoration: underline;
+    }
+    .a-carrito {
+        position: relative;
+        top: 1px;
     }
     .headerSearch {
         display: flex;

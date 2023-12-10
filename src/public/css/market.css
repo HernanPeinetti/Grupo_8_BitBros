@@ -20,35 +20,36 @@ main {
     justify-content: center;
 }
 
-.container-create {
+.container-market {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(255,
-            255,
-            255,
-            0.7);
+    background-color: #ffffffb3;
     /* Fondo blanco semitransparente */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px);
     /* Agrega un efecto de desenfoque al fondo del formulario */
-    width: 290px;
+    width: 95vw;
 }
 
-h2 {
+.title-market {
     text-align: center;
     color: #333;
     text-transform: uppercase;
 }
 
-form {
+.form-market {
     width: 100%;
-    max-width: 400px;
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+}
+.form-market div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
 }
 
 label {
@@ -58,7 +59,9 @@ label {
     font-weight: 500;
 }
 
-input {
+input,
+select,
+textarea {
     padding: 12px;
     margin-top: 8px;
     margin-bottom: 15px;
@@ -68,18 +71,11 @@ input {
 }
 
 button {
-    padding: 12px;
-    background-color: #a88af0;
     color: #fff;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #b98af0;
+    transition: 0.3s all;
 }
 
 button a {
@@ -87,74 +83,67 @@ button a {
     color: #fff;
 }
 
-.botones-create {
+.botones-market {
     margin-top: 25px;
     display: flex;
     justify-content: space-between;
-}
-
-.enviar,
-.resetear,
-.crear {
-    flex: 1;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+    gap: 10px;
 }
 
 .enviar {
-    background-color: #3b5998;
-    color: #fff;
-    margin-right: 10px;
+    background-color: #3b82bf;
+    padding: 15px;
+}
+.enviar:hover {
+    background-color: #1F67A6;
 }
 
 .resetear {
     background-color: #dd4b39;
-    color: #fff;
+    padding: 15px;
+}
+.resetear:hover {
+    background-color: #c0402f;
 }
 
-.crear{
-    background-color: gray;
-    color: #fff;
-    margin-left: 10px;
+.crear {
+    background-color: #a88af0;
+    padding: 15px;
+}
+.crear:hover {
+    background-color: #876ec1;
 }
 
 .descripcion {
     height: 7rem;
 }
 
-
-/* Media query para cambiar el diseño de los botones cuando la resolución sea mayor a 360px */
-@media screen and (max-width: 768px) {
-    .social-create {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .enviar,
-    .resetear,
-    .crear {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    main {
-        height: 55rem;
-    }
-
-    header a {
-        left: 5%;
-        top: 30px;
+@media (min-width: 525px) {
+    .container-market {
+        width: 26rem;
     }
 }
 
-@media screen and (min-width: 600px) {
-    .container-create {
-        width: 600px;
+@media screen and (min-width: 768px) {
+    
+    .container-market {
+        width: 75vw;
     }
-
+    .form-market {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+    }
+    .form-market div {
+        display: flex;
+        width: 48%;
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 1024px) {
+    
+    .container-market {
+        width: 48rem;
+    }
 }

@@ -3,10 +3,10 @@ const path = require('path')
 const controllersMarket = {
 
     create: (req, res) => {
-        res.render('./marketplace/create.ejs')
+        res.render('./market/create.ejs')
     },
     edit: (req, res) => {
-        res.render('./marketplace/edit.ejs')
+        res.render('./market/edit.ejs')
     },
 
 }
