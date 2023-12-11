@@ -109,6 +109,13 @@ button a {
 .crear {
     background-color: #a88af0;
     padding: 15px;
+    margin-top: 10px;
+    width: 100%;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 6px;
+    text-align: center;
 }
 .crear:hover {
     background-color: #876ec1;
@@ -139,6 +146,9 @@ button a {
         display: flex;
         width: 48%;
         flex-direction: column;
+    }
+    .crear {
+        width: 48%;
     }
 }
 @media screen and (min-width: 1024px) {

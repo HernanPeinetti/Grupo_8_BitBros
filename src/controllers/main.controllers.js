@@ -7,7 +7,7 @@ const controllers = {
     },
 
     carrito: (req, res) => {
-        res.render('carrito.ejs')
+        res.render('cart.ejs')
     },
 
 };
