@@ -61,6 +61,70 @@
         "categoria": "Bicicleta",
         "descripcion": "La bicicleta Venzo Phoenix Pro es la elección ideal para ciclistas que buscan una máquina confiable y de alto rendimiento para conquistar cualquier tipo de terreno. Ya sea que estés compitiendo en carreras o disfrutando de paseos recreativos, esta bicicleta te llevará al siguiente nivel de rendimiento y satisfacción en cada kilómetro.",
         "imagen": "id-7.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "300 Lumens Luz Delantera Blanca Bic",
+        "precio": 6000,
+        "descuento": 5,
+        "categoria": "Accesorios",
+        "descripcion": "Introducimos la Luz LED de la Bicicleta, una solución innovadora y esencial para los entusiastas del ciclismo que buscan una iluminación confiable y versátil. Diseñada para garantizar la seguridad y visibilidad durante tus paseos nocturnos en bicicleta",
+        "imagen": "id-8.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Mini Inflador Bicicleta Liviano",
+        "precio": 7500,
+        "descuento": 12,
+        "categoria": "Accesorios",
+        "descripcion": "El Mini Inflador Bicicleta Liviano Chico Pico Presta/auto 25 T es el compañero perfecto para tus aventuras en bicicleta. Con su diseño compacto y ligero, podrás llevarlo contigo a donde quiera que vayas.",
+        "imagen": "id-9.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Inflador De Pie Con Manometro Bulit Serie 600",
+        "precio": 38000,
+        "descuento": 5,
+        "categoria": "Accesorios",
+        "descripcion": "La bicicleta Venzo Phoenix Pro es la elección ideal para ciclistas que buscan una máquina confiable y de alto rendimiento para conquistar cualquier tipo de terreno. Ya sea que estés compitiendo en carreras o disfrutando de paseos recreativos, esta bicicleta te llevará al siguiente nivel de rendimiento y satisfacción en cada kilómetro.",
+        "imagen": "id-10.jpg"
+    },
+    {
+        "id": 11,
+        "nombre": "Portabicicleta P/ Techo Universal Reforzado",
+        "precio": 641000,
+        "descuento": 5,
+        "categoria": "Accesorios",
+        "descripcion": "El Porta Bicicleta Universal, tu compañero perfecto para transportar tu bicicleta de manera segura y conveniente. Diseñado con características excepcionales, este porta bicicleta se adapta a una amplia variedad de bicicletas, desde mountain bikes hasta bicicletas de ruta, BMX y más.",
+        "imagen": "id-11.jpg"
+    },
+
+    {
+        "id": 12,
+        "nombre": "Soporte Para Bicicleta 45kg Techo Roldas Frenos Ganchos",
+        "precio": 64000,
+        "descuento": 17,
+        "categoria": "Accesorios",
+        "descripcion": "El Soporte Para Bicicleta 45kg Techo Roldas Frenos Ganchos es el accesorio perfecto para los amantes del ciclismo. Con capacidad para una bicicleta, este soporte de la reconocida marca Gadnic te brinda la seguridad y comodidad que necesitas.",
+        "imagen": "id-12.jpg"
+    },
+    {
+        "id": 13,
+        "nombre": "Inflador Bicicleta Aluminio",
+        "precio": 14000,
+        "descuento": 5,
+        "categoria": "Accesorios",
+        "descripcion": "El inflador de bicicleta de aluminio de la marca Ever Safe es la herramienta perfecta para mantener tus neumáticos siempre inflados.",
+        "imagen": "id-13.jpg"
+    },
+    {
+        "id": 14,
+        "nombre": "Linterna Led Bicicleta 1000 Lumens Recargable",
+        "precio": 64000,
+        "descuento": 5,
+        "categoria": "Accesorios",
+        "descripcion": "Presentamos nuestra potente Linterna LED de 1000 Lumens, la compañera perfecta para iluminar tus aventuras con claridad y versatilidad. Con un diseño robusto y características innovadoras, esta linterna se adapta a tus necesidades en cualquier entorno.",
+        "imagen": "id-14.jpg"
     }
 
 
