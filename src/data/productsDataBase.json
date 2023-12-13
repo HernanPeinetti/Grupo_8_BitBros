@@ -125,7 +125,71 @@
         "categoria": "Accesorios",
         "descripcion": "Presentamos nuestra potente Linterna LED de 1000 Lumens, la compañera perfecta para iluminar tus aventuras con claridad y versatilidad. Con un diseño robusto y características innovadoras, esta linterna se adapta a tus necesidades en cualquier entorno.",
         "imagen": "id-14.jpg"
+    },
+    {
+        "id": 15,
+        "nombre": "Manubrio 31.8 X 720mm Aluminio Mtb Sbk",
+        "precio": 64000,
+        "descuento": 5,
+        "categoria": "Repuesto",
+        "descripcion": "Introducimos el Manubrio SBK para MTB, un componente esencial diseñado para maximizar tu experiencia de ciclismo de montaña. Fabricado con precisión en aluminio y respaldado por la renombrada marca SBK, este manubrio ofrece durabilidad, rendimiento y estilo para satisfacer las demandas de los ciclistas más exigentes.",
+        "imagen": "id-15.jpg"
+    },
+    {
+        "id": 16,
+        "nombre": "Kit Frenos Shimano Deore Mt410 Disco Hidraulico Mtb- Celero",
+        "precio": 174000,
+        "descuento": 21,
+        "categoria": "Repuesto",
+        "descripcion": "Sumérgete en una experiencia de frenado superior con el KIT DE FRENO SHIMANO M410 para disco hidráulico. Diseñado para ofrecer una frenada potente y fiable en cualquier condición, este kit proporciona un rendimiento excepcional y características avanzadas para elevar tu experiencia de ciclismo.",
+        "imagen": "id-16.jpg"
+    },
+    {
+        "id": 17,
+        "nombre": "Pedales Gadnic Para Bicicleta Universal",
+        "precio": 24000,
+        "descuento": 5,
+        "categoria": "Repuesto",
+        "descripcion": "El eje de 9/16 pulgadas de uso común se adapta perfectamente a las bicicletas híbridas, bicicletas de trekking, bicicletas plegables, bicicletas de carretera o cualquier bicicleta urbana.",
+        "imagen": "id-17.jpg"
+    },
+    {
+        "id": 18,
+        "nombre": "Plato Palanca Shimano Deore M4100 10v 36-26 175 Boost Celero",
+        "precio": 84000,
+        "descuento": 5,
+        "categoria": "Repuesto",
+        "descripcion": "Presentamos las Palancas Shimano Deore M4100 BOOST, un conjunto de bielas diseñadas para llevar tu experiencia de ciclismo de montaña al siguiente nivel. Con características avanzadas y un rendimiento excepcional, estas palancas están diseñadas para los ciclistas que buscan precisión, durabilidad y eficiencia en cada pedalada.",
+        "imagen": "id-18.jpg"
+    },
+    {
+        "id": 19,
+        "nombre": "Cadena Kmc X8 Silver & Gray 116l 8v 16v 24v Mtb Ruta",
+        "precio": 14000,
+        "descuento": 5,
+        "categoria": "Repuesto",
+        "descripcion": "La Cadena KMC X8 Silver / Gray es una opción versátil y duradera para tu bicicleta. Diseñada para ser compatible con 5/6/7/8, 16 y 24 velocidades, esta cadena de alta calidad de la marca KMC te ofrece una resistencia excepcional a la tracción.",
+        "imagen": "id-19.jpg"
+    },
+    {
+        "id": 20,
+        "nombre": "Cubiertas Rodado 29 Bicicleta MTB Mitas Ocelot v85 29 x 2.35",
+        "precio": 40000,
+        "descuento": 5,
+        "categoria": "Repuesto",
+        "descripcion": "Con unas dimensiones de 29 x 2.35, este neumático proporciona una combinación ideal de agarre y velocidad para el ciclismo de montaña. Estas medidas específicas están diseñadas para optimizar el rendimiento en una variedad de terrenos.",
+        "imagen": "id-20.jpg"
+    },
+    {
+        "id": 21,
+        "nombre": "Cuadro Bicicleta 29 Mtb Aluminio Reforzado",
+        "precio": 144000,
+        "descuento": 5,
+        "categoria": "Repuesto",
+        "descripcion": "Presentamos el Cuadro de Bicicleta MTB de Aluminio 6061, diseñado para ofrecer resistencia, durabilidad y compatibilidad avanzada con características que satisfacen las necesidades de los ciclistas de montaña más exigentes. Descubre el rendimiento confiable y la versatilidad que este cuadro aporta a tus aventuras en bicicleta.",
+        "imagen": "id-21.jpg"
     }
+
 
 
 
