@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "nombre": "Bicicleta Mtb Overtech Q6 R29",
+        "precio": 257000,
+        "descuento": 19,
+        "categoria": "Bicicleta",
+        "descripcion": "Con un diseño resistente y funcional, la Bicicleta MTB Overtech Q6 cuenta con un pie de apoyo que facilita el estacionamiento y el mantenimiento. Esta bicicleta es la elección perfecta para los amantes del mountain bike que buscan una máquina sólida y duradera para aventuras emocionantes en la naturaleza. Con la Overtech Q6, cada ruta se convierte en una experiencia inolvidable.",
+        "imagen": "id-1.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Mountain bike Olmo Wish 290 R18",
+        "precio": 260000,
+        "descuento": 12,
+        "categoria": "Bicicleta",
+        "descripcion": "Las bicicletas Olmo se destacan por sus cuadros de aluminio hidroformado y de frente integrado. Son productos de carrera de alta gama, pensados para ciclistas con ganas de superarse y para todas las personas que disfrutan de un andar impecable.",
+        "imagen": "id-2.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Mountain bike Olmo Flash 290 R18",
+        "precio": 311000,
+        "descuento": 10,
+        "categoria": "Bicicleta",
+        "descripcion": "Te presentamos la Bicicleta Olmo Flash 290, un modelo excepcional diseñado para ofrecer un rendimiento óptimo en cualquier terreno. Con el distintivo sello de calidad de la marca Olmo, esta bicicleta está diseñada para ciclistas que buscan aventuras emocionantes y un rendimiento confiable.",
+        "imagen": "id-3.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Olmo Amelie Plume Rapide R26",
+        "precio": 331000,
+        "descuento": 12,
+        "categoria": "Bicicleta",
+        "descripcion": "La Bicicleta urbana Olmo Amelie Plume Rapide es perfecta para aquellos que buscan una opción cómoda y práctica para moverse por la ciudad. Con su cuadro de aluminio de 18 pulgadas y rodado26. Esta bicicleta es ligera y fácil de manejar - ideal para adultos que deseen un medio de transporte ágil y eficiente.",
+        "imagen": "id-4.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Mtb Modelo Ktm Myroon Ace Se3 - Carbono",
+        "precio": 4157000,
+        "descuento": 19,
+        "categoria": "Bicicleta",
+        "descripcion": "Con esta bicicleta, experimentarás la emoción de recorrer senderos con confianza, gracias a su combinación de tecnología de vanguardia y componentes de alta calidad. Preparada para aventuras épicas, nuestra bicicleta de montaña es la elección perfecta para ciclistas apasionados que buscan un rendimiento excepcional en cada viaje.",
+        "imagen": "id-5.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Top Mega Harrier R28",
+        "precio": 911000,
+        "descuento": 19,
+        "categoria": "Bicicleta",
+        "descripcion": "Con detalles meticulosos y componentes de alta calidad, la bicicleta de ruta Harrier Aluminio es la elección perfecta para ciclistas apasionados que buscan una experiencia de conducción suave, cómoda y llena de estilo en cada kilómetro.",
+        "imagen": "id-6.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Venzo Phoenix Pro - 2x8v R28",
+        "precio": 641000,
+        "descuento": 5,
+        "categoria": "Bicicleta",
+        "descripcion": "La bicicleta Venzo Phoenix Pro es la elección ideal para ciclistas que buscan una máquina confiable y de alto rendimiento para conquistar cualquier tipo de terreno. Ya sea que estés compitiendo en carreras o disfrutando de paseos recreativos, esta bicicleta te llevará al siguiente nivel de rendimiento y satisfacción en cada kilómetro.",
+        "imagen": "id-7.jpg"
+    }
+
+
+
+]

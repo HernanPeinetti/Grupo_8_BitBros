@@ -4,6 +4,7 @@ const controllersProduct = {
 
     detalleProducto: (req, res) => {
         res.render('./products/productDetail.ejs')
+        
     },
 
     create: (req, res) => {
