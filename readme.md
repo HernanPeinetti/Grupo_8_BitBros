@@ -28,7 +28,7 @@ npm run dev
 
 ## Acerca de
 
-Isabel Bicicleteria es un comercio regional ubicado en Prov. Santiago del Estero, especializado en la venta tanto de bicicletas, como de repuestos, accesorios, indumentaria y servicio mecánico para las mismas. Nuestra misión es proporcionarte soluciones de calidad y acompañarte en cada pedaleada.
+Isabel Bicicleteria es un comercio regional ubicado en Prov. Santiago del Estero, especializado tanto en la venta de bicicletas, como de repuestos, accesorios, indumentaria y servicio mecánico para las mismas. Nuestra misión es proporcionarte soluciones de calidad y acompañarte en cada pedaleada.
 
 ## ¿Por qué elegirnos?
 
