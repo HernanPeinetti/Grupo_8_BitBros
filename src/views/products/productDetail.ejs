@@ -1,263 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partials/head', {titulo: 'Mountain Bike Olmo', estilo: 'productDetail'}) %>
+<%- include('../partials/head', {titulo: 'Mountain Bike Olmo' , estilo: 'productDetail' }) %>
 
     <body>
         <%- include('../partials/header') %>
-        <main class="mainDetail">
-
+            <main class="mainDetail">
+                <!-- 
             <nav class="sub-Section">
                 <a href=""> Productos </a>
                 <span class="divider"> > </span>
                 <a href="">Categoria</a>
                 <span class="divider"> > </span>
                 <a href="">Sub-categoria</a>
-            </nav>
+            </nav> -->
 
-            <div class="titleContainer">
-                <p class="nombre">Inflador Giyo de pie</p>
-                <form>
-                    <input id="heart" type="checkbox" />
-                    <label for="heart"><i class="fa-solid fa-heart"></i></i></label>
-                </form>
-            </div>
-            
-            <div class="section1">
-                <div class="imageContainer"> 
-                    <img src="/images/inflador.jpg"  alt="inflador" width="100%">
+                <div class="titleContainer">
+                    <p class="nombre">Inflador Giyo</p>
+                    <form>
+                        <input id="heart" type="checkbox" />
+                        <label for="heart"><i class="fa-solid fa-heart"></i></i></label>
+                    </form>
                 </div>
 
-                <div class="detailSection">
-
-                    <div class="precio">
-                        <p>$14.000 ARS</p>
-                         <span class="impuestos">$11.060  ARS precio sin impuestos</span>
-                    </div>
-
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <span>(12)</span>
-                    </div>
-
-                    <div class="stockSection">
-                        <p>Cantidad</p>
-                        <div class="cantidad">
-                            <input type="number" placeholder="1" step="1" min="1" max="10" id="number"/>
-                        </div>
-                    </div>
-
-                    <div class="pickColorContainer">
-                        <div class="Color">
-                            <p>Elegí el color:</p>
-                        </div>
-                        <select name="pickColor" class="changeColor">
-                            <option value="black">Negro</option>
-                            <option value="red">Rojo</option>
-                            <option value="green">Verde</option>
-                        </select>
-                    </div>
-    
-                    <a href="/carrito">
-                        <button class="btnAddToCart">
-                            <i class="fa-solid fa-cart-shopping"></i>AGREGAR AL CARRITO
-                        </button>
-                    </a>
-
-                    <a href="/productos/editar/1">
-                        <button class="btnEditProduct">EDITAR PRODUCTO</button>
-                    </a>
-    
-                    <div class="infoContainer">
-                        <p class="available">
-                            <i class="fa-solid fa-circle-check"></i> Disponible
-                        </p>
-                        <p>
-                            <i class="fa-solid fa-truck"></i> Envío de 3 a 4 días hábiles
-                        </p>
-                    </div>
-                    
-                    <div class="shortDescription">Tipo adaptativo para:
-                        <ul class="listDescription">
-                            <li>Moto</li>
-                            <li>Bicicletas</li>
-                            <li>Autos</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-
-            
-
-            <div class="acordeon">
-                <details class="productDetailContainer">
-                    <summary>Detalles del producto
-                        <div id="arrows">
-                            <i class="fa-solid fa-arrow-down"></i>
-                        </div>
-   
-                    </summary>
-                    <div class="contenido">Marca : GIYO
-                        <li>Modelo: GF35-P</li>
-                        <p>Cuerpo de acero. Válvula presta y schrader con traba (compatible ambos picos). Manija ergonómica. Medidor de presión en la base.
-                        </p>
-                    </div>
-                </details> 
-                <details class="medidasContainer">
-                    <summary>Tamaño y medidas
-                        <div id="arrows">
-                            <i class="fa-solid fa-arrow-down"></i>
-                        </div>
-                    </summary>
-                    <div class="contenido">Mango de 23 cm. Color: Plata y negro. Base plástica 24 cm. Peso: 850 gr Largo: 56 cm. 160 PSI (máximo)</div>
-                </details>
-                <details class="descripcionContainer">
-                    <summary>Descripción
-                        <div id="arrows">
-                            <i class="fa-solid fa-arrow-down"></i>
-                        </div>
-                    </summary>
-                    <div class="contenido">El Inflador Giyo Bomba Taller con manómetro 160 psi amarillo es un potente inflador con el que podrás inflar ruedas de cualquier tamaño y presión. Especialmente indicado para inflar ruedas de bicicletas de carretera que necesitan mayor presión de inflado, aunque también podrás inflar ruedas de bicicletas de montaña, bicicletas infantiles, ruedas de carros, sillas de ruedas, etc…</div>
-                </details>
-                
-            </div>
-
-            <div class="punctuationStars">
-                <p>Puntuá este producto:</p>
-                <form>
-                    <div class="clasificacion">
-                        <input id="radio1" type="radio" name="estrellas" value="5">
-                        <label for="radio1"><i class="fa-solid fa-star"></i></label>
-                        <input id="radio2" type="radio" name="estrellas" value="4">
-                        <label for="radio2"><i class="fa-solid fa-star"></i></label>
-                        <input id="radio3" type="radio" name="estrellas" value="3">
-                        <label for="radio3"><i class="fa-solid fa-star"></i></label>
-                        <input id="radio4" type="radio" name="estrellas" value="2">
-                        <label for="radio4"><i class="fa-solid fa-star"></i></label>
-                        <input id="radio5" type="radio" name="estrellas" value="1">
-                        <label for="radio5"><i class="fa-solid fa-star"></i></label>
-                    </div>
-                </form>
-                <a class="sendStars">
-                    <p class="containerStars">
-                        Enviar
-                    </p>
-                </a>
-            </div>
-            
-
-            <div class="prodRelacionados">
-
-                <p class="titleProdRel">Productos relacionados</p>
-            
-                <div class="grupo-articulos">
-                    <a href="#">
-                        <article>
-                            <img src="/images/LUZ.jpg" alt="luz de bicicleta">
-                            <div class="detalles-producto">
-                                <h3 class="nombre-producto">Luz delantera tipo mini</h3>
-                                <p class="descripcion">Carga USB. Rosa o blanco</p>
-                            </div>
-                            <h4 class="precio">$4.000</h4>
-                        </article>
-                    </a>
-                    <a href="#">
-                        <article>
+                <div class="section1">
+                    <div class="imageContainer">
                         <img src="/images/inflador.jpg" alt="inflador">
-                        <div class="detalles-producto">
-                            <h3 class="nombre-producto">Inflador de pie GIYO</h3>
-                            <p class="descripcion">Apto para moto, bici, auto, pelotas, etc.</p>
+                    </div>
+
+                    <div class="detailSection">
+
+                        <div class="precio">
+                            <p>$14.000 ARS</p>
+                            <span class="impuestos">$11.060 ARS precio sin impuestos</span>
                         </div>
-                        <h4 class="precio">$14.000</h4>
-                    </article>
-                    </a>
-                    
-                    <a href="#">
-                        <article>
-                        <img src="/images/CAJA.jpg" alt="caja pedalera">
-                        <div class="detalles-producto">
-                            <h3 class="nombre-producto">Caja hollowtech a rulemanes</h3>
-                            <p class="descripcion">Marca FIRST. Rojo o negro. Compatible Shimano</p>
+
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>(12)</span>
                         </div>
-                        <h4 class="precio">$12.300,50</h4>
-                    </article>
-                    </a>
-                    
-                    <a href="#">
-                        <article>
-                        <img src="/images/horquilla-29er.jpg" alt="horquilla-29er">
-                        <div class="detalles-producto">
-                            <h3 class="nombre-producto">Horquilla 29er And-Es</h3>
-                            <p class="descripcion">Frente recto-Apto disco </p>
+
+                        <div class="stockSection">
+                            <p>Cantidad</p>
+                            <div class="cantidad">
+                                <input type="number" placeholder="1" step="1" min="1" max="10" id="number" />
+                            </div>
                         </div>
-                        <h4 class="precio">$16.500</h4>
-                    </article>
-                    </a>
-                    
-                    <a href="#">
-                        <article>
-                        <img src="/images/manijas-freno-hidraulico.jpg" alt="manijas-freno-hidraulico">
-                        <div class="detalles-producto">
-                            <h3 class="nombre-producto">Frenos Hidraulicos Shimano m6100</h3>
-                            <p class="descripcion">Incluye manijas, calipers y ductos</p>
+
+                        <div class="pickColorContainer">
+                            <div class="Color">
+                                <p>Elegí el color:</p>
+                            </div>
+                            <select name="pickColor" class="changeColor">
+                                <option value="black">Negro</option>
+                                <option value="red">Rojo</option>
+                                <option value="green">Verde</option>
+                            </select>
                         </div>
-                        <h4 class="precio">$110.000</h4>
-                    </article>
-                    </a>
-                    
-                    <a href="#">
-                        <article>
-                        <img src="/images/maza-trasera-shimanotx506.jpg" alt="maza-trasera-shimanotx506">
-                        <div class="detalles-producto">
-                            <h3 class="nombre-producto">Maza trasera shimano TX506</h3>
-                            <p class="descripcion">Apta disco a tornillos - Piñon 9v</p>
+
+                        <a href="/carrito">
+                            <button class="btnAddToCart">
+                                <i class="fa-solid fa-cart-shopping"></i>AGREGAR AL CARRITO
+                            </button>
+                        </a>
+
+                        <a href="/productos/editar/1">
+                            <button class="btnEditProduct">EDITAR PRODUCTO</button>
+                        </a>
+
+                        <div class="infoContainer">
+                            <p class="available">
+                                <i class="fa-solid fa-circle-check"></i> Disponible
+                            </p>
+                            <p>
+                                <i class="fa-solid fa-truck"></i> Envío de 3 a 4 días hábiles
+                            </p>
                         </div>
-                        <h4 class="precio">$23.600</h4>
-                    </article>
-                    </a>
-                    
-                    <a href="#">
-                        <article>
-                        <img src="/images/pedales-aluminio.jpg" alt="pedales-aluminio">
-                        <div class="detalles-producto">
-                            <h3 class="nombre-producto">Pedales Aluminio</h3>
-                            <p class="descripcion">Solo en color negro</p>
+
+                        <div class="shortDescription">Tipo adaptativo para:
+                            <ul class="listDescription">
+                                <li>Moto</li>
+                                <li>Bicicletas</li>
+                                <li>Autos</li>
+                            </ul>
                         </div>
-                        <h4 class="precio">$4.400</h4>
-                    </article>
-                    </a>
-                    
-                    <a href="#">
-                        <article>
-                        <img src="/images/piñon-9v-ruta.jpg" alt="piñon-9v-ruta">
-                        <div class="detalles-producto">
-                            <h3 class="nombre-producto">Piñon Ruta Shimano 9v</h3>
-                            <p class="descripcion">Piñon corrido apto ruta o gravel</p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="acordeon">
+                    <details class="productDetailContainer">
+                        <summary>Detalles del Producto
+                            <div id="arrows">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+
+                        </summary>
+                        <div class="contenido">Marca: GIYO
+                            <li>Modelo: GF35-P</li>
+                            <p>Cuerpo de acero. Válvula presta y schrader con traba (compatible ambos picos). Manija
+                                ergonómica. Medidor de presión en la base.
+                            </p>
                         </div>
-                        <h4 class="precio">$33.000</h4>
-                    </article>
-                    </a>
-                    
-                    <a href="#">
-                        <article>
-                        <img src="/images/camara-deportiva.jpg" alt="camara-deportiva">
-                        <div class="detalles-producto">
-                            <h3 class="nombre-producto">Camara de filmacion HD</h3>
-                            <p class="descripcion">Con accesorios - Sin tarjeta de memoria</p>
+                    </details>
+                    <details class="medidasContainer">
+                        <summary>Tamaño y medidas
+                            <div id="arrows">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+                        </summary>
+                        <div class="contenido">Mango de 23 cm. Color: Plata y negro. Base plástica 24 cm. Peso: 850 gr
+                            Largo: 56 cm. 160 PSI (máximo)</div>
+                    </details>
+                    <!-- <details class="reseñasContainer">
+                        <summary>Reseñas
+                            <div id="arrows">
+                                <i class="fa-solid fa-arrow-down"></i>
+                            </div>
+                        </summary>
+                        <div class="contenido">El Inflador Giyo Bomba Taller con manómetro 160 psi amarillo es un
+                            potente inflador con el que podrás inflar ruedas de cualquier tamaño y presión.
+                            Especialmente indicado para inflar ruedas de bicicletas de carretera que necesitan mayor
+                            presión de inflado, aunque también podrás inflar ruedas de bicicletas de montaña, bicicletas
+                            infantiles, ruedas de carros, sillas de ruedas, etc…</div>
+                    </details> -->
+
+                </div>
+
+                <div class="punctuationStars">
+                    <p>Puntuá este producto:</p>
+                    <form>
+                        <div class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5"><i class="fa-solid fa-star"></i></label>
                         </div>
-                        <h4 class="precio">$150.300,50</h4>
-                    </article>
+                    </form>
+                    <a class="sendStars">
+                        <p class="containerStars">
+                            Enviar
+                        </p>
                     </a>
                 </div>
 
-            </div>    
-        </main>
 
-        <%- include('../partials/footer.ejs') %>
+                <div class="prodRelacionados">
+
+                    <p class="titleProdRel">Productos relacionados</p>
+
+                    <div class="grupo-articulos">
+                        <a href="#">
+                            <article>
+                                <img src="/images/LUZ.jpg" alt="luz de bicicleta">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Luz delantera tipo mini</h3>
+                                    <p class="descripcion">Carga USB. Rosa o blanco</p>
+                                </div>
+                                <h4 class="precio">$4.000</h4>
+                            </article>
+                        </a>
+                        <a href="#">
+                            <article>
+                                <img src="/images/inflador.jpg" alt="inflador">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Inflador de pie GIYO</h3>
+                                    <p class="descripcion">Apto para moto, bici, auto, pelotas, etc.</p>
+                                </div>
+                                <h4 class="precio">$14.000</h4>
+                            </article>
+                        </a>
+
+                        <a href="#">
+                            <article>
+                                <img src="/images/CAJA.jpg" alt="caja pedalera">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Caja hollowtech a rulemanes</h3>
+                                    <p class="descripcion">Marca FIRST. Rojo o negro. Compatible Shimano</p>
+                                </div>
+                                <h4 class="precio">$12.300,50</h4>
+                            </article>
+                        </a>
+
+                        <a href="#">
+                            <article>
+                                <img src="/images/horquilla-29er.jpg" alt="horquilla-29er">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Horquilla 29er And-Es</h3>
+                                    <p class="descripcion">Frente recto-Apto disco </p>
+                                </div>
+                                <h4 class="precio">$16.500</h4>
+                            </article>
+                        </a>
+
+                        <a href="#">
+                            <article>
+                                <img src="/images/manijas-freno-hidraulico.jpg" alt="manijas-freno-hidraulico">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Frenos Hidraulicos Shimano m6100</h3>
+                                    <p class="descripcion">Incluye manijas, calipers y ductos</p>
+                                </div>
+                                <h4 class="precio">$110.000</h4>
+                            </article>
+                        </a>
+
+                        <a href="#">
+                            <article>
+                                <img src="/images/maza-trasera-shimanotx506.jpg" alt="maza-trasera-shimanotx506">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Maza trasera shimano TX506</h3>
+                                    <p class="descripcion">Apta disco a tornillos - Piñon 9v</p>
+                                </div>
+                                <h4 class="precio">$23.600</h4>
+                            </article>
+                        </a>
+
+                        <a href="#">
+                            <article>
+                                <img src="/images/pedales-aluminio.jpg" alt="pedales-aluminio">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Pedales Aluminio</h3>
+                                    <p class="descripcion">Solo en color negro</p>
+                                </div>
+                                <h4 class="precio">$4.400</h4>
+                            </article>
+                        </a>
+
+                        <a href="#">
+                            <article>
+                                <img src="/images/piñon-9v-ruta.jpg" alt="piñon-9v-ruta">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Piñon Ruta Shimano 9v</h3>
+                                    <p class="descripcion">Piñon corrido apto ruta o gravel</p>
+                                </div>
+                                <h4 class="precio">$33.000</h4>
+                            </article>
+                        </a>
+
+                        <a href="#">
+                            <article>
+                                <img src="/images/camara-deportiva.jpg" alt="camara-deportiva">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">Camara de filmacion HD</h3>
+                                    <p class="descripcion">Con accesorios - Sin tarjeta de memoria</p>
+                                </div>
+                                <h4 class="precio">$150.300,50</h4>
+                            </article>
+                        </a>
+                    </div>
+
+                </div>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
     </body>
+
 </html>

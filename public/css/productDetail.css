@@ -18,7 +18,7 @@ body {
 
 .section1 {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: space-between;
 }
 
@@ -73,9 +73,11 @@ body {
 
 .imageContainer {
     background-color: #ffffff;
-    width: 90vw;
-    height: auto;
+    width: 25rem;
+    height:25rem;
     display: flex;
+    justify-content: center;
+
 }
 
 /* seccion de precio, detalles y otros */
