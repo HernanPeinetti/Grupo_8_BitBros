@@ -13,4 +13,6 @@ ruoter.get("/editar/:id", controllers.edit)
 // VISTA CREATE http://localhost:3000/productos/crear
 ruoter.get("/crear", controllers.create)
 
+router.delete('/delete/:id', controllers.remove)
+
 module.exports = ruoter; 
