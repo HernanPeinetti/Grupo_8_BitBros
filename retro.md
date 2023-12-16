@@ -52,3 +52,25 @@ SPRINT 2
 # Dejar de hacer
 
 1. **Evitar postergaciones innecesarias:** Dejar de aplazar tareas sin razón y buscar abordarlas de manera oportuna.
+
+
+# SPRINT 4:
+
+# Comenzar a Hacer
+1. Coordinar la reparticion de tareas.
+
+# Hacer más
+
+- **Implementar daily/weekly standups** Para poder llevar un control y documentar avance y modalidad de trabajo.
+
+# Continuar haciendo
+
+- **Ayuda cada que se necesite:** como grupo sabemos que, si uno se estanca o necesita un empujón a la hora de resolver un problema, podemos contar con el otro que nos guíe a la solución o tratar de buscar la solución de manera conjunta.
+- **Gestionar horarios eficientemente:** Establecer horarios específicos para reuniones y sesiones de programación.
+
+# Hacer menos
+- Postergar las reuniones programadas.
+
+# Dejar de hacer
+
+- Dejar los codigos para ultimo momento, hace que el equipo luego tenga que esforzarse en estudiarlo en un corto periodo para comenzar con el proximo sprint.
