@@ -45,3 +45,28 @@
 
 - Cada miembro iniciará las tareas asignadas.
 - Acordamos reunirnos al día siguiente para compartir el progreso y discutir cualquier pregunta o problema.
+
+
+
+## 16/12/23
+
+### Detalles de la Reunión
+
+- **Fecha:** 16/12/23
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Progreso de Tareas**
+   - Discutimos el progreso de nuestras tareas asignadas.
+
+2. **Dificultades y Soluciones**
+   - Debatimos acerca de las dificultades encontradas hasta el momento y cómo podríamos solucionarlas.
+
+3. **Próxima Reunión**
+   - Acordamos reunirnos al día siguiente.
+
+### Próximos Pasos
+
+- Continuaremos trabajando en nuestras tareas y abordaremos las dificultades discutidas.
+- Nos reuniremos nuevamente para seguir monitoreando el progreso y resolver cualquier problema que surja.
