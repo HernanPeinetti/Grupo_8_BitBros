@@ -1,18 +1,17 @@
-const express = require('express')
-const ruoter = express.Router();
+const express = require('express');
+const router = express.Router();
 const controllers = require('../controllers/products.controllers.js');
 
+// VISTA DETALLE DE PRODUCTOS http://localhost:3000/productos/detalle/id
+router.get('/detalle/:id', controllers.detalleProducto);
 
-// VISTA DETALLE DE PRODUCTOS http://localhost:3000/productos/detalle/1
-ruoter.get("/detalle/:id", controllers.detalleProducto)
-
-
-// VISTA ITEM  http://localhost:3000/productos/editar/1
-ruoter.get("/editar/:id", controllers.edit)
+// VISTA ITEM  http://localhost:3000/productos/editar/id
+router.get('/editar/:id', controllers.editar);
 
 // VISTA CREATE http://localhost:3000/productos/crear
-ruoter.get("/crear", controllers.create)
+router.get('/crear', controllers.crear);
 
-router.delete('/delete/:id', controllers.remove)
+// VISTA CREATE http://localhost:3000/productos/eliminar/id
+router.delete('/eliminar/:id', controllers.eliminar);
 
-module.exports = ruoter; 
+module.exports = router;
