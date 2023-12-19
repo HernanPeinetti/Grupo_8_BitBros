@@ -5,7 +5,12 @@ let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 
 const controllersProduct = {
     detail: (req, res) => {
-        res.render("./products/detail.ejs");
+        let id = req.params.id;
+        let product = productos.find((product) => product == id);
+        if (product) {
+            res.render("./products/detail.ejs, {product}")
+        }
+        res.send('El producto que busca no existe')
     },
 
     create: (req, res) => {

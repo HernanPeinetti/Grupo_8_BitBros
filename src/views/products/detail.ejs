@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {titulo: 'Mountain Bike Olmo' , estilo: 'detail' }) %>
+<%- include('../partials/head', {titulo: product.nombre , estilo: 'detail' }) %>
 
     <body>
         <%- include('../partials/header') %>
@@ -16,7 +16,7 @@
             </nav> -->
 
                 <div class="titleContainer">
-                    <p class="nombre">Inflador Giyo</p>
+                    <p class="nombre"><%= product.nombre %></p>
                     <form>
                         <input id="heart" type="checkbox" />
                         <label for="heart"><i class="fa-solid fa-heart"></i></i></label>
@@ -25,14 +25,13 @@
 
                 <div class="section1">
                     <div class="imageContainer">
-                        <img src="/images/inflador.jpg" alt="inflador">
+                        <img src="/data/products/<%=product.imagen%>"  alt="inflador" >
                     </div>
 
                     <div class="detailSection">
 
                         <div class="precio">
-                            <p>$14.000 ARS</p>
-                            <span class="impuestos">$11.060 ARS precio sin impuestos</span>
+                            <p><%= product.precio %></p>
                         </div>
 
                         <div class="stars">
@@ -105,10 +104,9 @@
                             </div>
 
                         </summary>
-                        <div class="contenido">Marca: GIYO
-                            <li>Modelo: GF35-P</li>
-                            <p>Cuerpo de acero. Válvula presta y schrader con traba (compatible ambos picos). Manija
-                                ergonómica. Medidor de presión en la base.
+                        <div class="contenido"><%= product.marca %>
+                            <li><%= product.categoria %></li>
+                            <p><%= product.descripcion %>
                             </p>
                         </div>
                     </details>
