@@ -6,7 +6,7 @@ const controllers = {
         res.render('index.ejs')
     },
 
-    carrito: (req, res) => {
+    cart: (req, res) => {
         res.render('cart.ejs')
     },
 

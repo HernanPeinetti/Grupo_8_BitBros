@@ -1,44 +1,40 @@
 const path = require("path");
 const fs = require("fs");
-const pathProducts = path.join(
-    __dirname,
-    "..",
-    "data",
-    "productsDataBase.json"
-);
+const pathProducts = path.join(__dirname, "..", "data", "products.json");
 let productsDB = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 
 const controllersProduct = {
-    detalleProducto: (req, res) => {
-        res.render("./products/productDetail.ejs");
+
+    detail: (req, res) => {
+        res.render("./products/detail.ejs");
     },
 
-    crear: (req, res) => {
-        res.render("./market/create.ejs");
+    create: (req, res) => {
+        res.render("./products/create.ejs");
     },
 
-    editar: (req, res) => {
-        res.render("./market/edit.ejs");
+    edit: (req, res) => {
+        res.render("./products/edit.ejs");
     },
 
-    eliminar: (req, res) => {
+    remove: (req, res) => {
         const { id } = req.params;
 
-        const producto = productsDB.find((product) => product.id === id);
-        if (producto.image != "img-defecto.png") {
-            fs.unlinkSync(
-                path.join(
-                    __dirname,
-                    "..",
-                    "..",
-                    "public",
-                    "images",
-                    "products",
-                    producto.categoria.toLowerCase(), //
-                    producto.image
-                )
-            );
-        }
+        // const producto = productsDB.find((product) => product.id === id);
+        // if (producto.image != "img-defecto.png") {
+        //     fs.unlinkSync(
+        //         path.join(
+        //             __dirname,
+        //             "..",
+        //             "..",
+        //             "public",
+        //             "images",
+        //             "products",
+        //             producto.categoria.toLowerCase(), //
+        //             producto.image
+        //         )
+        //     );
+        // }
 
         productsDB = productsDB.filter((product) => product.id != id);
         const productsJSON = JSON.stringify(productsDB, null, "");
@@ -46,6 +42,7 @@ const controllersProduct = {
         fs.writeFileSync(pathProducts, productsJSON);
         res.redirect("/");
     },
+    
 };
 
 module.exports = controllersProduct;

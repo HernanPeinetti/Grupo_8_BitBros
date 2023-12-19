@@ -6,6 +6,6 @@ const controllers = require('../controllers/main.controllers');
 ruoter.get("/", controllers.index)
 
 // VISTA CARRITO http://localhost:3000/carrito
-ruoter.get("/carrito", controllers.carrito)
+ruoter.get("/carrito", controllers.cart)
 
 module.exports = ruoter; 
