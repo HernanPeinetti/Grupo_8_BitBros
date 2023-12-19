@@ -8,20 +8,20 @@
   <main>
     <div class="container">
       <h2>Te damos la bienvenida a Isabel Bicicleteria</h2>
-      <form action="#" method="post">
-        <label for="nombre">Nombre y Apellido:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Por ej: Juan Perez" required>
+      <form action="/register" method="POST" enctype="multipart/form-data">
+        <label for="">Nombre y Apellido:</label>
+        <input type="text"  name="nombre" placeholder="Por ej: Juan Perez" required>
   
-        <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        <label for="">Fecha de Nacimiento:</label>
+        <input type="date"  name="fecha_nacimiento" required>
   
-        <label for="correo">Correo Electrónico:</label>
-        <input type="email" id="correo" name="correo" required>
+        <label for="">Correo Electrónico:</label>
+        <input type="email"  name="correo" required>
   
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required>
+        <label for="">Contraseña:</label>
+        <input type="password"  name="contrasena" required>
   
-        <button type="submit">Continuar</button>
+        <input type="submit">Continuar</input>
       </form>
   
       <div class="social-buttons">
