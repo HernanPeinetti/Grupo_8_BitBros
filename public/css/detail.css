@@ -18,7 +18,7 @@ body {
 
 .section1 {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -73,11 +73,13 @@ body {
 
 .imageContainer {
     background-color: #ffffff;
-    width: 25rem;
-    height:25rem;
+    width: 100%;
     display: flex;
     justify-content: center;
 
+}
+.imageContainer img {
+    width: 100%;
 }
 
 /* seccion de precio, detalles y otros */
@@ -179,19 +181,28 @@ body {
 .btnAddToCart:hover {
     background-color: #1F67A6;
 }
-.btnEditProduct {
+.btnProduct {
     width: 100%;
     height: 50px;
     border-radius: 0.4rem;
     cursor: pointer;
     border: 0;
     color: #ffffff;
-    background-color: #a88af0;
+    
     margin-bottom: 15px;
     transition: 0.3s all;
 }
-.btnEditProduct:hover {
+.productEdit {
+    background-color: #a88af0;
+}
+.productEdit:hover {
     background-color: #876ec1;
+}
+.productDelete {
+    background-color: #db4444;
+}
+.productDelete:hover {
+    background-color: #b83a3a;
 }
 
 .infoContainer {
@@ -223,8 +234,8 @@ body {
 /* fin de seccion de detalles */
 
 .acordeon {
-    padding: 10px;
     cursor: pointer;
+    margin-top: 20px;
     list-style: none;
 }
 
@@ -357,7 +368,7 @@ article img{
 /* Añadir pntuacion */
 .punctuationStars {
     background-color: white;
-    border-bottom: 1px #8a97ca solid;
+    border-top: 1px #8a97ca solid;
     padding: 40px;
     width: 100%;
     font-weight: 800;
@@ -489,11 +500,12 @@ input[type="radio"]:checked ~ label {
         width: 75vw;
     }
     .imageContainer {
-        width: 30rem;
+        width: 21rem;
     }
     .imageContainer img {
         object-fit: cover;
         object-position: center;
+        width: 100%;
     }
    
     .section1 {
@@ -545,6 +557,9 @@ input[type="radio"]:checked ~ label {
     }
     .imageContainer {
         width: 45rem;
+    }
+    .imageContainer img {
+        width: 36rem;
     }
     .nombre {
         font-weight: 700;

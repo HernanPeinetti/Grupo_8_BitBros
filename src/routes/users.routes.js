@@ -1,8 +1,8 @@
 const express = require('express')
-const ruoter = express.Router();
+const router = express.Router();
 const multer = require("multer");
 const path = require("path")
-const controllers = require('../controllers/user.controllers.js');
+const controllers = require('../controllers/users.controllers.js');
 
 
 const storage = multer.diskStorage({
@@ -18,15 +18,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 
-// VISTA LOGIN http://localhost:3000/login
-ruoter.get("/login", controllers.login)
+// VISTA LOGUEARSE http://localhost:3000/login
+router.get("/login", controllers.login)
 
-// VISTA REGISTER http://localhost:3000/register
-ruoter.get("/register", controllers.register)
+// VISTA REGISTRARSE http://localhost:3000/register
+router.get("/register", controllers.register)
 
 // REGISTER DE USUARIOS
-ruoter.post("/register", upload.single(), controllers.create)
+router.post("/register", upload.single(), controllers.create)
 
-ruoter.post("/login", controllers.create)
-
-module.exports = ruoter; 
+module.exports = router; 

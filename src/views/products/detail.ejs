@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {titulo: 'Mountain Bike Olmo' , estilo: 'productDetail' }) %>
+<%- include('../partials/head', {titulo: 'Mountain Bike Olmo' , estilo: 'detail' }) %>
 
     <body>
         <%- include('../partials/header') %>
@@ -64,13 +64,16 @@
 
                         <a href="/carrito">
                             <button class="btnAddToCart">
-                                <i class="fa-solid fa-cart-shopping"></i>AGREGAR AL CARRITO
+                                <i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
                             </button>
                         </a>
 
                         <a href="/productos/editar/1">
-                            <button class="btnEditProduct">EDITAR PRODUCTO</button>
+                            <button class="btnProduct productEdit">EDITAR PRODUCTO</button>
                         </a>
+                        <form action="/productos/eliminar/1?_method=DELETE" method="POST">
+							<button type="submit" class="btnProduct productDelete">ELIMINAR PRODUCTO</button>
+						</form>
 
                         <div class="infoContainer">
                             <p class="available">
@@ -159,7 +162,7 @@
 
                 <div class="prodRelacionados">
 
-                    <p class="titleProdRel">Productos relacionados</p>
+                    <h2 class="titleProdRel">Productos relacionados</h2>
 
                     <div class="grupo-articulos">
                         <a href="#">

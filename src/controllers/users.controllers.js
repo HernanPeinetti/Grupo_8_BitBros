@@ -23,7 +23,7 @@ const controllersUser = {
         let usuarioJSON = JSON.stringify(usuarios, null, " ");
         fs.writeFileSyncFileSync(userPath, usuarioJSON)
         
-        res.redirect("./users/login.ejs")
+        res.redirect("/login")
     }
     
 };

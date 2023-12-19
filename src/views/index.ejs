@@ -33,19 +33,17 @@
                         <a href="#">BUSCAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                            <% for (let i = 1; i <= 10; i++) { %>
-                                <% const producto = productos.find(item => item.id === i); %>
-                                    <a href="/productos/detalle/<%= i %>">
-                                        <article>
-                                            <img src="<%= producto.imagen %>" alt="<%= producto.alt %>">
-                                            <div class="detalles-producto">
-                                                <h3 class="nombre-producto"><%= producto.nombre %></h3>
-                                            </div>
-                                            <h4 class="precio">$<%= producto.precio %></h4>
-                                        </article>
-                                    </a>
-                                
-                            <% } %>
+                        <% for( let i = 0; i < 10; i++ ) { %>
+                            <a href="/productos/detalle/<%= productos[i].id %>">
+                                <article>
+                                    <img src="/images/productos/<%= productos[i].categoria %>/<%= productos[i].imagen %>" alt="<%= productos[i].alt %>">
+                                    <div class="detalles-producto">
+                                        <h3 class="nombre-producto"><%= productos[i].nombre %></h3>
+                                    </div>
+                                    <h4 class="precio">$<%= productos[i].precio %></h4>
+                                </article>
+                            </a>
+                        <% } %>
                         
                         <!-- <a href="/productos/detalle/1">
                             <article>
@@ -156,18 +154,16 @@
                         <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                        <% for (let i = 1; i <= 10; i++) { %>
-                            <% const producto = productos.find(item => item.id === i); %>
-                                <a href="/productos/detalle/<%= i %>">
-                                    <article>
-                                        <img src="<%= producto.imagen %>" alt="<%= producto.alt %>">
-                                        <div class="detalles-producto">
-                                            <h3 class="nombre-producto"><%= producto.nombre %></h3>
-                                        </div>
-                                        <h4 class="precio">$<%= producto.precio %></h4>
-                                    </article>
-                                </a>
-                            
+                        <% for( let i = 0; i < 10; i++ ) { %>
+                            <a href="/productos/detalle/<%= productos[i].id %>">
+                                <article>
+                                    <img src="/images/productos/<%= productos[i].categoria %>/<%= productos[i].imagen %>" alt="<%= productos[i].alt %>">
+                                    <div class="detalles-producto">
+                                        <h3 class="nombre-producto"><%= productos[i].nombre %></h3>
+                                    </div>
+                                    <h4 class="precio">$<%= productos[i].precio %></h4>
+                                </article>
+                            </a>
                         <% } %>
                     </div>
                 </div>
