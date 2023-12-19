@@ -25,7 +25,7 @@
 
                 <div class="section1">
                     <div class="imageContainer">
-                        <img src="/data/products/<%=product.imagen%>"  alt="inflador" >
+                        <img src="/images/productos/<%= product.categoria %>/<%=product.imagen%>"  alt="inflador" >
                     </div>
 
                     <div class="detailSection">
@@ -67,13 +67,12 @@
                             </button>
                         </a>
 
-                        <a href="/productos/editar/1">
+                        <a href="/productos/editar/<%= product.id %>">
                             <button class="btnProduct productEdit">EDITAR PRODUCTO</button>
                         </a>
-                        <form action="/productos/eliminar/1?_method=DELETE" method="POST">
+                        <form action="/productos/eliminar/<%= product.id %>?_method=DELETE" method="POST">
 							<button type="submit" class="btnProduct productDelete">ELIMINAR PRODUCTO</button>
 						</form>
-
                         <div class="infoContainer">
                             <p class="available">
                                 <i class="fa-solid fa-circle-check"></i> Disponible

@@ -6,9 +6,9 @@ let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 const controllersProduct = {
     detail: (req, res) => {
         let id = req.params.id;
-        let product = productos.find((product) => product == id);
+        let product = productos.find((product) => product.id == id);
         if (product) {
-            res.render("./products/detail.ejs, {product}")
+            res.render("./products/detail.ejs", {product})
         }
         res.send('El producto que busca no existe')
     },
