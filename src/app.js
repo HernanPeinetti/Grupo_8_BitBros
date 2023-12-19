@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const methodOverride =  require('method-override');
+const router = express.Router();
 
 //Configuraciones
 const app = express();
@@ -21,6 +22,11 @@ app.use('/', mainRoutes, usersRoutes)
 app.use('/productos', productRoutes) 
 app.use('/categories', categoriesRoutes)
 
+
 app.listen(3000, () => {
     console.log("Servidor levantado en http://localhost:3000");
 });
+
+app.use((req, res, next)=>{
+    res.status(404).render("notFound")
+    })
