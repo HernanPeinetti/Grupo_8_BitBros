@@ -1,11 +1,11 @@
 const express = require('express')
-const ruoter = express.Router();
+const router = express.Router();
 const controllers = require('../controllers/main.controllers');
 
 // VISTA HOME http://localhost:3000/
-ruoter.get("/", controllers.index)
+router.get("/", controllers.index)
 
 // VISTA CARRITO http://localhost:3000/carrito
-ruoter.get("/carrito", controllers.carrito)
+router.get("/carrito", controllers.carrito)
 
-module.exports = ruoter; 
+module.exports = router; 
