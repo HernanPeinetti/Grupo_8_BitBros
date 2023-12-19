@@ -33,7 +33,21 @@
                         <a href="#">BUSCAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                        <a href="/productos/detalle/1">
+                            <% for (let i = 1; i <= 10; i++) { %>
+                                <% const producto = productos.find(item => item.id === i); %>
+                                    <a href="/productos/detalle/<%= i %>">
+                                        <article>
+                                            <img src="<%= producto.imagen %>" alt="<%= producto.alt %>">
+                                            <div class="detalles-producto">
+                                                <h3 class="nombre-producto"><%= producto.nombre %></h3>
+                                            </div>
+                                            <h4 class="precio">$<%= producto.precio %></h4>
+                                        </article>
+                                    </a>
+                                
+                            <% } %>
+                        
+                        <!-- <a href="/productos/detalle/1">
                             <article>
                                 <img src="/images/LUZ.jpg" alt="luz de bicicleta">
                                 <div class="detalles-producto">
@@ -123,8 +137,8 @@
                                 <h4 class="precio">$150.300,50</h4>
                             </article>
                         </a>
-                    </div>
-                </div>
+                    </div>-->
+                </div> 
                 <div class="anuncio-promo">
                     <div class="textos">
                         <h2 class="super-promo">Super Promo</h2>
@@ -142,96 +156,19 @@
                         <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/grupo-cues.jpg" alt="grupo-cues">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Grupo Shimano Cues</h3>
-                                    <p class="descripcion">Apto Uso Urbano o Recreativo</p>
-                                </div>
-                                <h4 class="precio">$114.000</h4>
-                            </article>
-                        </a>
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/infladoresRoak.jpg" alt="inflador">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Inflador de Mano Roak</h3>
-                                    <p class="descripcion">Apto valvula tipo fina y tipo moto</p>
-                                </div>
-                                <h4 class="precio">$3.300</h4>
-                            </article>
-                        </a>
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/casco1.jpg" alt="casco">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Casco Raleigh Mod1</h3>
-                                    <p class="descripcion">Regulable Talle M-L</p>
-                                </div>
-                                <h4 class="precio">$42.300,70</h4>
-                            </article>
-                        </a>
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/grupo-xt8100.jpg" alt="grupo-xt8100">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Grupo Shimano Xt8100</h3>
-                                    <p class="descripcion"> Incluye: Cadena-Piñon-Roldanas</p>
-                                </div>
-                                <h4 class="precio">$184.000</h4>
-                            </article>
-                        </a>
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/casco2.jpg" alt="casco2">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Casco Raleigh Mod2</h3>
-                                    <p class="descripcion">Regulable Talle S-M</p>
-                                </div>
-                                <h4 class="precio">$44.600</h4>
-                            </article>
-                        </a>
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/cubierta-220.jpg" alt="cubierta-220">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Cubierta RCT 29x2.20</h3>
-                                    <p class="descripcion">Simil ikon - Apta Camara</p>
-                                </div>
-                                <h4 class="precio">$16.300,50</h4>
-                            </article>
-                        </a>
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/casco3.jpg" alt="Casco">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Casco Raleigh Mod3</h3>
-                                    <p class="descripcion">Regulable Talle M-L</p>
-                                </div>
-                                <h4 class="precio">$44.700</h4>
-                            </article>
-                        </a>
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/lente1.jpg" alt="lente1">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Lente Ciclismo-Running</h3>
-                                    <p class="descripcion"> Sin vidrios intercambiables</p>
-                                </div>
-                                <h4 class="precio">$6.100</h4>
-                            </article>
-                        </a>
-                        <a href="/productos/detalle/1">
-                            <article>
-                                <img src="/images/CAJA.jpg" alt="caja pedalera">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Caja hollowtech a rulemanes</h3>
-                                    <p class="descripcion">Marca FIRST. Rojo o negro. Compatible Shimano</p>
-                                </div>
-                                <h4 class="precio">$12.300,50</h4>
-                            </article>
-                        </a>
+                        <% for (let i = 1; i <= 10; i++) { %>
+                            <% const producto = productos.find(item => item.id === i); %>
+                                <a href="/productos/detalle/<%= i %>">
+                                    <article>
+                                        <img src="<%= producto.imagen %>" alt="<%= producto.alt %>">
+                                        <div class="detalles-producto">
+                                            <h3 class="nombre-producto"><%= producto.nombre %></h3>
+                                        </div>
+                                        <h4 class="precio">$<%= producto.precio %></h4>
+                                    </article>
+                                </a>
+                            
+                        <% } %>
                     </div>
                 </div>
             </main>
