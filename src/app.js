@@ -15,7 +15,7 @@ app.use(methodOverride('_method'));
 //ROUTES 
 const mainRoutes = require('./routes/main.routes.js')
 const productRoutes = require('./routes/products.routes.js')
-const usersRoutes = require('./routes/user.routes.js')
+const usersRoutes = require('./routes/users.routes.js')
 const categoriesRoutes = require('./routes/categories.routes.js')
 
 app.use('/', mainRoutes, usersRoutes)

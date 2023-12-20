@@ -1,3 +1,27 @@
 [
-    
+ {
+  "nombre": "Quijote de la Mancha",
+  "fecha_nacimiento": "1234-01-22",
+  "password": "quijote123"
+ },
+ {
+  "nombre": "Karl Marx",
+  "fecha_nacimiento": "3213-02-01",
+  "email": "asdasd@gmail.com",
+  "password": "proletariadounido"
+ },
+ {
+  "nombre": "Lio Messi",
+  "fecha_nacimiento": "1989-06-26",
+  "email": "asdasd@gmail.com",
+  "password": "123123",
+  "id": "e6c898a6-950b-47bc-9fe0-de9cf56e3ca3"
+ },
+ {
+  "nombre": "Pedro Picapiedra",
+  "fecha_nacimiento": "0001-01-12",
+  "email": "asdasd@gmail.com",
+  "password": "asdasdasda",
+  "id": "123afddf-0317-4b96-b627-97063af827b1"
+ }
 ]

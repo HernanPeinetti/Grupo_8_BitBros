@@ -2,7 +2,8 @@ const path = require("path");
 const multer = require("multer");
 const fs = require ("fs")
 const userPath = path.join(__dirname, "../data/users.json")
-const usuarios = JSON.stringify(fs.readFileSync(userPath, "utf-8"))
+const usuarios = JSON.parse(fs.readFileSync(userPath, "utf-8"))
+const { v4: uuidv4 } = require('uuid');
 
 const controllersUser = {
 
@@ -16,12 +17,16 @@ const controllersUser = {
 
     create: function(req, res){
         let NuevoUsuario = {
-            ...req.bodys
+            nombre: req.body.nombre,
+            fecha_nacimiento: req.body.fecha_nacimiento,
+            email: req.body.correo,
+            password: req.body.contrasena,
+            id: uuidv4()
         }
         usuarios.push(NuevoUsuario)
 
         let usuarioJSON = JSON.stringify(usuarios, null, " ");
-        fs.writeFileSyncFileSync(userPath, usuarioJSON)
+        fs.writeFileSync(userPath, usuarioJSON)
         
         res.redirect("/login")
     }
