@@ -70,3 +70,30 @@
 
 - Continuaremos trabajando en nuestras tareas y abordaremos las dificultades discutidas.
 - Nos reuniremos nuevamente para seguir monitoreando el progreso y resolver cualquier problema que surja.
+
+
+
+## 19/12/2023
+
+### Detalles de la Reunión
+
+- **Fecha:** 19/12/2023
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Progreso desde la Última Reunión**
+   - Revisamos el progreso de las tareas desde la última reunión y discutimos cualquier dificultad encontrada.
+
+2. **Discusión de Dificultades**
+   - Analizamos las dificultades que surgieron y compartimos posibles soluciones o enfoques para superarlas.
+
+3. **Tareas Completadas**
+   - Identificamos las tareas que ya han sido finalizadas y discutimos los resultados.
+
+4. **Pasos a Seguir**
+   - Planificamos los próximos pasos y definimos las acciones a seguir para maximizar la eficiencia y calidad del trabajo.
+
+### Conclusiones
+
+Debido a un corte de electricidad en la fecha originalmente programada para la reunión, nos reunimos en el día de la fecha para mantenernos al día con el progreso del proyecto. Observamos que estamos avanzando significativamente, trabajando de manera más activa y en equipo en comparación con el sprint anterior.

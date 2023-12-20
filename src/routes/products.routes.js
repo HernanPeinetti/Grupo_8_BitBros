@@ -11,6 +11,17 @@ router.get('/crear', controllers.create);
 // VISTA EDITAR PRODUCTO http://localhost:3000/productos/editar/id
 router.get('/editar/:id', controllers.edit);
 
+// VISTA ITEM  http://localhost:3000/productos/editar/1
+
+router.put("/editar/:id", controllers.update);
+
+
+
+
+
+
+
+
 // METODO ELIMINAR PRODUCTO http://localhost:3000/productos/eliminar/id
 router.delete('/eliminar/:id', controllers.remove);
 

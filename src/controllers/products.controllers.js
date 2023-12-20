@@ -4,51 +4,64 @@ const pathProducts = path.join(__dirname, "..", "data", "products.json");
 let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 
 const controllersProduct = {
-    detail: (req, res) => {
-        let id = req.params.id;
-        let product = productos.find((product) => product == id);
-        if (product) {
-            res.render("./products/detail.ejs, {product}")
-        }
-        res.send('El producto que busca no existe')
-    },
+  detail: (req, res) => {
+    let id = req.params.id;
+    let product = productos.find((product) => product.id == id);
+    if (product) {
+      res.render("./products/detail.ejs", { product });
+    } else {
+      res.send("El producto que busca no existe");
+    }
+  },
 
-    create: (req, res) => {
-        res.render("./products/create.ejs");
-    },
+  create: (req, res) => {
+    res.render("./products/create.ejs");
+  },
 
-    edit: (req, res) => {
-        res.render("./products/edit.ejs");
-    },
+  edit: (req, res) => {
+    const id = req.params.id;
+    let producto = productos.find((producto) => producto.id == id);
 
-    remove: (req, res) => {
-        const { id } = req.params;
+    res.render("./products/edit.ejs", { producto });
+  },
 
-        console.log(id);
+  update: (req, res) => {
+    let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 
-        const producto = productos.find((producto) => producto.id == id);
+    let productoId = req.params.id;
+    const producto = productos.find((producto) => producto.id == productoId);
 
-        if (producto.imagen != "img-defecto.png") {
-            fs.unlinkSync(
-                path.join(
-                    __dirname,
-                    "..",
-                    "..",
-                    "public",
-                    "images",
-                    "productos",
-                    producto.categoria, //
-                    producto.imagen
-                )
-            );
-        }
+    console.log(req.body);
+  },
 
-        productos = productos.filter((producto) => producto.id != id);
-        const productsJSON = JSON.stringify(productos, null, "");
+  remove: (req, res) => {
+    const { id } = req.params;
 
-        fs.writeFileSync(pathProducts, productsJSON);
-        res.render("index.ejs", { productos: productos });
-    },
+    console.log(id);
+
+    const producto = productos.find((producto) => producto.id == id);
+
+    if (producto.imagen != "img-defecto.png") {
+      fs.unlinkSync(
+        path.join(
+          __dirname,
+          "..",
+          "..",
+          "public",
+          "images",
+          "productos",
+          producto.categoria, //
+          producto.imagen
+        )
+      );
+    }
+
+    productos = productos.filter((producto) => producto.id != id);
+    const productsJSON = JSON.stringify(productos, null, "");
+
+    fs.writeFileSync(pathProducts, productsJSON);
+    res.render("index.ejs", { productos: productos });
+  },
 };
 
 module.exports = controllersProduct;
