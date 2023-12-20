@@ -320,6 +320,7 @@ article{
     display: flex;
     flex-direction: column;
     box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.10);
+    height: auto;
 }
 
 article img{
@@ -353,6 +354,7 @@ article img{
 .precio{
     font-size: 15px;
     margin: 0 0 5px 5px;
+    padding-top: 2.5rem;
 }
 
 .subTitle {
@@ -499,20 +501,6 @@ input[type="radio"]:checked ~ label {
     .mainDetail {
         width: 75vw;
     }
-    .imageContainer {
-        width: 21rem;
-    }
-    .imageContainer img {
-        object-fit: cover;
-        object-position: center;
-        width: 100%;
-    }
-   
-    .section1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
     .nombre {
         display: flex;
         align-self: flex-end;
@@ -556,11 +544,13 @@ input[type="radio"]:checked ~ label {
         border-radius: 0.2rem;
     }
     .imageContainer {
-        width: 45rem;
+        width: 48rem;
     }
     .imageContainer img {
-        width: 36rem;
+        object-fit: cover;
+        object-position: center;
     }
+    
     .nombre {
         font-weight: 700;
         font-size: 30px;
