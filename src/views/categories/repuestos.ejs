@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     
-<%- include('../partials/head', {titulo: 'Bicicletas', estilo: 'categories'}) %>
+<%- include('../partials/head', {titulo: 'Repuestos', estilo: 'categories'}) %>
 
     <body>
         <%- include('../partials/header') %>
-        <h1 class="titular">Bicicletas</h1>
+        <h1 class="titular">Repuestos</h1>
         <div class="grupo-articulos">
             <% for (let i = 0; i < productos.length; i++) { %>
             
-                <% if (productos[i].categoria === 'bicicletas') { %>
+                <% if (productos[i].categoria === 'repuestos') { %>
                     <a href="/productos/detalle/<%= productos[i].id %>">
                         <article>
                             <img src="/images/productos/<%= productos[i].categoria %>/<%= productos[i].imagen %>" alt="<%= productos[i].alt %>">
