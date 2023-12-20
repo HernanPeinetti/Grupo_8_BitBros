@@ -21,6 +21,7 @@ const controllersUser = {
             fecha_nacimiento: req.body.fecha_nacimiento,
             email: req.body.correo,
             password: req.body.contrasena,
+            image: req.file?.filename || "default-image.png",
             id: uuidv4()
         }
         usuarios.push(NuevoUsuario)
@@ -29,7 +30,7 @@ const controllersUser = {
         fs.writeFileSync(userPath, usuarioJSON)
         
         res.redirect("/login")
-    }
+    },
     
 };
 

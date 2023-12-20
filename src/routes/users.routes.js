@@ -3,17 +3,17 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path")
 const controllers = require('../controllers/users.controllers.js');
+const pathImages = path.resolve("public")
 
 
 const storage = multer.diskStorage({
-    destination: (req, res, cb) =>{
-        cb(null, path.join(__dirname, "../data/user.json"))
+    destination: (req, file, cb) =>{
+        cb(null, path.join(pathImages, "/images/userProfile"))
     },
-    filename: (req, res, cb) =>{
-        console.log(file)
-        const newFileName ="";
-        cb(null, );
-    } 
+    filename: (req, file, cb) =>{
+        const newFileName ="perfil-" + Date.now() + path.extname(file.originalname);
+        cb(null, newFileName);
+    },
 })
 
 const upload = multer({storage})
@@ -25,6 +25,6 @@ router.get("/login", controllers.login)
 router.get("/register", controllers.register)
 
 // REGISTER DE USUARIOS
-router.post("/register", upload.single(), controllers.create)
+router.post("/register", upload.single("foto_perfil"), controllers.create)
 
 module.exports = router; 
