@@ -8,7 +8,7 @@ const controllersProduct = {
         let id = req.params.id;
         let product = productos.find((product) => product.id == id);
         if (product) {
-            res.render("./products/detail.ejs", { product })
+            res.render("./products/detail.ejs", {product})
         }
         res.send('El producto que busca no existe')
     },
@@ -17,51 +17,50 @@ const controllersProduct = {
         res.render("./products/create.ejs");
     },
 
-    store: (req, res) => {
-        console.log(req.body)
-        const newProduct = {
-            id: Date.now(),
-            ...req.body,
-            imagen: 'default-image.png',
-        }
-        productos.push(newProduct)
-        let productsJSON = JSON.stringify(productos, null, '')
-        fs.writeFileSync(pathProducts, productsJSON),
-            res.redirect('/productos/crear')
-    },
+  edit: (req, res) => {
+    const id = req.params.id;
+    let producto = productos.find((producto) => producto.id == id);
 
-    edit: (req, res) => {
-        res.render("./products/edit.ejs");
-    },
+    res.render("./products/edit.ejs", { producto });
+  },
 
-    remove: (req, res) => {
-        const { id } = req.params;
+  update: (req, res) => {
+    let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 
-        console.log(id);
+    let productoId = req.params.id;
+    const producto = productos.find((producto) => producto.id == productoId);
 
-        const producto = productos.find((producto) => producto.id == id);
+    console.log(req.body);
+  },
 
-        if (producto.imagen != "img-defecto.png") {
-            fs.unlinkSync(
-                path.join(
-                    __dirname,
-                    "..",
-                    "..",
-                    "public",
-                    "images",
-                    "productos",
-                    producto.categoria, //
-                    producto.imagen
-                )
-            );
-        }
+  remove: (req, res) => {
+    const { id } = req.params;
 
-        productos = productos.filter((producto) => producto.id != id);
-        const productsJSON = JSON.stringify(productos, null, "");
+    console.log(id);
 
-        fs.writeFileSync(pathProducts, productsJSON);
-        res.render("index.ejs", { productos: productos });
-    },
+    const producto = productos.find((producto) => producto.id == id);
+
+    if (producto.imagen != "img-defecto.png") {
+      fs.unlinkSync(
+        path.join(
+          __dirname,
+          "..",
+          "..",
+          "public",
+          "images",
+          "productos",
+          producto.categoria, //
+          producto.imagen
+        )
+      );
+    }
+
+    productos = productos.filter((producto) => producto.id != id);
+    const productsJSON = JSON.stringify(productos, null, "");
+
+    fs.writeFileSync(pathProducts, productsJSON);
+    res.render("index.ejs", { productos: productos });
+  },
 };
 
 module.exports = controllersProduct;
