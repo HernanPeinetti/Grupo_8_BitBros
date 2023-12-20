@@ -162,17 +162,19 @@
                     <h2 class="titleProdRel">Productos relacionados</h2>
 
                     <div class="grupo-articulos">
-                        <a href="#">
-                            <article>
-                                <img src="/images/LUZ.jpg" alt="luz de bicicleta">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Luz delantera tipo mini</h3>
-                                    <p class="descripcion">Carga USB. Rosa o blanco</p>
-                                </div>
-                                <h4 class="precio">$4.000</h4>
-                            </article>
-                        </a>
-                        <a href="#">
+                        <% productsRelated.forEach(producto => { %>
+                            <a href="/productos/detalle/<%= producto.id %>">
+                                <article>
+                                    <img src="/images/productos/<%= producto.categoria %>/<%= producto.imagen %>" alt="<%= producto.alt %>">
+                                    <div class="detalles-producto">
+                                        <h3 class="nombre-producto"><%= producto.nombre %></h3>
+                                    </div>
+                                    <h4 class="precio">$<%= producto.precio %></h4>
+                                </article>
+                            </a>
+                        <% }) %>
+                        
+                        <!-- <a href="#">
                             <article>
                                 <img src="/images/inflador.jpg" alt="inflador">
                                 <div class="detalles-producto">
@@ -258,7 +260,7 @@
                                 </div>
                                 <h4 class="precio">$150.300,50</h4>
                             </article>
-                        </a>
+                        </a> -->
                     </div>
 
                 </div>
