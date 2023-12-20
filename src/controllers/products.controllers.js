@@ -3,6 +3,7 @@ const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 const pathProducts = path.join(__dirname, "..", "data", "products.json");
 let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
+const multer = require('multer');
 
 const controllersProduct = {
     detail: (req, res) => {
@@ -26,11 +27,21 @@ const controllersProduct = {
     store: (req, res) => {
         const newProduct = {
             id: uuidv4(),
-            ...req.body,
+            // ...req.body,
+            nombre : req.body.nombre,
+            image : req.file?.filename || 'default-image.png',
+            categoria : req.body.categoria,
+            medidas : req.body.medidas,
+            precio : req.body.precio,
+            stock : req.body.stock,
+            colores : req.body.colores,
+            descripcion : req.body.descripcion,
         };
-        productos.push(newProduct);
-        fs.writeFileSync(pathProducts, JSON.stringify(productos, null, ""));
-        res.redirect("/");
+            
+         productos.push(newProduct);
+         fs.writeFileSync(pathProducts, JSON.stringify(productos, null, ""));
+         res.redirect("/");
+        console.log(newProduct);
     },
 
     edit: (req, res) => {
@@ -68,20 +79,19 @@ const controllersProduct = {
         const { id } = req.params;
         const producto = productos.find((producto) => producto.id == id);
 
-        // if (producto.imagen != "img-defecto.png") {
-        //     fs.unlinkSync(
-        //         path.join(
-        //             __dirname,
-        //             "..",
-        //             "..",
-        //             "public",
-        //             "images",
-        //             "productos",
-        //             producto.categoria, //
-        //             producto.imagen
-        //         )
-        //     );
-        // }
+         if (producto.imagen != "img-defecto.png") {
+             fs.unlinkSync(
+                 path.join(
+                     __dirname,
+                     "..",
+                     "..",
+                     "public",
+                     "images",
+                     "productos", 
+                     producto.image
+                 )
+             );
+         }
 
         productos = productos.filter((producto) => producto.id != id);
         const productsJSON = JSON.stringify(productos, null, "");

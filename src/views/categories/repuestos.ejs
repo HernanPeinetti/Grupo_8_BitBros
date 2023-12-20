@@ -12,7 +12,7 @@
                 <% if (productos[i].categoria === 'repuestos') { %>
                     <a href="/productos/detalle/<%= productos[i].id %>">
                         <article>
-                            <img src="/images/productos/<%= productos[i].categoria %>/<%= productos[i].imagen %>" alt="<%= productos[i].alt %>">
+                            <img src="/images/productos/<%= productos[i].image %>" alt="<%= productos[i].alt %>">
                             <div class="detalles-producto">
                                 <h3 class="nombre-producto"><%= productos[i].nombre %></h3>
                             </div>

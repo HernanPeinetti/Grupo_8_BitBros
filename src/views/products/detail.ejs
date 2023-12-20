@@ -25,7 +25,7 @@
 
                 <div class="section1">
                     <div class="imageContainer">
-                        <img src="/images/productos/<%= product.categoria %>/<%=product.imagen%>"  alt="inflador" >
+                        <img src="/images/productos/<%=product.image%>"  alt="inflador" >
                     </div>
 
                     <div class="detailSection">
@@ -165,7 +165,7 @@
                         <% productsRelated.forEach(producto => { %>
                             <a href="/productos/detalle/<%= producto.id %>">
                                 <article>
-                                    <img src="/images/productos/<%= producto.categoria %>/<%= producto.imagen %>" alt="<%= producto.alt %>">
+                                    <img src="/images/productos/<%= producto.image %>" alt="<%= producto.alt %>">
                                     <div class="detalles-producto">
                                         <h3 class="nombre-producto"><%= producto.nombre %></h3>
                                     </div>
