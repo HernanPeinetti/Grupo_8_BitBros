@@ -1,21 +1,36 @@
 const path = require("path");
 const fs = require("fs");
+const { v4: uuidv4 } = require('uuid')
 const pathProducts = path.join(__dirname, "..", "data", "products.json");
 let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 
 const controllersProduct = {
-    detail: (req, res) => {
-        let id = req.params.id;
-        let product = productos.find((product) => product.id == id);
-        if (product) {
-            res.render("./products/detail.ejs", {product})
-        }
-        res.send('El producto que busca no existe')
-    },
+  detail: (req, res) => {
+    let id = req.params.id;
+    let product = productos.find((product) => product.id == id);
+    if (product) {
+      res.render("./products/detail.ejs", { product })
+    }
+    res.send('El producto que busca no existe')
+  },
 
-    create: (req, res) => {
-        res.render("./products/create.ejs");
-    },
+  create: (req, res) => {
+    res.render("./products/create.ejs");
+  },
+
+  store: (req, res) => {
+    let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
+    let newProduct = {
+      id: uuidv4(),
+      ...req.body
+    }
+    productos.push(newProduct)
+    fs.writeFileSync(pathProducts, JSON.stringify(productos, null, ''))
+    res.redirect('/')
+
+  },
+
+
 
   edit: (req, res) => {
     const id = req.params.id;
