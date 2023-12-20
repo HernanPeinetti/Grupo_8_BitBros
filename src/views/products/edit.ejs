@@ -7,42 +7,42 @@
         <%- include('../partials/header-cart') %>
             <main>
                 <div class="container-market">
-                    <h2 class="title-market">Editando ...</h2>
-                    <form class="form-market" action="#" method="post">
+                    <h2 class="title-market">Editando <%= producto.nombre %></h2>
+                    <form class="form-market" action="/productos/editar/<%= producto.id %>?_method=PUT" method="POST">
                         <div>
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Por ej: Casco Generico" required>
+                            <label for="nombre">Nombre: </label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Por ej: Casco Generico" required value="<%= producto.nombre %>">
                         </div>
                         
-                        <div>
+                         <div>
                             <label for="imagen">Inserta una imagen:</label>
-                            <input type="file" name="avatar" accept=".jpg" required>
+                            <input type="file" name="avatar" accept=".jpg">
                         </div>
 
                         <div>
                             <label for="categoria">Seleccionar la categoria</label>
                             <select name="categoria" id="categoria">
                                 <option value="--"> -- </option>
-                                <option value="Accesorios">Accesorios</option>
-                                <option value="Indumentaria">Indumentaria</option>
-                                <option value="Repuestos">Repuestos</option>
-                                <option value="Bicicleta">Bicicletas - Rodados</option>
+                                <option value="Accesorios" <%= producto.categoria == 'accesorios' ? 'selected' : '' %>>Accesorios</option>
+                                <option value="Indumentarias" <%= producto.categoria == 'indumentaria' ? 'selected' : '' %>>Indumentaria</option>
+                                <option value="Repuestos" <%= producto.categoria == 'repuestos' ? 'selected' : '' %>>Repuestos</option>
+                                <option value="Bicicletas" <%= producto.categoria == 'bicicletas' ? 'selected' : '' %>>Bicicletas</option>
                             </select>
                         </div>
                         
                         <div>
                             <label for="tamañoYmedida">Ingresa las medidas del producto:</label>
-                            <input type="text" id="tamañoYmedida" name="tamañoYmedida" placeholder="Escribe las medidas del producto" required>
+                            <input type="text" id="tamañoYmedida" name="tamañoYmedida" placeholder="Escribe las medidas del producto">
                         </div>
                         
                         <div>
                             <label for="precio">Ingresa el precio:</label>
-                            <input type="text" id="precio" name="precio" placeholder="Ingresa el precio" required>
+                            <input type="text" id="precio" name="precio" placeholder="Ingresa el precio" required value="<%= producto.precio %>">
                         </div>
                         
                         <div>
                             <label for="stock">Ingresa el stock:</label>
-                            <input type="number" id="stock" name="stock" required>
+                            <input type="number" id="stock" name="stock">
                         </div>
                         
                         <div>
@@ -58,7 +58,7 @@
                         
                         <div>
                             <label for="descripcion">Descripcion</label>
-                            <textarea class="descripcion" name="descripcion" id="descripcion" placeholder="Escribe una breve descripcion..."></textarea>
+                            <textarea class="descripcion" name="descripcion" id="descripcion"><%= producto.descripcion %></textarea>
                         </div>
                         
                         <div class="botones-market">
