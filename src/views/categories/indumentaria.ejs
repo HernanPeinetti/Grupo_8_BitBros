@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<%- include('../partials/head', {titulo: 'Indumentaria', estilo: 'categories'}) %>
+
+    <body>
+        <%- include('../partials/header') %>
+        <h1 class="titular">Indumentaria</h1>
+        <div class="grupo-articulos">
+            <% for (let i = 0; i < productos.length; i++) { %>
+            
+                <% if (productos[i].categoria === 'indumentaria') { %>
+                    <a href="/productos/detalle/<%= productos[i].id %>">
+                        <article>
+                            <img src="/images/productos/<%= productos[i].categoria %>/<%= productos[i].imagen %>" alt="<%= productos[i].alt %>">
+                            <div class="detalles-producto">
+                                <h3 class="nombre-producto"><%= productos[i].nombre %></h3>
+                            </div>
+                            <h4 class="precio">$<%= productos[i].precio %></h4>
+                        </article>
+                    </a>
+                <% } %>
+            <% } %>
+        </div>
+        <%- include('../partials/footer') %>
+    </body>
+
+</html>

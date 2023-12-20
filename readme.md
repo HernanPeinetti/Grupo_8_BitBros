@@ -28,11 +28,11 @@ npm run dev
 
 ## Acerca de
 
-Isabel Bicicleteria es un comercio regional ubicado en Prov. Santiago del Estero, especializado en la venta de repuestos, accesorios, indumentaria y servicio mecánico para bicicletas. Nuestra misión es proporcionarte soluciones de calidad y acompañarte en cada pedaleada.
+Isabel Bicicleteria es un comercio regional ubicado en Prov. Santiago del Estero, especializado tanto en la venta de bicicletas, como de repuestos, accesorios, indumentaria y servicio mecánico para las mismas. Nuestra misión es proporcionarte soluciones de calidad y acompañarte en cada pedaleada.
 
 ## ¿Por qué elegirnos?
 
-- *Variedad de Productos:* Desde repuestos de calidad hasta accesorios exclusivos y ropa diseñada para tu comodidad, ofrecemos una amplia gama de productos para satisfacer todas tus necesidades ciclistas.
+- *Variedad de Productos:* Desde repuestos de calidad hasta accesorios exclusivos y ropa diseñada para tu comodidad. Ofrecemos una amplia gama de productos para satisfacer todas tus necesidades ciclistas.
 
 - *Asesoramiento Especializado:* Nuestro equipo de expertos está listo para ofrecerte asesoramiento personalizado, ya sea que estés buscando la bicicleta perfecta o necesites servicios de mantenimiento.
 
@@ -50,9 +50,9 @@ Hemos tomado inspiración de otros líderes en la industria del ciclismo. ¡Echa
 
 * **Hernán Peinetti** – 27 años – La Banda, Santiago del Estero.
 * **Rocío Espeche** – 26 años – Frías, Santiago del Estero.
-* **Matías Mercado** – 27 años – Capital, Santiago del Estero.
+* **Matías Mercado** – 27 años – Santiago del Estero.
 * **Milton Coria** – 20 años – Ojo de Agua, Santiago del Estero.
-* **Lourdes Montenegro** – 25 años – Capital, Santiago del Estero.
+* **Lourdes Montenegro** – 25 años – Santiago del Estero.
 * **Roberto Gustavo Bonahora** - 22 años - Santiago del Estero.
 
 **Trello - Tablero de trabajo**

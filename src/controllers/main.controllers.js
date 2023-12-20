@@ -1,16 +1,14 @@
-const path = require('path');
+const path = require("path");
+const productos = require("../data/products.json");
 
 const controllers = {
-
     index: (req, res) => {
-        res.render('index.ejs')
+        res.render("index.ejs", { productos: productos });
     },
 
-    carrito: (req, res) => {
-        res.render('cart.ejs')
+    cart: (req, res) => {
+        res.render("cart.ejs");
     },
-
 };
 
-
-module.exports = controllers
+module.exports = controllers;
