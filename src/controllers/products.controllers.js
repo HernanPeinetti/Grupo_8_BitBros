@@ -30,8 +30,25 @@ const controllersProduct = {
 
     let productoId = req.params.id;
     const producto = productos.find((producto) => producto.id == productoId);
+    if(producto){
 
-    console.log(req.body);
+      producto.nombre = req.body.nombre || producto.nombre;
+      // producto.imagen = req.body.imagen || producto.imagen;
+      producto.categoria = req.body.categoria || producto.categoria;
+      // producto.medidas = req.body.medidas || producto.medidas;
+      producto.precio = req.body.precio || producto.precio;
+      // producto.stock = req.body.stock || producto.stock;
+      // producto.colores = req.body.colores || producto.colores;
+      producto.descripcion = req.body.descripcion || producto.descripcion;
+
+        console.log(producto);
+        fs.writeFileSync(pathProducts, JSON.stringify(productos, null, ' '));
+        res.redirect('/')
+    }
+
+    
+    
+
   },
 
   remove: (req, res) => {
