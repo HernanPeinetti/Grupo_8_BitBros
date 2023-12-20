@@ -47,5 +47,13 @@
   "password": "KASKKK",
   "image": "perfil-1703054279086.jpeg",
   "id": "1a8f08b8-8942-4b76-948c-c838b9907bf5"
+ },
+ {
+  "nombre": "Milton Coria",
+  "fecha_nacimiento": "2000-03-26",
+  "email": "miltoncoria03@gmail.com",
+  "password": "12345678",
+  "image": "perfil-1703099357429.png",
+  "id": "1b30bf92-22d0-4704-ad8f-790b90e694ee"
  }
 ]
