@@ -57,12 +57,12 @@ article img{
 .nombre-producto{
     font-size: 15px;
     height: 2rem;
-    width: 7rem;
-    margin: 5px 0 5px 5px;
+    width: 13rem;
+
 }
 
 .precio{
     font-size: 15px;
     margin: 0 0 5px 5px;
-    padding-top: 3.5rem;
+    padding-top: 2.5rem;
 }
