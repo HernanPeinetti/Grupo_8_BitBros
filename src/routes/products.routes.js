@@ -7,6 +7,7 @@ router.get('/detalle/:id', controllers.detail);
 
 // VISTA CREAR PRODUCTO http://localhost:3000/productos/crear
 router.get('/crear', controllers.create);
+router.post('/crear', controllers.store);
 
 // VISTA EDITAR PRODUCTO http://localhost:3000/productos/editar/id
 router.get('/editar/:id', controllers.edit);

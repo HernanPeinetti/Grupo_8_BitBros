@@ -8,13 +8,26 @@ const controllersProduct = {
         let id = req.params.id;
         let product = productos.find((product) => product.id == id);
         if (product) {
-            res.render("./products/detail.ejs", {product})
+            res.render("./products/detail.ejs", { product })
         }
         res.send('El producto que busca no existe')
     },
 
     create: (req, res) => {
         res.render("./products/create.ejs");
+    },
+
+    store: (req, res) => {
+        console.log(req.body)
+        const newProduct = {
+            id: Date.now(),
+            ...req.body,
+            imagen: 'default-image.png',
+        }
+        productos.push(newProduct)
+        let productsJSON = JSON.stringify(productos, null, '')
+        fs.writeFileSync(pathProducts, productsJSON),
+            res.redirect('/productos/crear')
     },
 
     edit: (req, res) => {
