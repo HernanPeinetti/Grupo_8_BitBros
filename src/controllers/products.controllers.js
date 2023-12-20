@@ -68,20 +68,20 @@ const controllersProduct = {
         const { id } = req.params;
         const producto = productos.find((producto) => producto.id == id);
 
-        if (producto.imagen != "img-defecto.png") {
-            fs.unlinkSync(
-                path.join(
-                    __dirname,
-                    "..",
-                    "..",
-                    "public",
-                    "images",
-                    "productos",
-                    producto.categoria, //
-                    producto.imagen
-                )
-            );
-        }
+        // if (producto.imagen != "img-defecto.png") {
+        //     fs.unlinkSync(
+        //         path.join(
+        //             __dirname,
+        //             "..",
+        //             "..",
+        //             "public",
+        //             "images",
+        //             "productos",
+        //             producto.categoria, //
+        //             producto.imagen
+        //         )
+        //     );
+        // }
 
         productos = productos.filter((producto) => producto.id != id);
         const productsJSON = JSON.stringify(productos, null, "");

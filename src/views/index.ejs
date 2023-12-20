@@ -41,17 +41,18 @@
                         <a href="#">BUSCAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                        <% for( let i = 0; i < 10; i++ ) { %>
-                            <a href="/productos/detalle/<%= productos[i].id %>">
+                       
+                        <% productos.forEach(producto => { %>
+                            <a href="/productos/detalle/<%= producto.id %>">
                                 <article>
-                                    <img src="/images/productos/<%= productos[i].categoria %>/<%= productos[i].imagen %>" alt="<%= productos[i].alt %>">
+                                    <img src="/images/productos/<%= producto.categoria %>/<%= producto.imagen %>" alt="<%= producto.alt %>">
                                     <div class="detalles-producto">
-                                        <h3 class="nombre-producto"><%= productos[i].nombre %></h3>
+                                        <h3 class="nombre-producto"><%= producto.nombre %></h3>
                                     </div>
-                                    <h4 class="precio">$<%= productos[i].precio %></h4>
+                                    <h4 class="precio">$<%= producto.precio %></h4>
                                 </article>
                             </a>
-                        <% } %>
+                        <% }) %>
                 </div> 
                 <div class="anuncio-promo">
                     <div class="textos">
@@ -70,17 +71,17 @@
                         <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                        <% for( let i = 0; i < 10; i++ ) { %>
-                            <a href="/productos/detalle/<%= productos[i].id %>">
+                        <% productos.forEach(producto => { %>
+                            <a href="/productos/detalle/<%= producto.id %>">
                                 <article>
-                                    <img src="/images/productos/<%= productos[i].categoria %>/<%= productos[i].imagen %>" alt="<%= productos[i].alt %>">
+                                    <img src="/images/productos/<%= producto.categoria %>/<%= producto.imagen %>" alt="<%= producto.alt %>">
                                     <div class="detalles-producto">
-                                        <h3 class="nombre-producto"><%= productos[i].nombre %></h3>
+                                        <h3 class="nombre-producto"><%= producto.nombre %></h3>
                                     </div>
-                                    <h4 class="precio">$<%= productos[i].precio %></h4>
+                                    <h4 class="precio">$<%= producto.precio %></h4>
                                 </article>
                             </a>
-                        <% } %>
+                        <% }) %>
                     </div>
                 </div>
             </main>
