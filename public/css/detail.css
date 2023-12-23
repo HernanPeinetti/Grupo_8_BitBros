@@ -303,58 +303,67 @@ summary {
     justify-items: center;
     margin-bottom: 20px;
 }
-.grupo-articulos{
+.grupo-articulos {
     display: flex;
     margin-top: 1.5rem;
     overflow-x: scroll;
     justify-content: space-between;
 }
 
-.grupo-articulos a{
+.grupo-articulos a {
     text-decoration: none;
     color: #434343;
+    margin: 0 1rem 1rem 0;
 }
 
-article{
-    margin: 1rem;
+article {
     display: flex;
+    border-radius: 0.3rem;
     flex-direction: column;
-    box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.10);
-    height: auto;
+    -webkit-box-shadow: 10px 10px 19px -11px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: 10px 10px 19px -11px rgba(0, 0, 0, 0.64);
+    box-shadow: 10px 10px 19px -11px rgba(0, 0, 0, 0.64);
+    background-color: #ffffff;
+    height: 15rem;
+    width: 10rem;
 }
 
-article img{
-    width: 9rem;
-    height: 8rem;
+.img-producto {
+    width: 100%;
+    height: 50%;
+}
+.img-producto img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
     object-fit: cover;
     object-position: center;
 }
 
-.detalle-productos{
-    width: 7rem;
+.detalles-producto {
+    width: 90%;
+    margin: auto;
+    height: 30%;
     display: flex;
     flex-direction: column;
 }
 
-.nombre-producto{
-    font-size: 15px;
-    height: 2rem;
-    width: 7rem;
-    margin: 5px 0 5px 5px;
+.precio-producto {
+    width: 90%;
+    margin: auto;
+    height: 20%;
 }
 
-.descripcion{
-    font-size: 15px;
-    opacity: 0.8;
-    height: 4.5rem;
-    width: 7rem;
-    margin: 0 0 5px 5px;
+.nombre-producto {
+    font-size: 14px;
+    position: relative;
+    top: 1rem;
 }
 
-.precio{
+.precio {
     font-size: 15px;
-    margin: 0 0 5px 5px;
-    padding-top: 2.5rem;
+    position: relative;
+    top: 1rem;
 }
 
 .subTitle {
@@ -505,9 +514,15 @@ input[type="radio"]:checked ~ label {
         display: flex;
         align-self: flex-end;
     }
-    article img{
-        width: 10rem;
-        height: 9rem;
+    article {
+        width: 12rem;
+        height: 17rem;
+    }
+    .nombre-producto {
+        font-size: 15px;
+    }
+    .precio {
+        font-size: 16px;
     }
 }
 
@@ -642,8 +657,14 @@ input[type="radio"]:checked ~ label {
         color: #aeaeae;
     }
 
-    article img{
-        width: 11.5rem;
-        height: 10.5rem;
+    article {
+        width: 13rem;
+        height: 19rem;
+    }
+    .nombre-producto {
+        font-size: 16px;
+    }
+    .precio {
+        font-size: 17px;
     }
 }

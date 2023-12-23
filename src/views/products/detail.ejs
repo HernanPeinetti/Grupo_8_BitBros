@@ -165,11 +165,15 @@
                         <% productsRelated.forEach(producto => { %>
                             <a href="/productos/detalle/<%= producto.id %>">
                                 <article>
-                                    <img src="/images/productos/<%= producto.image %>" alt="<%= producto.alt %>">
+                                    <div class="img-producto">
+                                        <img src="/images/productos/<%= producto.image %>" alt="<%= producto.alt %>">
+                                    </div>
                                     <div class="detalles-producto">
                                         <h3 class="nombre-producto"><%= producto.nombre %></h3>
                                     </div>
-                                    <h4 class="precio">$<%= producto.precio %></h4>
+                                    <div class="precio-producto">
+                                        <h4 class="precio">$<%= producto.precio %></h4>
+                                    </div>
                                 </article>
                             </a>
                         <% }) %>
