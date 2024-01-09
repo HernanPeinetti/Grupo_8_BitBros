@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
+const log = require("./middlewares/log.js");
 
 //Configuraciones
 const app = express();
@@ -12,6 +13,7 @@ app.use(express.static(path.resolve("public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
+app.use(log); 
 
 //ROUTES
 
