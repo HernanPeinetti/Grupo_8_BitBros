@@ -1,9 +1,11 @@
 const path = require("path");
 const fs = require("fs");
-const { v4: uuidv4 } = require("uuid");
+const { v4: uuidv4, validate } = require("uuid");
 const pathProducts = path.join(__dirname, "..", "data", "products.json");
 let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 const multer = require("multer");
+const { validationResult } = require("express-validator")
+
 
 const controllersProduct = {
     detail: (req, res) => {
@@ -27,31 +29,36 @@ const controllersProduct = {
     },
 
     store: (req, res) => {
-        const newProduct = {
-            id: uuidv4(),
-            // ...req.body,
-            nombre: req.body.nombre,
-            image: req.file?.filename || "default-image.png",
-            categoria: req.body.categoria,
-            medidas: req.body.medidas,
-            precio: req.body.precio,
-            stock: req.body.stock,
-            colores: req.body.colores,
-            descripcion: req.body.descripcion,
-        };
+        const result = validationResult(req)
+        if (result.isEmpty()) {
+            const newProduct = {
+                id: uuidv4(),
+                // ...req.body,
+                nombre: req.body.nombre,
+                image: req.file?.filename || "default-image.png",
+                categoria: req.body.categoria,
+                medidas: req.body.medidas,
+                precio: req.body.precio,
+                stock: req.body.stock,
+                colores: req.body.colores,
+                descripcion: req.body.descripcion,
+            };
 
-        productos.push(newProduct);
-        fs.writeFileSync(pathProducts, JSON.stringify(productos, null, ""));
+            productos.push(newProduct);
+            fs.writeFileSync(pathProducts, JSON.stringify(productos, null, ""));
 
+            const productsRelated = productos.filter(
+                (product) =>
+                    product.categoria == newProduct.categoria &&
+                    product.id != newProduct.id
+            );
 
-        const productsRelated = productos.filter(
-            (product) =>
-                product.categoria == newProduct.categoria &&
-                product.id != newProduct.id
-        );
-
-        res.render("./products/detail.ejs", { product: newProduct, productsRelated });
+            res.render("./products/detail.ejs", { product: newProduct, productsRelated });
+        } else {
+            res.render('create.js', { errors: result.errors, oldDate: req.body })
+        }
     },
+
 
     edit: (req, res) => {
         const id = req.params.id;

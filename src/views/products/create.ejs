@@ -7,6 +7,11 @@
     <%- include('../partials/header-cart') %>
       <main>
         <div class="container-market">
+
+          <% if (locals.errors && ) { %>
+           
+          <% } %>
+
           <h2 class="title-market">Creando un producto</h2>
           <form class="form-market" action="/productos/crear" method="post" enctype="multipart/form-data">
 
