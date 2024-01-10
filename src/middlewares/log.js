@@ -11,3 +11,4 @@ module.exports = function (res, req, next) {
     fs.appendFileSync(pathLog, msg)
     next()
 }
+
