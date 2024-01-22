@@ -5,7 +5,7 @@ const path = require("path")
 const controllers = require('../controllers/users.controllers.js');
 const pathImages = path.resolve("public")
 
-const { login, register,create, processRegister} = require('../controllers/users.controllers.js')
+const { login, register,create, processRegister, processLogin} = require('../controllers/users.controllers.js')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
@@ -21,6 +21,9 @@ const upload = multer({storage})
 
 // VISTA LOGUEARSE http://localhost:3000/login
 router.get("/login", login)
+
+// PROCESO LOGIN DE USUARIOS
+router.post("/login", processLogin)
 
 // VISTA REGISTRARSE http://localhost:3000/register
 router.get("/register", register)

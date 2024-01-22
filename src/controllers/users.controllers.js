@@ -16,6 +16,14 @@ const controllersUser = {
         res.render("./users/login.ejs");
     },
 
+    processLogin: (req, res) => {
+        let userToLogin = users.findByField("email", req.body.email)
+        if (userToLogin) {
+
+        }
+        return res.render("./users/login.ejs")
+    },
+    
     create: function(req, res){
         let NuevoUsuario = {
             id: uuidv4(),
