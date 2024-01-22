@@ -5,6 +5,7 @@ const userPath = path.join(__dirname, "../data/users.json")
 const usuarios = JSON.parse(fs.readFileSync(userPath, "utf-8"))
 const { v4: uuidv4 } = require('uuid');
 
+
 const controllersUser = {
 
     register: (req, res) => {

@@ -3,6 +3,10 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path")
 const controllers = require('../controllers/users.controllers.js');
+const {body} = require('express-validator');
+const validator = [
+    body('name').notEmpty().withMessage('Tienes que ingresar un nombre')
+];
 
 
 const storage = multer.diskStorage({
