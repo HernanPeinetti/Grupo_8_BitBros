@@ -55,5 +55,28 @@
   "password": "12345678",
   "image": "perfil-1703099357429.png",
   "id": "1b30bf92-22d0-4704-ad8f-790b90e694ee"
+ },
+ {
+  "nombre": "Luuu",
+  "fecha_nacimiento": "1998-01-26",
+  "email": "lourdesmontenegro017@gmail.com",
+  "password": "41533409",
+  "image": "perfil-1705930745260.key",
+  "id": "0c7824bb-0c94-4f7a-ac3f-8a3858927629"
+ },
+ {
+  "id": "b0ace403-f809-447b-8adb-3f8f97fd44d8",
+  "nombre": "okook",
+  "fecha_nacimiento": "0566-06-05",
+  "email": "lourdesmontenegro017@gmail.com",
+  "image": "perfil-1705934617479.key"
+ },
+ {
+  "id": "1dc47a37-5222-4df7-a28d-7debd20eeab9",
+  "nombre": "kkkk",
+  "fecha_nacimiento": "0009-09-09",
+  "email": "lourdesmontenegro017@gmail.com",
+  "password": "$2a$10$p6uv..7p5WbIR.3n6Yjy4.F2Hjqp0CKCeXztM1BJ7LjMGkpmD3fyK",
+  "image": "perfil-1705935741579.key"
  }
 ]

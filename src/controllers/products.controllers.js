@@ -4,7 +4,7 @@ const { v4: uuidv4, validate } = require("uuid");
 const pathProducts = path.join(__dirname, "..", "data", "products.json");
 let productos = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 const multer = require("multer");
-const {validationResult} = require("express-validator")
+const {validationResult} = require("express-validator");
 
 
 const controllersProduct = {
