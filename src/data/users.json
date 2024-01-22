@@ -1,82 +1,10 @@
 [
  {
-  "nombre": "Quijote de la Mancha",
-  "fecha_nacimiento": "1234-01-22",
-  "password": "quijote123"
- },
- {
-  "nombre": "Karl Marx",
-  "fecha_nacimiento": "3213-02-01",
-  "email": "asdasd@gmail.com",
-  "password": "proletariadounido"
- },
- {
-  "nombre": "Lio Messi",
-  "fecha_nacimiento": "1989-06-26",
-  "email": "asdasd@gmail.com",
-  "password": "123123",
-  "id": "e6c898a6-950b-47bc-9fe0-de9cf56e3ca3"
- },
- {
-  "nombre": "Pedro Picapiedra",
-  "fecha_nacimiento": "0001-01-12",
-  "email": "asdasd@gmail.com",
-  "password": "asdasdasda",
-  "id": "123afddf-0317-4b96-b627-97063af827b1"
- },
- {
-  "nombre": "123",
-  "fecha_nacimiento": "0003-12-21",
-  "email": "asdasd@gmail.com",
-  "password": "123123",
-  "image": "default-image.png",
-  "id": "bdba6511-18fc-4081-a2ae-8c9e7a5e7047"
- },
- {
-  "nombre": "qaw",
-  "fecha_nacimiento": "0123-03-12",
-  "email": "asdasd@gmail.com",
-  "password": "123123",
-  "image": "default-image.png",
-  "id": "fa6042d8-1453-4c13-a951-d7c8a3c8ed06"
- },
- {
-  "nombre": "GERARDIOS ZAMORA",
-  "fecha_nacimiento": "1212-03-20",
-  "email": "asdasd@gmail.com",
-  "password": "KASKKK",
-  "image": "perfil-1703054279086.jpeg",
-  "id": "1a8f08b8-8942-4b76-948c-c838b9907bf5"
- },
- {
-  "nombre": "Milton Coria",
-  "fecha_nacimiento": "2000-03-26",
-  "email": "miltoncoria03@gmail.com",
-  "password": "12345678",
-  "image": "perfil-1703099357429.png",
-  "id": "1b30bf92-22d0-4704-ad8f-790b90e694ee"
- },
- {
-  "nombre": "Luuu",
-  "fecha_nacimiento": "1998-01-26",
-  "email": "lourdesmontenegro017@gmail.com",
-  "password": "41533409",
-  "image": "perfil-1705930745260.key",
-  "id": "0c7824bb-0c94-4f7a-ac3f-8a3858927629"
- },
- {
-  "id": "b0ace403-f809-447b-8adb-3f8f97fd44d8",
-  "nombre": "okook",
-  "fecha_nacimiento": "0566-06-05",
-  "email": "lourdesmontenegro017@gmail.com",
-  "image": "perfil-1705934617479.key"
- },
- {
-  "id": "1dc47a37-5222-4df7-a28d-7debd20eeab9",
-  "nombre": "kkkk",
-  "fecha_nacimiento": "0009-09-09",
-  "email": "lourdesmontenegro017@gmail.com",
-  "password": "$2a$10$p6uv..7p5WbIR.3n6Yjy4.F2Hjqp0CKCeXztM1BJ7LjMGkpmD3fyK",
-  "image": "perfil-1705935741579.key"
+  "id": "954e1111-94d5-490a-92e8-dc6eb415a026",
+  "name": "Hernan",
+  "birth": "1111-11-11",
+  "email": "a@a.com",
+  "password": "$2a$10$0rYSXL5gQb1KdRmbLvlV4e0idlHI7N7l1BRSdGONdHBQaq7FtBKbO",
+  "avatar": "perfil-1705964667128.jpg"
  }
 ]
