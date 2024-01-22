@@ -97,3 +97,42 @@
 ### Conclusiones
 
 Debido a un corte de electricidad en la fecha originalmente programada para la reunión, nos reunimos en el día de la fecha para mantenernos al día con el progreso del proyecto. Observamos que estamos avanzando significativamente, trabajando de manera más activa y en equipo en comparación con el sprint anterior.
+
+
+
+## 10/01/24
+
+### Detalles de la Reunión
+
+- **Fecha:** 10/01/24
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Objetivos del Sprint 5**
+   - Discutimos los objetivos y metas del Sprint 5.
+
+2. **Revisión del Progreso**
+   - Analizamos el estado actual del proyecto y el progreso realizado hasta la fecha.
+
+3. **Identificación de Atrasos en Contenidos**
+   - Evaluamos los contenidos pendientes y llegamos a la conclusión de que estábamos un poco atrasados.
+
+4. **Acuerdo para Ponerse al Día**
+   - Pactamos medidas concretas para ponernos al día con los contenidos y mantener el ritmo de avance.
+  
+
+## 19/01/24
+
+### Detalles de la Reunión
+
+- **Fecha:** 19/01/24
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Asignación de Tareas para el Sprint 5**
+   - Repartimos las tareas entre los miembros del equipo para el Sprint 5.
+
+2. **Acuerdo sobre la Próxima Reunión**
+   - Acordamos reunirnos nuevamente el 22/01 después de clases.
