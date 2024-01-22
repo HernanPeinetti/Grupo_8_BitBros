@@ -5,6 +5,8 @@ const userPath = path.join(__dirname, "../data/users.json")
 const usuarios = JSON.parse(fs.readFileSync(userPath, "utf-8"))
 const { v4: uuidv4 } = require('uuid');
 const bcryptjs = require('bcryptjs')
+const {validationResult} = require('express-validator')
+
 
 const controllersUser = {
 
@@ -27,27 +29,40 @@ const controllersUser = {
     create: function(req, res){
         let NuevoUsuario = {
             id: uuidv4(),
-            nombre: req.body.nombre,
-            fecha_nacimiento: req.body.fecha_nacimiento,
-            email: req.body.correo,
+            name: req.body.name,
+            birth: req.body.birth,
+            email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10), //encriptar contrasena 
-            image: req.file?.filename || "default-image.png",
+            avatar: req.file?.filename || "default-image.png",
         }
-        usuarios.push(NuevoUsuario)
 
-        fs.writeFileSync(userPath, JSON.stringify(usuarios, null, '  ')); //guardarlo en db json
 
-        let usuarioJSON = JSON.stringify(usuarios, null, " ");
-        fs.writeFileSync(userPath, usuarioJSON)
+        if(resultValidator.errors.length > 0){
+            res.render('./users/register', {errors: resultValidator.mapped(),old: NuevoUsuario});
+        }else{
+            usuarios.push(NuevoUsuario)
+            
+            fs.writeFileSync(userPath, JSON.stringify(usuarios, null, '  ')); //guardarlo en db json
+
+            let usuarioJSON = JSON.stringify(usuarios, null, " ");
+            fs.writeFileSync(userPath, usuarioJSON)
         
-        res.redirect("/login")
-    },
-    processRegister: (req, res) => {
-        let { email } = req.body
-        let users = JSON.parse(fs.readFileSync(userPath, 'utf-8'))
-        let userFound = users.find(user => user.email == email)
-        userFound ? res.send('El mail ya esta registrado') : null;
+            res.redirect("/login")
         }
+            
+
+
+
+        
+        
+
+    },
+    // processRegister: (req, res) => {
+    //     let { email } = req.body
+    //     let users = JSON.parse(fs.readFileSync(userPath, 'utf-8'))
+    //     let userFound = users.find(user => user.email == email)
+    //     userFound ? res.send('El mail ya esta registrado') : null;
+    //     }
     }
     
 ;
