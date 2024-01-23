@@ -38,13 +38,16 @@ const controllersUser = {
             console.log(userFound)
             if(userFound && bcryptjs.compareSync(usuario.password.toString(), userFound.password)){
                 req.session.user = userFound;
+                res.redirect("/");
+            } else{
+                res.redirect("/login");
             }
 
             // Almacenar información del usuario en la sesión
             //req.session.user = user;
 
             // Redirigir a la vista /index después de iniciar sesión
-            res.redirect("/");
+            
         }
     },
 
