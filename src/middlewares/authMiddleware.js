@@ -11,16 +11,13 @@ const withoutLogin = (req, res, next) =>{
     }
     next();
 }
-const adminLogin = (req, res, next) =>{
-    // if(req.session.user == undefined && req.session.user.admin != true){
-    //     res.send('No sos admin pa');
-    // }
-    next();
-    
+const adminLogin = (req, res, next) => {
+    if (req.session.user === undefined || req.session.user.admin !== true) {
+        res.send('No sos admin pa');
+    } else {
+        next();
+    }
 }
-    
-    
-    
 
     
     

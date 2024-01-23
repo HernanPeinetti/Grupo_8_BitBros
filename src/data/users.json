@@ -38,6 +38,23 @@
   "email": "t@t.com",
   "password": "$2a$10$IH/H/S8RjojMxOhKz0QgCuJLAPDLISSn0gkTKbTzvUzqNaTs6eRQO",
   "avatar": "1706041548040_img.jpg",
-  "admin" : true
+  "admin": true
+ },
+ {
+  "id": "8a9253ee-4fa6-4013-887b-5aa5a0d155f2",
+  "name": "Lourdes",
+  "birth": "2222-02-22",
+  "email": "888fff89dese88@gmail.com",
+  "password": "$2a$10$kYHwrWUwLSqpnBzYTav6WuVywZxhQ/asbjq5Z1OQRlK6ZOA8.7WsK",
+  "avatar": "1706045756213_img.png"
+ },
+ {
+  "id": "e254587f-005c-41b0-9be5-e4a2d5affd0f",
+  "name": "Lourdes",
+  "birth": "0111-11-11",
+  "email": "lourdes@gmail.com",
+  "password": "$2a$10$xfIVtgPYTnZVQgj872AL.O9iD9Usmu5iUWNDFwPsB7inVgAhCLzeK",
+  "avatar": "1706045935786_img.png",
+  "admin": true
  }
 ]

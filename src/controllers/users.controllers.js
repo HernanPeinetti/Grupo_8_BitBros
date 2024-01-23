@@ -5,7 +5,7 @@ const userPath = path.join(__dirname, "../data/users.json");
 const { v4: uuidv4 } = require('uuid');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
-let usersJson= JSON.parse(fs.readFileSync(userPath, 'utf-8'));
+let usersJson = JSON.parse(fs.readFileSync(userPath, 'utf-8'));
 
 
 const controllersUser = {
@@ -19,9 +19,6 @@ const controllersUser = {
         if (req.session.user) {
             res.render('./users/profile.ejs', { user: req.session.user });
         }
-
-        // Pasa la información necesaria a la vista
-       
     },
 
     processLogin: (req, res) => {
@@ -33,21 +30,18 @@ const controllersUser = {
         if (resultValidator.errors.length > 0) {
             res.render('./users/login', { errors: resultValidator.mapped(), old: user })
         } else {
-            
-            let userFound= usersJson.find(user => user.email== usuario.email);
+
+            let userFound = usersJson.find(user => user.email == usuario.email);
             console.log(userFound)
-            if(userFound && bcryptjs.compareSync(usuario.password.toString(), userFound.password)){
+            if (userFound && bcryptjs.compareSync(usuario.password.toString(), userFound.password)) {
                 req.session.user = userFound;
                 res.redirect("/");
-            } else{
+            } else {
                 res.redirect("/login");
             }
-
             // Almacenar información del usuario en la sesión
             //req.session.user = user;
-
             // Redirigir a la vista /index después de iniciar sesión
-            
         }
     },
 
