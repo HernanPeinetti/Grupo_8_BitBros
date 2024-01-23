@@ -20,10 +20,17 @@
             <a href="/carrito" class="headerUserLink a-carrito">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
-            <a href="/login" class="headerUserLink a-user">
-                <i class="fa-regular fa-user"></i>
-                <p class="p-user">Iniciar Sesión</p>
-            </a>
+            <% if (user) { %>
+                <a href="/profile" class="headerUserLink a-user">
+                    <i class="fa-regular fa-user"></i>
+                    <p class="p-user"><%= user.name %></p>
+                </a>
+            <% } else{ %>
+                <a href="/login" class="headerUserLink a-user">
+                    <i class="fa-regular fa-user"></i>
+                    <p class="p-user">Iniciar Sesión</p>
+                </a> <%}
+                %>
             <button class="userButton">
                 <i class="fa-solid fa-bars"></i>
             </button>

@@ -17,14 +17,14 @@ const controllersProduct = {
                 producto.id != product.id
         );
         if (product) {
-            res.render("./products/detail.ejs", { product, productsRelated });
+            res.render("./products/detail.ejs", { product, productsRelated, user: req.session.user });
         } else {
             res.send("El producto que busca no existe");
         }
     },
 
     create: (req, res) => {
-        res.render("./products/create.ejs");
+        res.render("./products/create.ejs", {user: req.session.user});
     },
 
     store: (req, res) => {
@@ -52,9 +52,9 @@ const controllersProduct = {
                     product.id != newProduct.id
             );
 
-            res.render("./products/detail.ejs", { product: newProduct, productsRelated });
+            res.render("./products/detail.ejs", { product: newProduct, productsRelated, user: req.session.user });
         } else {
-            res.render('./products/create.ejs', { errors: result.errors, oldDate: req.body })
+            res.render('./products/create.ejs', { errors: result.errors, oldDate: req.body, user: req.session.user})
         }
     },
 
@@ -63,7 +63,7 @@ const controllersProduct = {
         const id = req.params.id;
         const producto = productos.find((producto) => producto.id == id);
 
-        res.render("./products/edit.ejs", { producto });
+        res.render("./products/edit.ejs", { producto, user: req.session.user });
     },
 
     update: (req, res) => {
@@ -92,7 +92,7 @@ const controllersProduct = {
                     product.id != producto.id
             );
 
-            res.render("./products/detail.ejs", { product: producto, productsRelated });
+            res.render("./products/detail.ejs", { product: producto, productsRelated , user: req.session.user});
         }
     },
 
@@ -118,7 +118,7 @@ const controllersProduct = {
         const productsJSON = JSON.stringify(productos, null, "");
 
         fs.writeFileSync(pathProducts, productsJSON);
-        res.render("index.ejs", { productos: productos });
+        res.render("index.ejs", { productos: productos, user: req.session.user});
     },
 };
 

@@ -1,2 +1,18 @@
 [
+ {
+  "id": "8fff0c99-c8f9-477b-bc34-5f24f7244549",
+  "name": "Rocio Espeche",
+  "birth": "1997-09-23",
+  "email": "roespeche1@gmail.com",
+  "password": "$2a$10$dlQzKF9wbYCZeTrELVeeK.NHCYbLG0xMHIvPoWpZ.aGgeCDlvUmgG",
+  "avatar": "1706037804170_img.png"
+ },
+ {
+  "id": "06891396-9a99-4e1b-bbc9-ec641d349483",
+  "name": "Rocio Espeche",
+  "birth": "1997-09-23",
+  "email": "roespeche@gmail.com",
+  "password": "$2a$10$gbfHZAwXYfl46btsNKWFueuu5ZlxCGH2h/PIi/RxRUe1.7b5CwhDu",
+  "avatar": "1706037890683_img.png"
+ }
 ]

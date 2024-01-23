@@ -3,11 +3,11 @@ const productos = require("../data/products.json");
 
 const controllers = {
     index: (req, res) => {
-        res.render("index.ejs", { productos: productos });
+        res.render("index.ejs", { productos: productos, user: req.session.user });
     },
 
     cart: (req, res) => {
-        res.render("cart.ejs");
+        res.render("cart.ejs", { user: req.session.user});
     },
 };
 
