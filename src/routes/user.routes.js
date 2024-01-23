@@ -9,4 +9,7 @@ router.get("/login", controllers.login)
 // VISTA REGISTER http://localhost:3000/register
 router.get("/register", controllers.register)
 
+// Ruta para la vista PROFILE http://localhost:3000/profile
+router.get('/profile', controllers.profile);
+
 module.exports = router; 

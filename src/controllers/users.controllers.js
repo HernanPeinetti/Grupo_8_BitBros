@@ -14,19 +14,31 @@ const controllersUser = {
         res.render("./users/login.ejs");
     },
 
-    profile: ("/profile", (req, res) => {
-        res.render('./users/profile.ejs')
-    }),
+    profile: (req, res) => {
+        // Verifica si el usuario está autenticado antes de mostrar la página de perfil
+        if (!req.session.user) {
+            return res.redirect("/login");
+        }
+
+        // Pasa la información necesaria a la vista
+        res.render('./users/profile.ejs', { username: req.session.user.name });
+    },
 
     processLogin: (req, res) => {
-    const resultValidator = validationResult(req)
-    const user = {
-        email: req.body.email,
-        password: req.body.password
-    }
-    if(resultValidator.errors.length > 0){
-    res.render('./users/login', {errors: resultValidator.mapped(), old: user })
-    }
+        const resultValidator = validationResult(req)
+        const user = {
+            email: req.body.email,
+            password: req.body.password
+        }
+        if (resultValidator.errors.length > 0) {
+            res.render('./users/login', { errors: resultValidator.mapped(), old: user })
+        } else {
+            // Almacenar información del usuario en la sesión
+            req.session.user = user;
+
+            // Redirigir a la vista /index después de iniciar sesión
+            res.redirect("/");
+        }
     },
 
     register: (req, res) => {
@@ -54,7 +66,9 @@ const controllersUser = {
             let usuarioJSON = JSON.stringify(usuarios, null, " ");
             fs.writeFileSync(userPath, usuarioJSON)
 
-            res.redirect("/login")
+            req.session.user = newUser;
+
+            res.redirect("/profile");
         }
     },
 

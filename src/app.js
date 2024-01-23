@@ -3,6 +3,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const log = require("./middlewares/log.js");
 const cookieParser =require ('cookie-parser')
+const session = require('express-session')
 //Configuraciones
 const app = express();
 
@@ -13,8 +14,8 @@ app.use(express.static(path.resolve("public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
+app.use(session({secret: '....'}))
 //app.use(log); 
-
 //ROUTES
 
 const mainRoutes = require("./routes/main.routes.js");

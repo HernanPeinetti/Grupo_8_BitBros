@@ -31,5 +31,7 @@ router.get("/register", register)
 
 router.post("/register", upload.single("avatar"),validatorRegister, processRegister)
 
+// Ruta para la vista PROFILE http://localhost:3000/profile
+router.get('/profile', controllers.profile);
 
 module.exports = router; 
