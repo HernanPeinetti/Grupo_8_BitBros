@@ -17,14 +17,24 @@ const controllersUser = {
     login: (req, res) => {
         res.render("./users/login.ejs");
     },
-
-    processLogin: (req, res) => {
-        let userToLogin = users.findByField("email", req.body.email)
-        if (userToLogin) {
-
-        }
-        return res.render("./users/login.ejs")
-    },
+    profile: ("/profile", (req, res) => {
+        res.render('./users/profile.ejs')
+    }),
+    processRegister: (req, res) => {
+        let { email } = req.body
+        let users = JSON.parse(fs.readFileSync(userPath, 'utf-8'))
+        let userFound = users.find(user => user.email == email)
+        userFound ? res.send('El mail ya esta registrado') : null;
+        },
+        processLogin: (req, res) => {
+            let userToLogin = usuarios.find(user => user.email === req.body.email);
+        
+            if (userToLogin) {
+                res.render("./users/login.ejs");
+            } else {
+                res.send('Usuario no encontrado');
+            }
+        },
     
     create: function(req, res){
         let NuevoUsuario = {
@@ -47,7 +57,7 @@ const controllersUser = {
             let usuarioJSON = JSON.stringify(usuarios, null, " ");
             fs.writeFileSync(userPath, usuarioJSON)
         
-            res.redirect("/login")
+            res.redirect("/")
         }
             
 
@@ -57,12 +67,7 @@ const controllersUser = {
         
 
     },
-    // processRegister: (req, res) => {
-    //     let { email } = req.body
-    //     let users = JSON.parse(fs.readFileSync(userPath, 'utf-8'))
-    //     let userFound = users.find(user => user.email == email)
-    //     userFound ? res.send('El mail ya esta registrado') : null;
-    //     }
+    
     }
     
 ;

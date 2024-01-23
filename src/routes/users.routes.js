@@ -47,7 +47,7 @@ const validator = [
 
 const pathImages = path.resolve("public")
 
-const { login, register,create, processRegister, processLogin} = require('../controllers/users.controllers.js')
+const { login, register, profile, processRegister, processLogin} = require('../controllers/users.controllers.js')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
