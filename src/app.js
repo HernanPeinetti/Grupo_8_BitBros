@@ -13,7 +13,7 @@ app.use(express.static(path.resolve("public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
-app.use(log); 
+//app.use(log); 
 
 //ROUTES
 
