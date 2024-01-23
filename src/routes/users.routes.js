@@ -6,7 +6,7 @@ const path = require("path")
 const controllers = require('../controllers/users.controllers.js');
 const userPath = path.join(__dirname, "../data/users.json");
 const {body} = require('express-validator');
-const validator = [
+const validatorRegister = [
     body('name').notEmpty().withMessage('Tienes que ingresar un nombre'),
     body('birth').notEmpty().withMessage('Tienes que ingresar una fecha de nacimiento'),
     body('email').notEmpty().withMessage('Tienes que ingresar un correo electronico').custom((value, {req}) =>{
@@ -40,9 +40,10 @@ const validator = [
 
     })
 ];
-
-
-
+const validatorLogin = [ 
+    body('email').notEmpty().withMessage("Tienes que ingresar un correo electronico").bail().isEmail().withMessage("Debes ingresar un correo valido"), 
+    body('password').notEmpty().withMessage("Tienes que ingresar una contraseña").bail().isLength({min: 6}).withMessage("La contraseña debe tener más de 6 caracteres")
+]
 
 
 const pathImages = path.resolve("public")
@@ -72,7 +73,7 @@ router.get("/register", register)
 
 // REGISTER DE USUARIOS
 
-router.post("/register", upload.single("avatar"),validator, processRegister)
+router.post("/register", upload.single("avatar"),validatorRegister, processRegister)
 
 
 module.exports = router; 
