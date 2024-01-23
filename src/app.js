@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const log = require("./middlewares/log.js");
-
+const cookieParser =require ('cookie-parser')
 //Configuraciones
 const app = express();
 

@@ -1,30 +1,35 @@
 const express = require('express')
 const router = express.Router();
-const multer = require("multer");
-const path = require("path")
 const controllers = require('../controllers/users.controllers.js');
-const pathImages = path.resolve("public")
 
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) =>{
-        cb(null, path.join(pathImages, "/images/userProfile"))
-    },
-    filename: (req, file, cb) =>{
-        const newFileName ="perfil-" + Date.now() + path.extname(file.originalname);
-        cb(null, newFileName);
-    },
-})
 
-const upload = multer({storage})
+
+const { login, register, profile, processRegister, processLogin} = require('../controllers/users.controllers.js')
+const {validatorRegister, validatorLogin} = require('../middlewares/validatorUser.js');
+const upload = require('../middlewares/multerUsers.js');
+
+
+
+
+
+
+
+
 
 // VISTA LOGUEARSE http://localhost:3000/login
-router.get("/login", controllers.login)
+router.get("/login", login)
+
+// PROCESO LOGIN DE USUARIOS
+
+router.post("/login", validatorLogin, processLogin)
 
 // VISTA REGISTRARSE http://localhost:3000/register
-router.get("/register", controllers.register)
+router.get("/register", register)
 
 // REGISTER DE USUARIOS
-router.post("/register", upload.single("foto_perfil"), controllers.create)
+
+router.post("/register", upload.single("avatar"),validatorRegister, processRegister)
+
 
 module.exports = router; 

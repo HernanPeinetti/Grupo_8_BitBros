@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head', {titulo: 'Iniciar Sesión' , estilo: 'login' }) %>
+
+    <body>
+        <%- include('../partials/header-user') %>
+            <main>
+                <h2>El usuario<% req.body.usuario %> se ha logueado</h2>
+
+            </main>
+
+    </body>
+
+</html>

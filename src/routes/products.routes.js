@@ -3,8 +3,11 @@ const router = express.Router();
 // const pathImages = path.resolve("public")
 
 const controllers = require("../controllers/products.controllers.js");
-const upload = require("../middlewares/multerProduct.js");
-const validateProduct = require("../middlewares/validateProduct.js")
+
+const validateProduct = require("../middlewares/validateProduct.js");
+const  upload  = require("../middlewares/multerProducts.js");
+
+
 
 // VISTA DETALLE DE PRODUCTOS http://localhost:3000/productos/detalle/id
 router.get("/detalle/:id", controllers.detail);
