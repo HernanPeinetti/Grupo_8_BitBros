@@ -6,5 +6,29 @@
   "email": "a@a.com",
   "password": "$2a$10$0rYSXL5gQb1KdRmbLvlV4e0idlHI7N7l1BRSdGONdHBQaq7FtBKbO",
   "avatar": "perfil-1705964667128.jpg"
+ },
+ {
+  "id": "dbf8944b-c8a9-4a09-8d81-2916715b2e32",
+  "name": "Hernan",
+  "birth": "1111-11-11",
+  "email": "q@q.com",
+  "password": "$2a$10$J0WM0D7.l/.xlNHji/X3L.NMaY28qvYSin.JUohgRZdt9S3HzWGPq",
+  "avatar": "default-image.png"
+ },
+ {
+  "id": "4444d697-ce9c-474c-aa15-3fa34a033fec",
+  "name": "Cerveza Quilmes",
+  "birth": "1111-11-11",
+  "email": "b@b.com",
+  "password": "$2a$10$ucAfbsDszzxFXvX0IH8K8OOR4lKhsIvIfQpbOVSJlCQKS4feF1O/S",
+  "avatar": "1705978034922_img.jpg"
+ },
+ {
+  "id": "edd4942d-282c-41ed-b10f-1953e6a07b29",
+  "name": "Cerveza Quilmes",
+  "birth": "1111-11-11",
+  "email": "c@c.com",
+  "password": "$2a$10$vpO4gnqRIFWaxibnVDvZquPQ8vjMxIRRa/zsHB0gP0fQrSiuFSZpG",
+  "avatar": "1705978103494_img.jpg"
  }
 ]
