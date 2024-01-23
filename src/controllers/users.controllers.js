@@ -75,7 +75,7 @@ const controllersUser = {
 
             req.session.user = newUser;
 
-            res.redirect("/profile");
+            res.redirect("/login");
         }
     },
 

@@ -6,6 +6,8 @@ const controllers = require("../controllers/products.controllers.js");
 
 const validateProduct = require("../middlewares/validateProduct.js");
 const  upload  = require("../middlewares/multerProducts.js");
+//Middleware
+const {adminLogin} = require('../middlewares/authMiddleware.js');
 
 
 
@@ -13,10 +15,10 @@ const  upload  = require("../middlewares/multerProducts.js");
 router.get("/detalle/:id", controllers.detail);
 
 // VISTA CREAR PRODUCTO http://localhost:3000/productos/crear
-router.get('/crear',validateProduct, controllers.create);
+router.get('/crear',adminLogin,validateProduct, controllers.create);
 
 // VISTA EDITAR PRODUCTO http://localhost:3000/productos/editar/id
-router.get("/editar/:id", controllers.edit);
+router.get("/editar/:id", adminLogin,controllers.edit);
 
 // METODO CREAR PRODUCTO 
 router.post('/crear', upload.single('image'),validateProduct, controllers.store);
