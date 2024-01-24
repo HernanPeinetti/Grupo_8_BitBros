@@ -48,5 +48,13 @@
   "password": "$2a$10$xfIVtgPYTnZVQgj872AL.O9iD9Usmu5iUWNDFwPsB7inVgAhCLzeK",
   "avatar": "1706045935786_img.png",
   "admin": true
+ },
+ {
+  "id": "e94d8c8a-6e7e-44b5-a399-9d59b9c3b4b5",
+  "name": "juan perez",
+  "birth": "1212-12-12",
+  "email": "asdasdasd@gmail.com",
+  "password": "$2a$10$KPvKt4UzIQqvXN3KbbSkaOfjIaS0aSDHJVE4c7m1fQ0CnqylfJTFK",
+  "avatar": "1706117506428_img.jpg"
  }
 ]
