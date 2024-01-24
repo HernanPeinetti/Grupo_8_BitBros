@@ -10,41 +10,6 @@ let usersJson = JSON.parse(fs.readFileSync(userPath, 'utf-8'));
 
 const controllersUser = {
 
-    login: (req, res) => {
-        res.render("./users/login.ejs");
-    },
-
-    profile: (req, res) => {
-        // Verifica si el usuario está autenticado antes de mostrar la página de perfil
-        if (req.session.user) {
-            res.render('./users/profile.ejs', { user: req.session.user });
-        }
-    },
-
-    processLogin: (req, res) => {
-        const resultValidator = validationResult(req)
-        const usuario = {
-            email: req.body.email,
-            password: req.body.password
-        }
-        if (resultValidator.errors.length > 0) {
-            res.render('./users/login', { errors: resultValidator.mapped(), old: user })
-        } else {
-
-            let userFound = usersJson.find(user => user.email == usuario.email);
-            console.log(userFound)
-            if (userFound && bcryptjs.compareSync(usuario.password.toString(), userFound.password)) {
-                req.session.user = userFound;
-                res.redirect("/");
-            } else {
-                res.redirect("/login");
-            }
-            // Almacenar información del usuario en la sesión
-            //req.session.user = user;
-            // Redirigir a la vista /index después de iniciar sesión
-        }
-    },
-
     register: (req, res) => {
         res.render("./users/register.ejs");
     },
@@ -75,6 +40,48 @@ const controllersUser = {
             res.redirect("/login");
         }
     },
+
+    login: (req, res) => {
+        res.render("./users/login.ejs");
+    },
+
+    profile: (req, res) => {
+        // Verifica si el usuario está autenticado antes de mostrar la página de perfil
+        console.log(req.cookies.email)
+        if (req.session.user) {
+            res.render('./users/profile.ejs', { user: req.session.user });
+           
+        }
+    },
+
+    processLogin: (req, res) => {
+        const resultValidator = validationResult(req)
+        const usuario = {
+            email: req.body.email,
+            password: req.body.password
+        }
+        if (resultValidator.errors.length > 0) {
+            res.render('./users/login', { errors: resultValidator.mapped(), old: user })
+        } else {
+
+            let userFound = usersJson.find(user => user.email == usuario.email);
+            console.log(userFound)
+            if (userFound && bcryptjs.compareSync(usuario.password.toString(), userFound.password)) {
+                req.session.user = userFound;
+                res.redirect("/");
+            } else {
+                res.redirect("/login");
+            }
+            // Almacenar información del usuario en la sesión
+            //req.session.user = user;
+            // Redirigir a la vista /index después de iniciar sesión
+        }
+        if (req.body.recordarUser){
+            res.cookie("userEmail", req.body.email, {maxAge: (1000 * 60) * 2})
+        }
+    },
+
+
 
 }
 
