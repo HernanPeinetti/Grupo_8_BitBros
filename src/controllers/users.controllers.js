@@ -9,13 +9,14 @@ let usersJson = JSON.parse(fs.readFileSync(userPath, 'utf-8'));
 
 
 const controllersUser = {
-
     login: (req, res) => {
         res.render("./users/login.ejs");
+        req.session.save();
+        res.redirect("/");
     },
 
+
     profile: (req, res) => {
-        // Verifica si el usuario está autenticado antes de mostrar la página de perfil
         if (req.session.user) {
             res.render('./users/profile.ejs', { user: req.session.user });
         }
@@ -39,9 +40,6 @@ const controllersUser = {
             } else {
                 res.redirect("/login");
             }
-            // Almacenar información del usuario en la sesión
-            //req.session.user = user;
-            // Redirigir a la vista /index después de iniciar sesión
         }
     },
 

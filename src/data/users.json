@@ -47,6 +47,6 @@
   "email": "lourdes@gmail.com",
   "password": "$2a$10$xfIVtgPYTnZVQgj872AL.O9iD9Usmu5iUWNDFwPsB7inVgAhCLzeK",
   "avatar": "1706045935786_img.png",
-  "admin": true
+  "admin": false
  }
 ]
