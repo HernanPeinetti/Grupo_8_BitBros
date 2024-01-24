@@ -19,9 +19,6 @@ const controllersUser = {
         if (req.session.user) {
             res.render('./users/profile.ejs', { user: req.session.user });
         }
-
-        // Pasa la información necesaria a la vista
-       
     },
 
     processLogin: (req, res) => {
@@ -35,18 +32,12 @@ const controllersUser = {
         } else {
             
             let userFound= usersJson.find(user => user.email== usuario.email);
-            console.log(userFound)
             if(userFound && bcryptjs.compareSync(usuario.password.toString(), userFound.password)){
                 req.session.user = userFound;
                 res.redirect("/");
             } else{
                 res.redirect("/login");
             }
-
-            // Almacenar información del usuario en la sesión
-            //req.session.user = user;
-
-            // Redirigir a la vista /index después de iniciar sesión
             
         }
     },
@@ -64,7 +55,7 @@ const controllersUser = {
             birth: req.body.birth,
             email: req.body.email,
             password: bcryptjs.hashSync(req.body.password, 10), //encriptar contrasena 
-            avatar: req.file?.filename || "default-image.png",
+            avatar: req.file?.filename || "default-user.svg",
         }
 
         if (resultValidator.errors.length > 0) {
@@ -75,8 +66,6 @@ const controllersUser = {
             fs.writeFileSync(userPath, JSON.stringify(usersJson, null, '  ')); //guardarlo en db json
             let usuarioJSON = JSON.stringify(usersJson, null, " ");
             fs.writeFileSync(userPath, usuarioJSON)
-
-            req.session.user = newUser;
 
             res.redirect("/login");
         }

@@ -1,19 +1,41 @@
-const {body} = require ('express-validator')
+const { body } = require("express-validator");
+const fs = require("fs");
+const path = require("path");
 
-module.exports= [
-    body ('nombre').notEmpty().withMessage('El nombre del producto no debe estar vacio').bail().isLength({min: 2}).withMessage('El nombre debe tener como minimo 2 caracteres'),
+module.exports = [
+    body("name").notEmpty().withMessage("El nombre del producto no debe estar vacio"),
 
-    body ('image').notEmpty().withMessage('No puede crear un producto sin la imagen').bail(),
+    body("image").custom((value, { req }) => {
+        let file = req.file;
+        let extensions = [".jpg", ".png", ".gif"];
 
-    body ('categoria').notEmpty().withMessage('Seleccione una categoria para el producto').bail(),
+        if (file) {
+            let fileExtension = path.extname(file.originalname);
 
-    body ('tamañoYmedida').notEmpty().withMessage('Debe especificar las medidas del producto').bail().isLength({min: 4}).withMessage('Debe contener numero y unidad'),
+            if (!extensions.includes(fileExtension)) {
+                throw new Error(`Las extensiones de archivo permitidas son ${extensions.join(", ")}`);
+            }
+        }
 
-    body ('precio').notEmpty().withMessage('El precio del producto no debe estar vacio').bail().isNumeric().withMessage('El precio debe ser un numero'),
+        return true;
+    }),
 
-    body ('stock').notEmpty().withMessage('El Stock del producto no debe estar vacio').bail(),
+    body("category").notEmpty().withMessage("Seleccione una categoria para el producto"),
 
-    body ('colores').notEmpty().withMessage('El nombre del color no debe estar vacio').bail().isLength({min: 2}).withMessage('El nombre debe tener como minimo 2 caracteres'),
+    body("price").notEmpty().withMessage("El precio del producto no debe estar vacio").isNumeric().withMessage("El precio debe ser un número"),
 
-    body ('descripcion').notEmpty().withMessage('La descripcion del producto no debe estar vacio').bail().isLength({min: 10}).withMessage('El nombre debe tener como minimo 10 caracteres'),
-]
+    body("stock").notEmpty().withMessage("El stock del producto no debe estar vacio"),
+
+    body("brand").notEmpty().withMessage("La marca del producto no debe estar vacío"),
+
+    body().custom((value, { req }) => {
+        const { color1, color2, color3 } = req.body;
+        if (!color1 && !color2 && !color3) {
+            throw new Error("Al menos tiene que elegir un color");
+        }
+        return true;
+    }),
+
+    body("description").notEmpty().withMessage("La descripcion del producto no debe estar vacio").bail().isLength({ min: 10 }).withMessage("La descripción debe tener como minimo 10 caracteres"),
+    
+];

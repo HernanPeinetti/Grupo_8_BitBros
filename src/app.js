@@ -2,8 +2,8 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const log = require("./middlewares/log.js");
-const cookieParser =require ('cookie-parser')
-const session = require('express-session')
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 //Configuraciones
 const app = express();
 
@@ -11,11 +11,16 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.resolve("public")));
+app.use("/bootstrap", express.static(path.resolve("node_modules/bootstrap/dist")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
-app.use(session({secret: '....'}))
-//app.use(log); 
+app.use(session({
+    secret: 'mi_secreto',
+    resave: false,
+    saveUninitialized: true
+}));
+//app.use(log);
 //ROUTES
 
 const mainRoutes = require("./routes/main.routes.js");
@@ -32,5 +37,5 @@ app.listen(3000, () => {
 });
 
 app.use((req, res, next) => {
-    res.status(404).render("notFound", {user: req.session.user});
+    res.status(404).render("notFound", { user: req.session.user });
 });

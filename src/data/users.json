@@ -1,43 +1,11 @@
 [
  {
-  "id": "8fff0c99-c8f9-477b-bc34-5f24f7244549",
-  "name": "Rocio Espeche",
-  "birth": "1997-09-23",
-  "email": "roespeche1@gmail.com",
-  "password": "$2a$10$dlQzKF9wbYCZeTrELVeeK.NHCYbLG0xMHIvPoWpZ.aGgeCDlvUmgG",
-  "avatar": "1706037804170_img.png"
- },
- {
-  "id": "06891396-9a99-4e1b-bbc9-ec641d349483",
-  "name": "Rocio Espeche",
-  "birth": "1997-09-23",
-  "email": "roespeche@gmail.com",
-  "password": "$2a$10$gbfHZAwXYfl46btsNKWFueuu5ZlxCGH2h/PIi/RxRUe1.7b5CwhDu",
-  "avatar": "1706037890683_img.png"
- },
- {
-  "id": "89344b3d-efd0-48ce-89ed-d0d4e0a4312a",
-  "name": "Hernan",
-  "birth": "1991-11-11",
-  "email": "a@a.com",
-  "password": "$2a$10$AeMFatEOrEMIAKKi1.FQW.TJg0OfURNBetZPu0bZWLygJPXl6TvHK",
-  "avatar": "1706041377294_img.jpg"
- },
- {
-  "id": "7dc3224d-6046-40e5-92fa-030f6925b38f",
-  "name": "Marcos",
-  "birth": "1111-11-11",
-  "email": "b@b.com",
-  "password": "$2a$10$YYBovBGz3YTPAmdHqoQiJeNlAdnmxVCUlK.eS.9zKwMRvG5UtID2W",
-  "avatar": "1706041454267_img.jpg"
- },
- {
-  "id": "c8362dd9-ec9b-46fd-88c6-1190b5debcde",
-  "name": "Marcossss",
-  "birth": "1111-11-11",
-  "email": "t@t.com",
-  "password": "$2a$10$IH/H/S8RjojMxOhKz0QgCuJLAPDLISSn0gkTKbTzvUzqNaTs6eRQO",
-  "avatar": "1706041548040_img.jpg",
-  "admin" : true
+  "id": "0096c437-ed1f-46fc-843b-a56a42c4baaf",
+  "name": "Milton Ezequiel Coria",
+  "birth": "2003-03-26",
+  "email": "miltoncoria03@gmail.com",
+  "password": "$2a$10$Ben8dAdH.7LoBPIwR4XT.e2VZVVjtVTsGFeT5AFDRTAZTSjA52QUq",
+  "avatar": "default-user.svg",
+  "admin": true
  }
 ]

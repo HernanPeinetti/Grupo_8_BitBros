@@ -3,19 +3,9 @@ const router = express.Router();
 const controllers = require('../controllers/users.controllers.js');
 const {withLogin, withoutLogin} = require('../middlewares/authMiddleware.js');
 
-
-
-
 const { login, register, profile, processRegister, processLogin} = require('../controllers/users.controllers.js')
 const {validatorRegister, validatorLogin} = require('../middlewares/validatorUser.js');
 const upload = require('../middlewares/multerUsers.js');
-
-
-
-
-
-
-
 
 
 // VISTA LOGUEARSE http://localhost:3000/login

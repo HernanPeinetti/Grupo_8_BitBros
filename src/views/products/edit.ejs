@@ -7,64 +7,79 @@
         <%- include('../partials/header-cart', {user: user}) %>
             <main>
                 <div class="container-market">
-                    <h2 class="title-market">Editando <%= producto.nombre %></h2>
-                    <form class="form-market" action="/productos/editar/<%= producto.id %>?_method=PUT" method="POST">
+                    <h2 class="title-market">Editando <%= product.name %></h2>
+                    <form class="form-market" action="/productos/editar/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <div>
-                            <label for="nombre">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Por ej: Casco Generico" required value="<%= producto.nombre %>">
+                            <label for="name">Nombre:</label>
+                            <input type="text" id="name" name="name" value="<%= product.name %>">
                         </div>
                         
-                         <div>
-                            <label for="imagen">Inserta una imagen:</label>
-                            <input type="file" name="avatar" accept=".jpg">
+                        <div>
+                            <label for="image">Imagen:</label>
+                            <input type="file" name="image" id="image">
                         </div>
 
                         <div>
-                            <label for="categoria">Seleccionar la categoria</label>
-                            <select name="categoria" id="categoria">
-                                <option value="--"> -- </option>
-                                <option value="Accesorios" <%= producto.categoria == 'accesorios' ? 'selected' : '' %>>Accesorios</option>
-                                <option value="Indumentarias" <%= producto.categoria == 'indumentaria' ? 'selected' : '' %>>Indumentaria</option>
-                                <option value="Repuestos" <%= producto.categoria == 'repuestos' ? 'selected' : '' %>>Repuestos</option>
-                                <option value="Bicicletas" <%= producto.categoria == 'bicicletas' ? 'selected' : '' %>>Bicicletas</option>
+                            <label for="category">Categoría:</label>
+                            <select name="category" id="category">
+                                <option value=""> Elige una categoria </option>
+                                <option value="Accesorios" <%= product.category == "Accesorios" ? "selected": null %>>Acessorios</option>
+                                <option value="Indumentarias" <%= product.category == 'Indumentarias' ? 'selected' : null %>> Indumentaria </option>
+                                <option value="Repuestos" <%= product.category == 'Repuestos' ? 'selected' : null %>> Repuestos </option>
+                                <option value="Bicicletas" <%= product.category == 'Bicicletas' ? 'selected' : null %>> Bicicletas </option>
                             </select>
                         </div>
                         
                         <div>
-                            <label for="tamañoYmedida">Ingresa las medidas del producto:</label>
-                            <input type="text" id="tamañoYmedida" name="tamañoYmedida" placeholder="Escribe las medidas del producto">
+                            <label for="price">Precio:</label>
+                            <input type="number" id="price" name="price" value="<%= product.price %>">
                         </div>
                         
                         <div>
-                            <label for="precio">Ingresa el precio:</label>
-                            <input type="text" id="precio" name="precio" placeholder="Ingresa el precio" required value="<%= producto.precio %>">
+                            <label for="stock">Stock:</label>
+                            <input type="number" id="stock" name="stock" value="<%= product.stock %>">
                         </div>
                         
                         <div>
-                            <label for="stock">Ingresa el stock:</label>
-                            <input type="number" id="stock" name="stock">
+                            <label for="colors">Colores:</label>
+                            <div style="display: flex; flex-direction: row;width: 100%;">
+                              <select style="width: 33%;" name="color1" id="color1">
+                                <option <%= (product.colors && product.colors.color1 == "") || (locals.old && locals.old.colors.color1 == "") ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= (product.colors && product.colors.color1 == color) || (locals.old && locals.old.colors.color1 == color) ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                              </select>
+                              <select style="width: 33%;" name="color2" id="color2">
+                                <option <%= (product.colors && product.colors.color2 == "") || (locals.old && locals.old.colors.color2 == "") ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= product.colors.color2 == color ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                              </select>
+                              <select style="width: 33%;" name="color3" id="color3">
+                                <option <%= (product.colors && product.colors.color3 == "") || (locals.old && locals.old.colors.color3 == "") ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= product.colors.color3 == color ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                              </select>
+                            </div>
                         </div>
                         
                         <div>
-                            <label for="colores">Elige los colores</label>
-                            <select name="colores" id="colores">
-                                <option value="--"> -- </option>
-                                <option value="#ff0000">Rojo</option>
-                                <option value="#00ff00">Azul</option>
-                                <option value="0000ff">Verde</option>
-                                <option value="770077">Morado</option>
-                            </select>
+                            <label for="brand">Marca:</label>
+                            <input type="text" id="brand" name="brand" value="<%= product.brand %>" />
                         </div>
-                        
+
                         <div>
-                            <label for="descripcion">Descripcion</label>
-                            <textarea class="descripcion" name="descripcion" id="descripcion"><%= producto.descripcion %></textarea>
+                            <label for="description">Descripción:</label>
+                            <textarea class="description" name="description" id="description"><%= product.description %></textarea>
                         </div>
                         
                         <div class="botones-market">
                             <button class="enviar" type="submit">Guardar Cambios</button>
-                            <button class="resetear" type="reset">Eliminar Producto</button>
                         </div>
+                    </form>
+                    <form class="form-delete" action="/productos/eliminar/<%= product.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="resetear">Eliminar producto</button>
                     </form>
                     <a class="crear" href="/productos/crear">Crear un Producto</a>
                 </div>

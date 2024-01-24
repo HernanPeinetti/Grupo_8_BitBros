@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', { titulo: 'Iniciar Sesión' , estilo: 'login' }) %>
+<%- include('../partials/head', { titulo: 'Iniciar Sesión' , estilo: 'profile' }) %>
 
     <body>
-        <%- include('../partials/header-user', { user: user}) %>
+        <%- include('../partials/header-cart', { user: user}) %>
 
-            <main class="container">
-                <div class="row justify-content-center mt-5">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">¡Bienvenido <%= user.name %>!</h2>
-                                <img src="/images/userProfile/<%= user.avatar %>" alt="">
-                            </div>
-                        </div>
-                    </div>
+            <main style="text-align: center;" class="">
+                <div class="">
+                    <h2 class="">¡Bienvenido <%= user.name %>!</h2>
+                    <img style="width: 300px;" src="/images/userProfile/<%= user.avatar %>" alt="">
                 </div>
             </main>
 

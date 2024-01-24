@@ -1,83 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
+    <%- include('../partials/head', {titulo: 'Crear producto' , estilo: 'edit-create' }) %>
 
-<%- include('../partials/head', {titulo: 'Crear producto' , estilo: 'edit-create' }) %>
+    <body>
+        <%- include('../partials/header-cart', {user: user}) %>
+        <main>
+            <div class="container-market">
+                <h2 class="title-market">Creando un producto</h2>
+                <div>
+                    <% if (locals.errors) {%> <% for( let error in errors) { %>
+                    <p><%= errors[error].msg %></p>
+                    <% } %> <% } %>
+                </div>
+                <form class="form-market" action="/productos/crear" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" value="<%= locals.old && old.name ? old.name : "" %>"/>
+                    </div>
 
-  <body>
-    <%- include('../partials/header-cart', {user: user}) %>
-      <main>
-        <div class="container-market">
-          <div>
-            <% if (locals.errors) {%>
-              <% errors.forEach( error => { %>
-                <p><%error.msg%></p>
-              <% }) %>
-            <% } %>
-          </div>
-          <h2 class="title-market">Creando un producto</h2>
-          <form class="form-market" action="/productos/crear" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="image">Imagen:</label>
+                        <input type="file" id="image" name="image" />
+                    </div>
 
-            <div>
-              <label for="nombre">Ingresa un nombre:</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Casco Generico">
+                    <div>
+                        <label for="category">Categoría:</label>
+                        <select name="category" id="category">
+                            <option <%= locals.old && old.category == "" ? "selected" : "" %> value="">Elige una categoria</option>
+                            <option <%= locals.old && old.category == "Accesorios" ? "selected" : "" %> value="Accesorios">Accesorios</option>
+                            <option <%= locals.old && old.category == "Indumentarias" ? "selected" : "" %> value="Indumentarias">Indumentarias</option>
+                            <option <%= locals.old && old.category == "Repuestos" ? "selected" : "" %> value="Repuestos">Repuestos</option>
+                            <option <%= locals.old && old.category == "Bicicletas" ? "selected" : "" %> value="Bicicletas">Bicicletas</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex;flex-direction: row;">
+                        <div style="width: 50%;">
+                            <label for="price">Precio:</label>
+                            <input type="number" id="price" name="price" value="<%= locals.old && old.price ? old.price : "" %>" />
+                        </div>
+                        <div style="width: 50%;">
+                            <label for="stock">Stock:</label>
+                            <input type="number" id="stock" name="stock" value="<%= locals.old && old.stock ? old.stock : "" %>" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="colors">Colores:</label>
+                        <div style="display: flex; flex-direction: row; width: 100%">
+                            <select style="width: 33%" name="color1" id="color1">
+                                <option <%= locals.old && old.colors.color1 == "" ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= locals.old && old.colors.color1 == color ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                            </select>
+                            <select style="width: 33%" name="color2" id="color2">
+                                <option <%= locals.old && old.colors.color2 == "" ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= locals.old && old.colors.color2 == color ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                            </select>
+                            <select style="width: 33%" name="color3" id="color3">
+                                <option <%= locals.old && old.colors.color3 == "" ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= locals.old && old.colors.color3 == color ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="brand">Marca:</label>
+                        <input type="text" id="brand" name="brand" value="<%= locals.old && old.brand ? old.brand : "" %>" />
+                    </div>
+
+                    <div>
+                        <label for="description">Descripción:</label>
+                        <textarea class="description" name="description" id="description" placeholder="Escribe una breve descripcion..."><%= locals.old && old.description ? old.description : "" %></textarea>
+                    </div>
+
+                    <div class="botones-market">
+                        <button class="enviar" type="submit">Enviar y Guardar</button>
+                        <button class="resetear" type="reset">Borrar Datos</button>
+                    </div>
+                </form>
             </div>
-
-            <div>
-              <label for="imagen">Inserta una imagen:</label>
-              <input type="file" name="image" accept=".jpg">
-            </div>
-
-            <div>
-              <label for="categoria">Seleccionar la categoria</label>
-              <select name="categoria" id="categoria">
-                <option value="--"> -- </option>
-                <option value="Accesorios">Accesorios</option>
-                <option value="Indumentaria">Indumentaria</option>
-                <option value="Repuestos">Repuestos</option>
-                <option value="Bicicleta">Bicicletas - Rodados</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="medidas">Ingresa las medidas del producto:</label>
-              <input type="text" id="medidas" name="tamañoYmedida" placeholder="Escribe las medidas del producto">
-            </div>
-
-            <div>
-              <label for="precio">Ingresa el precio:</label>
-              <input type="text" id="precio" name="precio" placeholder="Ingresa el precio">
-            </div>
-
-            <div>
-              <label for="stock">Ingresa el stock:</label>
-              <input type="number" id="stock" name="stock">
-            </div>
-
-            <div>
-              <label for="colores">Elige los colores</label>
-              <select name="colores" id="colores">
-                <option value="--"> -- </option>
-                <option value="#ff0000">Rojo</option>
-                <option value="#00ff00">Azul</option>
-                <option value="0000ff">Verde</option>
-                <option value="770077">Morado</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="descripcion">Descripcion</label>
-              <textarea class="descripcion" name="descripcion" id="descripcion"
-                placeholder="Escribe una breve descripcion..."></textarea>
-            </div>
-
-            <div class="botones-market">
-              <button class="enviar" type="submit">Enviar y Guardar</button>
-              <button class="resetear" type="reset">Borrar Datos</button>
-            </div>
-          </form>
-        </div>
-      </main>
-      <%- include('../partials/footer') %>
-  </body>
-
+        </main>
+        <%- include('../partials/footer') %>
+    </body>
 </html>
