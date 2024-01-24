@@ -136,3 +136,17 @@ Debido a un corte de electricidad en la fecha originalmente programada para la r
 
 2. **Acuerdo sobre la Próxima Reunión**
    - Acordamos reunirnos nuevamente el 22/01 después de clases.
+  
+
+
+## 22/01/24
+
+### Detalles de la Reunión
+
+- **Fecha:** 22/01/24
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Trabajo en Conjunto en Actividades Pendientes del Sprint 5**
+   - Nos reunimos para colaborar en las tareas que aún quedaban por completar del Sprint 5.
