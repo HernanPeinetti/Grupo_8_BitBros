@@ -14,7 +14,17 @@ app.use(express.static(path.resolve("public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
-app.use(session({secret: '....'}))
+app.use(session({
+    secret: 'tu-secreto-aqui',
+    resave: false,
+    saveUninitialized: true
+}));
+// Middleware para definir 'user' antes de renderizar las vistas
+app.use((req, res, next) => {
+    res.locals.user = req.session.user || null;
+    next();
+});
+
 //app.use(log); 
 //ROUTES
 
