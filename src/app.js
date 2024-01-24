@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const log = require("./middlewares/log.js");
-const cookieParser =require ('cookie-parser')
+const cookieParser = require('cookie-parser')
 const session = require('express-session')
 //Configuraciones
 const app = express();
@@ -14,7 +14,21 @@ app.use(express.static(path.resolve("public")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
-app.use(session({secret: '....'}))
+app.use(session({
+    secret: '5678912345',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        maxAge: 5 * 60 * 1000, //cookie de 5 minutos
+    },
+}));
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.clearCookie('connect.sid');
+    res.redirect('/login');
+});
+
 //app.use(log); 
 //ROUTES
 
@@ -32,5 +46,5 @@ app.listen(3000, () => {
 });
 
 app.use((req, res, next) => {
-    res.status(404).render("notFound", {user: req.session.user});
+    res.status(404).render("notFound", { user: req.session.user });
 });

@@ -74,3 +74,26 @@ SPRINT 2
 # Dejar de hacer
 
 - Dejar los codigos para ultimo momento, hace que el equipo luego tenga que esforzarse en estudiarlo en un corto periodo para comenzar con el proximo sprint.
+
+
+
+
+
+# SPRINT 5:
+
+# Comenzar a Hacer
+1. **Implementar revisiones de diseño:** Iniciar revisiones de diseño entre pares para garantizar la coherencia y la calidad del código desde las etapas iniciales del desarrollo.
+
+# Hacer más
+- **Optimizar la comunicación:** Fortalecer la comunicación mediante la implementación de herramientas adicionales, como canales de mensajería específicos para discutir aspectos técnicos.
+
+# Continuar haciendo
+- **Coordinar la repartición de tareas:** Mantener una distribución equitativa de las responsabilidades entre los miembros del equipo para optimizar la productividad.
+
+# Hacer menos
+- **Evitar la procrastinación en revisión de código:** Reducir el tiempo entre la finalización del código y su revisión para evitar acumulaciones que afecten la eficiencia del proceso.
+
+# Dejar de hacer
+1. **Postergar la documentación:** Eliminar la tendencia a posponer la documentación, asegurando que se realice de manera oportuna para facilitar la comprensión del código y las decisiones de diseño.
+
+2. **Depender exclusivamente de reuniones para la coordinación:** Dejar de depender únicamente de reuniones para la coordinación; explorar métodos adicionales, como la colaboración en línea, para mejorar la eficiencia en la gestión de tareas.

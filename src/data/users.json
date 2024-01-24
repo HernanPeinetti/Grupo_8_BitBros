@@ -41,14 +41,6 @@
   "admin": true
  },
  {
-  "id": "8a9253ee-4fa6-4013-887b-5aa5a0d155f2",
-  "name": "Lourdes",
-  "birth": "2222-02-22",
-  "email": "888fff89dese88@gmail.com",
-  "password": "$2a$10$kYHwrWUwLSqpnBzYTav6WuVywZxhQ/asbjq5Z1OQRlK6ZOA8.7WsK",
-  "avatar": "1706045756213_img.png"
- },
- {
   "id": "e254587f-005c-41b0-9be5-e4a2d5affd0f",
   "name": "Lourdes",
   "birth": "0111-11-11",
@@ -56,13 +48,5 @@
   "password": "$2a$10$xfIVtgPYTnZVQgj872AL.O9iD9Usmu5iUWNDFwPsB7inVgAhCLzeK",
   "avatar": "1706045935786_img.png",
   "admin": true
- },
- {
-  "id": "6545d8ba-7a4f-4c52-8b1b-370c3787323b",
-  "name": "juan perez",
-  "birth": "1200-02-12",
-  "email": "asdasdasd@gmail.com",
-  "password": "$2a$10$U0KiAWfZ/C0DK4laDGcliusC1eniD5DMGDed8UJxKKl1ESCescvI6",
-  "avatar": "1706091899210_img.jpg"
  }
 ]
