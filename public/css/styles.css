@@ -1,5 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 header {
-    font-family: "Roboto", sans-serif;
     height: 60px;
     width: 100%;
 }
@@ -194,13 +199,14 @@ footer {
         align-items: center;
         text-decoration: none;
     }
+    
 
     .a-user:hover p {
         text-decoration: underline;
     }
     .p-user {
-        display: block;
-        margin-left: 0.5rem;
+        display: flex;
+        margin: auto 0.5rem;
         font-size: 15px;
         font-weight: 500;
     }

@@ -28,7 +28,7 @@ module.exports = [
 
     body("brand").notEmpty().withMessage("La marca del producto no debe estar vacío"),
 
-    body().custom((value, { req }) => {
+    body("colors").custom((value, { req }) => {
         const { color1, color2, color3 } = req.body;
         if (!color1 && !color2 && !color3) {
             throw new Error("Al menos tiene que elegir un color");

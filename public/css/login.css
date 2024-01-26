@@ -43,72 +43,11 @@ h2 {
     color: #333;
     text-transform: uppercase;
 }
-
-form {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-label {
-    margin-top: 15px;
-    color: #555;
-    font-size: 14px;
-}
-
-input {
-    padding: 12px;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-button {
-    padding: 12px;
-    background-color: #a88af0;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: #b98af0;
-}
-
-.social-buttons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.facebook,
-.google {
-    flex: 1;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
 .facebook {
-    background-color: #3b5998;
-    color: #fff;
-    margin-right: 10px;
+    border-radius: 0.5rem 0 0 0.5rem !important;
 }
-
 .google {
-    background-color: #dd4b39;
-    color: #fff;
+    border-radius: 0 0.5rem 0.5rem 0 !important;
 }
 
 .forgot-password {
@@ -143,16 +82,6 @@ button:hover {
 
 /* Media query para cambiar el diseño de los botones cuando la resolución sea mayor a 360px */
 @media screen and (max-width: 768px) {
-    .social-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .facebook,
-    .google {
-        width: 100%;
-        margin-bottom: 10px;
-    }
 
       main {
         height: 55rem;

@@ -22,8 +22,8 @@
             </a>
             <% if (user) { %>
                 <a href="/profile" class="headerUserLink a-user">
-                    <div class="headerIconUser">
-                        <img src="/images/userProfile/<%= user.avatar %>" alt="">
+                    <div>
+                        <img class="headerIconUser" src="/images/userProfile/<%= user.avatar %>" alt="">
                     </div>
                     <p class="p-user"><%= user.name %></p>
                 </a>

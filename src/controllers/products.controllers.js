@@ -24,7 +24,7 @@ const controllersProduct = {
         res.render("./products/create.ejs", { user: req.session.user, colors: colors });
     },
 
-    store: (req, res) => {
+    processCreate: (req, res) => {
         const resultValidator = validationResult(req);
         const newProduct = {
             id: uuidv4(),
@@ -57,32 +57,50 @@ const controllersProduct = {
         res.render("./products/edit.ejs", { product, user: req.session.user, colors: colors });
     },
 
-    update: (req, res) => {
-        const productId = req.params.id;
-        const product = products.find((product) => product.id == productId);
-        if (product) {
-            product.name = req.body.name || product.name;
-            product.image = req.file?.filename || product.image;
-            product.category = req.body.category || product.category;
-            product.price = req.body.price || product.price;
-            product.stock = req.body.stock || product.stock;
-            product.colors = { color1: req.body.color1, color2: req.body.color2, color3: req.body.color3 } || product.colors;
-            product.description = req.body.description || product.description;
+    processEdit: (req, res) => {
+        const resultValidator = validationResult(req);
+        const product = {
+            id: req.params.id,
+            name: req.body.name,
+            image: req.file?.filename || "default-product.jpg",
+            category: req.body.category,
+            price: req.body.price,
+            stock: req.body.stock,
+            colors: { color1: req.body.color1, color2: req.body.color2, color3: req.body.color3 },
+            brand: req.body.brand,
+            description: req.body.description,
+        };
 
-            fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
+        const productFound = products.find((product) => product.id == req.params.id);
 
-            const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != product.id);
+        if (resultValidator.errors.length > 0) {
+            res.render("./products/edit", { product: productFound, user: req.session.user, colors: colors, errors: resultValidator.mapped(), old: product });
+        } else {
+            if (productFound) {
+                productFound.name = product.name || productFound.name;
+                productFound.image = req.file?.filename || productFound.image;
+                productFound.category = product.category || productFound.category;
+                productFound.price = product.price || productFound.price;
+                productFound.stock = product.stock || productFound.stock;
+                productFound.colors = { color1: product.colors.color1, color2: product.colors.color2, color3: product.colors.color3 } || productFound.colors;
+                productFound.description = product.description || productFound.description;
 
-            res.render("./products/detail.ejs", { product: product, productsRelated, user: req.session.user });
+                fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
+
+                const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
+
+                res.render("./products/detail.ejs", { product: productFound, productsRelated, user: req.session.user });
+            }
         }
     },
 
-    remove: (req, res) => {
-        const { id } = req.params;
-        const product = products.find((product) => product.id == id);
+    processDelete: (req, res) => {
+        const id = req.params.idDelete;
+        
+        const productFound = products.find((product) => product.id == id);
 
-        if (product.imagen != "default-product.jpg") {
-            fs.unlinkSync(path.join(__dirname, "../../public/images/products", product.image));
+        if (productFound && productFound.image != "default-product.jpg") {
+            fs.unlinkSync(path.join(__dirname, "../../public/images/products", productFound.image));
         }
 
         products = products.filter((product) => product.id != id);

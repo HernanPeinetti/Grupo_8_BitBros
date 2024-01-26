@@ -1,15 +1,15 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     overflow-x: hidden;
-    background-image: url('../images/background-register.jpg'); 
+    background-image: url("../images/background-register.jpg");
     background-size: cover;
     background-position: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 main {
@@ -19,8 +19,8 @@ main {
     align-items: center;
     height: 100vh;
 }
-  
-  .container {
+
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,121 +31,54 @@ main {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(5px); /*  desenfoque al fondo del formulario */
-  }
-  
-  h2 {
+}
+
+h2 {
     text-align: center;
-    color: #e42f98;
+    color: #333;
     text-transform: uppercase;
-  }
-  
-  form {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-  
-  label {
-    margin-top: 15px;
-    color: #555;
-    font-size: 14px;
-  }
-  
-  input {
-    padding: 12px;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-  }
-  
-  button {
-    padding: 12px;
-    background-color: #A88AF0;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  button:hover {
-    background-color: #B98AF0;
-  }
-  
-  .social-buttons {
-    margin-top: 25px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .facebook, .google {
-    flex: 1;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .facebook {
-    background-color: #3b5998;
-    color: #fff;
-    margin-right: 10px;
-  }
-  
-  .google {
-    background-color: #dd4b39;
-    color: #fff;
-  }
-  
-  .login-link {
+}
+
+.login-link {
     text-align: center;
     margin-top: 20px;
     color: #555;
-  }
-  
-  .login-link a {
+}
+.facebook {
+    border-radius: 0.5rem 0 0 0.5rem !important;
+}
+.google {
+    border-radius: 0 0.5rem 0.5rem 0 !important;
+}
+.login-link a {
     color: #007bff;
     text-decoration: none;
-  }
-  
-  .login-link a:hover {
+}
+
+.login-link a:hover {
     text-decoration: underline;
-  }
-  
-  /* Media query para cambiar el posicionamiento de los botones cuando la resolución sea mayor a 360px */
-  @media screen and (max-width: 768px) {
+}
+
+/* Media query para cambiar el posicionamiento de los botones cuando la resolución sea mayor a 360px */
+@media screen and (max-width: 768px) {
     .social-buttons {
-      flex-direction: column;
-      align-items: center;
-  }
-  
-  
-body {
-  background-repeat: repeat-y;
-}
-main {
-  height: 55rem;
-}
-    .facebook, .google {
-      width: 100%;
-      margin-bottom: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body {
+        background-repeat: repeat-y;
+    }
+    main {
+        height: 55rem;
     }
 
     header a {
-      left: 5%;
-      top: 30px;
+        left: 5%;
+        top: 30px;
     }
-  }
-  
-  .checkbox-container{
-  text-align: center;
-  
-  }
+}
+
+.checkbox-container {
+    text-align: center;
+}

@@ -112,13 +112,15 @@ button a {
 .form-delete {
     width: 48%;
 }
+.select-colors {
+    width: 100%;
+}
 .crear {
     background-color: #a88af0;
     padding: 15px;
     margin-top: 10px;
     width: 100%;
     text-decoration: none;
-    font-size: 14px;
     color: #fff;
     border-radius: 6px;
     text-align: center;
@@ -131,9 +133,12 @@ button a {
     height: 7rem;
 }
 
-@media (min-width: 525px) {
+@media (min-width: 576px) {
     .container-market {
         width: 26rem;
+    }
+    .select-colors {
+        width: 33.3%;
     }
 }
 
@@ -156,6 +161,7 @@ button a {
     .crear {
         width: 48%;
     }
+    
 }
 @media screen and (min-width: 1024px) {
     

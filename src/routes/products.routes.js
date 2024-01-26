@@ -4,7 +4,7 @@ const router = express.Router();
 
 const controllers = require("../controllers/products.controllers.js");
 
-const validateProduct = require("../middlewares/validateProduct.js");
+const validateProduct = require("../middlewares/validateProduct.js")
 const upload = require("../middlewares/multerProducts.js");
 
 //Middleware
@@ -17,20 +17,20 @@ router.get("/detalle/:id", controllers.detail);
 router.get("/crear", controllers.create);
 
 // VISTA EDITAR PRODUCTO http://localhost:3000/productos/editar/id
-router.get("/editar/:id",  controllers.edit);
+router.get("/editar/:id", controllers.edit);
 
 // METODO CREAR PRODUCTO
 router.post(
     "/crear",
     upload.single("image"),
     validateProduct,
-    controllers.store
+    controllers.processCreate
 );
 
 // METODO ACTUALIZAR PRODUCTO
-router.put("/editar/:id", upload.single("image"), validateProduct, controllers.update);
+router.put("/editar/:id", upload.single("image"), validateProduct, controllers.processEdit);
 
 // METODO ELIMINAR PRODUCTO
-router.delete("/eliminar/:id", controllers.remove);
+router.delete("/eliminar/:idDelete", controllers.processDelete);
 
 module.exports = router;

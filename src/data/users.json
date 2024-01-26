@@ -7,5 +7,13 @@
   "password": "$2a$10$Ben8dAdH.7LoBPIwR4XT.e2VZVVjtVTsGFeT5AFDRTAZTSjA52QUq",
   "avatar": "default-user.svg",
   "admin": true
+ },
+ {
+  "id": "52ea60ba-57ed-4d08-bf71-c53cceb729d4",
+  "name": "Milton Ezequiel Coria",
+  "birth": "2000-02-01",
+  "email": "miltoncoriadev@gmail.com",
+  "password": "$2a$10$ck2nkhmr0R3N6.C4RF/sjOQG8ooO1.4unxI6ueCJXb0xDK2yhLtkK",
+  "avatar": "profile_1706122648953_img.jpg"
  }
 ]

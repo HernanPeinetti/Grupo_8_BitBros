@@ -18,7 +18,7 @@ app.use(methodOverride("_method"));
 app.use(session({
     secret: 'mi_secreto',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: false,
 }));
 //app.use(log);
 //ROUTES
