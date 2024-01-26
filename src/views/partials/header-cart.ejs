@@ -21,9 +21,13 @@
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
             <% if (user) { %>
-                <a href="/profile" class="headerUserLink a-user">
-                    <i class="fa-regular fa-user"></i>
-                    <p class="p-user"><%= user.name %></p>
+                <a href="/perfil" class="headerUserLink a-user">
+                    <div>
+                        <img class="headerIconUser" src="/images/userProfile/<%= user.avatar %>" alt="">
+                    </div>
+                    <div>
+                        <p class="p-user"><%= user.name %></p>
+                    </div>
                 </a>
             <% } else{ %>
                 <a href="/login" class="headerUserLink a-user">

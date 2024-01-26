@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', { titulo: 'Iniciar Sesión' , estilo: 'login' }) %>
+<%- include('../partials/head', { titulo: 'Iniciar Sesión' , estilo: 'profile' }) %>
 
     <body>
-        <%- include('../partials/header-user', { user: user}) %>
+        <%- include('../partials/header-cart', { user: user}) %>
 
-            <main class="container">
-                <div class="row justify-content-center mt-5">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h2 class="card-title">¡Bienvenido/a <%= user.name %>!</h2>
-                                <div class="user-avatar">
-                                    <img src="/images/userProfile<%= user.avatar %>" alt="User Avatar">
-                                </div>
+        <main class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">¡Bienvenido/a <%= user.name %>!</h2>
+                            <div class="user-avatar">
+                                <img src="/images/userProfile/<%= user.avatar %>" alt="User Avatar">
                             </div>
+                            <form action="/salir" method="POST" class="formAlert">
+                                <button class="btn btn-dark col-12 p-2 mt-2 btnAlert" type="submit">Cerrar sesión</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </main>
+             </div>
+        </main>
 
+        <%- include('../partials/footer') %>
     </body>
 
 </html>

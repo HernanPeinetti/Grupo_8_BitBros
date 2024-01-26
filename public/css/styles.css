@@ -1,5 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 header {
-    font-family: "Roboto", sans-serif;
     height: 60px;
     width: 100%;
 }
@@ -30,6 +35,11 @@ header {
     color: #8a97ca;
     margin-right: 0.7rem;
     font-size: 18px;
+}
+.headerIconUser {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 .userButton {
@@ -189,13 +199,14 @@ footer {
         align-items: center;
         text-decoration: none;
     }
+    
 
     .a-user:hover p {
         text-decoration: underline;
     }
     .p-user {
-        display: block;
-        margin-left: 0.5rem;
+        display: flex;
+        margin: auto 0.5rem;
         font-size: 15px;
         font-weight: 500;
     }
@@ -267,7 +278,7 @@ footer {
         top: 11px;
         color: #8a97ca;
     }
-    
+
     .navUser {
         height: 140px;
         width: 100%;

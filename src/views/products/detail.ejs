@@ -16,7 +16,7 @@
             </nav> -->
 
                 <div class="titleContainer">
-                    <p class="nombre"><%= product.nombre %></p>
+                    <p class="nombre"><%= product.name %></p>
                     <form>
                         <input id="heart" type="checkbox" />
                         <label for="heart"><i class="fa-solid fa-heart"></i></i></label>
@@ -25,13 +25,13 @@
 
                 <div class="section1">
                     <div class="imageContainer">
-                        <img src="/images/productos/<%=product.image%>"  alt="inflador" >
+                        <img src="/images/products/<%=product.image%>"  alt="inflador" >
                     </div>
 
                     <div class="detailSection">
 
                         <div class="precio">
-                            <p><%= product.precio %></p>
+                            <p>$<%= product.price %></p>
                         </div>
 
                         <div class="stars">
@@ -46,7 +46,7 @@
                         <div class="stockSection">
                             <p>Cantidad</p>
                             <div class="cantidad">
-                                <input type="number" placeholder="1" step="1" min="1" max="10" id="number" />
+                                <input type="number" placeholder="1" step="1" min="1" max="<%= product.stock %>" id="number" />
                             </div>
                         </div>
 
@@ -55,9 +55,12 @@
                                 <p>Elegí el color:</p>
                             </div>
                             <select name="pickColor" class="changeColor">
-                                <option value="black">Negro</option>
-                                <option value="red">Rojo</option>
-                                <option value="green">Verde</option>
+                                <% for(let color in product.colors) { %>
+                                    <% if (product.colors[color] != "") { %>
+                                        <option value="<%= product.colors[color] %>"><%= product.colors[color] %></option>
+                                    <% } %>
+                                <% } %>
+
                             </select>
                         </div>
 
@@ -67,12 +70,15 @@
                             </button>
                         </a>
 
-                        <a href="/productos/editar/<%= product.id %>">
-                            <button class="btnProduct productEdit">EDITAR PRODUCTO</button>
-                        </a>
-                        <form action="/productos/eliminar/<%= product.id %>?_method=DELETE" method="POST">
-							<button type="submit" class="btnProduct productDelete">ELIMINAR PRODUCTO</button>
-						</form>
+                        <% if (user && user.admin == true) { %>
+                            <a href="/productos/editar/<%= product.id %>">
+                                <button class="btnProduct productEdit">EDITAR PRODUCTO</button>
+                            </a>
+                            <form class="formAlert" action="/productos/eliminar/<%= product.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btnProduct productDelete btnAlert">ELIMINAR PRODUCTO</button>
+                            </form>
+                        <% } %>
+
                         <div class="infoContainer">
                             <p class="available">
                                 <i class="fa-solid fa-circle-check"></i> Disponible
@@ -103,9 +109,10 @@
                             </div>
 
                         </summary>
-                        <div class="contenido"><%= product.marca %>
-                            <li><%= product.categoria %></li>
-                            <p><%= product.descripcion %>
+                        <div class="contenido">
+                            <li><strong>Marca:</strong><%= product.brand %></li>
+                            <li><strong>Categoría:</strong><%= product.category %></li>
+                            <p><strong>Descripción:</strong><%= product.description %>
                             </p>
                         </div>
                     </details>
@@ -162,109 +169,22 @@
                     <h2 class="titleProdRel">Productos relacionados</h2>
 
                     <div class="grupo-articulos">
-                        <% productsRelated.forEach(producto => { %>
-                            <a href="/productos/detalle/<%= producto.id %>">
+                        <% productsRelated.forEach(product => { %>
+                            <a href="/productos/detalle/<%= product.id %>">
                                 <article>
                                     <div class="img-producto">
-                                        <img src="/images/productos/<%= producto.image %>" alt="<%= producto.alt %>">
+                                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                                     </div>
                                     <div class="detalles-producto">
-                                        <h3 class="nombre-producto"><%= producto.nombre %></h3>
+                                        <h3 class="nombre-producto"><%= product.name %></h3>
                                     </div>
                                     <div class="precio-producto">
-                                        <h4 class="precio">$<%= producto.precio %></h4>
+                                        <h4 class="precio">$<%= product.price %></h4>
                                     </div>
                                 </article>
                             </a>
                         <% }) %>
-                        
-                        <!-- <a href="#">
-                            <article>
-                                <img src="/images/inflador.jpg" alt="inflador">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Inflador de pie GIYO</h3>
-                                    <p class="descripcion">Apto para moto, bici, auto, pelotas, etc.</p>
-                                </div>
-                                <h4 class="precio">$14.000</h4>
-                            </article>
-                        </a>
 
-                        <a href="#">
-                            <article>
-                                <img src="/images/CAJA.jpg" alt="caja pedalera">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Caja hollowtech a rulemanes</h3>
-                                    <p class="descripcion">Marca FIRST. Rojo o negro. Compatible Shimano</p>
-                                </div>
-                                <h4 class="precio">$12.300,50</h4>
-                            </article>
-                        </a>
-
-                        <a href="#">
-                            <article>
-                                <img src="/images/horquilla-29er.jpg" alt="horquilla-29er">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Horquilla 29er And-Es</h3>
-                                    <p class="descripcion">Frente recto-Apto disco </p>
-                                </div>
-                                <h4 class="precio">$16.500</h4>
-                            </article>
-                        </a>
-
-                        <a href="#">
-                            <article>
-                                <img src="/images/manijas-freno-hidraulico.jpg" alt="manijas-freno-hidraulico">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Frenos Hidraulicos Shimano m6100</h3>
-                                    <p class="descripcion">Incluye manijas, calipers y ductos</p>
-                                </div>
-                                <h4 class="precio">$110.000</h4>
-                            </article>
-                        </a>
-
-                        <a href="#">
-                            <article>
-                                <img src="/images/maza-trasera-shimanotx506.jpg" alt="maza-trasera-shimanotx506">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Maza trasera shimano TX506</h3>
-                                    <p class="descripcion">Apta disco a tornillos - Piñon 9v</p>
-                                </div>
-                                <h4 class="precio">$23.600</h4>
-                            </article>
-                        </a>
-
-                        <a href="#">
-                            <article>
-                                <img src="/images/pedales-aluminio.jpg" alt="pedales-aluminio">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Pedales Aluminio</h3>
-                                    <p class="descripcion">Solo en color negro</p>
-                                </div>
-                                <h4 class="precio">$4.400</h4>
-                            </article>
-                        </a>
-
-                        <a href="#">
-                            <article>
-                                <img src="/images/piñon-9v-ruta.jpg" alt="piñon-9v-ruta">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Piñon Ruta Shimano 9v</h3>
-                                    <p class="descripcion">Piñon corrido apto ruta o gravel</p>
-                                </div>
-                                <h4 class="precio">$33.000</h4>
-                            </article>
-                        </a>
-
-                        <a href="#">
-                            <article>
-                                <img src="/images/camara-deportiva.jpg" alt="camara-deportiva">
-                                <div class="detalles-producto">
-                                    <h3 class="nombre-producto">Camara de filmacion HD</h3>
-                                    <p class="descripcion">Con accesorios - Sin tarjeta de memoria</p>
-                                </div>
-                                <h4 class="precio">$150.300,50</h4>
-                            </article>
-                        </a> -->
                     </div>
 
                 </div>

@@ -7,16 +7,15 @@
         <%- include('../partials/header', {user: user}) %>
         <h1 class="titular">Bicicletas</h1>
         <div class="grupo-articulos">
-            <% for (let i = 0; i < productos.length; i++) { %>
-            
-                <% if (productos[i].categoria === 'bicicletas') { %>
-                    <a href="/productos/detalle/<%= productos[i].id %>">
+            <% for (let i = 0; i < products.length; i++) { %>
+                <% if (products[i].category === 'Bicicletas') { %>
+                    <a href="/productos/detalle/<%= products[i].id %>">
                         <article>
-                            <img src="/images/productos/<%= productos[i].image %>" alt="<%= productos[i].alt %>">
+                            <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].name %>">
                             <div class="detalles-producto">
-                                <h3 class="nombre-producto"><%= productos[i].nombre %></h3>
+                                <h3 class="nombre-producto"><%= products[i].name %></h3>
                             </div>
-                            <h4 class="precio">$<%= productos[i].precio %></h4>
+                            <h4 class="precio">$<%= products[i].price %></h4>
                         </article>
                     </a>
                 <% } %>

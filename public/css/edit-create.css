@@ -35,6 +35,7 @@ main {
     width: 95vw;
 }
 
+
 .title-market {
     text-align: center;
     color: #333;
@@ -85,9 +86,9 @@ button a {
 }
 
 .botones-market {
-    margin-top: 25px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-top: 15px;
     gap: 10px;
 }
 
@@ -100,20 +101,26 @@ button a {
 }
 
 .resetear {
+    width: 100%;
     background-color: #dd4b39;
     padding: 15px;
+    margin-top: 10px;
 }
 .resetear:hover {
     background-color: #c0402f;
 }
-
+.form-delete {
+    width: 48%;
+}
+.select-colors {
+    width: 100%;
+}
 .crear {
     background-color: #a88af0;
     padding: 15px;
     margin-top: 10px;
     width: 100%;
     text-decoration: none;
-    font-size: 14px;
     color: #fff;
     border-radius: 6px;
     text-align: center;
@@ -122,13 +129,16 @@ button a {
     background-color: #876ec1;
 }
 
-.descripcion {
+.description {
     height: 7rem;
 }
 
-@media (min-width: 525px) {
+@media (min-width: 576px) {
     .container-market {
         width: 26rem;
+    }
+    .select-colors {
+        width: 33.3%;
     }
 }
 
@@ -151,6 +161,7 @@ button a {
     .crear {
         width: 48%;
     }
+    
 }
 @media screen and (min-width: 1024px) {
     

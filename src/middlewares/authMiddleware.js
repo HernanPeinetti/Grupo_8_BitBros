@@ -1,8 +1,9 @@
 const withLogin = (req, res, next) => {
-    if (req.session.user === undefined) {
-        return res.redirect('/login'); // Redirige al usuario a la página de inicio de sesión
+    if (req.session.user == undefined) {
+        res.redirect("/login");
+    } else {
+        next();
     }
-    next();
 };
 
 const withoutLogin = (req, res, next) => {
@@ -14,9 +15,10 @@ const withoutLogin = (req, res, next) => {
 
 const adminLogin = (req, res, next) => {
     if (req.session.user === undefined || req.session.user.admin !== true) {
-        return res.status(403).send('No tienes permisos de administrador/a'); // Devuelve un código de estado 403 Forbidden si no es administrador
+        res.send("No tienes permisos de administrador/a");
+    } else {
+        next();
     }
-    next();
 };
 
 module.exports = { withLogin, withoutLogin, adminLogin };

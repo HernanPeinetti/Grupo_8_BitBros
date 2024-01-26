@@ -1,83 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
+    <%- include('../partials/head', {titulo: 'Crear producto' , estilo: 'edit-create' }) %>
 
-<%- include('../partials/head', {titulo: 'Crear producto' , estilo: 'edit-create' }) %>
+    <body>
+        <%- include('../partials/header-cart', {user: user}) %>
+        <main>
+            <div class="container-market">
+                <h2 class="title-market">Creando un producto</h2>
 
-  <body>
-    <%- include('../partials/header-cart', {user: user}) %>
-      <main>
-        <div class="container-market">
-          <div>
-            <% if (locals.errors) {%>
-              <% errors.forEach( error => { %>
-                <p><%error.msg%></p>
-              <% }) %>
-            <% } %>
-          </div>
-          <h2 class="title-market">Creando un producto</h2>
-          <form class="form-market" action="/productos/crear" method="post" enctype="multipart/form-data">
+                <form action="/productos/crear" method="POST" class="formAlert row d-flex flex-row g-2 needs-validation" enctype="multipart/form-data">
+                    <div class="col-sm-6 col-12">
+                        <label for="name" class="form-label">Nombre del producto:</label>
+                        <input type="text" name="name" value="<%= locals.old && old.name ? old.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
+                        <% if (locals.errors && errors.name) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.name.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="image" class="form-label">Imagen:</label>
+                        <input type="file" name="image" id="image" class="form-control <%= locals.errors && errors.image ? "is-invalid" : ""  %>" />
+                        <% if (locals.errors && errors.image) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.image.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="category" class="form-label">Categoría</label>
+                        <select class="form-select <%= locals.errors && errors.category ? "is-invalid" : ""  %>" name="category" id="category">
+                            <option <%= locals.old && old.category == "" ? "selected" : "" %> value="">...</option>
+                            <option <%= locals.old && old.category == "Accesorios" ? "selected" : "" %> value="Accesorios">Accesorios</option>
+                            <option <%= locals.old && old.category == "Indumentarias" ? "selected" : "" %> value="Indumentarias">Indumentarias</option>
+                            <option <%= locals.old && old.category == "Repuestos" ? "selected" : "" %> value="Repuestos">Repuestos</option>
+                            <option <%= locals.old && old.category == "Bicicletas" ? "selected" : "" %> value="Bicicletas">Bicicletas</option>
+                          </select>
+                        <% if (locals.errors && errors.category) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.category.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="d-flex flex-row col-sm-6 col-12">
+                        <div class="w-50">
+                            <label for="price" class="form-label">Precio:</label>
+                            <input type="text" name="price" value="<%= locals.old && old.price ? old.price : "" %>" id="price" class="form-control <%= locals.errors && errors.price ? "is-invalid" : "" %>" />
+                            <% if (locals.errors && errors.price) { %>
+                                <div class="invalid-feedback">
+                                    <%= errors.price.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="w-50">
+                            <label for="stock" class="form-label">Stock:</label>
+                            <input type="text" name="stock" value="<%= locals.old && old.stock ? old.stock : "" %>" id="stock" class="form-control <%= locals.errors && errors.stock ? "is-invalid" : "" %>" />
+                            <% if (locals.errors && errors.stock) { %>
+                                <div class="invalid-feedback">
+                                    <%= errors.stock.msg %>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 d-flex flex-row flex-wrap">
+                        <label class="col-12" for="colors">Colores:</label>
+                            <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color1" id="color1">
+                                <option <%= locals.old && old.colors.color1 == "" ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= locals.old && old.colors.color1 == color ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                            </select>
+                            <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color2" id="color2">
+                                <option <%= locals.old && old.colors.color2 == "" ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= locals.old && old.colors.color2 == color ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                            </select>
+                            <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color3" id="color3">
+                                <option <%= locals.old && old.colors.color3 == "" ? "selected" : "" %> value="">---</option>
+                                <% colors.forEach(color => { %>
+                                    <option value="<%= color %>" <%= locals.old && old.colors.color3 == color ? "selected" : "" %>><%= color %></option>
+                                <% }) %>
+                            </select>
 
-            <div>
-              <label for="nombre">Ingresa un nombre:</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Casco Generico">
+                            <% if (locals.errors && errors.colors) { %>
+                                <div class="invalid-feedback col-12">
+                                    <%= errors.colors.msg %>
+                                </div>
+                            <% } %>
+                        
+                    </div>
+                    <div class="col-sm-6 col-12">
+                        <label for="brand" class="form-label">Marca:</label>
+                        <input type="text" name="brand" value="<%= locals.old && old.brand ? old.brand : "" %>" id="brand" class="form-control <%= locals.errors && errors.brand ? "is-invalid" : "" %>" />
+                        <% if (locals.errors && errors.brand) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.brand.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+
+                    <div class="col-sm-12 col-12">
+                        <label for="description" class="form-label">Descripción:</label>
+                        <textarea class="form-control <%= locals.errors && errors.description ? "is-invalid" : "" %>" id="description" name="description" placeholder="Escribe una breve descripcion..."><%= locals.old && old.description ? old.description : "" %></textarea>
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.description.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    <div class="col-sm-12 m-auto mt-3">
+                        <button class="btn btn-dark col-12 p-2 btnAlert" type="submit">Crear producto</button>
+                    </div>
+                    <div class="col-sm-12 m-auto mt-2">
+                        <button class="btn btn-danger col-12 p-2" type="reset">Borrar datos</button>
+                    </div>
+                  </form>
             </div>
-
-            <div>
-              <label for="imagen">Inserta una imagen:</label>
-              <input type="file" name="image" accept=".jpg">
-            </div>
-
-            <div>
-              <label for="categoria">Seleccionar la categoria</label>
-              <select name="categoria" id="categoria">
-                <option value="--"> -- </option>
-                <option value="Accesorios">Accesorios</option>
-                <option value="Indumentaria">Indumentaria</option>
-                <option value="Repuestos">Repuestos</option>
-                <option value="Bicicleta">Bicicletas - Rodados</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="medidas">Ingresa las medidas del producto:</label>
-              <input type="text" id="medidas" name="tamañoYmedida" placeholder="Escribe las medidas del producto">
-            </div>
-
-            <div>
-              <label for="precio">Ingresa el precio:</label>
-              <input type="text" id="precio" name="precio" placeholder="Ingresa el precio">
-            </div>
-
-            <div>
-              <label for="stock">Ingresa el stock:</label>
-              <input type="number" id="stock" name="stock">
-            </div>
-
-            <div>
-              <label for="colores">Elige los colores</label>
-              <select name="colores" id="colores">
-                <option value="--"> -- </option>
-                <option value="#ff0000">Rojo</option>
-                <option value="#00ff00">Azul</option>
-                <option value="0000ff">Verde</option>
-                <option value="770077">Morado</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="descripcion">Descripcion</label>
-              <textarea class="descripcion" name="descripcion" id="descripcion"
-                placeholder="Escribe una breve descripcion..."></textarea>
-            </div>
-
-            <div class="botones-market">
-              <button class="enviar" type="submit">Enviar y Guardar</button>
-              <button class="resetear" type="reset">Borrar Datos</button>
-            </div>
-          </form>
-        </div>
-      </main>
-      <%- include('../partials/footer') %>
-  </body>
-
+        </main>
+        <%- include('../partials/footer') %>
+    </body>
 </html>

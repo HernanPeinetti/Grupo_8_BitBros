@@ -38,17 +38,17 @@
                     </div>
                     <div class="grupo-articulos">
                        
-                        <% productos.forEach(producto => { %>
-                            <a href="/productos/detalle/<%= producto.id %>">
+                        <% products.forEach(product => { %>
+                            <a href="/productos/detalle/<%= product.id %>">
                                 <article>
                                     <div class="img-producto">
-                                        <img src="/images/productos/<%= producto.image %>" alt="<%= producto.alt %>">
+                                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                                     </div>
                                     <div class="detalles-producto">
-                                        <h3 class="nombre-producto"><%= producto.nombre %></h3>
+                                        <h3 class="nombre-producto"><%= product.name %></h3>
                                     </div>
                                     <div class="precio-producto">
-                                        <h4 class="precio">$<%= producto.precio %></h4>
+                                        <h4 class="precio">$<%= product.price %></h4>
                                     </div>
                                 </article>
                             </a>
@@ -71,17 +71,17 @@
                         <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                        <% productos.forEach(producto => { %>
-                            <a href="/productos/detalle/<%= producto.id %>">
+                        <% products.forEach(product => { %>
+                            <a href="/productos/detalle/<%= product.id %>">
                                 <article>
                                     <div class="img-producto">
-                                        <img src="/images/productos/<%= producto.image %>" alt="<%= producto.alt %>">
+                                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                                     </div>
                                     <div class="detalles-producto">
-                                        <h3 class="nombre-producto"><%= producto.nombre %></h3>
+                                        <h3 class="nombre-producto"><%= product.name %></h3>
                                     </div>
                                     <div class="precio-producto">
-                                        <h4 class="precio">$<%= producto.precio %></h4>
+                                        <h4 class="precio">$<%= product.price %></h4>
                                     </div>
                                 </article>
                             </a>

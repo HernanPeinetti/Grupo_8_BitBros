@@ -2,8 +2,9 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const log = require("./middlewares/log.js");
-const cookieParser = require('cookie-parser')
-const session = require('express-session')
+const rememberUser = require("./middlewares/rememberUser.js")
+const cookieParser = require("cookie-parser");
+const session = require("express-session");
 //Configuraciones
 const app = express();
 
@@ -11,9 +12,11 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.resolve("public")));
+app.use("/bootstrap", express.static(path.resolve("node_modules/bootstrap/dist")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(methodOverride("_method"));
+app.use(cookieParser());
 app.use(session({
     secret: '5678912345',
     resave: false,
@@ -23,14 +26,9 @@ app.use(session({
         maxAge: 5 * 60 * 1000, //cookie de 5 minutos
     },
 }));
-app.get('/logout', (req, res) => {
-    req.session.destroy();
-    res.clearCookie('connect.sid');
-    res.redirect('/login');
-});
+app.use(rememberUser);
+// app.use(log); 
 
-//app.use(log); 
-//ROUTES
 
 const mainRoutes = require("./routes/main.routes.js");
 const productsRoutes = require("./routes/products.routes.js");

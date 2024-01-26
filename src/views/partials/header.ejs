@@ -21,8 +21,10 @@
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
             <% if (user) { %>
-                <a href="/profile" class="headerUserLink a-user">
-                    <i class="fa-regular fa-user"></i>
+                <a href="/perfil" class="headerUserLink a-user">
+                    <div>
+                        <img class="headerIconUser" src="/images/userProfile/<%= user.avatar %>" alt="">
+                    </div>
                     <p class="p-user"><%= user.name %></p>
                 </a>
             <% } else{ %>
@@ -59,9 +61,11 @@
                 <li>
                     <a href="/" class="navLink">Contacto</a>
                 </li>
-                <li>
-                    <a href="/productos/crear" class="navLink">Vender</a>
-                </li>
+                <% if (user && user.admin == true) { %>
+                    <li>
+                        <a href="/productos/crear" class="navLink">Vender</a>
+                    </li>
+                <% } %>
             </ul>
         </nav>
     </div>
