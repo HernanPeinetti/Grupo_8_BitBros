@@ -4,7 +4,7 @@
 <%- include('../partials/head', {titulo: product.nombre , estilo: 'detail' }) %>
 
     <body>
-        <%- include('../partials/header', {user: user}) %>
+        <%- include('../partials/header', {user: locals.user ? locals.user : undefined}) %>
             <main class="mainDetail">
                 <!-- 
             <nav class="sub-Section">

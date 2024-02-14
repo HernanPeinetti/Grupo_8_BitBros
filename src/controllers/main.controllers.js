@@ -5,11 +5,11 @@ let products = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 
 const controllers = {
     index: (req, res) => {
-        res.render("index.ejs", { products: products, user: req.session.user });
+        res.render("index.ejs", { products: products });
     },
 
     cart: (req, res) => {
-        res.render("cart.ejs", { user: req.session.user});
+        res.render("cart.ejs");
     },
 };
 

@@ -5,12 +5,13 @@
 }
 
 body {
-  background-image: url('../images/background-login.jpg');
-  background-size: cover;
-  background-position: center;
-  overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
+    background-image: url('../images/background-login.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
 }
+
 main {
     height: 100vh;
     margin: 0;
@@ -24,18 +25,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgba(
-        255,
-        255,
-        255,
-        0.7
-    ); /* Fondo blanco semitransparente */
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(
-        5px
-    ); /* Agrega un efecto de desenfoque al fondo del formulario */
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    backdrop-filter: blur(5px);
 }
 
 h2 {
@@ -43,9 +37,11 @@ h2 {
     color: #333;
     text-transform: uppercase;
 }
+
 .facebook {
     border-radius: 0.5rem 0 0 0.5rem !important;
 }
+
 .google {
     border-radius: 0 0.5rem 0.5rem 0 !important;
 }
@@ -83,12 +79,12 @@ h2 {
 /* Media query para cambiar el diseño de los botones cuando la resolución sea mayor a 360px */
 @media screen and (max-width: 768px) {
 
-      main {
+    main {
         height: 55rem;
-      }
+    }
 
     header a {
         left: 5%;
         top: 30px;
-      }
+    }
 }

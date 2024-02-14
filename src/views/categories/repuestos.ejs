@@ -4,7 +4,7 @@
 <%- include('../partials/head', {titulo: 'Repuestos', estilo: 'categories'}) %>
 
     <body>
-        <%- include('../partials/header', {user: user}) %>
+        <%- include('../partials/header', {user: locals.user ? locals.user : undefined}) %>
         <h1 class="titular">Repuestos</h1>
         <div class="grupo-articulos">
             <% for (let i = 0; i < products.length; i++) { %>

@@ -39,7 +39,7 @@
             </div>
             <div class="col-sm-6 col-12">
                 <label for="password" class="form-label">Contraseña:</label>
-                <input type="password" name="password" class="form-control <%= locals.errors && errors.password ? "is-invalid" : locals.old && old.password ? "border-black" : "" %>" id="password" />
+                <input type="password" name="password" class="form-control <%= locals.errors && errors.password ? "is-invalid" : "" %>" id="password" />
                 <% if (locals.errors && errors.password) { %>
                     <div class="invalid-feedback">
                         <%= errors.password.msg %>
@@ -48,7 +48,7 @@
             </div>
             <div class="col-sm-12">
                 <label for="avatar" class="form-label">Foto de perfil:</label>
-                <input type="file" name="avatar" id="avatar" class="form-control <%= locals.errors && errors.avatar ? "is-invalid" : locals.old && old.avatar ? "border-black" : ""  %>" />
+                <input type="file" name="avatar" id="avatar" class="form-control <%= locals.errors && errors.avatar ? "is-invalid" : ""  %>" value="<%= locals.image_old ? image_old : null %>" />
                 <% if (locals.errors && errors.avatar) { %>
                     <div class="invalid-feedback">
                         <%= errors.avatar.msg %>

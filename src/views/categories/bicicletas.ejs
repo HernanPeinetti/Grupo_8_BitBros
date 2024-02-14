@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<%- include('../partials/head', {titulo: 'Bicicletas', estilo: 'categories'}) %>
+
+<%- include('../partials/head', {titulo: 'Bicicletas' , estilo: 'categories' }) %>
 
     <body>
-        <%- include('../partials/header', {user: user}) %>
-        <h1 class="titular">Bicicletas</h1>
-        <div class="grupo-articulos">
-            <% for (let i = 0; i < products.length; i++) { %>
-                <% if (products[i].category === 'Bicicletas') { %>
-                    <a href="/productos/detalle/<%= products[i].id %>">
-                        <article>
-                            <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].name %>">
-                            <div class="detalles-producto">
-                                <h3 class="nombre-producto"><%= products[i].name %></h3>
-                            </div>
-                            <h4 class="precio">$<%= products[i].price %></h4>
-                        </article>
-                    </a>
-                <% } %>
-            <% } %>
-        </div>
-        <%- include('../partials/footer') %>
+        <%- include('../partials/header', {user: locals.user ? locals.user : undefined}) %>
+            <h1 class="titular">Bicicletas</h1>
+            <div class="grupo-articulos">
+                <% for (let i=0; i < products.length; i++) { %>
+                    <% if (products[i].category==='Bicicletas' ) { %>
+                        <a href="/productos/detalle/<%= products[i].id %>">
+                            <article>
+                                <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].name %>">
+                                <div class="detalles-producto">
+                                    <h3 class="nombre-producto">
+                                        <%= products[i].name %>
+                                    </h3>
+                                </div>
+                                <h4 class="precio">$<%= products[i].price %>
+                                </h4>
+                            </article>
+                        </a>
+                        <% } %>
+                            <% } %>
+            </div>
+            <%- include('../partials/footer') %>
     </body>
 
 </html>

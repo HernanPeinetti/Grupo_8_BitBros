@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<%- include('./partials/head', {titulo: 'Inicio', estilo: 'index'}) %>
+
+<%- include('./partials/head', {titulo: 'Inicio' , estilo: 'index' }) %>
 
     <body>
-        <%- include('./partials/header', {user: user}) %>
+        <%- include('./partials/header', {user: locals.user ? locals.user : undefined}) %>
             <nav class="banner">
                 <img src="/images/banner5.jpg">
             </nav>
@@ -37,60 +37,65 @@
                         <a href="#">BUSCAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                       
-                        <% products.forEach(product => { %>
+                        <% products.forEach(product=> { %>
                             <a href="/productos/detalle/<%= product.id %>">
                                 <article>
                                     <div class="img-producto">
                                         <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
                                     </div>
                                     <div class="detalles-producto">
-                                        <h3 class="nombre-producto"><%= product.name %></h3>
+                                        <h3 class="nombre-producto">
+                                            <%= product.name %>
+                                        </h3>
                                     </div>
                                     <div class="precio-producto">
-                                        <h4 class="precio">$<%= product.price %></h4>
+                                        <h4 class="precio">$<%= product.price %>
+                                        </h4>
                                     </div>
                                 </article>
                             </a>
-                        <% }) %>
-                </div> 
-                <div class="anuncio-promo">
-                    <div class="textos">
-                        <h2 class="super-promo">Super Promo</h2>
-                        <h3 class="descuento">50%</h3>
-                        <h4 class="productos-seleccionados">de descuento en productos<br>seleccionados</h4>
+                            <% }) %>
                     </div>
-                    <div class="imagen-sale">
-                        <img src="/images/ofertas.avif" alt="cartel de SALE(oferta)">
-                        <a href="#">VER AHORA</a>
+                    <div class="anuncio-promo">
+                        <div class="textos">
+                            <h2 class="super-promo">Super Promo</h2>
+                            <h3 class="descuento">50%</h3>
+                            <h4 class="productos-seleccionados">de descuento en productos<br>seleccionados</h4>
+                        </div>
+                        <div class="imagen-sale">
+                            <img src="/images/ofertas.avif" alt="cartel de SALE(oferta)">
+                            <a href="#">VER AHORA</a>
+                        </div>
                     </div>
-                </div>
-                <div class="seccion-productos">
-                    <div class="encabezados">
-                        <h2>Productos destacados</h2>
-                        <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
+                    <div class="seccion-productos">
+                        <div class="encabezados">
+                            <h2>Productos destacados</h2>
+                            <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
+                        </div>
+                        <div class="grupo-articulos">
+                            <% products.forEach(product=> { %>
+                                <a href="/productos/detalle/<%= product.id %>">
+                                    <article>
+                                        <div class="img-producto">
+                                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                                        </div>
+                                        <div class="detalles-producto">
+                                            <h3 class="nombre-producto">
+                                                <%= product.name %>
+                                            </h3>
+                                        </div>
+                                        <div class="precio-producto">
+                                            <h4 class="precio">$<%= product.price %>
+                                            </h4>
+                                        </div>
+                                    </article>
+                                </a>
+                                <% }) %>
+                        </div>
                     </div>
-                    <div class="grupo-articulos">
-                        <% products.forEach(product => { %>
-                            <a href="/productos/detalle/<%= product.id %>">
-                                <article>
-                                    <div class="img-producto">
-                                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
-                                    </div>
-                                    <div class="detalles-producto">
-                                        <h3 class="nombre-producto"><%= product.name %></h3>
-                                    </div>
-                                    <div class="precio-producto">
-                                        <h4 class="precio">$<%= product.price %></h4>
-                                    </div>
-                                </article>
-                            </a>
-                        <% }) %>
-                    </div>
-                </div>
             </main>
 
-         <%- include('./partials/footer') %>
+            <%- include('./partials/footer') %>
     </body>
 
 </html>

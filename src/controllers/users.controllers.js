@@ -7,11 +7,17 @@ const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 let usersJson = JSON.parse(fs.readFileSync(userPath, "utf-8"));
 
+// if (!errors.isEmpty()) {
+//     let imagePath = req.file?.path
+//     res.render('formCreate', { imagePath, OldData: req.body, errors:errors.mapped() })
+//     }
+
+//     <input type="file" id="imagen" name="imagen" accept="image/*" <% if (imagen) { %> value="<%= imagePath%>" <% } %>
+
 const controllersUser = {
     profile: (req, res) => {
-        // Verifica si el usuario está autenticado antes de mostrar la página de perfil
         if (req.session.user) {
-            res.render("./users/profile.ejs", { user: req.session.user });
+            res.render("./users/profile.ejs");
         }
     },
 
@@ -28,7 +34,9 @@ const controllersUser = {
         let cookieUser = req.body.rembember;
 
         if (resultValidator.errors.length > 0) {
+
             res.render("./users/login", { errors: resultValidator.mapped(), old: usuario });
+
         } else {
             let userFound = usersJson.find((user) => user.email == usuario.email);
 
@@ -43,17 +51,17 @@ const controllersUser = {
                     errors:
                         userFound == undefined
                             ? {
-                                  email: {
-                                      msg: "No hay una cuenta registrada con el correo ingresado",
-                                  },
-                              }
+                                email: {
+                                    msg: "No hay una cuenta registrada con el correo ingresado",
+                                },
+                            }
                             : bcryptjs.compareSync(usuario.password.toString(), userFound.password) == false
-                            ? {
-                                  password: {
-                                      msg: "La constraseña es incorrecta",
-                                  },
-                              }
-                            : "",
+                                ? {
+                                    password: {
+                                        msg: "La constraseña es incorrecta",
+                                    },
+                                }
+                                : "",
                     old: usuario,
                 });
             }
@@ -76,9 +84,19 @@ const controllersUser = {
         };
 
         if (resultValidator.errors.length > 0) {
+            let imagePath = req.file?.path
+            console.log(req.file)
+
+            if (newUser.avatar !== "default-user.svg") {
+                const imagePath = path.join(__dirname, `../../public/images/userProfile/${req.file?.filename}`)
+
+                fs.unlinkSync(imagePath)
+            }
+
             res.render("./users/register", {
                 errors: resultValidator.mapped(),
                 old: newUser,
+                image_old: imagePath
             });
         } else {
             usersJson.push(newUser);

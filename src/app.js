@@ -1,8 +1,7 @@
 const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
-const log = require("./middlewares/log.js");
-const rememberUser = require("./middlewares/rememberUser.js")
+const userLogged = require("./middlewares/userLogged.js")
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 //Configuraciones
@@ -21,13 +20,10 @@ app.use(session({
     secret: '5678912345',
     resave: false,
     saveUninitialized: false,
-    cookie: {
-        secure: false,
-        maxAge: 5 * 60 * 1000, //cookie de 5 minutos
-    },
 }));
-app.use(rememberUser);
+app.use(userLogged);
 // app.use(log); 
+// <!-- <input type="file" id="imagen" name="imagen" accept="image/*" <% if (imagen) { %> value="<%= imagen %>" <% } %> required> -->
 
 
 const mainRoutes = require("./routes/main.routes.js");

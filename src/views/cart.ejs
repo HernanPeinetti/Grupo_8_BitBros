@@ -4,7 +4,7 @@
 <%- include('./partials/head', {titulo: 'Mi Carrito', estilo: 'cart'}) %>
 
 <body>
-    <%- include('./partials/header-cart', {user: user}) %>
+    <%- include('./partials/header-cart', {user: locals.user ? locals.user : undefined}) %>
     <main class="main-carrito">
         <div class="titulos">
             <h1>Carro de Compras</h1>

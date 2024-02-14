@@ -14,14 +14,14 @@ const controllersProduct = {
         const product = products.find((producto) => producto.id == id);
         const productsRelated = products.filter((producto) => producto.categoria == product.categoria && producto.id != product.id);
         if (product) {
-            res.render("./products/detail.ejs", { product, productsRelated, user: req.session.user });
+            res.render("./products/detail.ejs", { product, productsRelated });
         } else {
             res.send("El producto que busca no existe");
         }
     },
 
     create: (req, res) => {
-        res.render("./products/create.ejs", { user: req.session.user, colors: colors });
+        res.render("./products/create.ejs", { colors: colors });
     },
 
     processCreate: (req, res) => {
@@ -39,14 +39,20 @@ const controllersProduct = {
         };
 
         if (resultValidator.errors.length > 0) {
-            res.render("./products/create", { errors: resultValidator.mapped(), old: newProduct, user: req.session.user, colors: colors });
+            if (newProduct.image !== "default-user.svg") {
+                const imagePath = path.join(__dirname, `../../public/images/products/${req.file?.filename}`)
+
+                fs.unlinkSync(imagePath)
+            }
+
+            res.render("./products/create", { errors: resultValidator.mapped(), old: newProduct, colors: colors });
         } else {
             products.push(newProduct);
             fs.writeFileSync(pathProducts, JSON.stringify(products, null, ""));
 
             const productsRelated = products.filter((product) => product.category == newProduct.category && product.id != newProduct.id);
 
-            res.render("./products/detail", { product: newProduct, productsRelated, user: req.session.user });
+            res.render("./products/detail", { product: newProduct, productsRelated });
         }
     },
 
@@ -54,7 +60,7 @@ const controllersProduct = {
         const id = req.params.id;
         const product = products.find((product) => product.id == id);
 
-        res.render("./products/edit.ejs", { product, user: req.session.user, colors: colors });
+        res.render("./products/edit.ejs", { product, colors: colors });
     },
 
     processEdit: (req, res) => {
@@ -74,7 +80,7 @@ const controllersProduct = {
         const productFound = products.find((product) => product.id == req.params.id);
 
         if (resultValidator.errors.length > 0) {
-            res.render("./products/edit", { product: productFound, user: req.session.user, colors: colors, errors: resultValidator.mapped(), old: product });
+            res.render("./products/edit", { product: productFound, colors: colors, errors: resultValidator.mapped(), old: product });
         } else {
             if (productFound) {
                 productFound.name = product.name || productFound.name;
@@ -89,14 +95,14 @@ const controllersProduct = {
 
                 const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
 
-                res.render("./products/detail.ejs", { product: productFound, productsRelated, user: req.session.user });
+                res.render("./products/detail.ejs", { product: productFound, productsRelated });
             }
         }
     },
 
     processDelete: (req, res) => {
         const id = req.params.idDelete;
-        
+
         const productFound = products.find((product) => product.id == id);
 
         if (productFound && productFound.image != "default-product.jpg") {
@@ -107,7 +113,7 @@ const controllersProduct = {
         const productsJSON = JSON.stringify(products, null, "");
 
         fs.writeFileSync(pathProducts, productsJSON);
-        res.render("index.ejs", { products: products, user: req.session.user });
+        res.render("index.ejs", { products: products });
     },
 };
 
