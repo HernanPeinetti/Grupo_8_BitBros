@@ -7,13 +7,6 @@ const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 let usersJson = JSON.parse(fs.readFileSync(userPath, "utf-8"));
 
-// if (!errors.isEmpty()) {
-//     let imagePath = req.file?.path
-//     res.render('formCreate', { imagePath, OldData: req.body, errors:errors.mapped() })
-//     }
-
-//     <input type="file" id="imagen" name="imagen" accept="image/*" <% if (imagen) { %> value="<%= imagePath%>" <% } %>
-
 const controllersUser = {
     profile: (req, res) => {
         if (req.session.user) {

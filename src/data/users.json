@@ -31,5 +31,13 @@
   "email": "miltoncoria@gmail.com",
   "password": "$2a$10$I4IzvGzzOmmzDL1ZV3YEQ.q3wfVdLzUuzN8fptQREccEfR5BgS3wO",
   "avatar": "default-user.svg"
+ },
+ {
+  "id": "0b02698c-b8f8-4c7a-9ace-b45e8aa91949",
+  "name": "Lourdes Montenegro",
+  "birth": "1998-01-26",
+  "email": "lourdes@gmail.com",
+  "password": "$2a$10$RH3JjgV7Rkj4aGV9KLZfU.k3i/86NQd.W1ushVFl1Vewd6RG/.2nq",
+  "avatar": "default-user.svg"
  }
 ]

@@ -22,7 +22,7 @@ SET time_zone = "+00:00";
 --
 
 DROP DATABASE IF EXISTS structure;
-CREATE structure;
+CREATE DATABASE structure;
 USE structure;
 
 -- --------------------------------------------------------
