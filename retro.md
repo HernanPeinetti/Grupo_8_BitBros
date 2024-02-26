@@ -97,3 +97,24 @@ SPRINT 2
 1. **Postergar la documentación:** Eliminar la tendencia a posponer la documentación, asegurando que se realice de manera oportuna para facilitar la comprensión del código y las decisiones de diseño.
 
 2. **Depender exclusivamente de reuniones para la coordinación:** Dejar de depender únicamente de reuniones para la coordinación; explorar métodos adicionales, como la colaboración en línea, para mejorar la eficiencia en la gestión de tareas.
+
+
+
+
+# Sprint 6
+
+## Comenzar a Hacer
+1. **Implementar pruebas automatizadas:** Iniciar la práctica de escribir pruebas automatizadas para garantizar la integridad del código y facilitar la detección temprana de errores.
+
+## Hacer más
+- **Revisión continua de la arquitectura:** Incrementar la frecuencia de las revisiones de la arquitectura del sistema para identificar posibles mejoras y evitar acumulación de deudas técnicas.
+
+## Continuar haciendo
+- **Mantener la colaboración activa:** Continuar fomentando un ambiente de colaboración entre los miembros del equipo, donde se comparta conocimiento y se ofrezca ayuda cuando sea necesario.
+
+## Hacer menos
+- **Reducir la dependencia de reuniones prolongadas:** Limitar la duración de las reuniones para evitar pérdidas de tiempo y mantener el enfoque en las tareas prioritarias.
+
+## Dejar de hacer
+1. **Evitar la duplicación de código:** Eliminar la práctica de duplicar código en diferentes partes del proyecto, buscando siempre reutilizar y refactorizar cuando sea necesario.
+2. **Dejar de procrastinar en la revisión de pruebas:** Abandonar la tendencia a posponer la revisión de las pruebas realizadas, asegurando que se realice de manera inmediata para mantener la calidad del código.
