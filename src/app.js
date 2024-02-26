@@ -35,8 +35,8 @@ app.use("/", mainRoutes, usersRoutes);
 app.use("/productos", productsRoutes);
 app.use("/categorias", categoriesRoutes);
 
-app.listen(3000, () => {
-    console.log("Servidor levantado en http://localhost:3000");
+app.listen(3001, () => {
+    console.log("Servidor levantado en http://localhost:3001");
 });
 
 app.use((req, res, next) => {

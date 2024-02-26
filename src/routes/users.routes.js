@@ -20,7 +20,7 @@ router.get("/register",withoutLogin, register)
 
 // REGISTER DE USUARIOS
 
-router.post("/register", upload.single("avatar"),validatorRegister, processRegister)
+router.post("/register", upload.single("profile_img"),validatorRegister, processRegister)
 
 // Ruta para la vista PROFILE http://localhost:3000/profile
 router.get('/perfil', withLogin, controllers.profile);

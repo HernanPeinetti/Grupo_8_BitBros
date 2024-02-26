@@ -48,7 +48,7 @@
             </div>
             <div class="col-sm-12">
                 <label for="profile_img" class="form-label">Foto de perfil:</label>
-                <input type="file" name="profile_img" id="profile_img" class="form-control <%= locals.errors && errors.profile_img ? "is-invalid" : ""  %>" value="<%= locals.image_old ? image_old : null %>" />
+                <input type="file" name="profile_img" id="profile_img" class="form-control <%= locals.errors && errors.profile_img ? "is-invalid" : ""  %>" />
                 <% if (locals.errors && errors.profile_img) { %>
                     <div class="invalid-feedback">
                         <%= errors.profile_img.msg %>

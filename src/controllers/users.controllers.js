@@ -70,37 +70,32 @@ const controllersUser = {
     processRegister: async (req, res) => {
         try {
             const resultValidator = validationResult(req);
-
-            const {name, birth, email, password, profile_img} = req.body
-
-
-
-            await User.create()
-
-
+            
+            const { name, birth, email, password } = req.body
 
             if (resultValidator.errors.length > 0) {
                 let imagePath = req.file?.path
-                console.log(req.file)
-    
-                if (newUser.avatar !== "default-user.svg") {
+
+                if (imagePath) {
                     const imagePath = path.join(__dirname, `../../public/images/userProfile/${req.file?.filename}`)
-    
+
                     fs.unlinkSync(imagePath)
                 }
-    
+
                 res.render("./users/register", {
                     errors: resultValidator.mapped(),
-                    old: newUser,
-                    image_old: imagePath
+                    old: req.body
                 });
             } else {
-                usersJson.push(newUser);
-    
-                fs.writeFileSync(userPath, JSON.stringify(usersJson, null, "  ")); //guardarlo en db json
-                let usuarioJSON = JSON.stringify(usersJson, null, " ");
-                fs.writeFileSync(userPath, usuarioJSON);
-    
+                await User.create({
+                    name: name,
+                    birth: birth,
+                    email: email,
+                    password: bcryptjs.hashSync(password, 10),
+                    profile_img: req.file?.filename || "default-user.svg",
+                    id_user_type: 1
+                })
+
                 res.redirect("/login");
             }
 
@@ -110,7 +105,7 @@ const controllersUser = {
             console.log(error.message)
         }
 
-        const resultValidator = validationResult(req);
+        // const resultValidator = validationResult(req);
         // let newUser = {
         //     id: uuidv4(),
         //     name: req.body.name,
@@ -120,7 +115,7 @@ const controllersUser = {
         //     avatar: req.file?.filename || "default-user.svg",
         // };
 
-        
+
     },
 
     logout: (req, res) => {
