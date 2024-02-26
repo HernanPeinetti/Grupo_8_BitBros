@@ -150,3 +150,74 @@ Debido a un corte de electricidad en la fecha originalmente programada para la r
 
 1. **Trabajo en Conjunto en Actividades Pendientes del Sprint 5**
    - Nos reunimos para colaborar en las tareas que aún quedaban por completar del Sprint 5.
+  
+
+
+## 10/02/2024
+
+### Detalles de la Reunión
+
+- **Fecha:** 10/02/2024
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Planificación del Sprint 6**
+   - Nos reunimos para discutir y planificar las metas y objetivos del Sprint 6.
+
+2. **División de Tareas**
+   - Distribuimos las tareas entre los miembros del equipo, asignando responsabilidades para cada aspecto del proyecto.
+
+3. **Tablero de Trello**
+   - Plasmamos las tareas y asignaciones en nuestro tablero de Trello para una gestión visual y organizada.
+
+
+
+## 19/02/2024
+
+### Detalles de la Reunión
+
+- **Fecha:** 19/02/2024
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Discusión de Progreso y Dificultades del Sprint 6**
+   - Nos reunimos para revisar y discutir el estado actual de nuestras tareas en el Sprint 6, compartiendo progresos y señalando posibles dificultades.
+
+2. **Consulta y Asistencia Mutua**
+   - Nos apoyamos mutuamente al abordar preguntas y dificultades, fomentando un ambiente colaborativo.
+  
+
+
+## 23/02/2024
+
+### Detalles de la Reunión
+
+- **Fecha:** 23/02/2024
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Trabajo en Conjunto en el Sprint 6**
+   - Nos reunimos para colaborar activamente y avanzar en conjunto en las tareas y objetivos del Sprint 6.
+  
+
+
+## 25/02/2024
+
+### Detalles de la Reunión
+
+- **Fecha:** 25/02/2024
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Continuación del Trabajo en Conjunto en el Sprint**
+   - Colaboración activa para avanzar en las tareas y metas establecidas en el Sprint.
+
+2. **Consulta y Resolución de Dudas**
+   - Espacio para realizar consultas y resolver dudas entre los miembros del equipo.
+  
+
+
