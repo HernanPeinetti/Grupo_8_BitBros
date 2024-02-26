@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2024 a las 05:04:59
+-- Tiempo de generación: 26-02-2024 a las 15:30:07
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,8 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db`
+-- Base de datos: `bicicleteria_db`
 --
+CREATE DATABASE IF NOT EXISTS `bicicleteria_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `bicicleteria_db`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `brands`
 --
 
+DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id_brand` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
@@ -38,6 +41,7 @@ CREATE TABLE `brands` (
 -- Estructura de tabla para la tabla `categories`
 --
 
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL
@@ -49,6 +53,7 @@ CREATE TABLE `categories` (
 -- Estructura de tabla para la tabla `colors`
 --
 
+DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
   `id_color` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
@@ -60,6 +65,7 @@ CREATE TABLE `colors` (
 -- Estructura de tabla para la tabla `measures`
 --
 
+DROP TABLE IF EXISTS `measures`;
 CREATE TABLE `measures` (
   `id_measure` int(11) NOT NULL,
   `height` decimal(3,1) DEFAULT NULL,
@@ -73,6 +79,7 @@ CREATE TABLE `measures` (
 -- Estructura de tabla para la tabla `products`
 --
 
+DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -91,6 +98,7 @@ CREATE TABLE `products` (
 -- Estructura de tabla para la tabla `products_colors`
 --
 
+DROP TABLE IF EXISTS `products_colors`;
 CREATE TABLE `products_colors` (
   `id_product_color` int(11) NOT NULL,
   `id_product` int(11) DEFAULT NULL,
@@ -103,6 +111,7 @@ CREATE TABLE `products_colors` (
 -- Estructura de tabla para la tabla `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
   `created_at` date DEFAULT NULL,
@@ -122,6 +131,7 @@ CREATE TABLE `users` (
 -- Estructura de tabla para la tabla `users_types`
 --
 
+DROP TABLE IF EXISTS `users_types`;
 CREATE TABLE `users_types` (
   `id_user_type` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL
