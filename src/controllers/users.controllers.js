@@ -105,17 +105,6 @@ const controllersUser = {
             console.log(error.message)
         }
 
-        // const resultValidator = validationResult(req);
-        // let newUser = {
-        //     id: uuidv4(),
-        //     name: req.body.name,
-        //     birth: req.body.birth,
-        //     email: req.body.email,
-        //     password: bcryptjs.hashSync(req.body.password, 10), //encriptar contrasena
-        //     avatar: req.file?.filename || "default-user.svg",
-        // };
-
-
     },
 
     logout: (req, res) => {
