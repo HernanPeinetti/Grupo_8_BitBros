@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) =>{
         id_user : {
             type : dataTypes.INTEGER.UNSIGNED,
             primaryKey : true,
-            AutoIncrement : true
+            autoIncrement : true
         }, 
         id_user_type : {
             type : dataTypes.INTEGER.UNSIGNED
