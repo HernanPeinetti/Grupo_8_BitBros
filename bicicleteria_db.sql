@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2024 a las 15:30:07
+-- Tiempo de generación: 26-02-2024 a las 19:31:12
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -125,6 +125,13 @@ CREATE TABLE `users` (
   `id_user_type` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id_user`, `created_at`, `updated_at`, `name`, `profile_img`, `birth`, `email`, `password`, `deleted_at`, `id_user_type`) VALUES
+(5, '2024-02-26', '2024-02-26', 'Milton Ezequiel Coria', 'profile_1708972104587_img.jpg', '2000-02-21', 'miltoncoria03@gmail.com', '$2a$10$gx4CK08V05tz1hzojiy/5ucZGk1cwBGZcV46s1xhn7kS0r/YlAPXS', NULL, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -136,6 +143,13 @@ CREATE TABLE `users_types` (
   `id_user_type` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users_types`
+--
+
+INSERT INTO `users_types` (`id_user_type`, `name`) VALUES
+(1, 'client');
 
 --
 -- Índices para tablas volcadas
@@ -239,13 +253,13 @@ ALTER TABLE `products_colors`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `users_types`
 --
 ALTER TABLE `users_types`
-  MODIFY `id_user_type` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

@@ -99,8 +99,6 @@ const controllersUser = {
                 res.redirect("/login");
             }
 
-
-
         } catch (error) {
             console.log(error.message)
         }
