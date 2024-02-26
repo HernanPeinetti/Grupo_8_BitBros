@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) =>{
         id_user : {
             type : dataTypes.INTEGER.UNSIGNED,
             primaryKey : true,
-            AutoIncrement : true
+            autoIncrement : true
         }, 
         id_user_type : {
             type : dataTypes.INTEGER.UNSIGNED
@@ -31,7 +31,7 @@ module.exports = (sequelize, dataTypes) =>{
             type : dataTypes.STRING(100),
             allowNull : false
         }, 
-        profileImg : {
+        profile_img : {
             type : dataTypes.STRING(100)
         }, 
         updated_at : {
@@ -48,6 +48,4 @@ module.exports = (sequelize, dataTypes) =>{
 
     const User = sequelize.define(alias, cols, config)
     return User
-
-
 }
