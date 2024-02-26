@@ -31,7 +31,7 @@ module.exports = (sequelize, dataTypes) =>{
             type : dataTypes.STRING(100),
             allowNull : false
         }, 
-        profileImg : {
+        profile_img : {
             type : dataTypes.STRING(100)
         }, 
         updated_at : {
@@ -47,7 +47,13 @@ module.exports = (sequelize, dataTypes) =>{
     }
 
     const User = sequelize.define(alias, cols, config)
+
+    User.associate = (models) => {
+        User.belongsTo(models.User_type, {
+            as: "user_type",
+            foreignKey: "id_user_type"
+        })
+    }
+
     return User
-
-
 }

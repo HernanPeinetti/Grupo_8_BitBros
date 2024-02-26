@@ -118,7 +118,7 @@ CREATE TABLE `users` (
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   `name` varchar(255) NOT NULL,
-  `profileImg` varchar(255) DEFAULT NULL,
+  `profile_img` varchar(255) DEFAULT NULL,
   `birth` date NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,

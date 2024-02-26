@@ -7,6 +7,8 @@ const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 let usersJson = JSON.parse(fs.readFileSync(userPath, "utf-8"));
 
+const { User } = require('../database/models')
+
 const controllersUser = {
     profile: (req, res) => {
         if (req.session.user) {
@@ -65,41 +67,55 @@ const controllersUser = {
         res.render("./users/register.ejs");
     },
 
-    processRegister: function (req, res) {
-        const resultValidator = validationResult(req);
-        let newUser = {
-            id: uuidv4(),
-            name: req.body.name,
-            birth: req.body.birth,
-            email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10), //encriptar contrasena
-            avatar: req.file?.filename || "default-user.svg",
-        };
+    processRegister: async (req, res) => {
+        try {
+            const resultValidator = validationResult(req);
+            
+            const { name, birth, email, password } = req.body
 
-        if (resultValidator.errors.length > 0) {
-            let imagePath = req.file?.path
-            console.log(req.file)
+            if (resultValidator.errors.length > 0) {
+                let imagePath = req.file?.path
 
-            if (newUser.avatar !== "default-user.svg") {
-                const imagePath = path.join(__dirname, `../../public/images/userProfile/${req.file?.filename}`)
+                if (imagePath) {
+                    const imagePath = path.join(__dirname, `../../public/images/userProfile/${req.file?.filename}`)
 
-                fs.unlinkSync(imagePath)
+                    fs.unlinkSync(imagePath)
+                }
+
+                res.render("./users/register", {
+                    errors: resultValidator.mapped(),
+                    old: req.body
+                });
+            } else {
+                await User.create({
+                    name: name,
+                    birth: birth,
+                    email: email,
+                    password: bcryptjs.hashSync(password, 10),
+                    profile_img: req.file?.filename || "default-user.svg",
+                    id_user_type: 1
+                })
+
+                res.redirect("/login");
             }
 
-            res.render("./users/register", {
-                errors: resultValidator.mapped(),
-                old: newUser,
-                image_old: imagePath
-            });
-        } else {
-            usersJson.push(newUser);
 
-            fs.writeFileSync(userPath, JSON.stringify(usersJson, null, "  ")); //guardarlo en db json
-            let usuarioJSON = JSON.stringify(usersJson, null, " ");
-            fs.writeFileSync(userPath, usuarioJSON);
 
-            res.redirect("/login");
+        } catch (error) {
+            console.log(error.message)
         }
+
+        // const resultValidator = validationResult(req);
+        // let newUser = {
+        //     id: uuidv4(),
+        //     name: req.body.name,
+        //     birth: req.body.birth,
+        //     email: req.body.email,
+        //     password: bcryptjs.hashSync(req.body.password, 10), //encriptar contrasena
+        //     avatar: req.file?.filename || "default-user.svg",
+        // };
+
+
     },
 
     logout: (req, res) => {
