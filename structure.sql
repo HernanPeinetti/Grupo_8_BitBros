@@ -31,10 +31,13 @@ USE structure;
 -- Estructura de tabla para la tabla `brands`
 --
 
-DROP TABLE IF EXISTS brands;
+DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id_brand` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -45,7 +48,10 @@ CREATE TABLE `brands` (
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -57,7 +63,10 @@ CREATE TABLE `categories` (
 DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
   `id_color` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -69,9 +78,12 @@ CREATE TABLE `colors` (
 DROP TABLE IF EXISTS `measures`;
 CREATE TABLE `measures` (
   `id_measure` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   `height` decimal(3,1) DEFAULT NULL,
   `width` decimal(3,1) DEFAULT NULL,
-  `length` decimal(3,1) DEFAULT NULL
+  `length` decimal(3,1) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -83,6 +95,8 @@ CREATE TABLE `measures` (
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `price` int(10) UNSIGNED NOT NULL,
@@ -90,7 +104,8 @@ CREATE TABLE `products` (
   `description` text DEFAULT NULL,
   `id_category` int(11) NOT NULL,
   `id_brand` int(11) DEFAULT NULL,
-  `id_measure` int(11) DEFAULT NULL
+  `id_measure` int(11) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -102,8 +117,11 @@ CREATE TABLE `products` (
 DROP TABLE IF EXISTS `products_colors`;
 CREATE TABLE `products_colors` (
   `id_product_color` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   `id_product` int(11) DEFAULT NULL,
-  `id_color` int(11) DEFAULT NULL
+  `id_color` int(11) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -122,8 +140,8 @@ CREATE TABLE `users` (
   `birth` date NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL,
-  `id_user_type` int(11) NOT NULL
+  `id_user_type` int(11) NOT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -135,7 +153,11 @@ CREATE TABLE `users` (
 DROP TABLE IF EXISTS `users_types`;
 CREATE TABLE `users_types` (
   `id_user_type` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `key` varchar(255) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

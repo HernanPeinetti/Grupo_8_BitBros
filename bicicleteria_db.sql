@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2024 a las 19:31:12
+-- Tiempo de generación: 27-02-2024 a las 18:46:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -32,7 +32,10 @@ USE `bicicleteria_db`;
 DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id_brand` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -44,7 +47,10 @@ CREATE TABLE `brands` (
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -56,7 +62,10 @@ CREATE TABLE `categories` (
 DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
   `id_color` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -68,9 +77,12 @@ CREATE TABLE `colors` (
 DROP TABLE IF EXISTS `measures`;
 CREATE TABLE `measures` (
   `id_measure` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   `height` decimal(3,1) DEFAULT NULL,
   `width` decimal(3,1) DEFAULT NULL,
-  `length` decimal(3,1) DEFAULT NULL
+  `length` decimal(3,1) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -82,6 +94,8 @@ CREATE TABLE `measures` (
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `price` int(10) UNSIGNED NOT NULL,
@@ -89,7 +103,8 @@ CREATE TABLE `products` (
   `description` text DEFAULT NULL,
   `id_category` int(11) NOT NULL,
   `id_brand` int(11) DEFAULT NULL,
-  `id_measure` int(11) DEFAULT NULL
+  `id_measure` int(11) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -101,8 +116,11 @@ CREATE TABLE `products` (
 DROP TABLE IF EXISTS `products_colors`;
 CREATE TABLE `products_colors` (
   `id_product_color` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   `id_product` int(11) DEFAULT NULL,
-  `id_color` int(11) DEFAULT NULL
+  `id_color` int(11) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -121,16 +139,9 @@ CREATE TABLE `users` (
   `birth` date NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL,
-  `id_user_type` int(11) NOT NULL
+  `id_user_type` int(11) NOT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `users`
---
-
-INSERT INTO `users` (`id_user`, `created_at`, `updated_at`, `name`, `profile_img`, `birth`, `email`, `password`, `deleted_at`, `id_user_type`) VALUES
-(5, '2024-02-26', '2024-02-26', 'Milton Ezequiel Coria', 'profile_1708972104587_img.jpg', '2000-02-21', 'miltoncoria03@gmail.com', '$2a$10$gx4CK08V05tz1hzojiy/5ucZGk1cwBGZcV46s1xhn7kS0r/YlAPXS', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -141,15 +152,19 @@ INSERT INTO `users` (`id_user`, `created_at`, `updated_at`, `name`, `profile_img
 DROP TABLE IF EXISTS `users_types`;
 CREATE TABLE `users_types` (
   `id_user_type` int(11) NOT NULL,
-  `name` varchar(255) DEFAULT NULL
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `key` varchar(255) DEFAULT NULL,
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users_types`
 --
 
-INSERT INTO `users_types` (`id_user_type`, `name`) VALUES
-(1, 'client');
+INSERT INTO `users_types` (`id_user_type`, `created_at`, `updated_at`, `name`, `key`, `deleted_at`) VALUES
+(1, '2024-02-27', '2024-02-27', 'client', NULL, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -253,7 +268,7 @@ ALTER TABLE `products_colors`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `users_types`

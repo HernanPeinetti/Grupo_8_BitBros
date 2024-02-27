@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-// const pathImages = path.resolve("public")
 
 const controllers = require("../controllers/products.controllers.js");
 const validateProduct = require("../middlewares/validateProduct.js")
