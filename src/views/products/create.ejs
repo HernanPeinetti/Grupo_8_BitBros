@@ -100,6 +100,31 @@
                         <% } %>
                     </div>
 
+                    <div class="col-sm-6 col-12">
+                        <label for="measures" class="form-label">Medidas:</label>
+                        <div class="d-flex col-sm-6 col-12" >
+                            <div class="w-50">
+                                <label for="measures" class="form-label">Ancho:</label>
+                                <input type="text" name="measures" placeholder="cm" value="<%= locals.old && old.measures ? old.measures : "" %>" id="measures" class="form-control <%= locals.errors && errors.measures? "is-invalid" : "" %>" />
+                            </div>
+                            <div class="w-50">
+                                <label for="measures" class="form-label">Largo:</label>
+                                <input type="text" name="measures" placeholder="cm" value="<%= locals.old && old.measures ? old.measures : "" %>" id="measures" class="form-control <%= locals.errors && errors.measures? "is-invalid" : "" %>" />
+                            </div>
+                            <div class="w-50">
+                                <label for="measures" class="form-label">Alto:</label>
+                                <input type="text" name="measures" placeholder="cm" value="<%= locals.old && old.measures ? old.measures : "" %>" id="measures" class="form-control <%= locals.errors && errors.measures? "is-invalid" : "" %>" />
+                            </div>
+                        </div>
+                        
+                        <% if (locals.errors && errors.measures) { %>
+                            <div class="invalid-feedback">
+                                <%= errors.measures.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                    
+
                     <div class="col-sm-12 col-12">
                         <label for="description" class="form-label">Descripción:</label>
                         <textarea class="form-control <%= locals.errors && errors.description ? "is-invalid" : "" %>" id="description" name="description" placeholder="Escribe una breve descripcion..."><%= locals.old && old.description ? old.description : "" %></textarea>
