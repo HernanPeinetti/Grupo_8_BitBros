@@ -7,17 +7,10 @@ const {Op} = require('sequelize');
 
 const { Product, Color, Category, Brand, Product_color, sequelize } = require('../database/models')
 
-
-
-
-
-
 const controllersProduct = {
     detail: async (req, res) => {
         const id = req.params.id;
-        console.log(id);
         const product =  await Product.findByPk(id);
-        
         
         if (product) {
              const productsRelated = await Product.findAll({
@@ -59,11 +52,11 @@ const controllersProduct = {
 
             let imagePath = req.file?.path
 
-            // if (imagePath) {
-            //     const imagePath = path.join(__dirname, `../../public/images/products/${req.file?.filename}`)
+            if (imagePath) {
+                const imagePath = path.join(__dirname, `../../public/images/products/${req.file?.filename}`)
 
-            //     fs.unlinkSync(imagePath)
-            // }
+                fs.unlinkSync(imagePath)
+            }
 
             try {
 
@@ -111,7 +104,13 @@ const controllersProduct = {
 
                 const productsRelated = await Product.findAll({
                     where: {
-                        id_category: newProduct.id_category
+                        [Op.and]: [{
+                            id_category: product.id_category
+                        },{
+                            id_product : {
+                                [Op.ne]: product.id_product,
+                            }
+                        }],
                     }
                 })
 
@@ -182,48 +181,22 @@ const controllersProduct = {
 
 
 
-                // const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
+                const productsRelated = await Product.findAll({
+                    where: {
+                        [Op.and]: [{
+                            id_category: product.id_category
+                        },{
+                            id_product : {
+                                [Op.ne]: product.id_product,
+                            }
+                        }],
+                    }
+                })
 
-                // res.render("./products/detail.ejs", { product: productFound, productsRelated });
-                res.redirect("/")
+                res.render("./products/detail.ejs", { product: productFound, productsRelated });
             }
         }
 
-
-        // const resultValidator = validationResult(req);
-        // const product = {
-        //     id: req.params.id,
-        //     name: req.body.name,
-        //     image: req.file?.filename || "default-product.jpg",
-        //     category: req.body.category,
-        //     price: req.body.price,
-        //     stock: req.body.stock,
-        //     colors: { color1: req.body.color1, color2: req.body.color2, color3: req.body.color3 },
-        //     brand: req.body.brand,
-        //     description: req.body.description,
-        // };
-
-        // const productFound = products.find((product) => product.id == req.params.id);
-
-        // if (resultValidator.errors.length > 0) {
-        //     res.render("./products/edit", { product: productFound, colors: colors, errors: resultValidator.mapped(), old: product });
-        // } else {
-        //     if (productFound) {
-        //         productFound.name = product.name || productFound.name;
-        //         productFound.image = req.file?.filename || productFound.image;
-        //         productFound.category = product.category || productFound.category;
-        //         productFound.price = product.price || productFound.price;
-        //         productFound.stock = product.stock || productFound.stock;
-        //         productFound.colors = { color1: product.colors.color1, color2: product.colors.color2, color3: product.colors.color3 } || productFound.colors;
-        //         productFound.description = product.description || productFound.description;
-
-        //         fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
-
-        //         const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
-
-        //         res.render("./products/detail.ejs", { product: productFound, productsRelated });
-        //     }
-        // }
     },
 
     processDelete: (req, res) => {

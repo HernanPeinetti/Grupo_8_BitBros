@@ -12,10 +12,10 @@ const { adminLogin } = require("../middlewares/authMiddleware.js");
 router.get("/detalle/:id", controllers.detail);
 
 // VISTA CREAR PRODUCTO http://localhost:3000/productos/crear
-router.get("/crear", controllers.create);
+router.get("/crear", adminLogin, controllers.create);
 
 // VISTA EDITAR PRODUCTO http://localhost:3000/productos/editar/id
-router.get("/editar/:id", controllers.update);
+router.get("/editar/:id", adminLogin, controllers.update);
 
 // METODO CREAR PRODUCTO
 router.post("/crear", upload.single("image"), validateProduct, controllers.processCreate);

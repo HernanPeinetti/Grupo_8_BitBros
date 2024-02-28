@@ -19,86 +19,46 @@ const controllersUser = {
 
     processLogin: async (req, res) => {
         try {
-            const {email, password, remember} = req.body;
+            const { email, password, remember } = req.body;
             const userFound = await User.findOne({
+                include: [{ association: "user_type" }],
                 where: {
                     email
                 }
             })
+
             if (userFound && bcryptjs.compareSync(password.toString(), userFound.password)) {
-                delete userFound.password;        
+                delete userFound.password;
                 req.session.user = userFound;
 
-                let cookieUser= remember;
+                let cookieUser = remember;
 
-                        if (cookieUser == "on") {
-                            res.cookie("rememberUser", userFound.email, { maxAge: 1 * 60 * 60 * 1000 }); // 1 hora
-                        }
-                        res.redirect("/");
-                    } else {
-                        res.render("./users/login.ejs", {
-                            errors:
-                                userFound == undefined
-                                    ? {
-                                        email: {
-                                            msg: "No hay una cuenta registrada con el correo ingresado",
-                                        },
-                                    }
-                                    : bcryptjs.compareSync(password.toString(), userFound.password) == false
-                                        ? {
-                                            password: {
-                                                msg: "La constraseña es incorrecta",
-                                            },
-                                        }
-                                        : "",
-                            old: req.body,
-                        });
-                    }
-
-            
+                if (cookieUser == "on") {
+                    res.cookie("rememberUser", userFound.email, { maxAge: 1 * 60 * 60 * 1000 }); // 1 hora
+                }
+                res.redirect("/");
+            } else {
+                res.render("./users/login.ejs", {
+                    errors:
+                        userFound == undefined
+                            ? {
+                                email: {
+                                    msg: "No hay una cuenta registrada con el correo ingresado",
+                                },
+                            }
+                            : bcryptjs.compareSync(password.toString(), userFound.password) == false
+                                ? {
+                                    password: {
+                                        msg: "La constraseña es incorrecta",
+                                    },
+                                }
+                                : "",
+                    old: req.body,
+                });
+            }
         } catch (error) {
-            console.log(error)   
+            console.log(error)
         }
-        // const resultValidator = validationResult(req);
-        // const usuario = {
-        //     email: req.body.email,
-        //     password: req.body.password,
-        // };
-        // let cookieUser = req.body.rembember;
-
-        // if (resultValidator.errors.length > 0) {
-
-        //     res.render("./users/login", { errors: resultValidator.mapped(), old: usuario });
-
-        // } else {
-        //     let userFound = usersJson.find((user) => user.email == usuario.email);
-
-        //     if (userFound && bcryptjs.compareSync(usuario.password.toString(), userFound.password)) {
-        //         req.session.user = userFound;
-        //         if (cookieUser == "on") {
-        //             res.cookie("rememberUser", userFound.email, { maxAge: 1 * 60 * 60 * 1000 }); // 1 hora
-        //         }
-        //         res.redirect("/");
-        //     } else {
-        //         res.render("./users/login.ejs", {
-        //             errors:
-        //                 userFound == undefined
-        //                     ? {
-        //                         email: {
-        //                             msg: "No hay una cuenta registrada con el correo ingresado",
-        //                         },
-        //                     }
-        //                     : bcryptjs.compareSync(usuario.password.toString(), userFound.password) == false
-        //                         ? {
-        //                             password: {
-        //                                 msg: "La constraseña es incorrecta",
-        //                             },
-        //                         }
-        //                         : "",
-        //             old: usuario,
-        //         });
-        //     }
-        // }
     },
 
     register: (req, res) => {
@@ -108,7 +68,7 @@ const controllersUser = {
     processRegister: async (req, res) => {
         try {
             const resultValidator = validationResult(req);
-            
+
             const { name, birth, email, password } = req.body
 
             if (resultValidator.errors.length > 0) {
