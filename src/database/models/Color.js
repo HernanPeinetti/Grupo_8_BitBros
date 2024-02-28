@@ -30,5 +30,15 @@ module.exports = (sequelize, dataTypes) => {
 
     const Color = sequelize.define(alias, cols, config)
 
+    Color.associate = (models) => {
+        Color.belongsToMany(models.Product, {
+            as: "products",
+            through: "products_colors",
+            foreignKey: "id_color",
+            otherKey: "id_product",
+            timestamps: false
+        })
+    }
+
     return Color
 }

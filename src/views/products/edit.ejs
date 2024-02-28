@@ -67,19 +67,19 @@
                                 <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color1" id="color1">
                                     <option <%= locals.old && old.color1 == "" ? "selected" : "" %> value="">---</option>
                                     <% colors.forEach(color => { %>
-                                        <option value="<%= color.id_color %>" <%= locals.old && old.color1 == color.id_color ? "selected" : "" %>><%= color.name %></option>
+                                        <option value="<%= color.id_color %>" <%= locals.old && old.color1 == color.id_color ? "selected" : product && product.colors[0] && product.colors[0].id_color == color.id_color ? "selected" : ""  %> ><%= color.name %></option>
                                     <% }) %>
                                 </select>
                                 <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color2" id="color2">
                                     <option <%= locals.old && old.color2 == "" ? "selected" : "" %> value="">---</option>
                                     <% colors.forEach(color => { %>
-                                        <option value="<%= color.id_color %>" <%= locals.old && old.color2 == color.id_color ? "selected" : "" %>><%= color.name %></option>
+                                        <option value="<%= color.id_color %>" <%= locals.old && old.color2 == color.id_color ? "selected" : product && product.colors[1] && product.colors[1].id_color == color.id_color ? "selected" : "" %>><%= color.name %></option>
                                     <% }) %>
                                 </select>
                                 <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color3" id="color3">
                                     <option <%= locals.old && old.color3 == "" ? "selected" : "" %> value="">---</option>
                                     <% colors.forEach(color => { %>
-                                        <option value="<%= color.id_color %>" <%= locals.old && old.color3 == color.id_color ? "selected" : "" %>><%= color.name %></option>
+                                        <option value="<%= color.id_color %>" <%= locals.old && old.color3 == color.id_color ? "selected" : product && product.colors[2] && product.colors[2].id_color == color.id_color ? "selected" : "" %>><%= color.name %></option>
                                     <% }) %>
                                 </select>
     
@@ -92,7 +92,7 @@
                         </div>
                         <div class="col-sm-6 col-12">
                             <label for="brand" class="form-label">Marca:</label>
-                            <input type="text" name="brand" value="<%= locals.old && old.brand ? old.brand : "" %>" id="brand" class="form-control <%= locals.errors && errors.brand ? "is-invalid" : "" %>" />
+                            <input type="text" name="brand" value="<%= locals.old && old.brand ? old.brand : product && product.brand.name ? product.brand.name : "" %>" id="brand" class="form-control <%= locals.errors && errors.brand ? "is-invalid" : "" %>" />
                             <% if (locals.errors && errors.brand) { %>
                                 <div class="invalid-feedback">
                                     <%= errors.brand.msg %>
@@ -102,7 +102,7 @@
     
                         <div class="col-sm-12 col-12">
                             <label for="description" class="form-label">Descripción:</label>
-                            <textarea class="form-control <%= locals.errors && errors.description ? "is-invalid" : "" %>" id="description" name="description" placeholder="Escribe una breve descripcion..."><%= locals.old && old.description ? old.description : "" %></textarea>
+                            <textarea class="form-control <%= locals.errors && errors.description ? "is-invalid" : "" %>" id="description" name="description" placeholder="Escribe una breve descripcion..."><%= locals.old && old.description ? old.description : product && product.description ? product.description : "" %></textarea>
                             <% if (locals.errors && errors.description) { %>
                                 <div class="invalid-feedback">
                                     <%= errors.description.msg %>

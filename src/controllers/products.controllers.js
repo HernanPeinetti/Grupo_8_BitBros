@@ -94,11 +94,9 @@ const controllersProduct = {
                         })
                     }
                 }
-                // const productsRelated = products.filter((product) => product.category == newProduct.category && product.id != .id);
 
                 // const productsRelated = await Product.findAll({
                 //     where: {
-                //         // id_product: !newProductFound.id_product,
                 //         id_category: parseInt(category)
                 //     }
                 // })
@@ -116,20 +114,35 @@ const controllersProduct = {
 
     update: async (req, res) => {
         const id = req.params.id;
-        const product = await Product.findByPk(id)
-        
-        const colors = await Color.findAll()
-        const categories = await Category.findAll()
-        // console.log(product);
-        res.render("./products/edit.ejs", { product, colors, categories });
-        
+
+        try {
+
+            const product = await Product.findByPk(id, {
+                include: [{ association: "brand" }, { association: "colors" }]
+            })
+
+            if (product) {
+
+                console.log(product.colors[0].id_color)
+                const colors = await Color.findAll()
+                const categories = await Category.findAll()
+
+                res.render("./products/edit.ejs", { product, colors, categories });
+
+            } else {
+                res.send("El producto que busca no existe");
+            }
+
+        } catch (error) {
+            console.log(error.message)
+        }
     },
 
     processUpdate: async (req, res) => {
-        const {name, category, price, stock, color1, color2, color3, brand, description} = req.body;
+        const { name, category, price, stock, color1, color2, color3, brand, description } = req.body;
         const resultValidator = validationResult(req);
-        
-        
+
+
         if (resultValidator.errors.length > 0) {
             try {
 
@@ -141,26 +154,26 @@ const controllersProduct = {
             } catch (error) {
                 console.log(error)
             }
-            } else {
-                if (productFound) {
-                    productFound.name = product.name || productFound.name;
-                    productFound.image = req.file?.filename || productFound.image;
-                    productFound.category = product.category || productFound.category;
-                    productFound.price = product.price || productFound.price;
-                    productFound.stock = product.stock || productFound.stock;
-                    productFound.colors = { color1: product.colors.color1, color2: product.colors.color2, color3: product.colors.color3 } || productFound.colors;
-                    productFound.description = product.description || productFound.description;
-    
-                    fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
+        } else {
+            if (productFound) {
+                productFound.name = product.name || productFound.name;
+                productFound.image = req.file?.filename || productFound.image;
+                productFound.category = product.category || productFound.category;
+                productFound.price = product.price || productFound.price;
+                productFound.stock = product.stock || productFound.stock;
+                productFound.colors = { color1: product.colors.color1, color2: product.colors.color2, color3: product.colors.color3 } || productFound.colors;
+                productFound.description = product.description || productFound.description;
 
-                    
-    
-                    // const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
-    
-                    // res.render("./products/detail.ejs", { product: productFound, productsRelated });
-                    res.redirect("/")
-                }
+                fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
+
+
+
+                // const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
+
+                // res.render("./products/detail.ejs", { product: productFound, productsRelated });
+                res.redirect("/")
             }
+        }
 
 
         // const resultValidator = validationResult(req);
