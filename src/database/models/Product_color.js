@@ -4,7 +4,7 @@ module.exports = (sequelize, dataTypes) =>{
         id_product_color : {
             type : dataTypes.INTEGER.UNSIGNED,
             primaryKey : true,
-            AutoIncrement : true,
+            autoIncrement : true,
         },
         id_color : {
             type : dataTypes.INTEGER.UNSIGNED,
@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) =>{
         }
     }
     const config = {
-        tableName : 'product_color',
+        tableName : 'products_colors',
         createdAt : 'created_at',
         updatedAt : 'updated_at',
         deletedAt : 'deleted_at',

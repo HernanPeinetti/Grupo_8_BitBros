@@ -1,11 +1,8 @@
 const path = require("path");
 const multer = require("multer");
 const fs = require("fs");
-const userPath = path.join(__dirname, "../data/users.json");
-const { v4: uuidv4 } = require("uuid");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
-let usersJson = JSON.parse(fs.readFileSync(userPath, "utf-8"));
 
 const { User } = require('../database/models')
 

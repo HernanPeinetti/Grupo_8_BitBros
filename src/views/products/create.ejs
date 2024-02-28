@@ -44,7 +44,7 @@
                     <div class="d-flex flex-row col-sm-6 col-12">
                         <div class="w-50">
                             <label for="price" class="form-label">Precio:</label>
-                            <input type="number" name="price" value="<%= locals.old && old.price ? old.price : "" %>" id="price" class="form-control <%= locals.errors && errors.price ? "is-invalid" : "" %>" />
+                            <input type="number" name="price" value="<%= locals.old && old.price ? old.price : "" %>" id="price" class="form-control <%= locals.errors && errors.price ? "is-invalid" : "" %>" min="0" />
                             <% if (locals.errors && errors.price) { %>
                                 <div class="invalid-feedback">
                                     <%= errors.price.msg %>
@@ -53,7 +53,7 @@
                         </div>
                         <div class="w-50">
                             <label for="stock" class="form-label">Stock:</label>
-                            <input type="number" name="stock" value="<%= locals.old && old.stock ? old.stock : "" %>" id="stock" class="form-control <%= locals.errors && errors.stock ? "is-invalid" : "" %>" />
+                            <input type="number" name="stock" value="<%= locals.old && old.stock ? old.stock : "" %>" id="stock" class="form-control <%= locals.errors && errors.stock ? "is-invalid" : "" %>" min="0" />
                             <% if (locals.errors && errors.stock) { %>
                                 <div class="invalid-feedback">
                                     <%= errors.stock.msg %>
