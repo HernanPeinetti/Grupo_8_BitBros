@@ -1,28 +1,15 @@
 module.exports = (sequelize, dataTypes) =>{
     const alias = 'User'
     const cols = {
-        birth : {
-            type : dataTypes.DATE,
-            allowNull : false
-        },
-        created_at : {
-            type : dataTypes.DATE
-        },
-        deleted_at : {
-            type : dataTypes.DATE
-        },
-        email : {
-            type : dataTypes.STRING(50),
-            allowNull : false
-        }, 
         id_user : {
             type : dataTypes.INTEGER.UNSIGNED,
             primaryKey : true,
             autoIncrement : true
         }, 
-        id_user_type : {
-            type : dataTypes.INTEGER.UNSIGNED
-        }, 
+        email : {
+            type : dataTypes.STRING(50),
+            allowNull : false
+        },
         name : {
             type : dataTypes.STRING,
             allowNull : false
@@ -31,9 +18,22 @@ module.exports = (sequelize, dataTypes) =>{
             type : dataTypes.STRING(100),
             allowNull : false
         }, 
+        birth : {
+            type : dataTypes.DATE,
+            allowNull : false
+        },
         profile_img : {
             type : dataTypes.STRING(100)
         }, 
+        id_user_type : {
+            type : dataTypes.INTEGER.UNSIGNED
+        }, 
+        created_at : {
+            type : dataTypes.DATE
+        },
+        deleted_at : {
+            type : dataTypes.DATE
+        },
         updated_at : {
             type : dataTypes.DATE
         }

@@ -15,7 +15,7 @@ router.get("/detalle/:id", controllers.detail);
 router.get("/crear", controllers.create);
 
 // VISTA EDITAR PRODUCTO http://localhost:3000/productos/editar/id
-router.get("/editar/:id", adminLogin, controllers.edit);
+router.get("/editar/:id", controllers.edit);
 
 // METODO CREAR PRODUCTO
 router.post("/crear", upload.single("image"), validateProduct, controllers.processCreate);

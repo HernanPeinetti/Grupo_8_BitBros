@@ -34,8 +34,8 @@ USE structure;
 DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id_brand` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp,
+  `updated_at` timestamp,
   `name` varchar(255) NOT NULL,
   `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -45,11 +45,12 @@ CREATE TABLE `brands` (
 --
 -- Estructura de tabla para la tabla `categories`
 --
+
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp,
+  `updated_at` timestamp,
   `name` varchar(255) DEFAULT NULL,
   `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -63,8 +64,8 @@ CREATE TABLE `categories` (
 DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
   `id_color` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp,
+  `updated_at` timestamp,
   `name` varchar(255) NOT NULL,
   `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -78,8 +79,8 @@ CREATE TABLE `colors` (
 DROP TABLE IF EXISTS `measures`;
 CREATE TABLE `measures` (
   `id_measure` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp,
+  `updated_at` timestamp,
   `height` decimal(3,1) DEFAULT NULL,
   `width` decimal(3,1) DEFAULT NULL,
   `length` decimal(3,1) DEFAULT NULL,
@@ -95,8 +96,8 @@ CREATE TABLE `measures` (
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp,
+  `updated_at` timestamp,
   `name` varchar(255) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
   `price` int(10) UNSIGNED NOT NULL,
@@ -117,8 +118,8 @@ CREATE TABLE `products` (
 DROP TABLE IF EXISTS `products_colors`;
 CREATE TABLE `products_colors` (
   `id_product_color` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp,
+  `updated_at` timestamp,
   `id_product` int(11) DEFAULT NULL,
   `id_color` int(11) DEFAULT NULL,
   `deleted_at` date DEFAULT NULL
@@ -133,8 +134,8 @@ CREATE TABLE `products_colors` (
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp,
+  `updated_at` timestamp,
   `name` varchar(255) NOT NULL,
   `profile_img` varchar(255) DEFAULT NULL,
   `birth` date NOT NULL,
@@ -143,6 +144,7 @@ CREATE TABLE `users` (
   `id_user_type` int(11) NOT NULL,
   `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 
@@ -153,11 +155,11 @@ CREATE TABLE `users` (
 DROP TABLE IF EXISTS `users_types`;
 CREATE TABLE `users_types` (
   `id_user_type` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp,
+  `updated_at` timestamp,
   `name` varchar(255) DEFAULT NULL,
   `key` varchar(255) DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL 
+  `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -232,13 +234,13 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `colors`
 --
 ALTER TABLE `colors`
-  MODIFY `id_color` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_color` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `measures`
@@ -262,13 +264,13 @@ ALTER TABLE `products_colors`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `users_types`
 --
 ALTER TABLE `users_types`
-  MODIFY `id_user_type` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas
