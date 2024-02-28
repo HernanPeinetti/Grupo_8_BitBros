@@ -3,28 +3,28 @@ const fs = require("fs");
 const { v4: uuidv4, validate } = require("uuid");
 const multer = require("multer");
 const { validationResult } = require("express-validator");
-const {Op} = require('sequelize');
+const { Op } = require('sequelize');
 
 const { Product, Color, Category, Brand, Product_color, sequelize } = require('../database/models')
 
 const controllersProduct = {
     detail: async (req, res) => {
         const id = req.params.id;
-        const product =  await Product.findByPk(id);
-        
+        const product = await Product.findByPk(id);
+
         if (product) {
-             const productsRelated = await Product.findAll({
-                    where: {
-                        
-                        [Op.and]: [{
-                            id_category: product.id_category
-                        },{
-                            id_product : {
-                                [Op.ne]: product.id_product,
-                            }
-                        }],
-                    }
-                })
+            const productsRelated = await Product.findAll({
+                where: {
+
+                    [Op.and]: [{
+                        id_category: product.id_category
+                    }, {
+                        id_product: {
+                            [Op.ne]: product.id_product,
+                        }
+                    }],
+                }
+            })
 
             res.render("./products/detail.ejs", { product, productsRelated });
         } else {
@@ -73,11 +73,22 @@ const controllersProduct = {
 
             try {
 
-                const newBrand = await Brand.create({
-                    name: brand
+                let idBrand;
+                const brandFound = await Brand.findOne({
+                    where: {
+                        name: brand
+                    }
                 })
 
-                const newBrandFound = await Brand.findByPk(newBrand.id_brand)
+                if (brandFound) {
+                    idBrand = brandFound.id_brand
+                } else {
+                    const newBrand = await Brand.create({
+                        name: brand
+                    })
+
+                    idBrand = await Brand.findByPk(newBrand.id_brand)
+                }
 
                 const newProduct = await Product.create({
                     name: name,
@@ -86,7 +97,7 @@ const controllersProduct = {
                     description: description,
                     image: req.file?.filename || "default-product.jpg",
                     id_category: parseInt(category),
-                    id_brand: newBrandFound.id_brand
+                    id_brand: idBrand.id_brand
                 })
 
                 const newProductFound = await Product.findByPk(newProduct.id_product)
@@ -105,20 +116,16 @@ const controllersProduct = {
                 const productsRelated = await Product.findAll({
                     where: {
                         [Op.and]: [{
-                            id_category: product.id_category
-                        },{
-                            id_product : {
-                                [Op.ne]: product.id_product,
+                            id_category: newProduct.id_category
+                        }, {
+                            id_product: {
+                                [Op.ne]: newProduct.id_product,
                             }
                         }],
                     }
                 })
 
                 res.render("./products/detail", { product: newProduct, productsRelated });
-    
-
-                res.redirect('/');
-
             } catch (error) {
                 console.log(error)
             }
@@ -185,8 +192,8 @@ const controllersProduct = {
                     where: {
                         [Op.and]: [{
                             id_category: product.id_category
-                        },{
-                            id_product : {
+                        }, {
+                            id_product: {
                                 [Op.ne]: product.id_product,
                             }
                         }],

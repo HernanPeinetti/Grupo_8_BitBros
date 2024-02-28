@@ -59,7 +59,7 @@
                 <li>
                     <a href="/" class="navLink">Contacto</a>
                 </li>
-                <% if (user && user.admin==true) { %>
+                <% if (user && user.user_type && user.user_type.name=="admin") { %>
                     <li>
                         <a href="/productos/crear" class="navLink">Vender</a>
                     </li>

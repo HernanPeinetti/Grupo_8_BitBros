@@ -70,11 +70,11 @@
                             </button>
                         </a>
 
-                        <% if (user && user.admin == true) { %>
-                            <a href="/productos/editar/<%= product.id %>">
+                        <% if (user && user.user_type && user.user_type.name=="admin") { %>
+                            <a href="/productos/editar/<%= product.id_product %>">
                                 <button class="btnProduct productEdit">EDITAR PRODUCTO</button>
                             </a>
-                            <form class="formAlert" action="/productos/eliminar/<%= product.id %>?_method=DELETE" method="POST">
+                            <form class="formAlert" action="/productos/eliminar/<%= product.id_product %>?_method=DELETE" method="POST">
                                 <button type="submit" class="btnProduct productDelete btnAlert">ELIMINAR PRODUCTO</button>
                             </form>
                         <% } %>
