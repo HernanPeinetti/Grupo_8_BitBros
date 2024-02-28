@@ -12,7 +12,7 @@
                     <form action="/productos/editar/<%= product.id %>?_method=PUT" method="POST" class="row d-flex flex-row g-2 needs-validation formAlert" enctype="multipart/form-data">
                         <div class="col-sm-6 col-12">
                             <label for="name" class="form-label">Nombre del producto:</label>
-                            <input type="text" name="name" value="<%= locals.old ? old.name : product && product.name ? product.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
+                            <input type="text" name="name" value="<%= locals.old && old.name ? old.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
                             <% if (locals.errors && errors.name) { %>
                                 <div class="invalid-feedback">
                                     <%= errors.name.msg %>
@@ -31,12 +31,10 @@
                         <div class="col-sm-6 col-12">
                             <label for="category" class="form-label">Categoría</label>
                             <select class="form-select <%= locals.errors && errors.category ? "is-invalid" : ""  %>" name="category" id="category">
-                                <option <%= locals.old && old.category == "" ? "selected" : product.category == "" ? "selected" : "" %> value="">...</option>
-                                <option <%= locals.old && old.category == "Categoria" ? "selected" : product.category == "Categoria" ? "selected" : "" %> value="Categoria">Elige la categoria</option>
-                                <option <%= locals.old && old.category == "Bicicletas" ? "selected" : product.category == "Bicicletas" ? "selected" : "" %> value="Bicicletas">Bicicletas</option>
-                                <option <%= locals.old && old.category == "Accesorios" ? "selected" : product.category == "v" ? "selected" : "" %> value="Accesorios">Accesorios</option>
-                                <option <%= locals.old && old.category == "Indumentarias" ? "selected" : product.category == "Indumentarias" ? "selected" : "" %> value="Indumentarias">Indumentarias</option>
-                                <option <%= locals.old && old.category == "Repuestos" ? "selected" : product.category == "Repuestos" ? "selected" : "" %> value="Repuestos">Repuestos</option>
+                                <option <%= locals.old && old.category == "" ? "selected" : "" %> value="">...</option>
+                                <% categories.forEach(category => { %>
+                                    <option value="<%= category.id_category %>" <%= locals.old && old.category == category.id_category ? "selected" : "" %> ><%= category.name %></option>
+                                <% }) %>
                               </select>
                             <% if (locals.errors && errors.category) { %>
                                 <div class="invalid-feedback">
@@ -47,7 +45,7 @@
                         <div class="d-flex flex-row col-sm-6 col-12">
                             <div class="w-50">
                                 <label for="price" class="form-label">Precio:</label>
-                                <input type="text" name="price" value="<%= locals.old ? old.price : product && product.price ? product.price : "" %>" id="price" class="form-control <%= locals.errors && errors.price ? "is-invalid" : "" %>" />
+                                <input type="number" name="price" value="<%= locals.old && old.price ? old.price : "" %>" id="price" class="form-control <%= locals.errors && errors.price ? "is-invalid" : "" %>" min="0" />
                                 <% if (locals.errors && errors.price) { %>
                                     <div class="invalid-feedback">
                                         <%= errors.price.msg %>
@@ -56,7 +54,7 @@
                             </div>
                             <div class="w-50">
                                 <label for="stock" class="form-label">Stock:</label>
-                                <input type="text" name="stock" value="<%= locals.old ? old.stock : product && product.stock ? product.stock : "" %>" id="stock" class="form-control <%= locals.errors && errors.stock ? "is-invalid" : "" %>" />
+                                <input type="number" name="stock" value="<%= locals.old && old.stock ? old.stock : "" %>" id="stock" class="form-control <%= locals.errors && errors.stock ? "is-invalid" : "" %>" min="0" />
                                 <% if (locals.errors && errors.stock) { %>
                                     <div class="invalid-feedback">
                                         <%= errors.stock.msg %>
@@ -67,21 +65,21 @@
                         <div class="col-sm-6 col-12 d-flex flex-row flex-wrap">
                             <label class="col-12" for="colors">Colores:</label>
                                 <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color1" id="color1">
-                                    <option <%= locals.old && old.colors.color1 == "" ? "selected" : product.colors.color1 == "" ? "selected" : "" %> value="">---</option>
+                                    <option <%= locals.old && old.color1 == "" ? "selected" : "" %> value="">---</option>
                                     <% colors.forEach(color => { %>
-                                        <option value="<%= color %>" <%= locals.old && old.colors.color1 == color ? "selected" : product.colors.color1 == color ? "selected" : "" %>><%= color %></option>
+                                        <option value="<%= color.id_color %>" <%= locals.old && old.color1 == color.id_color ? "selected" : "" %>><%= color.name %></option>
                                     <% }) %>
                                 </select>
                                 <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color2" id="color2">
-                                    <option <%= locals.old && old.colors.color2 == "" ? "selected" : product.colors.color2 == "" ? "selected" : "" %> value="">---</option>
+                                    <option <%= locals.old && old.color2 == "" ? "selected" : "" %> value="">---</option>
                                     <% colors.forEach(color => { %>
-                                        <option value="<%= color %>" <%= locals.old && old.colors.color2 == color ? "selected" : product.colors.color2 == color ? "selected" : "" %>><%= color %></option>
+                                        <option value="<%= color.id_color %>" <%= locals.old && old.color2 == color.id_color ? "selected" : "" %>><%= color.name %></option>
                                     <% }) %>
                                 </select>
                                 <select class="form-select mt-3 select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>"  name="color3" id="color3">
-                                    <option <%= locals.old && old.colors.color3 == "" ? "selected" : product.colors.color3 == "" ? "selected" : "" %> value="">---</option>
+                                    <option <%= locals.old && old.color3 == "" ? "selected" : "" %> value="">---</option>
                                     <% colors.forEach(color => { %>
-                                        <option value="<%= color %>" <%= locals.old && old.colors.color3 == color ? "selected" : product.colors.color3 == color ? "selected" : "" %>><%= color %></option>
+                                        <option value="<%= color.id_color %>" <%= locals.old && old.color3 == color.id_color ? "selected" : "" %>><%= color.name %></option>
                                     <% }) %>
                                 </select>
     
@@ -94,7 +92,7 @@
                         </div>
                         <div class="col-sm-6 col-12">
                             <label for="brand" class="form-label">Marca:</label>
-                            <input type="text" name="brand" value="<%= locals.old ? old.brand : product && product.brand ? product.brand : "" %>" id="brand" class="form-control <%= locals.errors && errors.brand ? "is-invalid" : "" %>" />
+                            <input type="text" name="brand" value="<%= locals.old && old.brand ? old.brand : "" %>" id="brand" class="form-control <%= locals.errors && errors.brand ? "is-invalid" : "" %>" />
                             <% if (locals.errors && errors.brand) { %>
                                 <div class="invalid-feedback">
                                     <%= errors.brand.msg %>
@@ -104,7 +102,7 @@
     
                         <div class="col-sm-12 col-12">
                             <label for="description" class="form-label">Descripción:</label>
-                            <textarea class="form-control <%= locals.errors && errors.description ? "is-invalid" : "" %>" id="description" name="description" placeholder="Escribe una breve descripcion..."><%= locals.old ? old.description : product && product.description ? product.description : "" %></textarea>
+                            <textarea class="form-control <%= locals.errors && errors.description ? "is-invalid" : "" %>" id="description" name="description" placeholder="Escribe una breve descripcion..."><%= locals.old && old.description ? old.description : "" %></textarea>
                             <% if (locals.errors && errors.description) { %>
                                 <div class="invalid-feedback">
                                     <%= errors.description.msg %>
