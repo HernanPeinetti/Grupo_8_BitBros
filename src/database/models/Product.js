@@ -29,9 +29,6 @@ module.exports = (sequelize, dataTypes) =>{
         }, 
         id_brand : {
             type : dataTypes.INTEGER.UNSIGNED
-        }, 
-        id_measure : {
-            type : dataTypes.INTEGER.UNSIGNED
         },
         created_at : {
             type : dataTypes.DATE

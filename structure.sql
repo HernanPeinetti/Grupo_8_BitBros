@@ -70,22 +70,6 @@ CREATE TABLE `colors` (
   `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `measures`
---
-
-DROP TABLE IF EXISTS `measures`;
-CREATE TABLE `measures` (
-  `id_measure` int(11) NOT NULL,
-  `created_at` timestamp,
-  `updated_at` timestamp,
-  `height` decimal(3,1) DEFAULT NULL,
-  `width` decimal(3,1) DEFAULT NULL,
-  `length` decimal(3,1) DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -105,7 +89,6 @@ CREATE TABLE `products` (
   `description` text DEFAULT NULL,
   `id_category` int(11) NOT NULL,
   `id_brand` int(11) DEFAULT NULL,
-  `id_measure` int(11) DEFAULT NULL,
   `deleted_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -185,19 +168,12 @@ ALTER TABLE `colors`
   ADD PRIMARY KEY (`id_color`);
 
 --
--- Indices de la tabla `measures`
---
-ALTER TABLE `measures`
-  ADD PRIMARY KEY (`id_measure`);
-
---
 -- Indices de la tabla `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id_product`),
   ADD KEY `id_category` (`id_category`),
-  ADD KEY `id_brand` (`id_brand`),
-  ADD KEY `id_measure` (`id_measure`);
+  ADD KEY `id_brand` (`id_brand`);
 
 --
 -- Indices de la tabla `products_colors`
@@ -243,12 +219,6 @@ ALTER TABLE `colors`
   MODIFY `id_color` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de la tabla `measures`
---
-ALTER TABLE `measures`
-  MODIFY `id_measure` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
@@ -281,8 +251,7 @@ ALTER TABLE `users_types`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `categories` (`id_category`),
-  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`id_brand`) REFERENCES `brands` (`id_brand`),
-  ADD CONSTRAINT `products_ibfk_3` FOREIGN KEY (`id_measure`) REFERENCES `measures` (`id_measure`);
+  ADD CONSTRAINT `products_ibfk_2` FOREIGN KEY (`id_brand`) REFERENCES `brands` (`id_brand`);
 
 --
 -- Filtros para la tabla `products_colors`

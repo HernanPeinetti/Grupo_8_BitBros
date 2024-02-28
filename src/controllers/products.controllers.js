@@ -6,7 +6,7 @@ let products = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 const multer = require("multer");
 const { validationResult } = require("express-validator");
 
-const { User, Color, Category, Measure, Brand, Product } = require('../database/models')
+const { User, Color, Category, Brand, Product } = require('../database/models')
 
 // const colors = ["Rojo", "Azul", "Verde", "Blanco", "Negro", "Gris", "Naranja", "Amarillo", "Celeste"];
 
@@ -68,11 +68,6 @@ const controllersProduct = {
                 const newBrand = await Brand.create({
                     name: req.body.brand
                 })
-                // const newMeasure = await Brand.create({
-                //     height: req.body.height,
-                //     width: req.body.width,
-                //     length: req.body.length
-                // })
 
                 const brandFound = await Brand.findOne({
                     where: {
@@ -87,8 +82,7 @@ const controllersProduct = {
                     description: req.body.description,
                     image: req.file?.filename || "default-product.jpg",
                     id_category: parseInt(req.body.category),
-                    id_brand: brandFound.id_brand,
-                    id_measure: parseInt(req.body.measure)
+                    id_brand: brandFound.id_brand
                 })
 
                 // const productsRelated = products.filter((product) => product.category == newProduct.category && product.id != .id);
