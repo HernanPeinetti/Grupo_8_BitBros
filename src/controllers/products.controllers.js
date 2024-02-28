@@ -1,24 +1,38 @@
 const path = require("path");
 const fs = require("fs");
 const { v4: uuidv4, validate } = require("uuid");
-const pathProducts = path.join(__dirname, "../data/products.json");
-let products = JSON.parse(fs.readFileSync(pathProducts, "utf8"));
 const multer = require("multer");
 const { validationResult } = require("express-validator");
+const {Op} = require('sequelize');
 
-const { Product, Color, Category, Brand, Product_color } = require('../database/models')
+const { Product, Color, Category, Brand, Product_color, sequelize } = require('../database/models')
 
-// const colors = ["Rojo", "Azul", "Verde", "Blanco", "Negro", "Gris", "Naranja", "Amarillo", "Celeste"];
+
 
 
 
 
 const controllersProduct = {
-    detail: (req, res) => {
+    detail: async (req, res) => {
         const id = req.params.id;
-        const product = products.find((producto) => producto.id == id);
-        const productsRelated = products.filter((producto) => producto.categoria == product.categoria && producto.id != product.id);
+        console.log(id);
+        const product =  await Product.findByPk(id);
+        
+        
         if (product) {
+             const productsRelated = await Product.findAll({
+                    where: {
+                        
+                        [Op.and]: [{
+                            id_category: product.id_category
+                        },{
+                            id_product : {
+                                [Op.ne]: product.id_product,
+                            }
+                        }],
+                    }
+                })
+
             res.render("./products/detail.ejs", { product, productsRelated });
         } else {
             res.send("El producto que busca no existe");
@@ -45,11 +59,11 @@ const controllersProduct = {
 
             let imagePath = req.file?.path
 
-            if (imagePath) {
-                const imagePath = path.join(__dirname, `../../public/images/products/${req.file?.filename}`)
+            // if (imagePath) {
+            //     const imagePath = path.join(__dirname, `../../public/images/products/${req.file?.filename}`)
 
-                fs.unlinkSync(imagePath)
-            }
+            //     fs.unlinkSync(imagePath)
+            // }
 
             try {
 
@@ -95,14 +109,14 @@ const controllersProduct = {
                     }
                 }
 
-                // const productsRelated = await Product.findAll({
-                //     where: {
-                //         id_category: parseInt(category)
-                //     }
-                // })
+                const productsRelated = await Product.findAll({
+                    where: {
+                        id_category: newProduct.id_category
+                    }
+                })
 
-                // res.render("./products/detail", { product: newProduct, productsRelated });
-                // console.log(productsRelated)
+                res.render("./products/detail", { product: newProduct, productsRelated });
+    
 
                 res.redirect('/');
 

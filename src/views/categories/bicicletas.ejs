@@ -8,8 +8,8 @@
             <h1 class="titular">Bicicletas</h1>
             <div class="grupo-articulos">
                 <% for (let i=0; i < products.length; i++) { %>
-                    <% if (products[i].category==='Bicicletas' ) { %>
-                        <a href="/productos/detalle/<%= products[i].id %>">
+                    <% if (products[i].id_category == 1) { %>
+                        <a href="/productos/detalle/<%= products[i].id_product %>">
                             <article>
                                 <img src="/images/products/<%= products[i].image %>" alt="<%= products[i].name %>">
                                 <div class="detalles-producto">
