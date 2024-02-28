@@ -1,7 +1,7 @@
 module.exports = (sequelize, dataTypes) =>{
     const alias = 'Product'
     const cols = {
-        id_user : {
+        id_product : {
             type : dataTypes.STRING(50),
             primaryKey : true,
             AutoIncrement : true
@@ -33,7 +33,6 @@ module.exports = (sequelize, dataTypes) =>{
         id_measure : {
             type : dataTypes.INTEGER.UNSIGNED
         },
-
         created_at : {
             type : dataTypes.DATE
         },
@@ -43,10 +42,9 @@ module.exports = (sequelize, dataTypes) =>{
         updated_at : {
             type : dataTypes.DATE
         }
-
     }
     const config = {
-        tableName : 'product',
+        tableName : 'products',
         createdAt : 'created_at',
         updatedAt : 'updated_at',
         deletedAt : 'deleted_at',
