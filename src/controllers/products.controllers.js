@@ -116,11 +116,13 @@ const controllersProduct = {
 
     update: async (req, res) => {
         const id = req.params.id;
-        const product = await Product.findByPk(req.params.id)
+        const product = await Product.findByPk(id)
         
         const colors = await Color.findAll()
         const categories = await Category.findAll()
+        // console.log(product);
         res.render("./products/edit.ejs", { product, colors, categories });
+        
     },
 
     processUpdate: async (req, res) => {

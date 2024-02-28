@@ -12,7 +12,7 @@
                     <form action="/productos/editar/<%= product.id %>?_method=PUT" method="POST" class="row d-flex flex-row g-2 needs-validation formAlert" enctype="multipart/form-data">
                         <div class="col-sm-6 col-12">
                             <label for="name" class="form-label">Nombre del producto:</label>
-                            <input type="text" name="name" value="<%= locals.old && old.name ? old.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
+                            <input type="text" name="name" value="<%= locals.old && old.name ? old.name : product && product.name ? product.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
                             <% if (locals.errors && errors.name) { %>
                                 <div class="invalid-feedback">
                                     <%= errors.name.msg %>
@@ -31,9 +31,9 @@
                         <div class="col-sm-6 col-12">
                             <label for="category" class="form-label">Categoría</label>
                             <select class="form-select <%= locals.errors && errors.category ? "is-invalid" : ""  %>" name="category" id="category">
-                                <option <%= locals.old && old.category == "" ? "selected" : "" %> value="">...</option>
+                                <option <%= locals.old && old.category == "" ? "selected" : product && product.id_category == "" ? "selected" : "" %> value="">...</option>
                                 <% categories.forEach(category => { %>
-                                    <option value="<%= category.id_category %>" <%= locals.old && old.category == category.id_category ? "selected" : "" %> ><%= category.name %></option>
+                                    <option value="<%= category.id_category %>" <%= locals.old && old.category == category.id_category ? "selected" : product && category.id_category == product.id_category ? "selected" : "" %> ><%= category.name %></option>
                                 <% }) %>
                               </select>
                             <% if (locals.errors && errors.category) { %>
@@ -45,7 +45,7 @@
                         <div class="d-flex flex-row col-sm-6 col-12">
                             <div class="w-50">
                                 <label for="price" class="form-label">Precio:</label>
-                                <input type="number" name="price" value="<%= locals.old && old.price ? old.price : "" %>" id="price" class="form-control <%= locals.errors && errors.price ? "is-invalid" : "" %>" min="0" />
+                                <input type="number" name="price" value="<%= locals.old && old.price ? old.price : product && product.price ? product.price : "" %>" id="price" class="form-control <%= locals.errors && errors.price ? "is-invalid" : "" %>" min="0" />
                                 <% if (locals.errors && errors.price) { %>
                                     <div class="invalid-feedback">
                                         <%= errors.price.msg %>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="w-50">
                                 <label for="stock" class="form-label">Stock:</label>
-                                <input type="number" name="stock" value="<%= locals.old && old.stock ? old.stock : "" %>" id="stock" class="form-control <%= locals.errors && errors.stock ? "is-invalid" : "" %>" min="0" />
+                                <input type="number" name="stock" value="<%= locals.old && old.stock ? old.stock : product && product.stock ? product.stock : "" %>" id="stock" class="form-control <%= locals.errors && errors.stock ? "is-invalid" : "" %>" min="0" />
                                 <% if (locals.errors && errors.stock) { %>
                                     <div class="invalid-feedback">
                                         <%= errors.stock.msg %>
