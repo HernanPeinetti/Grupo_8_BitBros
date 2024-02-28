@@ -10,6 +10,9 @@ const { Product, Color, Category, Brand, Product_color } = require('../database/
 
 // const colors = ["Rojo", "Azul", "Verde", "Blanco", "Negro", "Gris", "Naranja", "Amarillo", "Celeste"];
 
+
+
+
 const controllersProduct = {
     detail: (req, res) => {
         const id = req.params.id;
@@ -25,10 +28,8 @@ const controllersProduct = {
     create: async (req, res) => {
 
         try {
-
             const colors = await Color.findAll()
             const categories = await Category.findAll()
-
             res.render("./products/create.ejs", { colors, categories });
         } catch (error) {
             console.log(error)
@@ -113,48 +114,87 @@ const controllersProduct = {
         }
     },
 
-    edit: (req, res) => {
+    update: async (req, res) => {
         const id = req.params.id;
-        const product = products.find((product) => product.id == id);
-
-        res.render("./products/edit.ejs", { product, colors: colors });
+        const product = await Product.findByPk(req.params.id)
+        
+        const colors = await Color.findAll()
+        const categories = await Category.findAll()
+        res.render("./products/edit.ejs", { product, colors, categories });
     },
 
-    processEdit: (req, res) => {
+    processUpdate: async (req, res) => {
+        const {name, category, price, stock, color1, color2, color3, brand, description} = req.body;
         const resultValidator = validationResult(req);
-        const product = {
-            id: req.params.id,
-            name: req.body.name,
-            image: req.file?.filename || "default-product.jpg",
-            category: req.body.category,
-            price: req.body.price,
-            stock: req.body.stock,
-            colors: { color1: req.body.color1, color2: req.body.color2, color3: req.body.color3 },
-            brand: req.body.brand,
-            description: req.body.description,
-        };
-
-        const productFound = products.find((product) => product.id == req.params.id);
-
+        
+        
         if (resultValidator.errors.length > 0) {
-            res.render("./products/edit", { product: productFound, colors: colors, errors: resultValidator.mapped(), old: product });
-        } else {
-            if (productFound) {
-                productFound.name = product.name || productFound.name;
-                productFound.image = req.file?.filename || productFound.image;
-                productFound.category = product.category || productFound.category;
-                productFound.price = product.price || productFound.price;
-                productFound.stock = product.stock || productFound.stock;
-                productFound.colors = { color1: product.colors.color1, color2: product.colors.color2, color3: product.colors.color3 } || productFound.colors;
-                productFound.description = product.description || productFound.description;
+            try {
 
-                fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
+                const colors = await Color.findAll()
+                const categories = await Category.findAll()
 
-                const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
+                res.render("./products/create", { errors: resultValidator.mapped(), old: req.body, colors, categories });
 
-                res.render("./products/detail.ejs", { product: productFound, productsRelated });
+            } catch (error) {
+                console.log(error)
             }
-        }
+            } else {
+                if (productFound) {
+                    productFound.name = product.name || productFound.name;
+                    productFound.image = req.file?.filename || productFound.image;
+                    productFound.category = product.category || productFound.category;
+                    productFound.price = product.price || productFound.price;
+                    productFound.stock = product.stock || productFound.stock;
+                    productFound.colors = { color1: product.colors.color1, color2: product.colors.color2, color3: product.colors.color3 } || productFound.colors;
+                    productFound.description = product.description || productFound.description;
+    
+                    fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
+
+                    
+    
+                    // const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
+    
+                    // res.render("./products/detail.ejs", { product: productFound, productsRelated });
+                    res.redirect("/")
+                }
+            }
+
+
+        // const resultValidator = validationResult(req);
+        // const product = {
+        //     id: req.params.id,
+        //     name: req.body.name,
+        //     image: req.file?.filename || "default-product.jpg",
+        //     category: req.body.category,
+        //     price: req.body.price,
+        //     stock: req.body.stock,
+        //     colors: { color1: req.body.color1, color2: req.body.color2, color3: req.body.color3 },
+        //     brand: req.body.brand,
+        //     description: req.body.description,
+        // };
+
+        // const productFound = products.find((product) => product.id == req.params.id);
+
+        // if (resultValidator.errors.length > 0) {
+        //     res.render("./products/edit", { product: productFound, colors: colors, errors: resultValidator.mapped(), old: product });
+        // } else {
+        //     if (productFound) {
+        //         productFound.name = product.name || productFound.name;
+        //         productFound.image = req.file?.filename || productFound.image;
+        //         productFound.category = product.category || productFound.category;
+        //         productFound.price = product.price || productFound.price;
+        //         productFound.stock = product.stock || productFound.stock;
+        //         productFound.colors = { color1: product.colors.color1, color2: product.colors.color2, color3: product.colors.color3 } || productFound.colors;
+        //         productFound.description = product.description || productFound.description;
+
+        //         fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
+
+        //         const productsRelated = products.filter((productI) => productI.category == product.category && productI.id != productFound.id);
+
+        //         res.render("./products/detail.ejs", { product: productFound, productsRelated });
+        //     }
+        // }
     },
 
     processDelete: (req, res) => {

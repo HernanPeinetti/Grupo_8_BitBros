@@ -15,13 +15,13 @@ router.get("/detalle/:id", controllers.detail);
 router.get("/crear", controllers.create);
 
 // VISTA EDITAR PRODUCTO http://localhost:3000/productos/editar/id
-router.get("/editar/:id", controllers.edit);
+router.get("/editar/:id", controllers.update);
 
 // METODO CREAR PRODUCTO
 router.post("/crear", upload.single("image"), validateProduct, controllers.processCreate);
 
 // METODO ACTUALIZAR PRODUCTO
-router.put("/editar/:id", upload.single("image"), validateProduct, controllers.processEdit);
+router.put("/editar/:id", upload.single("image"), validateProduct, controllers.processUpdate);
 
 // METODO ELIMINAR PRODUCTO
 router.delete("/eliminar/:idDelete", controllers.processDelete);
