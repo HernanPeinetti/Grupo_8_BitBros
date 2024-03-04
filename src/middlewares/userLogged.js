@@ -1,17 +1,30 @@
-const fs = require("fs");
-const path = require("path");
-const userPath = path.join(__dirname, "../data/users.json");
-let usersJson = JSON.parse(fs.readFileSync(userPath, "utf-8"));
+const { User } = require("../database/models")
 
-const userLoggedMiddelware = (req, res, next) => {
-    if (req.cookies.rememberUser != undefined && req.session.user == undefined) {
-        const userFound = usersJson.find(user => user.email == req.cookies.rememberUser)
-        req.session.user = userFound;
+const userLoggedMiddelware = async (req, res, next) => {
+    try {
+        if (req.cookies.rememberUser !== undefined && req.session.user === undefined) {
+            const userFound = await User.findOne({
+                include: [{ association: "user_type" }],
+                where: {
+                    email: req.cookies.rememberUser,
+                    
+                }
+            })
+
+            if (userFound) {
+                delete userFound.dataValues.password;
+                delete userFound._previousDataValues.password;
+
+                req.session.user = userFound;
+            }
+        }
+        
+        res.locals.user = req.session.user
+        next();
+    } catch (error) {
+        console.log(error)
     }
 
-    res.locals.user = req.session.user
-
-    next();
 };
 
 module.exports = userLoggedMiddelware;

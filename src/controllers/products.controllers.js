@@ -100,15 +100,13 @@ const controllersProduct = {
                     id_brand: idBrand.id_brand
                 })
 
-                const newProductFound = await Product.findByPk(newProduct.id_product)
-
                 const colors = [color1, color2, color3]
 
                 for (let i = 0; i < colors.length; i++) {
                     if (colors[i]) {
                         await Product_color.create({
                             id_color: colors[i],
-                            id_product: newProductFound.id_product
+                            id_product: newProduct.id_product
                         })
                     }
                 }

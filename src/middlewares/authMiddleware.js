@@ -14,8 +14,7 @@ const withoutLogin = (req, res, next) => {
 };
 
 const adminLogin = (req, res, next) => {
-    const user = req.session.user
-    if (user === undefined || user.user_type.name !== "admin") {
+    if (req.session.user === undefined || req.session.user.user_type && req.session.user.user_type.name !== "admin") {
         res.send("No tienes permisos de administrador/a");
     } else {
         next();

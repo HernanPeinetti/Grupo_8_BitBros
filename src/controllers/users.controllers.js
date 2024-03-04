@@ -28,7 +28,8 @@ const controllersUser = {
             })
 
             if (userFound && bcryptjs.compareSync(password.toString(), userFound.password)) {
-                delete userFound.password;
+                delete userFound.dataValues.password;
+                delete userFound._previousDataValues.password;
                 req.session.user = userFound;
 
                 let cookieUser = remember;

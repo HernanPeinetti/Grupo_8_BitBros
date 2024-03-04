@@ -76,9 +76,8 @@
                             <% products.forEach(product=> { %>
                                 <a href="/productos/detalle/<%= product.id_product %>">
                                     <article>
-                                        
                                         <div class="img-producto">
-                                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                                            <img src="/images/products/<%= product.image ? product.image : "default-product.jpg" %>" alt="<%= product.name %>">
                                         </div>
                                         <div class="detalles-producto">
                                             <h3 class="nombre-producto">
