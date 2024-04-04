@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {titulo: product.nombre , estilo: 'detail' }) %>
+<%- include('../partials/head', {titulo: product.nombre , estilo: ['detail', 'carousel'] }) %>
 
     <body>
         <%- include('../partials/header', {user: locals.user ? locals.user : undefined}) %>
@@ -165,26 +165,31 @@
 
 
                 <div class="prodRelacionados">
-
-                    <h2 class="titleProdRel">Productos relacionados</h2>
-
+                    <div class="encabezados">
+                        <h2>Productos relacionados</h2>
+                    </div>
                     <div class="grupo-articulos">
-                        <% productsRelated.forEach(product => { %>
-                            <a href="/productos/detalle/<%= product.id %>">
-                                <article>
-                                    <div class="img-producto">
-                                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
+                        <div class="featured-carousel owl-carousel">
+                            <% productsRelated.forEach(product=> { %>
+                                <div class="item">
+                                    <div class="work">
+                                        <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
+                                            <div class="img d-flex align-items-end justify-content-center"
+                                                style="background-image: url('/images/products/<%= product.image %>');">
+                                                <div class="text w-100">
+                                                    <span class="cat">Web Design</span>
+                                                    <h3>
+                                                        <%= product.name %>
+                                                    </h3>
+                                                    <p>$ <%= product.price %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="detalles-producto">
-                                        <h3 class="nombre-producto"><%= product.name %></h3>
-                                    </div>
-                                    <div class="precio-producto">
-                                        <h4 class="precio">$<%= product.price %></h4>
-                                    </div>
-                                </article>
-                            </a>
-                        <% }) %>
-
+                                </div>
+                                <% }) %>
+                        </div>
                     </div>
 
                 </div>

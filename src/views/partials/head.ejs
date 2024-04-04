@@ -11,10 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
         rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
 
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
+    <link rel="stylesheet" href="/library/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/library/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/library/css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/<%= estilo %>.css" />
+
+    <% if (estilo instanceof Array) { %>
+        <% for( let i = 0; i < estilo.length; i++ ) { %>
+            <link rel="stylesheet" href="/css/<%= estilo[i] %>.css" />
+        <% } %>
+    <% } else if (estilo) { %> 
+        <link rel="stylesheet" href="/css/<%= estilo %>.css" />
+    <%  }%>
+
 </head>

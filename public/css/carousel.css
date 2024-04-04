@@ -1,0 +1,302 @@
+/* carosuel featured */
+.img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.owl-carousel {
+  position: relative;
+}
+
+.owl-carousel .owl-item {
+  opacity: 1;
+}
+
+.owl-carousel .owl-item.active {
+  opacity: 1;
+}
+
+.owl-carousel .owl-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.owl-carousel .owl-nav .owl-prev,
+.owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin-top: -10px;
+  color: rgba(0, 0, 0, 0.2) !important;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .owl-carousel .owl-nav .owl-prev,
+  .owl-carousel .owl-nav .owl-next {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+
+.owl-carousel .owl-nav .owl-prev span:before,
+.owl-carousel .owl-nav .owl-next span:before {
+  font-size: 16px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .owl-carousel .owl-nav .owl-prev span:before,
+  .owl-carousel .owl-nav .owl-next span:before {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+  }
+}
+
+.owl-carousel .owl-nav .owl-prev:hover span:before,
+.owl-carousel .owl-nav .owl-next:hover span:before {
+  color: #b063c5;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+  right: 0;
+  margin-right: 20px;
+}
+
+.owl-carousel .owl-nav .owl-next {
+  right: 0;
+}
+
+.owl-carousel .owl-dots {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.owl-carousel .owl-dots .owl-dot {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.owl-carousel .owl-dots .owl-dot:hover,
+.owl-carousel .owl-dots .owl-dot:focus {
+  outline: none !important;
+}
+
+.owl-carousel .owl-dots .owl-dot.active {
+  background: #b063c5;
+}
+
+.owl-carousel.owl-drag .owl-item {
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.work {
+  width: 100%;
+}
+
+.a-carrousel {
+  text-decoration: none;
+  text-align: center;
+  transition: 0.5s all;
+  opacity: 0.9 !important;
+}
+
+.a-carrousel:hover {
+  opacity: 1 !important;
+  transform: scale(1.2)
+}
+
+.work .img {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+  box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+  z-index: 0;
+}
+
+.work .img:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: '';
+  z-index: -1;
+  background: rgba(255, 93, 177, 0);
+  background: -moz-linear-gradient(top, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 93, 177, 0)), color-stop(42%, rgba(148, 54, 103, 0)), color-stop(100%, black));
+  background: -webkit-linear-gradient(top, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+  background: -o-linear-gradient(top, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+  background: -ms-linear-gradient(top, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 93, 177, 0)), color-stop(42%, rgba(148, 54, 103, 0)), to(black));
+  background: linear-gradient(to bottom, rgba(255, 93, 177, 0) 0%, rgba(148, 54, 103, 0) 42%, black 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5db1', endColorstr='#000000', GradientType=0);
+  opacity: .6;
+}
+
+.work .text {
+  padding: 0 20px 0 20px;
+  padding-top: 0;
+}
+
+.work .text h3 {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.work .text .cat {
+  font-size: 12px;
+  color: #b063c5;
+  font-weight: 400;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1px 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.work .text p {
+  font-size: 14px;
+  color: #fff;
+  padding: 1px 8px;
+  display: inline-block;
+}
+
+.owl-prev,
+.owl-next {
+  display: none;
+}
+
+/* carosuel  owl-2*/
+
+
+.media-29101 img {
+  margin-bottom: 20px;
+}
+
+.media-29101 h3 {
+  font-size: 18px;
+  font-weight: 900 !important;
+}
+
+.media-29101 h3 a {
+  color: #6c757d;
+}
+
+.owl-2-style .owl-nav {
+  display: none;
+}
+
+/* .owl-2-style .owl-dots {
+  text-align: center;
+  position: relative;
+  bottom: -30px; }
+  .owl-2-style .owl-dots .owl-dot {
+    display: inline-block; }
+    .owl-2-style .owl-dots .owl-dot span {
+      display: inline-block;
+      width: 15px;
+      height: 3px;
+      border-radius: 0px;
+      background: #cccccc;
+      -webkit-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      -o-transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      transition: 0.3s all cubic-bezier(0.32, 0.71, 0.53, 0.53);
+      margin: 3px; }
+    .owl-2-style .owl-dots .owl-dot.active span {
+      background: #007bff; }
+    .owl-2-style .owl-dots .owl-dot:active, .owl-2-style .owl-dots .owl-dot:focus {
+      outline: none; } */
+.img-fluid {
+  width: 400;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0.5rem;
+}
+
+.a-owl-2 {
+  color: #676767;
+  opacity: 0.9;
+  transition: 0.4s all;
+}
+
+.a-owl-2:hover {
+  opacity: 1;
+}
+
+
+@media (min-width: 768px) {
+  .work .img {
+    height: 350px;
+  }
+
+  .owl-prev,
+  .owl-next {
+    display: block!important;
+    display: none;
+    background: rgb(37, 37, 37) !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: -120px !important;
+  }
+
+  .owl-prev {
+    left: -25px !important;
+  }
+
+  .owl-next {
+    right: -25px !important;
+  }
+
+  .owl-prev span,
+  .owl-next span {
+    color: #A88AF0 !important;
+  }
+
+  .owl-prev,
+  .owl-next {
+    width: 50px;
+    height: 50px;
+    top: -170px !important;
+  }
+
+  .work .text h3 {
+    font-size: 20px;
+  }
+
+  .work .text .cat {
+    font-size: 12px;
+  }
+
+  .work .text p {
+    font-size: 18px;
+  }
+
+}

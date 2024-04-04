@@ -305,17 +305,16 @@ summary {
     justify-items: center;
     margin-bottom: 20px;
 }
-.grupo-articulos {
-    display: flex;
-    margin-top: 1.5rem;
-    overflow-x: scroll;
-    justify-content: space-between;
+.encabezados {
+    font-size: 16px;
+    margin-top: 1rem
 }
 
-.grupo-articulos a {
-    text-decoration: none;
-    color: #434343;
-    margin: 0 1rem 1rem 0;
+.encabezados a {
+    font-size: 13px;
+    padding-top: 5px;
+    color: #a88af0;
+    font-weight: bold;
 }
 
 article {
@@ -525,6 +524,9 @@ input[type="radio"]:checked ~ label {
     }
     .precio {
         font-size: 16px;
+    }
+    .encabezados {
+        font-size: 17px;
     }
 }
 

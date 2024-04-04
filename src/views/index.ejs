@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head', {titulo: 'Inicio' , estilo: 'index' }) %>
+<%- include('./partials/head', {titulo: 'Inicio' , estilo: ["index","carousel"] }) %>
 
     <body>
         <%- include('./partials/header', {user: locals.user ? locals.user : undefined}) %>
@@ -9,90 +9,113 @@
                 <img src="/images/banner5.jpg">
             </nav>
             <main>
-                <div class="contenedor-categorias">
-                    <a href="/categorias/bicicletas">
-                        <div class="categorias div-bici">
-                            <h3>Bicicletas</h3>
-                        </div>
-                    </a>
-                    <a href="/categorias/accesorios">
-                        <div class="categorias div-acc">
-                            <h3>Accesorios</h3>
-                        </div>
-                    </a>
-                    <a href="/categorias/repuestos">
-                        <div class="categorias div-rep">
-                            <h3>Repuestos</h3>
-                        </div>
-                    </a>
-                    <a href="/categorias/indumentaria">
-                        <div class="categorias div-ind">
-                            <h3>Indumentaria</h3>
-                        </div>
-                    </a>
-                </div>
+
+
                 <div class="seccion-productos">
                     <div class="encabezados">
                         <h2>¡Productos nuevos!</h2>
                         <a href="#">BUSCAR PRODUCTOS</a>
                     </div>
                     <div class="grupo-articulos">
-                        <% products.forEach(product=> { %>
-                            <a href="/productos/detalle/<%= product.id_product %>">
-                                <article>
-                                    <div class="img-producto">
-                                        <img src="/images/products/<%= product.image %>" alt="<%= product.name %>">
-                                    </div>
-                                    <div class="detalles-producto">
-                                        <h3 class="nombre-producto">
-                                            <%= product.name %>
-                                        </h3>
-                                    </div>
-                                    <div class="precio-producto">
-                                        <h4 class="precio">$<%= product.price %>
-                                        </h4>
-                                    </div>
-                                </article>
-                            </a>
-                            <% }) %>
-                    </div>
-                    <div class="anuncio-promo">
-                        <div class="textos">
-                            <h2 class="super-promo">Super Promo</h2>
-                            <h3 class="descuento">50%</h3>
-                            <h4 class="productos-seleccionados">de descuento en productos<br>seleccionados</h4>
-                        </div>
-                        <div class="imagen-sale">
-                            <img src="/images/ofertas.avif" alt="cartel de SALE(oferta)">
-                            <a href="#">VER AHORA</a>
-                        </div>
-                    </div>
-                    <div class="seccion-productos">
-                        <div class="encabezados">
-                            <h2>Productos destacados</h2>
-                            <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
-                        </div>
-                        <div class="grupo-articulos">
+                        <div class="featured-carousel owl-carousel">
                             <% products.forEach(product=> { %>
-                                <a href="/productos/detalle/<%= product.id_product %>">
-                                    <article>
-                                        <div class="img-producto">
-                                            <img src="/images/products/<%= product.image ? product.image : "default-product.jpg" %>" alt="<%= product.name %>">
-                                        </div>
-                                        <div class="detalles-producto">
-                                            <h3 class="nombre-producto">
-                                                <%= product.name %>
-                                            </h3>
-                                        </div>
-                                        <div class="precio-producto">
-                                            <h4 class="precio">$<%= product.price %>
-                                            </h4>
-                                        </div>
-                                    </article>
-                                </a>
+                                <div class="item">
+                                    <div class="work">
+                                        <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
+                                            <div class="img d-flex align-items-end justify-content-center"
+                                                style="background-image: url('/images/products/<%= product.image %>');">
+                                                <div class="text w-100">
+                                                    <span class="cat"><%= product.category.name %></span>
+                                                    <h3>
+                                                        <%= product.name %>
+                                                    </h3>
+                                                    <p>$ <%= product.price %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
                                 <% }) %>
                         </div>
                     </div>
+                </div>
+                <div class="anuncio-promo">
+                    <div class="textos">
+                        <h2 class="super-promo">Super Promo</h2>
+                        <h3 class="descuento">50%</h3>
+                        <h4 class="productos-seleccionados">de descuento en productos<br>seleccionados</h4>
+                    </div>
+                    <div class="imagen-sale">
+                        <img src="/images/ofertas.avif" alt="cartel de SALE(oferta)">
+                        <a href="#">VER AHORA</a>
+                    </div>
+                </div>
+
+                <div class="seccion-productos">
+                    <div class="site-section bg-left-half mb-4 mt-5">
+                        <div class="container owl-2-style">
+                            <h2 style="text-align: center;">Categorias</h2>
+                            <div class="owl-carousel owl-2">
+                                <div class="media-29101">
+                                    <a class="a-owl-2" href="/categorias/bicicletas">
+                                        <img src="/images/categories/bicicletas.jpg" alt="Image" class="img-fluid">
+                                        <h3 style="text-align: center;">Bicicletas</h3>
+                                    </a>
+                                </div>
+                                <div class="media-29101">
+                                    <a class="a-owl-2" href="/categorias/accesorios">
+                                        <img src="/images/categories/accesorios.jpg" alt="Image" class="img-fluid">
+                                        <h3 style="text-align: center;">Accesorios</h3>
+                                    </a>
+                                </div>
+                                <div class="media-29101">
+                                    <a class="a-owl-2" href="/categorias/repuestos">
+                                        <img src="/images/categories/repuestos.jpg" alt="Image" class="img-fluid">
+                                        <h3 style="text-align: center;">Repuestos</h3>
+                                    </a>
+                                </div>
+                                <div class="media-29101">
+                                    <a class="a-owl-2" href="/categorias/indumentarias">
+                                        <img src="/images/categories/indumentarias.jpg" alt="Image" class="img-fluid">
+                                        <h3 style="text-align: center;">Indumentarias</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seccion-productos">
+                    <div class="encabezados">
+                        <h2>Productos destacados</h2>
+                        <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
+                    </div>
+                    <div class="grupo-articulos">
+                        <div class="featured-carousel owl-carousel">
+                            <% products.forEach(product=> { %>
+                                <div class="item">
+                                    <div class="work">
+                                        <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
+                                            <div class="img d-flex align-items-end justify-content-center"
+                                                style="background-image: url('/images/products/<%= product.image %>');">
+                                                <div class="text w-100">
+                                                    <span class="cat"><%= product.category.name %></span>
+                                                    <h3>
+                                                        <%= product.name %>
+                                                    </h3>
+                                                    <p>$ <%= product.price %>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <% }) %>
+                        </div>
+                    </div>
+                </div>
+                
             </main>
 
             <%- include('./partials/footer') %>

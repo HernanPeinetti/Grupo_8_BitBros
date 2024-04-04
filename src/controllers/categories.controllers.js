@@ -13,7 +13,7 @@ const controllersCategories = {
         const products = await Product.findAll();
         res.render("./categories/accesorios.ejs", { products });
     },
-    indumentaria: async(req, res) => {
+    indumentarias: async(req, res) => {
         const products = await Product.findAll();
         res.render("./categories/indumentarias.ejs", { products });
     },

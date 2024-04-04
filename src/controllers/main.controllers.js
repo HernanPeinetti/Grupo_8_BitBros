@@ -8,6 +8,7 @@ const controllers = {
         let products;
         if(req.query?.search){
             products = await Product.findAll({
+                include: [{ association: "category" }],
                 where: {
                   name: {
                     [Op.like]: `%${req.query?.search}%` // Falta corregir para que no haya SQL inection
@@ -16,7 +17,9 @@ const controllers = {
               });
         }
         else{
-            products = await Product.findAll();
+            products = await Product.findAll({
+              include: [{ association: "category" }],
+            });
         }
         res.render("index.ejs", { products });
     },

@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 header {
     height: 60px;
     width: 100%;
@@ -144,7 +145,7 @@ footer {
 .footerChat {
     width: 50%;
     height: 30px;
-    height: 50%;
+    height: 40%;
     display: flex;
     justify-content: end;
     align-items: center;
@@ -229,6 +230,7 @@ footer {
     .headerNav ul {
         width: 100%;
         display: flex;
+        padding: 0;
         list-style: none;
         justify-content: center;
     }
