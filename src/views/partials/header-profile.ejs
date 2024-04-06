@@ -44,7 +44,7 @@
                     <a href="/" class="navLink">Inicio</a>
                 </li>
                 <li>
-                    <a href="/perfil" class="navLink">Perfil</a>
+                    <a href="/perfil" class="navLink">Mis datos</a>
                 </li>
                 <li>
                     <a href="#" class="navLink">Mis compras</a>
@@ -61,6 +61,9 @@
             <div class="headerLogo">
                 <a href="/"><img src="/icon/logo.svg" alt="logo" /></a>
             </div>
+            <a href="/carrito" class="carrito-mobile">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
@@ -78,6 +81,9 @@
                             <a class="nav-link link-mobile" aria-current="page" href="/">Inicio</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link link-mobile" href="/perfil">Mis datos</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link link-mobile" href="#">Mis compras</a>
                         </li>
                         <li class="nav-item">
@@ -90,10 +96,6 @@
                                     Mi cuenta
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item link-mobile" href="/carrito">Mi carrito</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
                                     <form action="/salir" method="POST" class="formAlert">
                                         <input class="dropdown-item linkUser btnAlert link-mobile" style="color: rgb(186, 72, 72)!important;" type="submit" value="Cerrar sesión"></input>
                                     </form>
