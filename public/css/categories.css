@@ -6,7 +6,6 @@
 
 body {
     background-color: #eaeaea;
-    font-family: "Roboto", sans-serif;
     width: 100vw;
     color: #434343;
     overflow-x: hidden;
@@ -25,10 +24,10 @@ body {
     display: flex;
     margin-top: 1.5rem;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     width: 90vw;
     margin: auto;
-    padding: 4rem 0 4rem 0;
+    padding: 3rem 0 3rem 0;
 }
 
 .grupo-articulos a {

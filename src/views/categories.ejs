@@ -8,6 +8,17 @@
         <main class="main-categories">
             <div class="grupo-articulos">
                 <% if (products && products.length > 0) { %>
+    
+                    <% if (products[0].category) { %>
+                        <h2 style="text-align: center; width: 100%; margin-bottom: 0.5rem;">
+                            <%= products[0].category.name.charAt(0).toUpperCase() + products[0].category.name.slice(1) %>
+                        </h2>
+                    <% } else { %> 
+                        <h4 style="text-align: center; width: 100%; margin-bottom: 0.5rem;">
+                            Se encontraron <%= products.length %> productos
+                        </h4>
+                    <% } %>
+                   
                     <% for (let i = 0; i < products.length; i++) { %>
                         <div class="item">
                             <div class="work">
@@ -30,7 +41,7 @@
                         </div>
                     <% } %>
                 <% } else { %> 
-                    <h3>No se encontró ningún producto</h3>
+                    <h4>No se encontró ningún producto</h4>
                 <% } %> 
             </div>
         </main>
