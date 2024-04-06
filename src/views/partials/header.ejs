@@ -13,22 +13,22 @@
             <button class="userButton">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <a href="/carrito" class="headerUserLink a-carrito">
+            <a href="/carrito" class="headerUserLink a-carrito <%= currentPage && currentPage === "/carrito" ? "linkActive2" : "" %>">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
             <% if (user) { %>
                     <div>
                         <img class="headerIconUser" src="/images/userProfile/<%= user.profile_img %>" alt="">
                     </div>
-                    <a class="nav-link dropdown-toggle linkAccount linkUser" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi cuenta</a>
+                    <a class="nav-link dropdown-toggle linkAccount <%= currentPage && currentPage === "/perfil" || currentPage === "/productos/crear" ? "linkActive2" : "" %>" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi cuenta</a>
                     <ul class="dropdown-menu bg-dark">
-                        <li><a class="dropdown-item text-bg-dark linkUser" href="/perfil">Mis datos</a></li>
-                        <li><a class="dropdown-item text-bg-dark linkUser" href="#">Mis compras</a></li>
+                        <li><a class="dropdown-item linkUser <%= currentPage && currentPage === "/perfil" ? "linkActive" : "" %>" href="/perfil">Mis datos</a></li>
+                        <li><a class="dropdown-item linkUser" href="#">Mis compras</a></li>
                         <% if (user && user.user_type && user.user_type.name === "admin" ) { %>
-                            <li><a class="dropdown-item text-bg-dark linkUser" href="/productos/crear">Añadir un producto</a></li>
+                            <li><a class="dropdown-item linkUser <%= currentPage && currentPage === "/productos/crear" ? "linkActive" : "" %>" href="/productos/crear">Añadir un producto</a></li>
                         <% } %>
                         <form action="/salir" method="POST" class="formAlert">
-                            <input class="dropdown-item text-bg-dark linkUser btnAlert" style="color: rgb(186, 72, 72)!important;" type="submit" value="Cerrar sesión"></input>
+                            <input class="dropdown-item linkUser btnAlert" style="color: rgb(186, 72, 72)!important;" type="submit" value="Cerrar sesión"></input>
                         </form>
                     </ul>
                 
@@ -46,19 +46,19 @@
         <div class="headerNav">
             <ul>
                 <li>
-                    <a href="/" class="navLink">Inicio</a>
+                    <a href="/" class="navLink <%= currentPage && currentPage === "/" ? "linkActive" : "" %>">Inicio</a>
                 </li>
                 <li>
-                    <a href="/categorias/bicicletas" class="navLink">Bicicletas</a>
+                    <a href="/categorias/bicicletas" class="navLink <%= currentPage && currentPage === "/categorias/bicicletas" ? "linkActive" : "" %>">Bicicletas</a>
                 </li>
                 <li>
-                    <a href="/categorias/accesorios" class="navLink">Accesorios</a>
+                    <a href="/categorias/accesorios" class="navLink <%= currentPage && currentPage === "/categorias/accesorios" ? "linkActive" : "" %>">Accesorios</a>
                 </li>
                 <li>
-                    <a href="/categorias/indumentarias" class="navLink">Indumentarias</a>
+                    <a href="/categorias/indumentaria" class="navLink <%= currentPage && currentPage === "/categorias/indumentaria" ? "linkActive" : "" %>">Indumentaria</a>
                 </li>
                 <li>
-                    <a href="/categorias/repuestos" class="navLink">Repuestos</a>
+                    <a href="/categorias/repuestos" class="navLink <%= currentPage && currentPage === "/categorias/repuestos" ? "linkActive" : "" %>">Repuestos</a>
                 </li>
             </ul>
         </div>
@@ -69,7 +69,7 @@
             <div class="headerLogo">
                 <a href="/"><img src="/icon/logo.svg" alt="logo" /></a>
             </div>
-            <a href="/carrito" class="carrito-mobile">
+            <a href="/carrito" class="carrito-mobile <%= currentPage && currentPage === "/carrito" ? "linkActive2" : "" %>">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -86,30 +86,30 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link link-mobile" aria-current="page" href="/">Inicio</a>
+                            <a class="nav-link link-mobile <%= currentPage && currentPage === "/" ? "linkActive" : "" %>" href="/">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-mobile" href="/categorias/bicicletas">Bicicletas</a>
+                            <a class="nav-link link-mobile <%= currentPage && currentPage === "/categorias/bicicletas" ? "linkActive" : "" %>" href="/categorias/bicicletas">Bicicletas</a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link link-mobile" href="/categorias/accesorios">Accesorios</a>
+                            <a class="nav-link link-mobile <%= currentPage && currentPage === "/categorias/accesorios" ? "linkActive" : "" %>" href="/categorias/accesorios">Accesorios</a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link link-mobile" href="/categorias/indumentarias">Indumentarias</a>
+                            <a class="nav-link link-mobile <%= currentPage && currentPage === "/categorias/indumentaria" ? "linkActive" : "" %>" href="/categorias/indumentaria">Indumentaria</a>
                         </li> 
                         <li class="nav-item">
-                            <a class="nav-link link-mobile" href="/categorias/repuestos">Repuestos</a>
+                            <a class="nav-link link-mobile <%= currentPage && currentPage === "/categorias/repuestos" ? "linkActive" : "" %>" href="/categorias/repuestos">Repuestos</a>
                         </li> 
                         <% if (user) { %>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle link-mobile" href="#" role="button" data-bs-toggle="dropdown"
+                                <a class="nav-link dropdown-toggle link-mobile <%= currentPage && currentPage === "/perfil" || currentPage === "/productos/crear" ? "linkActive" : "" %>" href="#" role="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     Mi cuenta
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item link-mobile" href="/perfil">Mis datos</a></li>
+                                    <li><a class="dropdown-item link-mobile <%= currentPage && currentPage === "/perfil" ? "linkActive" : "" %>" href="/perfil">Mis datos</a></li>
                                     <li><a class="dropdown-item link-mobile" href="#">Mis compras</a></li>
-                                    <li><a class="dropdown-item link-mobile" href="/productos/crear">Añadir un producto</a></li>
+                                    <li><a class="dropdown-item link-mobile <%= currentPage && currentPage === "/productos/crear" ? "linkActive" : "" %>" href="/productos/crear">Añadir un producto</a></li>
                                     <form action="/salir" method="POST" class="formAlert">
                                         <input class="dropdown-item linkUser btnAlert link-mobile" style="color: rgb(186, 72, 72)!important;" type="submit" value="Cerrar sesión"></input>
                                     </form>
@@ -117,7 +117,7 @@
                             </li>
                         <% } else { %> 
                             <li class="nav-item">
-                                <a class="nav-link" href="/login">Iniciar sesión</a>
+                                <a class="nav-link link-mobile" href="/login">Iniciar sesión</a>
                             </li>
                         <% } %>
 

@@ -9,11 +9,9 @@ body {
     background-size: cover;
     background-position: center;
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
 }
 
 main {
-    height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;

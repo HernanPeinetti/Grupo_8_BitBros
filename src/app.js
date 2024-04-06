@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const methodOverride = require("method-override");
 const userLogged = require("./middlewares/userLogged.js")
+const currentPage = require("./middlewares/currentPage.js")
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 //Configuraciones
@@ -21,8 +22,7 @@ app.use(session({
     saveUninitialized: false,
 }));
 app.use(userLogged);
-// app.use(log); 
-// <!-- <input type="file" id="imagen" name="imagen" accept="image/*" <% if (imagen) { %> value="<%= imagen %>" <% } %> required> -->
+app.use(currentPage)
 
 
 const mainRoutes = require("./routes/main.routes.js");

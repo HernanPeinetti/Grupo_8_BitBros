@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 header {
     height: 56px;
@@ -42,6 +43,7 @@ header {
 
 .link-mobile {
     font-size: 18px;
+    color: rgb(255, 255, 255, 0.55)!important;
 }
 .offnavbar-mobile {
     width: 280px !important;
@@ -51,6 +53,12 @@ header {
     font-size: 20px;
     position: absolute;
     right: 85px;
+}
+.linkActive {
+    color: #fff!important;
+}
+.linkActive2 {
+    color: #c1cbf1!important;
 }
 
 main {
@@ -207,16 +215,23 @@ footer {
         font-weight: 500;
     }
     .linkAccount:hover {
-        color: #99a7e0;
+        color: #c1cbf1;
     }
     .headerUserLink:hover {
-        color: #99a7e0;
+        color: #c1cbf1;
     }
     .headerUserLink:active {
         color: #99a7e0;
     }
+    .linkUser {
+        color: rgb(255, 255, 255, 0.55);
+        font-weight: 400;
+        font-size: 16px;
+    }
     .linkUser:hover {
         text-decoration: underline;
+        color: #fff!important;
+        background-color: #212529;
     }
 
     .headerNav {
@@ -235,8 +250,8 @@ footer {
         margin: 0 0.3rem 0 0.3rem;
     }
     .navLink {
-        color: #dfdfdf;
-        font-size: 17px;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 18px;
         font-style: normal;
         font-weight: 500;
         text-decoration: none;

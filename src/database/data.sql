@@ -75,7 +75,7 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id_category`, `created_at`, `updated_at`, `name`, `deleted_at`) VALUES
 (1, '2024-02-28 18:57:29', '2024-02-28 18:57:29', 'bicicletas', NULL),
-(2, '2024-02-28 18:57:29', '2024-02-28 18:57:29', 'indumentarias', NULL),
+(2, '2024-02-28 18:57:29', '2024-02-28 18:57:29', 'indumentaria', NULL),
 (3, '2024-02-28 18:57:29', '2024-02-28 18:57:29', 'accesorios', NULL),
 (4, '2024-02-28 18:57:29', '2024-02-28 18:57:29', 'repuestos', NULL);
 

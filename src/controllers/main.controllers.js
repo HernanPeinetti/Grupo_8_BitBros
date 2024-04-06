@@ -5,7 +5,6 @@ const { Op } = require('sequelize');
 
 const controllers = {
   index: async (req, res) => {
-
     const productsNews = await Product.findAll({
       include: [{ association: "category" }],
       order: [['created_at', 'DESC']],
@@ -20,14 +19,13 @@ const controllers = {
   },
 
   categories: async (req, res) => {
-    console.log(req.params.category)
     const products = await Product.findAll({
       include: [{
         association: "category",
         where: {
           name: req.params.category
         }
-      }, { association: "brand", }
+      }, { association: "brand" }
       ]
     });
 
