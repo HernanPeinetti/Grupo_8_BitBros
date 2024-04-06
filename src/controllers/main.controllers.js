@@ -2,6 +2,9 @@ const path = require("path");
 const fs = require("fs");
 const { Product, Category } = require('../database/models')
 const { Op } = require('sequelize');
+const thousand = (number) => {
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+};
 
 const controllers = {
   index: async (req, res) => {
@@ -15,7 +18,8 @@ const controllers = {
       include: [{ association: "category" }],
     });
 
-    res.render("index.ejs", { productsNews, productsAll });
+    
+    res.render("index.ejs", { productsNews, productsAll, thousand });
   },
 
   categories: async (req, res) => {
@@ -29,7 +33,7 @@ const controllers = {
       ]
     });
 
-    res.render("./categories.ejs", { products });
+    res.render("./categories.ejs", { products, thousand });
   },
 
   cart: (req, res) => {
@@ -86,7 +90,7 @@ const controllers = {
         }
       }
 
-      res.render("./categories.ejs", { products: productsFilters });
+      res.render("./categories.ejs", { products: productsFilters, thousand });
     }
   }
 };

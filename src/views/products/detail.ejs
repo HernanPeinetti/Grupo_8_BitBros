@@ -31,7 +31,7 @@
                     <div class="detailSection">
 
                         <div class="precio">
-                            <p>$<%= product.price %></p>
+                            <p>$<%= thousand?thousand(product.price): product.price %></p>
                         </div>
 
                         <div class="stars">
@@ -86,14 +86,14 @@
                                 <i class="fa-solid fa-truck"></i> Envío de 3 a 4 días hábiles
                             </p>
                         </div>
-
+                        <!-- 
                         <div class="shortDescription">Tipo adaptativo para:
                             <ul class="listDescription">
                                 <li>Moto</li>
                                 <li>Bicicletas</li>
                                 <li>Autos</li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
 
                 </div>
@@ -176,12 +176,11 @@
                                             <div class="img d-flex align-items-end justify-content-center"
                                                 style="background-image: url('/images/products/<%= product.image %>');">
                                                 <div class="text w-100">
-                                                    <span class="cat">Web Design</span>
+                                                    <span class="cat"><%= product.brand %></span>
                                                     <h3>
                                                         <%= product.name %>
                                                     </h3>
-                                                    <p>$ <%= product.price %>
-                                                    </p>
+                                                    <p>$ <%= thousand?thousand(product.price): product.price %> </p>
                                                 </div>
                                             </div>
                                         </a>

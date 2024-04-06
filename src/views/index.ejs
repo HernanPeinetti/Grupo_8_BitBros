@@ -61,7 +61,8 @@
                                                     <h3>
                                                         <%= product.name %>
                                                     </h3>
-                                                    <p>$ <%= product.price %>
+                                    
+                                                    <p>$ <%= thousand?thousand(product.price): product.price %>
                                                     </p>
                                                 </div>
                                             </div>
@@ -143,7 +144,7 @@
                                                     <h3>
                                                         <%= product.name %>
                                                     </h3>
-                                                    <p>$ <%= product.price %>
+                                                    <p>$ <%= thousand?thousand(product.price): product.price %>
                                                     </p>
                                                 </div>
                                             </div>

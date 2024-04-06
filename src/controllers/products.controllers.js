@@ -4,6 +4,9 @@ const { v4: uuidv4, validate } = require("uuid");
 const multer = require("multer");
 const { validationResult } = require("express-validator");
 const { Op } = require('sequelize');
+const thousand = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+};
 
 const { Product, Color, Category, Brand, Product_color, sequelize } = require('../database/models')
 
@@ -26,8 +29,7 @@ const controllersProduct = {
                     }],
                 }
             })
-
-            res.render("./products/detail.ejs", { product, productsRelated });
+            res.render("./products/detail.ejs", { product, productsRelated, thousand });
         } else {
             res.send("El producto que busca no existe");
         }
@@ -124,7 +126,7 @@ const controllersProduct = {
                     }
                 })
 
-                res.render("./products/detail", { product: newProduct, productsRelated });
+                res.render("./products/detail", { product: newProduct, productsRelated, thousand });
             } catch (error) {
                 console.log(error)
             }
@@ -199,7 +201,7 @@ const controllersProduct = {
                     }
                 })
 
-                res.render("./products/detail.ejs", { product: productFound, productsRelated });
+                res.render("./products/detail.ejs", { product: productFound, productsRelated, thousand });
             }
         }
 
@@ -218,7 +220,7 @@ const controllersProduct = {
         const productsJSON = JSON.stringify(products, null, "");
 
         fs.writeFileSync(pathProducts, productsJSON);
-        res.render("index.ejs", { products: products });
+        res.render("index.ejs", { products: products, thousand });
     },
 };
 
