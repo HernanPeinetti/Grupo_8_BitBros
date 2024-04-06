@@ -6,19 +6,51 @@
     <body>
         <%- include('./partials/header', {user: locals.user ? locals.user : undefined}) %>
             <nav class="banner">
-                <img src="/images/banner5.jpg">
+                <div class="hero featured-carousel featured-banner owl-carousel">
+                    <div class="item">
+                        <div class="work">
+                            <div class="img img-banner d-flex align-items-center justify-content-center" style="background-image: url(/images/banner1.jpg);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img img-banner d-flex align-items-center justify-content-center" style="background-image: url(/images/banner2.jpg);">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img img-banner d-flex align-items-center justify-content-center" style="background-image: url(/images/banner3.jpg);">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img img-banner d-flex align-items-center justify-content-center" style="background-image: url(/images/banner4.jpg);">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="work">
+                            <div class="img img-banner d-flex align-items-center justify-content-center" style="background-image: url(/images/banner5.jpg);">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
             <main>
-
-
                 <div class="seccion-productos">
                     <div class="encabezados">
-                        <h2>¡Productos nuevos!</h2>
-                        <a href="#">BUSCAR PRODUCTOS</a>
+                        <h2>Todos los productos</h2>
                     </div>
                     <div class="grupo-articulos">
                         <div class="featured-carousel owl-carousel">
-                            <% products.forEach(product=> { %>
+                            <% productsAll.forEach(product=> { %>
                                 <div class="item">
                                     <div class="work">
                                         <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
@@ -59,25 +91,33 @@
                             <div class="owl-carousel owl-2">
                                 <div class="media-29101">
                                     <a class="a-owl-2" href="/categorias/bicicletas">
-                                        <img src="/images/categories/bicicletas.jpg" alt="Image" class="img-fluid">
+                                        <div class="img-fluid">
+                                            <img src="/images/categories/bicicletas.jpg" alt="Image">
+                                        </div>
                                         <h3 style="text-align: center;">Bicicletas</h3>
                                     </a>
                                 </div>
                                 <div class="media-29101">
                                     <a class="a-owl-2" href="/categorias/accesorios">
-                                        <img src="/images/categories/accesorios.jpg" alt="Image" class="img-fluid">
+                                        <div class="img-fluid">
+                                            <img src="/images/categories/accesorios.jpg" alt="Image">
+                                        </div>
                                         <h3 style="text-align: center;">Accesorios</h3>
                                     </a>
                                 </div>
                                 <div class="media-29101">
                                     <a class="a-owl-2" href="/categorias/repuestos">
-                                        <img src="/images/categories/repuestos.jpg" alt="Image" class="img-fluid">
+                                        <div class="img-fluid">
+                                            <img src="/images/categories/repuestos.jpg" alt="Image">
+                                        </div>
                                         <h3 style="text-align: center;">Repuestos</h3>
                                     </a>
                                 </div>
                                 <div class="media-29101">
                                     <a class="a-owl-2" href="/categorias/indumentarias">
-                                        <img src="/images/categories/indumentarias.jpg" alt="Image" class="img-fluid">
+                                        <div class="img-fluid">
+                                            <img src="/images/categories/indumentarias.jpg" alt="Image">
+                                        </div>
                                         <h3 style="text-align: center;">Indumentarias</h3>
                                     </a>
                                 </div>
@@ -88,12 +128,11 @@
 
                 <div class="seccion-productos">
                     <div class="encabezados">
-                        <h2>Productos destacados</h2>
-                        <a href="#" class="explorar-productos">EXPLORAR PRODUCTOS</a>
+                        <h2>¡Productos nuevos!</h2>
                     </div>
                     <div class="grupo-articulos">
                         <div class="featured-carousel owl-carousel">
-                            <% products.forEach(product=> { %>
+                            <% productsNews.forEach(product=> { %>
                                 <div class="item">
                                     <div class="work">
                                         <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
@@ -115,7 +154,6 @@
                         </div>
                     </div>
                 </div>
-                
             </main>
 
             <%- include('./partials/footer') %>

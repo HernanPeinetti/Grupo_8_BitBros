@@ -16,7 +16,7 @@
             </nav> -->
 
                 <div class="titleContainer">
-                    <p class="nombre"><%= product.name %></p>
+                    <h2 class="nombre"><%= product.name %></h2>
                     <form>
                         <input id="heart" type="checkbox" />
                         <label for="heart"><i class="fa-solid fa-heart"></i></i></label>
@@ -55,12 +55,11 @@
                                 <p>Elegí el color:</p>
                             </div>
                             <select name="pickColor" class="changeColor">
-                                <% for(let color in product.colors) { %>
-                                    <% if (product.colors[color] != "") { %>
-                                        <option value="<%= product.colors[color] %>"><%= product.colors[color] %></option>
+                                <% product.colors.forEach(color => { %>
+                                    <% if (color != "") { %>
+                                        <option value="<%= color.id_color %>"><%= color.name %></option>
                                     <% } %>
-                                <% } %>
-
+                                <% }) %>
                             </select>
                         </div>
 

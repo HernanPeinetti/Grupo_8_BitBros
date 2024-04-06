@@ -3,23 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-
-
 header {
-    height: 60px;
+    height: 56px;
     width: 100%;
 }
-.headerContainer {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    z-index: 1;
-    border-bottom: 1px solid #ececec;
-    background: #fff;
-    height: 60px;
-    width: 100%;
-}
+
 .headerLogo {
     width: 50%;
 }
@@ -27,51 +15,9 @@ header {
     width: 125px;
     margin-left: 0.5rem;
 }
-.headerUser {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-}
-.headerUserLink {
-    color: #8a97ca;
-    margin-right: 0.7rem;
-    font-size: 18px;
-}
-.headerIconUser {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
 
-.userButton {
-    background-color: #00000000;
-    border: 0;
-    color: #8a97ca;
-    margin-right: 0.7rem;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-}
-.p-user {
+.nav-desktop {
     display: none;
-}
-.headerNav {
-    display: none;
-}
-
-.headerSearch {
-    display: none;
-}
-.a-volver {
-    color: #434343;
-    font-weight: 500;
-    text-decoration: none;
-}
-.a-volver i {
-    margin-right: 0.5rem;
-}
-.a-volver:hover {
-    text-decoration: underline;
 }
 
 .navUser {
@@ -94,7 +40,25 @@ header {
     margin-right: 0.5rem;
 }
 
+.link-mobile {
+    font-size: 18px;
+}
+.offnavbar-mobile {
+    width: 280px !important;
+}
+.carrito-mobile {
+    color:#99a7e0;
+    font-size: 20px;
+    position: absolute;
+    right: 85px;
+}
+
+main {
+    min-height: 75vh;
+}
+
 footer {
+    margin-bottom: auto;
     width: 100%;
     height: 198px;
     background: #fff;
@@ -164,16 +128,22 @@ footer {
 }
 
 @media (min-width: 768px) {
+    .nav-mobile {
+        display: none;
+    }
     header {
         height: 140px;
         width: 100%;
     }
-    .headerContainer {
+    .nav-desktop {
         width: 100%;
         display: flex;
+        background-color: #212529;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        position: fixed;
+        z-index: 1;
         height: 140px;
         width: 100%;
     }
@@ -194,14 +164,25 @@ footer {
         justify-content: flex-end;
         align-items: center;
     }
+    .a-volver {
+        color: #dfdfdf;
+        font-weight: 500;
+        transition: 0.3s all;
+        text-decoration: none;
+    }
+    .a-volver i {
+        margin-right: 0.5rem;
+    }
+    .a-volver:hover {
+        color: #ffffff;
+        text-decoration: underline;
+    }
     .a-user {
         margin-left: 1rem;
         display: flex;
         align-items: center;
         text-decoration: none;
     }
-    
-
     .a-user:hover p {
         text-decoration: underline;
     }
@@ -216,12 +197,28 @@ footer {
     }
     .headerUserLink {
         color: #8a97ca;
-        font-size: 24px;
+        font-size: 22px;
+        font-weight: 500;
         transition: 0.3s all;
     }
-    .headerUserLink:hover {
-        color: #7580ac;
+    .linkAccount {
+        color: #8a97ca;
+        font-size: 18px;
+        font-weight: 500;
     }
+    .linkAccount:hover {
+        color: #99a7e0;
+    }
+    .headerUserLink:hover {
+        color: #99a7e0;
+    }
+    .headerUserLink:active {
+        color: #99a7e0;
+    }
+    .linkUser:hover {
+        text-decoration: underline;
+    }
+
     .headerNav {
         width: 75%;
         height: 30%;
@@ -238,7 +235,7 @@ footer {
         margin: 0 0.3rem 0 0.3rem;
     }
     .navLink {
-        color: #434343;
+        color: #dfdfdf;
         font-size: 17px;
         font-style: normal;
         font-weight: 500;
@@ -246,12 +243,13 @@ footer {
         transition: 0.3s all;
     }
     .navLink:hover {
-        color: #181818;
+        color: #ffffff;
         text-decoration: underline;
     }
     .a-carrito {
         position: relative;
         top: 1px;
+        margin-right: 15px;
     }
     .headerSearch {
         display: flex;
@@ -268,11 +266,12 @@ footer {
         width: 100%;
         margin: auto;
         height: 40px;
+        color: #e9e9e9;
         padding: 0 0.5rem 0 2rem;
         border-radius: 5px;
         border: 1px solid #8a97ca;
-        background: #fff;
         outline: none;
+        background: #212529;
     }
     .i-search {
         position: absolute;
@@ -284,6 +283,11 @@ footer {
     .navUser {
         height: 140px;
         width: 100%;
+    }
+    .headerIconUser {
+        width: 45px;
+        height: 45px;
+        margin-right: 5px;
     }
 
     footer {

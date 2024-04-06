@@ -6,7 +6,6 @@
 
 body {
     background-size: cover;
-    background-image: url('../images/edit.jpg');
     background-position: center;
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
@@ -30,7 +29,6 @@ main {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
     /* Agrega un efecto de desenfoque al fondo del formulario */
     width: 95vw;
 }
@@ -65,8 +63,6 @@ input,
 select,
 textarea {
     padding: 12px;
-    margin-top: 8px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;

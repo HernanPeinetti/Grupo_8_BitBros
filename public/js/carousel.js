@@ -11,6 +11,19 @@
 	fullHeight();
 
 	const carousel = () => {
+		$('.featured-banner').owlCarousel({
+			loop:true,
+			autoplay: true,
+			margin:30,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			smartSpeed: 15000,
+			nav:false,
+			dots: false,
+			autoplayHoverPause: false,
+			items: 1,
+			navText : ["<span class='ion-ios-arrow-back'></span>","<span class='ion-ios-arrow-forward'></span>"],
+			});
 		$('.featured-carousel').owlCarousel({
 			loop: false,
 			autoplay: false,
@@ -29,10 +42,10 @@
 				280: {
 					items: 2
 				},
-				600: {
+				575: {
 					items: 3
 				},
-				1000: {
+				1024: {
 					items: 4
 				},
 				1280: {

@@ -74,19 +74,20 @@ body {
 .imageContainer {
     background-color: #ffffff;
     width: 100%;
-    height: 50%;
+    height: 300px;
     display: flex;
     justify-content: center;
-
 }
 .imageContainer img {
     width: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
 }
 
 /* seccion de precio, detalles y otros */
 .detailSection {
     background-color: #ffffff;
-    padding: 10px;
     margin: 10px;
     font-weight: 500;
     display: flex;
@@ -506,6 +507,16 @@ input[type="radio"]:checked ~ label {
     }
 } */
 
+@media (min-width: 425px) {
+    .imageContainer {
+        height: 450px;
+    }
+}
+@media (min-width: 575px) {
+    .imageContainer {
+        height: 600px;
+    }
+}
 /* TABLET LANDSCAPE / SMALL-DESKTOP´S */
 @media (min-width: 768px) {
     .mainDetail {
@@ -536,7 +547,7 @@ input[type="radio"]:checked ~ label {
     
     .titleContainer {
         align-self: center;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     [for="heart"] {
@@ -546,15 +557,14 @@ input[type="radio"]:checked ~ label {
     .section1 {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     
     .detailSection {
-        width: 450px;
+        width: 400px;
         display: block;
         background-color: #ffffff;
-        padding: 20px;
         margin: 10px;
         font-weight: 500;
         display: flex;
@@ -563,11 +573,7 @@ input[type="radio"]:checked ~ label {
         border-radius: 0.2rem;
     }
     .imageContainer {
-        width: 48rem;
-    }
-    .imageContainer img {
-        object-fit: cover;
-        object-position: center;
+        height: 450px;
     }
     
     .nombre {
@@ -670,5 +676,24 @@ input[type="radio"]:checked ~ label {
     }
     .precio {
         font-size: 24px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .detailSection {
+        width: 500px;
+    }
+    .imageContainer {
+        height: 550px;
+    }
+}
+@media (min-width: 1440px) {
+    .detailSection {
+        width: 700px;
+        padding-left: 200px;
+    }
+    .imageContainer {
+        width: 900px;
+        height: 550px!important;
     }
 }

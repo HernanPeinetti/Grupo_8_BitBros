@@ -108,7 +108,8 @@ const controllersUser = {
         req.session.destroy();
         res.clearCookie('connect.sid');
         res.clearCookie('rememberUser')
-        res.redirect('/login');
+
+        res.redirect('/');
     }
 };
 

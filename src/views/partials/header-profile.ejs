@@ -22,13 +22,8 @@
                     </div>
                     <a class="nav-link dropdown-toggle linkAccount linkUser" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mi cuenta</a>
                     <ul class="dropdown-menu bg-dark">
-                        <li><a class="dropdown-item text-bg-dark linkUser" href="/perfil">Perfil</a></li>
-                        <li><a class="dropdown-item text-bg-dark linkUser" href="#">Mis compras</a></li>
-                        <% if (user && user.user_type && user.user_type.name === "admin" ) { %>
-                            <li><a class="dropdown-item text-bg-dark linkUser" href="/productos/crear">Añadir un producto</a></li>
-                        <% } %>
                         <form action="/salir" method="POST" class="formAlert">
-                            <input class="dropdown-item text-bg-dark linkUser btnAlert" style="color: rgb(186, 72, 72)!important;" type="submit" value="Cerrar sesión"></input>
+                            <input class="dropdown-item text-bg-dark linkUser btnAlert" style="color: rgb(186, 72, 72)!important; font-size: 16px;" type="submit" value="Cerrar sesión"></input>
                         </form>
                     </ul>
                 
@@ -49,16 +44,13 @@
                     <a href="/" class="navLink">Inicio</a>
                 </li>
                 <li>
-                    <a href="/categorias/bicicletas" class="navLink">Bicicletas</a>
+                    <a href="/perfil" class="navLink">Perfil</a>
                 </li>
                 <li>
-                    <a href="/categorias/accesorios" class="navLink">Accesorios</a>
+                    <a href="#" class="navLink">Mis compras</a>
                 </li>
                 <li>
-                    <a href="/categorias/indumentarias" class="navLink">Indumentarias</a>
-                </li>
-                <li>
-                    <a href="/categorias/repuestos" class="navLink">Repuestos</a>
+                    <a href="/productos/crear" class="navLink">Añadir un producto</a>
                 </li>
             </ul>
         </div>
@@ -69,9 +61,6 @@
             <div class="headerLogo">
                 <a href="/"><img src="/icon/logo.svg" alt="logo" /></a>
             </div>
-            <a href="/carrito" class="carrito-mobile">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
@@ -89,17 +78,11 @@
                             <a class="nav-link link-mobile" aria-current="page" href="/">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-mobile" href="/categorias/bicicletas">Bicicletas</a>
-                        </li> 
+                            <a class="nav-link link-mobile" href="#">Mis compras</a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link link-mobile" href="/categorias/accesorios">Accesorios</a>
-                        </li> 
-                        <li class="nav-item">
-                            <a class="nav-link link-mobile" href="/categorias/indumentarias">Indumentarias</a>
-                        </li> 
-                        <li class="nav-item">
-                            <a class="nav-link link-mobile" href="/categorias/repuestos">Repuestos</a>
-                        </li> 
+                            <a class="nav-link link-mobile" href="/productos/crear">Añadir un producto</a>
+                        </li>
                         <% if (user) { %>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle link-mobile" href="#" role="button" data-bs-toggle="dropdown"
@@ -107,10 +90,7 @@
                                     Mi cuenta
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                    <li><a class="dropdown-item link-mobile" href="/perfil">Perfil</a></li>
                                     <li><a class="dropdown-item link-mobile" href="/carrito">Mi carrito</a></li>
-                                    <li><a class="dropdown-item link-mobile" href="#">Mis compras</a></li>
-                                    <li><a class="dropdown-item link-mobile" href="/productos/crear">Añadir un producto</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
@@ -124,7 +104,6 @@
                                 <a class="nav-link" href="/login">Iniciar sesión</a>
                             </li>
                         <% } %>
-
                     </ul>
                     <form class="d-flex mt-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

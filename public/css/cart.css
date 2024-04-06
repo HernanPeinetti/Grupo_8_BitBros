@@ -89,7 +89,7 @@ main body {
     display: flex;
     background-color: white;
     border-radius: 7px;
-    width: 320px;
+    width: 100%;
     align-items: center;
     margin: auto;
     padding: 0.5rem;
@@ -299,7 +299,7 @@ main {
 .contenedor-precio-final {
     padding: 0.2rem 0;
     margin: auto;
-    width: 320px;
+    width: 100%;
 }
 
 .compras.seguras {
@@ -315,11 +315,12 @@ main {
 .precio-final-off {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
 }
 
 .precio-final-off input{
     height: 1.5rem;
-    margin-top: 0.5rem;
     border: 1px #3B82BF solid;
     width: 10rem;
 }
@@ -332,11 +333,10 @@ main {
     color: white;
     border-radius: 7px;
     font-size: 12px;
-    margin-top: 0.2rem;
-    
+    margin-top: 1rem;
 }
 
-@media (min-width: 460px) {
+@media (min-width: 475px) {
     .contenedor-precio-final {
         width: 400px;
     }
@@ -498,7 +498,7 @@ margin-bottom: 1rem;
     .precio-final-off {
         background-color: white;
         width: 21.5rem;
-        height: 105px;
+        margin-top: 0;
         justify-content: center;
         display: flex;
         align-items: center;
@@ -506,6 +506,7 @@ margin-bottom: 1rem;
     }
 
     .precio-final-off p {
+        margin-top: 1.5rem;
         font-size: 16px;
     }
 
@@ -528,7 +529,6 @@ margin-bottom: 1rem;
         justify-content: space-between;
         margin-bottom: 1rem;
         margin-top: 1rem;
-
     }
 
     .descripcion-total {
@@ -537,14 +537,11 @@ margin-bottom: 1rem;
         justify-content: center;
         margin: 0 10px;
         font-size: 18px;
-        height: 5rem;
-
     }
 
     .descripcion-total div {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 0.5rem;
         font-size: 16px;
     }
 
@@ -561,5 +558,8 @@ margin-bottom: 1rem;
     }
     .precio-parrafo {
         left: 0;
+    }
+    .aplicarCodigo{
+        margin-bottom: 1.5rem;
     }
 }

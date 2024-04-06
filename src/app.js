@@ -28,11 +28,9 @@ app.use(userLogged);
 const mainRoutes = require("./routes/main.routes.js");
 const productsRoutes = require("./routes/products.routes.js");
 const usersRoutes = require("./routes/users.routes.js");
-const categoriesRoutes = require("./routes/categories.routes.js");
 
 app.use("/", mainRoutes, usersRoutes);
 app.use("/productos", productsRoutes);
-app.use("/categorias", categoriesRoutes);
 
 app.listen(3001, () => {
     console.log("Servidor levantado en http://localhost:3001");

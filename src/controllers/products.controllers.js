@@ -10,12 +10,13 @@ const { Product, Color, Category, Brand, Product_color, sequelize } = require('.
 const controllersProduct = {
     detail: async (req, res) => {
         const id = req.params.id;
-        const product = await Product.findByPk(id);
+        const product = await Product.findByPk(id, {
+            include: [{ association: "colors" }]
+        });
 
         if (product) {
             const productsRelated = await Product.findAll({
                 where: {
-
                     [Op.and]: [{
                         id_category: product.id_category
                     }, {

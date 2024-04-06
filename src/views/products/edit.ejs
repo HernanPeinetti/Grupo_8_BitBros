@@ -4,7 +4,7 @@
 <%- include('../partials/head', {titulo: 'Editar producto' , estilo: 'edit-create' }) %>
 
     <body>
-        <%- include('../partials/header-cart', {user: locals.user ? locals.user : undefined}) %>
+        <%- include('../partials/header', {user: locals.user ? locals.user : undefined}) %>
             <main>
                 <div class="container-market">
                     <h2 class="title-market">Editando <%= product.name %></h2>

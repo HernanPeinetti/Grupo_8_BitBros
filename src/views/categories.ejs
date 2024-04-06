@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<%- include('./partials/head', {titulo: 'Accesorios', estilo: 'categories'}) %>
+
+    <body>
+        <%- include('./partials/header', {user: locals.user ? locals.user : undefined}) %>
+        <main class="main-categories">
+            <div class="grupo-articulos">
+                <% if (products && products.length > 0) { %>
+                    <% for (let i = 0; i < products.length; i++) { %>
+                        <div class="item">
+                            <div class="work">
+                                <a class="a-carrousel" href="/productos/detalle/<%= products[i].id_product %>">
+                                    <div class="img d-flex align-items-end justify-content-center"
+                                        style="background: url('/images/products/<%= products[i].image %>');">
+                                        <div class="text w-100">
+                                            <% if (products[i].brand && products[i].brand.name !== "Sin marca") { %>
+                                                <span class="brand"><%= products[i].brand.name %></span>
+                                            <% } %>
+                                            <h3>
+                                                <%= products[i].name %>
+                                            </h3>
+                                            <p>$ <%= products[i].price %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    <% } %>
+                <% } else { %> 
+                    <h3>No se encontró ningún producto</h3>
+                <% } %> 
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
+    </body>
+
+</html>

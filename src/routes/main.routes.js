@@ -9,4 +9,11 @@ router.get("/", controllers.index)
 // VISTA CARRITO http://localhost:3000/carrito
 router.get("/carrito", withLogin, controllers.cart)
 
+// VISTA CATEGORIAS http://localhost:3000/categorias
+router.get("/categorias/:category", controllers.categories)
+
+// VISTA search http://localhost:3000/search
+router.get("/search", controllers.search)
+
+
 module.exports = router; 
