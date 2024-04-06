@@ -221,3 +221,103 @@ Debido a un corte de electricidad en la fecha originalmente programada para la r
   
 
 
+# Resumen de Reunión - 12/03/2024
+
+## Detalles de la Reunión
+
+- **Fecha:** 12/03/2024
+- **Plataforma:** Discord (canal de voz)
+
+## Agenda
+
+1. **Revisión del Sprint 7**
+   - Discutimos el estado actual del Sprint 7 para identificar qué puntos ya están completados y cuáles quedan pendientes.
+
+2. **División de Tareas**
+   - Dividimos las tareas restantes entre los miembros del equipo.
+
+3. **Actualización del Tablero de Trello**
+   - Actualizamos el tablero de Trello con las tareas asignadas y su estado actual.
+
+4. **Próxima Reunión**
+   - Acordamos reunirnos nuevamente al día siguiente para revisar el progreso y finalizar las tareas restantes en equipo.
+  
+
+
+# Resumen de Reunión - 13/03/2024
+
+## Detalles de la Reunión
+
+- **Fecha:** 13/03/2024
+- **Plataforma:** Discord (canal de voz)
+
+## Agenda
+
+1. **Revisión de Avances**
+   - Discutimos los avances realizados por cada miembro en las tareas asignadas desde nuestra última reunión.
+
+2. **Trabajo en Equipo**
+   - Colaboramos activamente para completar las tareas restantes del sprint.
+
+## Logros Destacados
+
+- Se revisaron y discutieron los avances individuales en las tareas asignadas.
+- Trabajamos juntos para finalizar con éxito las actividades pendientes del sprint.
+
+
+
+# Resumen de Reunión - 27/03/2024
+
+## Detalles de la Reunión
+
+- **Fecha:** 27/03/2024
+- **Plataforma:** Discord (canal de voz)
+
+## Agenda
+
+1. **Inicio del Último Sprint**
+   - Discutimos el inicio del octavo y último sprint del proyecto.
+
+2. **Planificación de Tareas**
+   - Acordamos ponernos al día con el contenido durante el fin de semana para poder dividir las tareas la próxima semana.
+
+## Decisiones Tomadas
+
+- Se acordó la importancia de una comunicación fluida para garantizar una distribución equitativa de las tareas y un progreso eficiente del sprint.
+
+
+
+# Resumen de Reunión - 03/04/2024
+
+## Detalles de la Reunión
+
+- **Fecha:** 03/04/2024
+- **Plataforma:** Discord (canal de voz)
+
+## Agenda
+
+1. **Distribución de Tareas**
+   - Nos reunimos para asignar las tareas a realizar entre los miembros del grupo para el último sprint.
+
+## Acciones Tomadas
+
+- Cada miembro aceptó responsabilidades específicas para contribuir al éxito del proyecto.
+
+
+
+# Resumen de Reunión - 05/04/2024
+
+## Detalles de la Reunión
+
+- **Fecha:** 05/04/2024
+- **Plataforma:** Discord (canal de voz)
+
+## Agenda
+
+1. **Correcciones en el Diseño de la Página**
+   - Nos reunimos para realizar algunas correcciones en el diseño de la página del proyecto.
+
+## Acciones Tomadas
+
+- Se llevaron a cabo correcciones en el diseño de la página según las discusiones y feedback del equipo.
+- Se acordó continuar trabajando en el proyecto y conectarse nuevamente al día siguiente para seguir avanzando.
