@@ -14,11 +14,12 @@ const controllersProduct = {
     detail: async (req, res) => {
         const id = req.params.id;
         const product = await Product.findByPk(id, {
-            include: [{ association: "colors" }]
+            include: [{ association: "colors"}, {association: "brand"}, {association: "category"}]
         });
 
         if (product) {
             const productsRelated = await Product.findAll({
+                include: [{ association: "brand"}],
                 where: {
                     [Op.and]: [{
                         id_category: product.id_category
@@ -27,7 +28,8 @@ const controllersProduct = {
                             [Op.ne]: product.id_product,
                         }
                     }],
-                }
+                },
+  
             })
             res.render("./products/detail.ejs", { product, productsRelated, thousand });
         } else {

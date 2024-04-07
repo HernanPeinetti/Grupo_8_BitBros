@@ -8,7 +8,6 @@
         <main class="main-categories">
             <div class="grupo-articulos">
                 <% if (products && products.length > 0) { %>
-    
                     <% if (products[0].category) { %>
                         <h2 style="text-align: center; width: 100%; margin-bottom: 0.5rem;">
                             <%= products[0].category.name.charAt(0).toUpperCase() + products[0].category.name.slice(1) %>

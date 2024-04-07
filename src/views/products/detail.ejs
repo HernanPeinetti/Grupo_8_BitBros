@@ -97,8 +97,7 @@
                     </div>
 
                 </div>
-
-
+                
 
                 <div class="acordeon">
                     <details class="productDetailContainer">
@@ -109,8 +108,8 @@
 
                         </summary>
                         <div class="contenido">
-                            <li><strong>Marca:</strong><%= product.brand %></li>
-                            <li><strong>Categoría:</strong><%= product.category %></li>
+                            <li><strong>Marca: </strong><%= product.brand.name %></li>
+                            <li><strong>Categoría: </strong><%= product.category.name %></li>
                             <p><strong>Descripción:</strong><%= product.description %>
                             </p>
                         </div>
@@ -176,7 +175,7 @@
                                             <div class="img d-flex align-items-end justify-content-center"
                                                 style="background-image: url('/images/products/<%= product.image %>');">
                                                 <div class="text w-100">
-                                                    <span class="cat"><%= product.brand %></span>
+                                                    <span class="cat"><%= product.brand.name %></span>
                                                     <h3>
                                                         <%= product.name %>
                                                     </h3>
