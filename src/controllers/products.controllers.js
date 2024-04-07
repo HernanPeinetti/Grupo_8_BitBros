@@ -3,7 +3,7 @@ const fs = require("fs");
 const { v4: uuidv4, validate } = require("uuid");
 const multer = require("multer");
 const { validationResult } = require("express-validator");
-const { Op } = require('sequelize');
+const { Op, where } = require('sequelize');
 const thousand = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };
@@ -107,10 +107,11 @@ const controllersProduct = {
 
                 for (let i = 0; i < colors.length; i++) {
                     if (colors[i]) {
-                        await Product_color.create({
+                        const colores = await Product_color.create({
                             id_color: colors[i],
                             id_product: newProduct.id_product
                         })
+                        console.log(colores)
                     }
                 }
 
@@ -207,20 +208,18 @@ const controllersProduct = {
 
     },
 
-    processDelete: (req, res) => {
+    processDelete: async (req, res) => {
         const id = req.params.idDelete;
 
-        const productFound = products.find((product) => product.id == id);
-
-        if (productFound && productFound.image != "default-product.jpg") {
-            fs.unlinkSync(path.join(__dirname, "../../public/images/products", productFound.image));
+        try {
+            const productoEliminado= await Product.destroy({ where: { id_product: id } });
+            console.log(productoEliminado)
+        } catch (error) {
+          console.log(error.message);
         }
-
-        products = products.filter((product) => product.id != id);
-        const productsJSON = JSON.stringify(products, null, "");
-
-        fs.writeFileSync(pathProducts, productsJSON);
-        res.render("index.ejs", { products: products, thousand });
+        console.log(id)
+        
+        // res.("/");
     },
 };
 
