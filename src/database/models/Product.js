@@ -45,6 +45,7 @@ module.exports = (sequelize, dataTypes) =>{
         createdAt : 'created_at',
         updatedAt : 'updated_at',
         deletedAt : 'deleted_at',
+        paranoid: true,
         timestamps : true
     }
 
@@ -65,6 +66,7 @@ module.exports = (sequelize, dataTypes) =>{
             through: "products_colors",
             foreignKey: "id_product",
             otherKey: "id_color",
+            paranoid: true,
             timestamps: false
         })
     }

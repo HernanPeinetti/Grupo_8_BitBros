@@ -36,6 +36,7 @@ module.exports = (sequelize, dataTypes) => {
             through: "products_colors",
             foreignKey: "id_color",
             otherKey: "id_product",
+            paranoid: true,
             timestamps: false
         })
     }

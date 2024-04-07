@@ -35,7 +35,7 @@ CREATE TABLE `brands` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) NOT NULL,
-  `deleted_at` date DEFAULT NULL
+  `deleted_at` date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `categories` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL
+  `deleted_at` date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `colors` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) NOT NULL,
-  `deleted_at` date DEFAULT NULL
+  `deleted_at` date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -127,7 +127,7 @@ CREATE TABLE `products` (
   `description` text DEFAULT NULL,
   `id_category` int(11) NOT NULL,
   `id_brand` int(11) DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL
+  `deleted_at` date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -169,7 +169,7 @@ CREATE TABLE `products_colors` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `id_product` int(11) DEFAULT NULL,
   `id_color` int(11) DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL
+  `deleted_at` date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -225,7 +225,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `id_user_type` int(11) NOT NULL,
-  `deleted_at` date DEFAULT NULL
+  `deleted_at` date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -248,7 +248,7 @@ CREATE TABLE `users_types` (
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) DEFAULT NULL,
   `key` varchar(255) DEFAULT NULL,
-  `deleted_at` date DEFAULT NULL
+  `deleted_at` date
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --

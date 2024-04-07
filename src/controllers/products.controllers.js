@@ -111,23 +111,10 @@ const controllersProduct = {
                             id_color: colors[i],
                             id_product: newProduct.id_product
                         })
-                        console.log(colores)
                     }
                 }
 
-                const productsRelated = await Product.findAll({
-                    where: {
-                        [Op.and]: [{
-                            id_category: newProduct.id_category
-                        }, {
-                            id_product: {
-                                [Op.ne]: newProduct.id_product,
-                            }
-                        }],
-                    }
-                })
-
-                res.render("./products/detail", { product: newProduct, productsRelated, thousand });
+                res.redirect(`/productos/detalle/${newProduct.id_product}`);
             } catch (error) {
                 console.log(error)
             }
@@ -209,17 +196,15 @@ const controllersProduct = {
     },
 
     processDelete: async (req, res) => {
-        const id = req.params.idDelete;
-
         try {
-            const productoEliminado= await Product.destroy({ where: { id_product: id } });
-            console.log(productoEliminado)
-        } catch (error) {
-          console.log(error.message);
+            await Product_color.destroy({ where: { id_product: req.params.idDelete } });
+
+            await Product.destroy({ where: { id_product: req.params.idDelete } });
+        } catch (e) {
+          console.log(e.message);
         }
-        console.log(id)
         
-        // res.("/");
+        res.redirect("/");
     },
 };
 
