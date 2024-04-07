@@ -151,49 +151,79 @@ const controllersProduct = {
 
     processUpdate: async (req, res) => {
         const { name, category, price, stock, color1, color2, color3, brand, description } = req.body;
+        
+        
         const resultValidator = validationResult(req);
-
-
-        if (resultValidator.errors.length > 0) {
-            try {
-
-                const colors = await Color.findAll()
-                const categories = await Category.findAll()
-
-                res.render("./products/create", { errors: resultValidator.mapped(), old: req.body, colors, categories });
-
-            } catch (error) {
-                console.log(error)
+        try {
+            const productFound = await Product.findByPk(req.params.id, {
+                include: [{ association: "brand" }, { association: "colors" }]
+            })
+    
+            if (resultValidator.errors.length > 0) {        
+        
+                        const colors = await Color.findAll()
+                        const categories = await Category.findAll()
+        
+                        console.log("===========================")
+                        console.log(req.body)
+                        req.body.category = parseInt(category);
+                        req.body.price = parseInt(price);
+                        req.body.stock = parseInt(stock);
+                        req.body.color1 = parseInt(color1);
+                        req.body.color2 = parseInt(color2);
+                        req.body.color3 = parseInt(color3);
+                        
+                        res.render("./products/edit.ejs", { productFound, errors: resultValidator.mapped(), old: req.body, colors, categories });
+    
             }
-        } else {
-            if (productFound) {
-                productFound.name = product.name || productFound.name;
-                productFound.image = req.file?.filename || productFound.image;
-                productFound.category = product.category || productFound.category;
-                productFound.price = product.price || productFound.price;
-                productFound.stock = product.stock || productFound.stock;
-                productFound.colors = { color1: product.colors.color1, color2: product.colors.color2, color3: product.colors.color3 } || productFound.colors;
-                productFound.description = product.description || productFound.description;
-
-                fs.writeFileSync(pathProducts, JSON.stringify(products, null, " "));
-
-
-
-                const productsRelated = await Product.findAll({
+             else {
+                let brandUpdate;
+                const brandFound = await Brand.findOne({
                     where: {
-                        [Op.and]: [{
-                            id_category: product.id_category
-                        }, {
-                            id_product: {
-                                [Op.ne]: product.id_product,
-                            }
-                        }],
+                        name: brand
                     }
                 })
 
-                res.render("./products/detail.ejs", { product: productFound, productsRelated, thousand });
+                if (brandFound) {
+                    brandUpdate = brandFound
+                } else {
+                    const newBrand = await Brand.create({
+                        name: brand
+                    })
+
+                    brandUpdate = await Brand.findByPk(newBrand.id_brand)
+                }
+
+
+
+
+
+
+                if (productFound) {
+                    await Product.update({
+                        name: name || productFound.name,
+                        image: req.file?.filename || productFound.image,
+                        price: parseInt(price) || productFound.price,
+                        stock: parseInt(stock) || productFound.stock,
+                        description: description || productFound.description,
+                        id_category: parseInt(category) || productFound.id_category,
+                        id_brand: brandUpdate.id_brand
+                    },{
+                        where:{
+                            id_product: productFound.id_product
+                        }
+                    })
+    
+    
+                    res.redirect(`/productos/detalle/${productFound.id_product}`);
+                }
             }
+            
+        } catch (error) {
+            console.log(error)
         }
+
+        
 
     },
 

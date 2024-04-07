@@ -9,7 +9,7 @@
                 <div class="container-market">
                     <h2 class="title-market">Editando <%= product.name %></h2>
                     
-                    <form action="/productos/editar/<%= product.id %>?_method=PUT" method="POST" class="row d-flex flex-row g-2 needs-validation formAlert" enctype="multipart/form-data">
+                    <form action="/productos/editar/<%= product.id_product %>?_method=PUT" method="POST" class="row d-flex flex-row g-2 needs-validation formAlert" enctype="multipart/form-data">
                         <div class="col-sm-6 col-12">
                             <label for="name" class="form-label">Nombre del producto:</label>
                             <input type="text" name="name" value="<%= locals.old && old.name ? old.name : product && product.name ? product.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
