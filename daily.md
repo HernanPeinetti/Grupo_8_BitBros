@@ -331,3 +331,33 @@ Debido a un corte de electricidad en la fecha originalmente programada para la r
 
 - Se llevaron a cabo correcciones en el diseño de la página según las discusiones y feedback del equipo.
 - Se acordó continuar trabajando en el proyecto y conectarse nuevamente al día siguiente para seguir avanzando.
+
+
+
+## 06/04/2024
+
+### Detalles de la Reunión
+
+- **Fecha:** 06/04/2024
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Continuación del Trabajo en Conjunto**
+   - Nos reunimos para seguir trabajando juntos en las actividades asignadas.
+
+2. **Actualización del Tablero de Trello**
+   - Se realizó una actualización en el tablero de Trello para reflejar el progreso y las nuevas tareas asignadas.
+
+3. **Actualización del Archivo Daily**
+   - Se actualizó el archivo daily para registrar los avances y las próximas acciones a realizar.
+
+### Acciones Tomadas
+
+- Se trabajó en conjunto en las actividades asignadas, aprovechando la comunicación en tiempo real a través de Discord.
+- Se actualizaron el tablero de Trello y el archivo daily para mantener un registro claro del progreso y las próximas acciones.
+
+### Próximos Pasos
+
+- Acordamos reunirnos nuevamente al día siguiente para continuar con el trabajo y revisar el progreso realizado.
+- Cada miembro del equipo se comprometió a seguir avanzando en sus tareas asignadas.
