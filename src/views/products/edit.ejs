@@ -9,12 +9,12 @@
                 <div class="container-market">
                     <h2 class="title-market">Editando <%= product.name %></h2>
                     
-                    <form id="formulario-edit" action="/productos/editar/<%= product.id_product %>?_method=PUT" method="POST" class="row d-flex flex-row g-2 needs-validation formAlert" enctype="multipart/form-data">
+                    <form id="formulario" action="/productos/editar/<%= product.id_product %>?_method=PUT" method="POST" class="row d-flex flex-row g-2 needs-validation formAlert" enctype="multipart/form-data">
                         <div class="col-sm-6 col-12">
                             <label for="name" class="form-label">Nombre del producto:</label>
                             <input type="text" name="name" value="<%= locals.old && old.name ? old.name : product && product.name ? product.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
                             <% if (locals.errors && errors.name) { %>
-                                <div class="invalid-feedback">
+                                <div class="invalid-tooltip">
                                     <%= errors.name.msg %>
                                 </div>
                             <% } %>
@@ -37,7 +37,7 @@
                                 <% }) %>
                               </select>
                             <% if (locals.errors && errors.category) { %>
-                                <div class="invalid-feedback">
+                                <div class="invalid-tooltip">
                                     <%= errors.category.msg %>
                                 </div>
                             <% } %>
@@ -47,7 +47,7 @@
                                 <label for="price" class="form-label">Precio:</label>
                                 <input type="number" name="price" value="<%= locals.old && old.price ? old.price : product && product.price ? product.price : "" %>" id="price" class="form-control <%= locals.errors && errors.price ? "is-invalid" : "" %>" min="0" />
                                 <% if (locals.errors && errors.price) { %>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-tooltip">
                                         <%= errors.price.msg %>
                                     </div>
                                 <% } %>
@@ -56,7 +56,7 @@
                                 <label for="stock" class="form-label">Stock:</label>
                                 <input type="number" name="stock" value="<%= locals.old && old.stock ? old.stock : product && product.stock ? product.stock : "" %>" id="stock" class="form-control <%= locals.errors && errors.stock ? "is-invalid" : "" %>" min="0" />
                                 <% if (locals.errors && errors.stock) { %>
-                                    <div class="invalid-feedback">
+                                    <div class="invalid-tooltip">
                                         <%= errors.stock.msg %>
                                     </div>
                                 <% } %>
@@ -84,7 +84,7 @@
                                 </select>
     
                                 <% if (locals.errors && errors.colors) { %>
-                                    <div class="invalid-feedback col-12">
+                                    <div class="invalid-tooltip col-12">
                                         <%= errors.colors.msg %>
                                     </div>
                                 <% } %>
@@ -94,7 +94,7 @@
                             <label for="brand" class="form-label">Marca:</label>
                             <input type="text" name="brand" value="<%= locals.old && old.brand ? old.brand : product && product.brand.name ? product.brand.name : "" %>" id="brand" class="form-control <%= locals.errors && errors.brand ? "is-invalid" : "" %>" />
                             <% if (locals.errors && errors.brand) { %>
-                                <div class="invalid-feedback">
+                                <div class="invalid-tooltip">
                                     <%= errors.brand.msg %>
                                 </div>
                             <% } %>
@@ -104,13 +104,13 @@
                             <label for="description" class="form-label">Descripción:</label>
                             <textarea class="form-control <%= locals.errors && errors.description ? "is-invalid" : "" %>" id="description" name="description" placeholder="Escribe una breve descripcion..."><%= locals.old && old.description ? old.description : product && product.description ? product.description : "" %></textarea>
                             <% if (locals.errors && errors.description) { %>
-                                <div class="invalid-feedback">
+                                <div class="invalid-tooltip">
                                     <%= errors.description.msg %>
                                 </div>
                             <% } %>
                         </div>
                         <div class="col-sm-12 m-auto mt-3">
-                            <button class="btn btn-dark col-12 p-2 btnAlert">Actualizar producto</button>
+                            <button id="btn-submit" class="btn btn-dark col-12 p-2 btnAlert" type="submit">Actualizar producto</button>
                         </div>
                       </form>
                     
@@ -124,7 +124,8 @@
             </main>
             <%- include('../partials/footer') %>
             
-            <script src="/js/editValidate.js"></script>
+            <script src="/js/alertEditCreate.js"></script>
+            <script src="/js/validateEditCreate.js"></script>
             <script src="/js/input.js"></script>
             
     </body>

@@ -9,6 +9,7 @@ body {
     background-image: url("../images/background-user.jpg");
     background-size: cover;
     background-position: center;
+    background-repeat: repeat;
 }
 
 main {
@@ -42,12 +43,6 @@ h2 {
     margin-top: 20px;
     color: #555;
 }
-.facebook {
-    border-radius: 0.5rem 0 0 0.5rem !important;
-}
-.google {
-    border-radius: 0 0.5rem 0.5rem 0 !important;
-}
 .login-link a {
     color: #007bff;
     text-decoration: none;
@@ -57,7 +52,6 @@ h2 {
     text-decoration: underline;
 }
 
-/* Media query para cambiar el posicionamiento de los botones cuando la resolución sea mayor a 360px */
 @media screen and (max-width: 768px) {
     .social-buttons {
         flex-direction: column;

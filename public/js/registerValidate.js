@@ -5,62 +5,31 @@ window.addEventListener('load', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault()
 
-        // input name
-        const name = form.name.value
-        const divName = document.getElementById('div-name')
+        let errores = false;
 
-        if (name === "") {
-            form.name.classList.add('is-invalid');
-            if (!divName.classList.contains('invalid-feedback')) {
-                divName.classList.add('invalid-feedback')
+        // Función de validación genérica
+        function validarCampo(campo, divCampo, mensajeError) {
+            if (campo.value === "") {
+                campo.classList.add('is-invalid');
+                if (!divCampo.classList.contains('invalid-feedback')) {
+                    divCampo.classList.add('invalid-feedback');
+                }
+                divCampo.innerText = mensajeError;
+                errores = true;
+            } else {
+                campo.classList.remove('is-invalid');
+                divCampo.classList.remove('invalid-feedback');
+                divCampo.innerText = '';
             }
-            divName.innerText = 'Tienes que ingresar un nombre - front';
-        } else {
-            form.submit();
         }
 
+        // Validar cada campo del formulario llamando a la función de validación genérica
+        validarCampo(form.name, document.getElementById('div-name'), 'Tienes que ingresar un nombre');
+        validarCampo(form.birth, document.getElementById('div-birth'), 'Tienes que ingresar una fecha de nacimiento');
+        validarCampo(form.email, document.getElementById('div-email'), 'Debes ingresar un email para el producto');
+        validarCampo(form.password, document.getElementById('div-password'), 'Tienes que ingresar una contraseña');
 
-        // input birth
-        const birth = form.birth.value
-        const divBirth = document.getElementById('div-birth')
-
-        if (birth === "") {
-            form.birth.classList.add('is-invalid');
-            if (!divBirth.classList.contains('invalid-feedback')) {
-                divBirth.classList.add('invalid-feedback')
-            }
-            divBirth.innerText = 'Tienes que ingresar una fecha de nacimiento - front';
-        } else {
-            form.submit();
-        }
-
-
-        // input email
-        const email = form.email.value
-        const divEmail = document.getElementById('div-email')
-
-        if (email === "") {
-            form.email.classList.add('is-invalid');
-            if (!divEmail.classList.contains('invalid-feedback')) {
-                divEmail.classList.add('invalid-feedback')
-            }
-            divEmail.innerText = 'Debes ingresar un email para el producto - front';
-        } else {
-            form.submit();
-        }
-
-
-        // input password
-        const password = form.password.value
-        const divPassword = document.getElementById('div-password')
-
-        if (password === "") {
-            form.password.classList.add('is-invalid');
-            if (!divPassword.classList.contains('invalid-feedback')) {
-                divPassword.classList.add('invalid-feedback')
-            }
-            divPassword.innerText = 'Tienes que ingresar una contraseña - front';
-        } else {
+        if (!errores) {
             form.submit();
         }
     })

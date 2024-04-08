@@ -140,6 +140,7 @@ button a {
 #file-selected {
     color: #876ec1
 }
+
 @media (min-width: 576px) {
     .select-colors {
         width: 33.3%;

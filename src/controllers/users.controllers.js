@@ -18,47 +18,47 @@ const controllersUser = {
     },
 
     processLogin: async (req, res) => {
-        try {
-            const { email, password, remember } = req.body;
-            const userFound = await User.findOne({
-                include: [{ association: "user_type" }],
-                where: {
-                    email
+        const resultValidator = validationResult(req);
+
+        const { email, password, remember } = req.body;
+
+        if (resultValidator.errors.length > 0) {
+            res.render("./users/login", {
+                errors: resultValidator.mapped(),
+                old: req.body
+            });
+        } else {
+            try {
+                const userFound = await User.findOne({
+                    include: [{ association: "user_type" }],
+                    where: {
+                        email
+                    }
+                })
+
+                if (userFound && bcryptjs.compareSync(password.toString(), userFound.password)) {
+                    delete userFound.dataValues.password;
+                    delete userFound._previousDataValues.password;
+                    req.session.user = userFound;
+
+                    let cookieUser = remember;
+
+                    if (cookieUser == "on") {
+                        res.cookie("rememberUser", userFound.email, { maxAge: 1 * 60 * 60 * 1000 }); // 1 hora
+                    }
+                    res.redirect("/");
+                } else {
+                    res.render("./users/login.ejs", {
+                        errors: userFound == undefined ?
+                            { email: { msg: "No hay una cuenta registrada con el correo ingresado" } } :
+                            bcryptjs.compareSync(password.toString(), userFound.password) == false ?
+                                { password: { msg: "La contraseña es incorrecta" } } : "",
+                        old: req.body,
+                    });
                 }
-            })
-
-            if (userFound && bcryptjs.compareSync(password.toString(), userFound.password)) {
-                delete userFound.dataValues.password;
-                delete userFound._previousDataValues.password;
-                req.session.user = userFound;
-
-                let cookieUser = remember;
-
-                if (cookieUser == "on") {
-                    res.cookie("rememberUser", userFound.email, { maxAge: 1 * 60 * 60 * 1000 }); // 1 hora
-                }
-                res.redirect("/");
-            } else {
-                res.render("./users/login.ejs", {
-                    errors:
-                        userFound == undefined
-                            ? {
-                                email: {
-                                    msg: "No hay una cuenta registrada con el correo ingresado",
-                                },
-                            }
-                            : bcryptjs.compareSync(password.toString(), userFound.password) == false
-                                ? {
-                                    password: {
-                                        msg: "La constraseña es incorrecta",
-                                    },
-                                }
-                                : "",
-                    old: req.body,
-                });
+            } catch (error) {
+                console.log(error)
             }
-        } catch (error) {
-            console.log(error)
         }
     },
 
@@ -67,25 +67,27 @@ const controllersUser = {
     },
 
     processRegister: async (req, res) => {
-        try {
-            const resultValidator = validationResult(req);
 
-            const { name, birth, email, password } = req.body
+        const resultValidator = validationResult(req);
 
-            if (resultValidator.errors.length > 0) {
-                let imagePath = req.file?.path
+        const { name, birth, email, password } = req.body
 
-                if (imagePath) {
-                    const imagePath = path.join(__dirname, `../../public/images/userProfile/${req.file?.filename}`)
+        if (resultValidator.errors.length > 0) {
+            let imagePath = req.file?.path
 
-                    fs.unlinkSync(imagePath)
-                }
+            if (imagePath) {
+                const imagePath = path.join(__dirname, `../../public/images/userProfile/${req.file?.filename}`)
 
-                res.render("./users/register", {
-                    errors: resultValidator.mapped(),
-                    old: req.body
-                });
-            } else {
+                fs.unlinkSync(imagePath)
+            }
+
+            res.render("./users/register", {
+                errors: resultValidator.mapped(),
+                old: req.body
+            });
+        } else {
+
+            try {
                 await User.create({
                     name: name,
                     birth: birth,
@@ -94,12 +96,11 @@ const controllersUser = {
                     profile_img: req.file?.filename || "default-user.svg",
                     id_user_type: 1
                 })
-
-                res.redirect("/login");
+            } catch (error) {
+                console.log(error)
             }
 
-        } catch (error) {
-            console.log(error.message)
+            res.redirect("/login");
         }
 
     },

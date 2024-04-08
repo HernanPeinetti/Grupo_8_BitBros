@@ -14,7 +14,7 @@
                 <label for="email" class="form-label">Correo electrónico:</label>
                 <input type="email" id="email" name="email" value="<%= locals.old ? old.email : null %>" class="form-control <%= locals.errors && errors.email ? "is-invalid" : "" %>" />
                 <% if (locals.errors && errors.email) { %>
-                    <div class="invalid-feedback">
+                    <div class="invalid-tooltip">
                       <%= errors.email.msg %>
                     </div>
                 <% } %>
@@ -24,7 +24,7 @@
                 <label for="password" class="form-label">Contraseña:</label>
                 <input type="password" name="password" class="form-control <%= locals.errors && errors.password ? "is-invalid" : locals.old && old.password ? "border-black" : "" %>" id="password" />
                 <% if (locals.errors && errors.password) { %>
-                    <div class="invalid-feedback">
+                    <div class="invalid-tooltip">
                         <%= errors.password.msg %>
                     </div>
                 <% } %>
@@ -36,11 +36,6 @@
             </div>
             <div>
                 <button class="btn btn-dark g-2 col-12 p-2 mt-3" type="submit">Iniciar sesión</button>
-            </div>
-
-            <div class="d-flex g-2">
-              <button class="col-6 btn btn-primary p-2 facebook">Continuar con Facebook</button>
-              <button class="col-6 btn btn-danger p-2 google">Continuar con Google</button>
             </div>
           </form>
         </form>

@@ -134,6 +134,16 @@ footer {
     text-decoration: none;
     background-color: #3a3a3a;
 }
+#formulario .invalid-tooltip {
+    background-color: #dc3545 !important;
+    color: white!important;
+    padding: 0.5rem;
+    right: 0;
+    top: 0;
+    border-radius: 0.5rem;
+    margin-top: 0.2rem!important;
+    position: relative!important;
+}
 
 @media (min-width: 768px) {
     .nav-mobile {

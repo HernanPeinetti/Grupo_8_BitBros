@@ -9,6 +9,7 @@ body {
     background-size: cover;
     background-position: center;
     overflow-x: hidden;
+    background-repeat: repeat;
 }
 
 main {
@@ -33,14 +34,6 @@ h2 {
     text-align: center;
     color: #333;
     text-transform: uppercase;
-}
-
-.facebook {
-    border-radius: 0.5rem 0 0 0.5rem !important;
-}
-
-.google {
-    border-radius: 0 0.5rem 0.5rem 0 !important;
 }
 
 .forgot-password {
@@ -73,7 +66,6 @@ h2 {
     text-decoration: underline;
 }
 
-/* Media query para cambiar el diseño de los botones cuando la resolución sea mayor a 360px */
 @media screen and (max-width: 768px) {
 
     main {

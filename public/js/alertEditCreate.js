@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
                     cancelButtonText: "Cancelar",
                 }).then((result) => {
                     if (result.value) {
-                        form.submit(form);
+                        validateEditCreate(form)
                     }
                 });
             });
