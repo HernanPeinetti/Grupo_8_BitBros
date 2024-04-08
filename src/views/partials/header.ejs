@@ -4,7 +4,7 @@
             <a href="/"><img src="/icon/logo.svg" alt="logo" /></a>
         </div>
         <div class="headerSearch">
-            <form  action="/search">
+            <form action="/search">
                 <input class="inputSearch" type="search" name="q" placeholder="Buscar productos" />
                 <i class="fa-solid fa-magnifying-glass i-search"></i>
             </form>
@@ -122,8 +122,8 @@
                         <% } %>
 
                     </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form action="/search" class="d-flex mt-3" role="search">
+                        <input class="form-control me-2" name="q" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn" style="background-color: #a88af0;" type="submit">Search</button>
                     </form>
                 </div>

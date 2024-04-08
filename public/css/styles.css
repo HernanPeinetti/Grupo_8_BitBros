@@ -87,15 +87,15 @@ footer {
     padding-top: 1.5rem;
 }
 .footerRedes a {
-    color: #434343;
+    color: #957ad4;
     margin: 0 0.5rem 0 0.5rem;
     transition: 0.3s all;
 }
 .footerRedes a:hover {
-    color: #a88af0;
+    color: #b595ff;
 }
 .footerRedes i {
-    font-size: 30px;
+    font-size: 36px;
 }
 .footerContacto {
     width: 50%;
@@ -103,40 +103,6 @@ footer {
     display: none;
     flex-direction: column;
     justify-content: center;
-}
-.footerContactoH3 {
-    margin-left: 0.5rem;
-    font-size: 16px;
-}
-.btnFooterContacto {
-    margin-left: 0.5rem;
-    width: 125px;
-    border: 0;
-    margin-top: 0.3rem;
-    height: 40px;
-    font-weight: 600;
-    color: #434343;
-    border-radius: 5px;
-    background-color: #d0c8e0;
-}
-.infoFooter {
-    width: 50%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    font-size: 0.5rem;
-    font-weight: bold;
-    padding-top: 1rem;
-}
-.listaInfoFooter li{
-    margin: 0.1rem;
-}
-.copyright{
-    font-size: 0.5rem;
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    margin-top: 0.2rem;
 }
 #formulario .invalid-tooltip {
     background-color: #dc3545 !important;
@@ -148,7 +114,23 @@ footer {
     margin-top: 0.2rem!important;
     position: relative!important;
 }
+.footer-datos-copy {
+    flex-direction: column!important;
+    text-align: center!important;
+}
+.list-datos-footer {
+    text-align: center!important;
+    justify-content: center!important;
+    padding: 0!important;
+    margin-bottom: 2rem;
+}
 
+.border-footer {
+    width: 100%;
+}
+.border-footer-copy {
+    width: 100%;
+}
 
 @media (min-width: 768px) {
     .nav-mobile {
@@ -323,46 +305,25 @@ footer {
     footer {
         width: 100%;
     }
-    
-    .sinCopyright{
-        justify-content: center;
-    }
+
     .footerRedes {
         width: 25%;
         height: 100%;
     }
-    .footerRedes a i {
-        font-size: 32px;
+    
+    .footer-datos-copy {
+        flex-direction: row!important;
     }
-    .footerContacto {
-        width: 25%;
-        height: 100%;
-        order: -1;
-        display: flex;
-        padding-top: 1rem;
+    .list-datos-footer {
+        justify-content: start!important;
     }
-    .footerContactoH3 {
-        font-size: 19px;
+    .border-footer {
+        width: 100%;
+        margin: auto;
     }
-    .btnFooterContacto {
-        cursor: pointer;
-        width: 155px;
-        font-size: 14px;
-        height: 45px;
-        transition: 0.3s all;
+    .border-footer-copy {
+        display: none;
     }
-    .btnFooterContacto:hover {
-        color: white;
-        background-color: #a88af0;
-    }
-    .infoFooter {
-        width: 25%;
-        font-size: 0.8rem;
-    }
-    .copyright{
-        font-size: 0.6rem;
-    }
-
 }
 
 @media (min-width: 1024px) {
@@ -370,7 +331,4 @@ footer {
         margin: 0 0.5rem 0 0.5rem;
     }
 
-    .footerRedes a i {
-        font-size: 35px;
-    }
 }
