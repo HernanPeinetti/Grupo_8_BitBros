@@ -361,3 +361,30 @@ Debido a un corte de electricidad en la fecha originalmente programada para la r
 
 - Acordamos reunirnos nuevamente al día siguiente para continuar con el trabajo y revisar el progreso realizado.
 - Cada miembro del equipo se comprometió a seguir avanzando en sus tareas asignadas.
+
+
+
+## 07/04/2024
+
+### Detalles de la Reunión
+
+- **Fecha:** 07/04/2024
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Continuación del Trabajo Conjunto**
+   - Nos reunimos para seguir colaborando en las actividades del sprint.
+
+2. **Discusión sobre Avances y Tareas Restantes**
+   - Revisamos los avances realizados por cada miembro y discutimos sobre las tareas que aún quedan por hacer.
+
+### Acciones Tomadas
+
+- Se trabajó conjuntamente en las actividades del sprint, compartiendo avances y discutiendo sobre los próximos pasos.
+- Se identificaron las tareas que aún requieren atención y se establecieron estrategias para abordarlas.
+
+### Próximos Pasos
+
+- Nos comprometimos a seguir avanzando en las tareas asignadas.
+- Acordamos reunirnos nuevamente al día siguiente para mantener el impulso y revisar el progreso realizado.
