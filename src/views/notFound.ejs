@@ -4,8 +4,8 @@
 
     <body>
         <%- include('./partials/header', {user: user}) %>
-        <% if (message) { %>
-            <h2 style="text-align: center; margin: 2rem 0 2rem 0;"><%= message %></h2>
+        <% if (locals.message_error) { %>
+            <h2 style="text-align: center; margin: 2rem 0 2rem 0;"><%= locals.message_error %></h2>
         <% } %>
             <div class="error">
                 <img class="errorimg" src="/icon/error.svg" alt="Error_404">

@@ -18,11 +18,13 @@ const controllers = {
       include: [{ association: "category" }],
     });
 
-    
+
     res.render("index.ejs", { productsNews, productsAll, thousand });
   },
 
   categories: async (req, res) => {
+
+    console.log(req.params.category)
     const products = await Product.findAll({
       include: [{
         association: "category",
@@ -33,7 +35,14 @@ const controllers = {
       ]
     });
 
-    res.render("./categories.ejs", { products, thousand });
+    const nameCategory = req.params.category.charAt(0).toUpperCase() + req.params.category.slice(1)
+
+
+    res.render("./categories.ejs", {
+      products, thousand, namePage: {
+        category: nameCategory
+      }
+    });
   },
 
   cart: (req, res) => {
@@ -90,7 +99,10 @@ const controllers = {
         }
       }
 
-      res.render("./categories.ejs", { products: productsFilters, thousand });
+      const nameSearch = `Buscaste ${req.query?.q}`
+      res.render("./categories.ejs", { products: productsFilters, thousand, namePage: {
+        search: nameSearch
+      } });
     }
   }
 };
