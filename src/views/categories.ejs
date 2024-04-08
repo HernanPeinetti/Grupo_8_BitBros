@@ -14,7 +14,7 @@
                         </h2>
                     <% } else { %> 
                         <h4 style="text-align: center; width: 100%; margin-bottom: 0.5rem;">
-                            <%= namePage && namePage.search ? namePage.search : "" %>  y se encontraron <%= products.length %> productos
+                            <%= namePage && namePage.search ? namePage.search : "" %>  y se <%= products.length > 1 ? "encontraron" : "encontró" %> <%= products.length %> <%= products.length > 1 ? "productos" : "producto"  %>
                         </h4>
                     <% } %>
                    
