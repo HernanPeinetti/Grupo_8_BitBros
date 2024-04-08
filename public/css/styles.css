@@ -66,20 +66,25 @@ main {
 }
 
 footer {
-    margin-bottom: auto;
     width: 100%;
-    height: 198px;
+
     background: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
 }
+
+.sinCopyright{
+    display: flex;
+}
+
 .footerRedes {
-    width: 100%;
+    width: 50%;
     height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 1.5rem;
 }
 .footerRedes a {
     color: #434343;
@@ -95,7 +100,7 @@ footer {
 .footerContacto {
     width: 50%;
     height: 40%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
 }
@@ -114,25 +119,24 @@ footer {
     border-radius: 5px;
     background-color: #d0c8e0;
 }
-.footerChat {
+.infoFooter {
     width: 50%;
-    height: 30px;
-    height: 40%;
     display: flex;
     justify-content: end;
     align-items: center;
+    font-size: 0.5rem;
+    font-weight: bold;
+    padding-top: 1rem;
 }
-.btnChat {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+.listaInfoFooter li{
+    margin: 0.1rem;
+}
+.copyright{
+    font-size: 0.5rem;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-right: 0.5rem;
-    color: #d0c8e0;
-    text-decoration: none;
-    background-color: #3a3a3a;
+    font-weight: bold;
+    margin-top: 0.2rem;
 }
 #formulario .invalid-tooltip {
     background-color: #dc3545 !important;
@@ -144,6 +148,7 @@ footer {
     margin-top: 0.2rem!important;
     position: relative!important;
 }
+
 
 @media (min-width: 768px) {
     .nav-mobile {
@@ -317,7 +322,10 @@ footer {
 
     footer {
         width: 100%;
-        height: 200px;
+    }
+    
+    .sinCopyright{
+        justify-content: center;
     }
     .footerRedes {
         width: 25%;
@@ -330,6 +338,8 @@ footer {
         width: 25%;
         height: 100%;
         order: -1;
+        display: flex;
+        padding-top: 1rem;
     }
     .footerContactoH3 {
         font-size: 19px;
@@ -345,24 +355,14 @@ footer {
         color: white;
         background-color: #a88af0;
     }
-    .footerChat {
+    .infoFooter {
         width: 25%;
-        height: 100%;
+        font-size: 0.8rem;
     }
-    .btnChat {
-        width: 52px;
-        height: 52px;
-        font-size: 20px;
-        transition: 0.3s all;
+    .copyright{
+        font-size: 0.6rem;
     }
-    .btnChat:hover {
-        background-color: #181818;
-        color: #a88af0;
-    }
-    .btnChat i {
-        position: relative;
-        top: 2px;
-    }
+
 }
 
 @media (min-width: 1024px) {
