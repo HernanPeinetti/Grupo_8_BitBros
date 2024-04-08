@@ -32,7 +32,7 @@ USE `data`;
 DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id_brand` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) NOT NULL,
   `deleted_at` date
@@ -63,7 +63,7 @@ INSERT INTO `brands` (`id_brand`, `created_at`, `updated_at`, `name`, `deleted_a
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) DEFAULT NULL,
   `deleted_at` date
@@ -88,7 +88,7 @@ INSERT INTO `categories` (`id_category`, `created_at`, `updated_at`, `name`, `de
 DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
   `id_color` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) NOT NULL,
   `deleted_at` date
@@ -118,7 +118,7 @@ INSERT INTO `colors` (`id_color`, `created_at`, `updated_at`, `name`, `deleted_a
 DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) NOT NULL,
   `image` varchar(255) DEFAULT NULL,
@@ -165,7 +165,7 @@ INSERT INTO `products` (`id_product`, `created_at`, `updated_at`, `name`, `image
 DROP TABLE IF EXISTS `products_colors`;
 CREATE TABLE `products_colors` (
   `id_product_color` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `id_product` int(11) DEFAULT NULL,
   `id_color` int(11) DEFAULT NULL,
@@ -217,7 +217,7 @@ INSERT INTO `products_colors` (`id_product_color`, `created_at`, `updated_at`, `
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) NOT NULL,
   `profile_img` varchar(255) DEFAULT NULL,
@@ -244,7 +244,7 @@ INSERT INTO `users` (`id_user`, `created_at`, `updated_at`, `name`, `profile_img
 DROP TABLE IF EXISTS `users_types`;
 CREATE TABLE `users_types` (
   `id_user_type` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `name` varchar(255) DEFAULT NULL,
   `key` varchar(255) DEFAULT NULL,

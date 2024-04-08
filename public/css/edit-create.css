@@ -128,17 +128,27 @@ button a {
     height: 7rem;
 }
 
+.btn-image {
+    background-color: #00000000;
+    color: black;
+}
+.input-image {
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+    white-space: wrap!important;
+}
+#file-selected {
+    color: #876ec1
+}
 @media (min-width: 576px) {
-    .container-market {
-        width: 26rem;
-    }
     .select-colors {
         width: 33.3%;
     }
 }
-
-@media screen and (min-width: 768px) {
-    
+@media (min-width: 768px) {
+    .input-image {
+        white-space: nowrap!important;
+    }
     .container-market {
         width: 75vw;
     }
@@ -158,7 +168,7 @@ button a {
     }
     
 }
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
     
     .container-market {
         width: 48rem;

@@ -214,18 +214,46 @@ const controllersProduct = {
                         }
                     })
 
-                    // colorsProduct.forEach(color => {
-                    //     // if(productFound.colors.)
-                    //     if (color1 != color.id_color || color2 != color.id_color || color3 != color.id_color) {
-                    //         console.log('================================')
-                    //         console.log(1)
-                    //         await Product_color.update({
+                    for (let i = 0; i < colorsProduct.length; i++) {
+                        let updateColor = null;
+                        if (color1 != colorsProduct[i].id_color && i === 0) {
+                            updateColor = color1;
+                        } else if (color2 != colorsProduct[i].id_color && i === 1) {
+                            updateColor = color2;
+                        } else if (color3 != colorsProduct[i].id_color && i === 2) {
+                            newColor = color3;
+                        }
 
-                    //         })
-                    //     } else {
-                    //         console.log(2)
-                    //     }
-                    // });
+                        if (updateColor !== null) {
+                            await Product_color.update({
+                                id_color: updateColor,
+                            }, {
+                                where: {
+                                    [Op.and]: [{
+                                        id_color: colorsProduct[i].id_color
+                                    }, {
+                                        id_product: productFound.id_product
+                                    }]
+                                }
+                            })
+                        }
+                    }
+
+                    let newColor = null
+                    if (colorsProduct.length === 0 && color1) {
+                        newColor = color1
+                    } else if (colorsProduct.length === 1 && color2) {
+                        newColor = color2
+                    } else if (colorsProduct.length === 2 && color3) {
+                        newColor = color3
+                    }
+
+                    if (newColor !== null) {
+                        await Product_color.create({
+                            id_color: newColor,
+                            id_product: productFound.id_product
+                        })
+                    }
 
                     res.redirect(`/productos/detalle/${productFound.id_product}`);
                 }
