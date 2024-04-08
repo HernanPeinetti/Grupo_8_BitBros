@@ -5,17 +5,29 @@ window.addEventListener('load', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault()
 
-        // input email
-        const email = form.email.value
-        const divEmail = document.getElementById('div-email')
+        let errores = false;
 
-        if (email === "") {
-            form.email.classList.add('is-invalid');
-            if (!divEmail.classList.contains('invalid-feedback')) {
-                divEmail.classList.add('invalid-feedback')
+        // Función de validación genérica
+        function validarCampo(campo, divCampo, mensajeError) {
+            if (campo.value === "") {
+                campo.classList.add('is-invalid');
+                if (!divCampo.classList.contains('invalid-feedback')) {
+                    divCampo.classList.add('invalid-feedback');
+                }
+                divCampo.innerText = mensajeError;
+                errores = true;
+            } else {
+                campo.classList.remove('is-invalid');
+                divCampo.classList.remove('invalid-feedback');
+                divCampo.innerText = '';
             }
-            divEmail.innerText = 'Debes ingresar un email para el producto';
-        } else {
+        }
+
+        // Validar cada campo del formulario llamando a la función de validación genérica
+        validarCampo(form.email, document.getElementById('div-email'), 'Tienes que ingresar un email');
+        validarCampo(form.password, document.getElementById('div-password'), 'Tienes que ingresar una contraseña');
+        
+        if (!errores) {
             form.submit();
         }
     })

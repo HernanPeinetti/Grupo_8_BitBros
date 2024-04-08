@@ -26,7 +26,7 @@ window.addEventListener('load', () => {
         // Validar cada campo del formulario llamando a la función de validación genérica
         validarCampo(form.name, document.getElementById('div-name'), 'Tienes que ingresar un nombre');
         validarCampo(form.birth, document.getElementById('div-birth'), 'Tienes que ingresar una fecha de nacimiento');
-        validarCampo(form.email, document.getElementById('div-email'), 'Debes ingresar un email para el producto');
+        validarCampo(form.email, document.getElementById('div-email'), 'Debes ingresar un email válido');
         validarCampo(form.password, document.getElementById('div-password'), 'Tienes que ingresar una contraseña');
 
         if (!errores) {
