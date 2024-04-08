@@ -8,7 +8,7 @@
             <div class="container-market">
                 <h2 class="title-market">Creando un producto</h2>
 
-                <form action="/productos/crear" method="POST" class="formAlert row d-flex flex-row g-2 needs-validation" enctype="multipart/form-data">
+                <form id="formulario-create" action="/productos/crear" method="POST" class="formAlert row d-flex flex-row g-2 needs-validation" enctype="multipart/form-data">
                     <div class="col-sm-6 col-12">
                         <label for="name" class="form-label">Nombre del producto:</label>
                         <input type="text" name="name" value="<%= locals.old && old.name ? old.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
@@ -17,6 +17,7 @@
                                 <%= errors.name.msg %>
                             </div>
                         <% } %>
+                        <div id="div-name"></div>
                     </div>
                     <div class="col-sm-6 col-12">
                         <label for="image" class="form-label">Imagen:</label>
@@ -118,6 +119,7 @@
         </main>
         <%- include('../partials/footer') %>
 
-        <script src="/js/input.js"></script>
+        <script src="/js/createValidate.js"></script>
+        <!-- <script src="/js/input.js"></script> -->
     </body>
 </html>
