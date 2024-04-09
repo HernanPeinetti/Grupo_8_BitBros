@@ -52,15 +52,11 @@
 
                         <div class="pickColorContainer">
                             <div class="Color">
-                                <p class="p-product-select">Elegí el color:</p>
+                                <p class="p-product-select">Color:</p>
                             </div>
-                            <select name="pickColor" class="changeColor">
-                                <% product.colors.forEach(color => { %>
-                                    <% if (color != "") { %>
-                                        <option value="<%= color.id_color %>"><%= color.name %></option>
-                                    <% } %>
-                                <% }) %>
-                            </select>
+                                <% if (product.color && product.color.id_color != "") { %>
+                                    <p><%= product.color.name %></p>
+                                <% } %>
                         </div>
 
                         <a href="/carrito">

@@ -41,21 +41,9 @@ module.exports = [
     body("brand")
         .notEmpty()
         .withMessage("Tienes que ingresar una marca para el producto"),
-    body("colors").custom((value, { req }) => {
-        const { color1, color2, color3 } = req.body;
-
-        if (!color1 && !color2 && !color3) {
-            throw new Error("Tienes que elegir al menos un color");
-        }
-
-        const coloresSeleccionados = [color1, color2, color3].filter((color) => color);
-
-        if (new Set(coloresSeleccionados).size !== coloresSeleccionados.length) {
-            throw new Error("Elegiste dos colores repetidos");
-        }
-
-        return true;
-    }),
+    body("color")
+        .notEmpty()
+        .withMessage("Tienes que elegir un color"),
     body("description")
         .notEmpty()
         .withMessage("Tienes que ingresar una descripción para el producto")

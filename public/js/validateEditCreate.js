@@ -24,7 +24,7 @@ function validateEditCreate(form) {
         validarCampo(form.price, document.getElementById('div-price'), 'Tienes que ingresar un precio para el producto');
         validarCampo(form.stock, document.getElementById('div-stock'), 'Tienes que ingresar un stock para el producto');
         validarCampo(form.brand, document.getElementById('div-brand'), 'Tienes que ingresar una marca para el producto');
-        validarCampo(form.color, document.getElementById('div-color'), 'Tienes que elegir al menos un color');
+        validarCampo(form.color, document.getElementById('div-color'), 'Tienes que elegir un color');
         validarCampo(form.description, document.getElementById('div-description'), 'Tienes que ingresar una descripción para el producto');
 
         if (!errores) {
