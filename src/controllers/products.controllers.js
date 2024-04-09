@@ -7,41 +7,58 @@ const { Op, where } = require('sequelize');
 const thousand = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };
+const firstLetter = (param) => {
+    return param.charAt(0).toUpperCase() + param.slice(1)
+}
 
 const { Product, Color, Category, Brand, sequelize } = require('../database/models')
 
 const controllersProduct = {
     detail: async (req, res) => {
         const id = req.params.id;
-        const product = await Product.findByPk(id, {
-            include: [{ association: "brand" }, { association: "category" }, { association: "color" }]
-        });
 
-        if (product) {
-            const productsRelated = await Product.findAll({
-                include: [{ association: "brand" }],
-                where: {
-                    [Op.and]: [{
-                        id_category: product.id_category
-                    }, {
-                        id_product: {
-                            [Op.ne]: product.id_product,
-                        }
-                    }],
-                },
+        try {
 
-            })
-            res.render("./products/detail.ejs", { product, productsRelated, thousand });
-        } else {
-            res.send("El producto que busca no existe");
+            const product = await Product.findByPk(id, {
+                include: [{ association: "brand" }, { association: "category" }, { association: "color" }]
+            });
+
+            if (product) {
+                const productsRelated = await Product.findAll({
+                    include: [{ association: "brand" }],
+                    where: {
+                        [Op.and]: [{
+                            id_category: product.id_category
+                        }, {
+                            id_product: {
+                                [Op.ne]: product.id_product,
+                            }
+                        }],
+                    },
+
+                })
+                res.render("./products/detail.ejs", { product, productsRelated, thousand });
+            } else {
+                res.send("El producto que busca no existe");
+            }
+
+        } catch (error) {
+            console.log(error)
         }
     },
 
     create: async (req, res) => {
-
         try {
             const colors = await Color.findAll()
+            colors.forEach(color => {
+                color.name = firstLetter(color.name)
+            })
+
             const categories = await Category.findAll()
+            categories.forEach(category => {
+                category.name = firstLetter(category.name)
+            })
+
             res.render("./products/create.ejs", { colors, categories });
         } catch (error) {
             console.log(error)
@@ -121,7 +138,14 @@ const controllersProduct = {
             if (product) {
 
                 const colors = await Color.findAll()
+                colors.forEach(color => {
+                    color.name = firstLetter(color.name)
+                })
+
                 const categories = await Category.findAll()
+                categories.forEach(category => {
+                    category.name = firstLetter(category.name)
+                })
 
                 res.render("./products/edit.ejs", { product, colors, categories });
 

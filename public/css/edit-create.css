@@ -140,6 +140,10 @@ button a {
 #file-selected {
     color: #876ec1
 }
+.option-form::first-letter {
+    text-transform: uppercase!important;
+}
+
 @media (min-width: 768px) {
     .input-image {
         white-space: nowrap!important;

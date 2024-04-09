@@ -62,7 +62,7 @@ body {
     background: transparent;
 }
 
-[id="heart"]:checked + label {
+[id="heart"]:checked+label {
     color: #e2264d;
     will-change: font-size;
     animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
@@ -77,6 +77,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
 .imageContainer img {
     width: 100%;
     object-fit: cover;
@@ -180,9 +181,11 @@ body {
     margin-bottom: 15px;
     transition: 0.3s all;
 }
+
 .btnAddToCart:hover {
     background-color: #1F67A6;
 }
+
 .btnProduct {
     width: 100%;
     height: 50px;
@@ -190,19 +193,23 @@ body {
     cursor: pointer;
     border: 0;
     color: #ffffff;
-    
+
     margin-bottom: 15px;
     transition: 0.3s all;
 }
+
 .productEdit {
     background-color: #a88af0;
 }
+
 .productEdit:hover {
     background-color: #876ec1;
 }
+
 .productDelete {
     background-color: #db4444;
 }
+
 .productDelete:hover {
     background-color: #b83a3a;
 }
@@ -215,17 +222,20 @@ body {
     color: #8a97ca;
     margin-bottom: 15px;
 }
+
 .available {
     font-weight: lighter;
     font-size: 15px;
     color: rgb(75, 212, 75);
 }
+
 .shortDescription {
     font-size: 100px;
     font-weight: 500;
     font-size: 20px;
     color: #595959;
 }
+
 .listDescription {
     list-style: none;
     font-size: 75px;
@@ -233,6 +243,7 @@ body {
     font-size: 15px;
     color: #aeaeae;
 }
+
 /* fin de seccion de detalles */
 
 .acordeon {
@@ -305,6 +316,7 @@ summary {
     justify-items: center;
     margin-bottom: 20px;
 }
+
 .encabezados {
     font-size: 16px;
     margin-top: 1rem
@@ -333,6 +345,7 @@ article {
     width: 100%;
     height: 50%;
 }
+
 .img-producto img {
     width: 100%;
     height: 100%;
@@ -427,11 +440,11 @@ label {
 }
 
 label:hover,
-label:hover ~ label {
+label:hover~label {
     color: orange;
 }
 
-input[type="radio"]:checked ~ label {
+input[type="radio"]:checked~label {
     color: orange;
 }
 
@@ -462,38 +475,54 @@ input[type="radio"]:checked ~ label {
 .p-product-select {
     margin-bottom: 0;
 }
+
 .cantidad input {
-    text-align: center;
+    text-align: end;
 }
+
+.p-color {
+    margin-bottom: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 @media (min-width: 425px) {
     .imageContainer {
         height: 450px;
     }
 }
+
 @media (min-width: 575px) {
     .imageContainer {
         height: 600px;
     }
 }
+
 /* TABLET LANDSCAPE / SMALL-DESKTOP´S */
 @media (min-width: 768px) {
     .mainDetail {
         width: 75vw;
     }
+
     .nombre {
         display: flex;
         align-self: flex-end;
     }
+
     article {
         width: 12rem;
         height: 17rem;
     }
+
     .nombre-producto {
         font-size: 15px;
     }
+
     .precio {
         font-size: 16px;
     }
+
     .encabezados {
         font-size: 17px;
     }
@@ -502,7 +531,7 @@ input[type="radio"]:checked ~ label {
 /* DESKTOP */
 
 @media (min-width: 1024px) {
-    
+
     .titleContainer {
         align-self: center;
         justify-content: space-between;
@@ -518,7 +547,7 @@ input[type="radio"]:checked ~ label {
         justify-content: space-between;
     }
 
-    
+
     .detailSection {
         width: 400px;
         display: block;
@@ -530,10 +559,11 @@ input[type="radio"]:checked ~ label {
         justify-content: space-evenly;
         border-radius: 0.2rem;
     }
+
     .imageContainer {
         height: 450px;
     }
-    
+
     .nombre {
         font-weight: 700;
         font-size: 30px;
@@ -606,17 +636,20 @@ input[type="radio"]:checked ~ label {
         font-size: 15px;
         color: #595959;
     }
+
     .available {
         font-weight: lighter;
         font-size: 15px;
         color: rgb(75, 212, 75);
     }
+
     .shortDescription {
         font-size: 100px;
         font-weight: 500;
         font-size: 20px;
         color: #595959;
     }
+
     .listDescription {
         list-style: none;
         font-size: 75px;
@@ -629,9 +662,11 @@ input[type="radio"]:checked ~ label {
         width: 13rem;
         height: 19rem;
     }
+
     .nombre-producto {
         font-size: 16px;
     }
+
     .precio {
         font-size: 24px;
     }
@@ -641,17 +676,20 @@ input[type="radio"]:checked ~ label {
     .detailSection {
         width: 500px;
     }
+
     .imageContainer {
         height: 550px;
     }
 }
+
 @media (min-width: 1440px) {
     .detailSection {
         width: 700px;
         padding-left: 200px;
     }
+
     .imageContainer {
         width: 900px;
-        height: 550px!important;
+        height: 550px !important;
     }
 }

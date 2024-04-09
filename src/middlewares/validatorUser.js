@@ -64,7 +64,20 @@ const validatorLogin = [
         .withMessage("Tienes que ingresar un correo electronico")
         .bail()
         .isEmail()
-        .withMessage("Debes ingresar un correo valido"),
+        .withMessage("Debes ingresar un correo valido")
+        .bail()
+        .custom(async (value, { req }) => {
+            let { email } = req.body;
+            const userFound = await db.User.findOne({
+                where: {
+                    email: email
+                }
+            });
+            if (!userFound) {
+                throw new Error("No hay una cuenta registrada con el correo ingresado");
+            }
+            return true;
+        }),
     body("password")
         .notEmpty()
         .withMessage("Tienes que ingresar una contraseña")

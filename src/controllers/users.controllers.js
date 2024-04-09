@@ -49,10 +49,8 @@ const controllersUser = {
                     res.redirect("/");
                 } else {
                     res.render("./users/login.ejs", {
-                        errors: userFound == undefined ?
-                            { email: { msg: "No hay una cuenta registrada con el correo ingresado" } } :
-                            bcryptjs.compareSync(password.toString(), userFound.password) == false ?
-                                { password: { msg: "La contraseña es incorrecta" } } : "",
+                        errors: bcryptjs.compareSync(password.toString(), userFound.password) == false ?
+                            { password: { msg: "La contraseña es incorrecta" } } : "",
                         old: req.body,
                     });
                 }

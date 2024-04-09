@@ -6,6 +6,10 @@ const thousand = (number) => {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 };
 
+const firstLetter = (param) => {
+  return param.charAt(0).toUpperCase() + param.slice(1)
+}
+
 const controllers = {
   index: async (req, res) => {
     const productsNews = await Product.findAll({
@@ -24,7 +28,6 @@ const controllers = {
 
   categories: async (req, res) => {
 
-    console.log(req.params.category)
     const products = await Product.findAll({
       include: [{
         association: "category",
@@ -35,7 +38,7 @@ const controllers = {
       ]
     });
 
-    const nameCategory = req.params.category.charAt(0).toUpperCase() + req.params.category.slice(1)
+    const nameCategory = firstLetter(req.params.category)
 
 
     res.render("./categories.ejs", {
