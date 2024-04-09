@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="stockSection">
-                            <p>Cantidad</p>
+                            <p class="p-product-select">Cantidad</p>
                             <div class="cantidad">
                                 <input type="number" placeholder="1" step="1" min="1" max="<%= product.stock %>" id="number" />
                             </div>
@@ -52,7 +52,7 @@
 
                         <div class="pickColorContainer">
                             <div class="Color">
-                                <p>Elegí el color:</p>
+                                <p class="p-product-select">Elegí el color:</p>
                             </div>
                             <select name="pickColor" class="changeColor">
                                 <% product.colors.forEach(color => { %>
@@ -164,28 +164,31 @@
 
                 <div class="prodRelacionados">
                     <div class="encabezados">
-                        <h2>Productos relacionados</h2>
+                        <% if (productsRelated && productsRelated > 0) { %>
+                            <h2>Productos relacionados</h2>
+                        <% } %>
                     </div>
                     <div class="grupo-articulos">
                         <div class="featured-carousel owl-carousel">
-                            <% productsRelated.forEach(product=> { %>
-                                <div class="item">
-                                    <div class="work">
-                                        <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
-                                            <div class="img d-flex align-items-end justify-content-center"
-                                                style="background-image: url('/images/products/<%= product.image %>');">
-                                                <div class="text w-100">
-                                                    <span class="cat"><%= product.brand.name %></span>
-                                                    <h3>
-                                                        <%= product.name %>
-                                                    </h3>
-                                                    <p>$ <%= thousand?thousand(product.price): product.price %> </p>
+                                <% productsRelated.forEach(product=> { %>
+                                    <div class="item">
+                                        <div class="work">
+                                            <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
+                                                <div class="img d-flex align-items-end justify-content-center"
+                                                    style="background-image: url('/images/products/<%= product.image %>');">
+                                                    <div class="text w-100">
+                                                        <span class="cat"><%= product.brand.name %></span>
+                                                        <h3>
+                                                            <%= product.name %>
+                                                        </h3>
+                                                        <p>$ <%= thousand?thousand(product.price): product.price %> </p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </a>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                                <% }) %>
+                                    <% }) %>
+                            
                         </div>
                     </div>
 
