@@ -7,10 +7,11 @@ const controllers = {
   products: async (req, res) => {
 
     const productsAll = await Product.findAndCountAll({
-      include: [{ association: "category" }, { association: "color" }, { association: "brand" }]
+      include: [{ association: "category" }, { association: "color" }, { association: "brand" }],
     });
+
     const categories = await Category.findAll({
-      include: [{ association: "products" }]
+      include: [{ association: "products" }],
     });
 
     const countByCategory = []
@@ -61,11 +62,28 @@ const controllers = {
       })
     }
 
+    
+    const lastProduct = await Product.findOne({
+      order: [['created_at', 'DESC']],
+    });
+
+    const lastProductCreated = {
+      id_product: lastProduct.id_product,
+      name: lastProduct.name,
+      image: `http://localhost:3001/images/products/${lastProduct.image}`,
+      price: lastProduct.price,
+      stock: lastProduct.stock,
+      description: lastProduct.description,
+      created_at: lastProduct.created_at,
+      url: `http://localhost:3001/api/products/detail/${lastProduct.id_product}`
+    }
+
     const response = {
       meta: {
         status: 200,
         count: productsAll.count,
         countByCategory: countByCategory,
+        lastProductCreated: lastProductCreated,
         url: `http://localhost:3001/api/products`,
         method: "GET"
       },
@@ -114,7 +132,8 @@ const controllers = {
 
   detail: async (req, res) => {
     const productFound = await Product.findByPk(req.params.id_product,
-      { include: [{ association: "category" }, { association: "color" }, { association: "brand" }] });
+      { include: [{ association: "category" }, { association: "color" }, { association: "brand" }]
+    });
 
     const product = {
       id_product: productFound.id_product,

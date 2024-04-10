@@ -20,10 +20,24 @@ const controllersUser = {
             })
         }
 
+        const lastUser = await User.findOne({
+            order: [["created_at", "DESC"]],
+        })
+
+        const lastUserCreated = {
+            id_user: lastUser.id_user,
+            name: lastUser.name,
+            email: lastUser.email,
+            created_at: lastUser.created_at,
+            url: `http://localhost:3001/api/users/detail/${lastUser.id_user}`
+            
+        }
+
         const response = {
             meta: {
               status: 200,
               count: usersAll.count,
+              lastUserCreated: lastUserCreated,
               url: `http://localhost:3001/api/users`,
               method: "GET"
             },
@@ -55,6 +69,7 @@ const controllersUser = {
         }
         res.json(response);
     },
+    
     
     
 };
