@@ -5,23 +5,56 @@ const { detail } = require('../products.controllers');
 
 const controllers = {
   products: async (req, res) => {
-    try {
-      const productsAll = await Product.findAll();
-      const response = {
-        meta: {
-          status: 200,
-          count: productsAll.length,
-          url: `/api/products/all`,
-          method: "GET"
-        },
-        data: productsAll
-      }
-      res.json(response);
-    } catch (error) {
-      console.log(error)
-    }
-  },
 
+    const productsAll = await Product.findAndCountAll({
+      include:[{association: "category"}, {association: "color"}, {association: "brand"}]
+    });
+    const categories = await Category.findAll({
+      include: [{ association: "products" }]
+    });
+
+    const countByCategory = []
+
+    for (let i = 0; i < categories.length; i++) {
+      countByCategory.push({
+        id_category: categories[i].id_category,
+        name: categories[i].name,
+        count: categories[i].products.length,
+        url: `http://localhost:3001/api/products/${categories[i].name}`,
+        products: categories[i].products
+      })
+
+    }
+    const data = []
+
+    for (let i = 0; i < productsAll.rows.length; i++) {
+      data.push({
+        id_product: productsAll.rows[i].id_product,
+        name: productsAll.rows[i].name,
+        image: productsAll.rows[i].image,
+        price: productsAll.rows[i].price,
+        stock: productsAll.rows[i].stock,
+        description: productsAll.rows[i].description,
+        category: productsAll.rows[i].category.name,
+        brand: productsAll.rows[i].brand.name,
+        color: productsAll.rows[i].color.name,
+        url: `http://localhost:3001/api/products/detail/${productsAll.rows[i].id_product}`
+      })
+    }
+
+    const response = {
+      meta: {
+        status: 200,
+        count: productsAll.count,
+        countByCategory: countByCategory,
+        url: `http://localhost:3001/api/products`,
+        method: "GET"
+      },
+      data: data
+    }
+    res.json(response);
+
+  },
 
   categories: async (req, res) => {
     const categories = await Category.findAll({
@@ -36,7 +69,7 @@ const controllers = {
         status: 200,
         count: categories[0].products.length,
         name: categories[0].name,
-        url: `/api/products/${req.params.category}`,
+        url: `http://localhost:3001/api/products/${req.params.category}`,
         method: "GET"
       },
 
@@ -51,7 +84,7 @@ const controllers = {
     const response = {
       meta: {
         status: 200,
-        url: `/api/products/detail/${req.params.id_product}`,
+        url: `http://localhost:3001/api/products/detail/${req.params.id_product}`,
         method: "GET"
       },
       data: product
