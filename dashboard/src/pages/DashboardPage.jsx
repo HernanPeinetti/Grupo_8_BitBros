@@ -1,12 +1,43 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
-import imgProduct from '../../../public/images/products/product_1709146900130_img.png'
+// import imgProduct from '../../../public/images/products/product_1709146900130_img.png'
 
-import ContentRowMovies from '../components/ContentRowMovies'
-import LastProduct from '../components/LastProduct'
-import CategoriesInDB from '../components/CategoriesInDB'
+import ContentRow from '../components/ContentRow'
+import CardInDB from '../components/CardInDB'
+import ListInDB from '../components/ListInDB'
 
 const DashboardPage = () => {
+
+    const [countProduct, setCountProduct] = useState(0)
+    const [countUsers, setCountUsers] = useState(0)
+    const [countCategories, setCountCategories] = useState(0)
+    const [categories, setCategories] = useState([])
+    const [lastProduct, setLastProduct] = useState({})
+
+    useEffect(() => {
+        fetch('http://localhost:3001/api/products')
+            .then(res => res.json())
+            .then(data => {
+                setCountProduct(data.meta.count)
+                setCountCategories(data.meta.countByCategory.length)
+                setCategories(data.meta.countByCategory)
+                setLastProduct(data.meta.lastProductCreated)
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, [])
+
+    useEffect(() => {
+        fetch('http://localhost:3001/api/users')
+            .then(res => res.json())
+            .then(data => {
+                setCountUsers(data.meta.count)
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, [])
     return (
         <>
             <div className="container-fluid">
@@ -15,13 +46,13 @@ const DashboardPage = () => {
                 </div>
 
                 <div className="row">
-                    <ContentRowMovies title="Productos en la base de datos" total={21} border="primary" icon="bi bi-box" />
-                    <ContentRowMovies title="Total de categorías" total={79} border="success" icon="bi bi-grid" />
-                    <ContentRowMovies title="Cantidad de usuarios" total={49} border="warning" icon="fas fa-user" />
+                    <ContentRow title="Productos en la base de datos" border="primary" total={countProduct} icon="bi bi-box" />
+                    <ContentRow title="Total de categorías" total={79} border="success" total={countCategories} icon="bi bi-grid" />
+                    <ContentRow title="Cantidad de usuarios" total={49} border="warning" total={countUsers} icon="fas fa-user" />
                 </div>
 
                 <div className="row">
-                    <LastProduct img={imgProduct} alt="Star Wars - Mandalorian" link="/" />
+                    <CardInDB alt={lastProduct.name} desc={lastProduct.description} link="/" img={lastProduct.image} />
                     <div className="col-lg-6 mb-4">
                         <div className="card shadow mb-4">
                             <div className="card-header py-3">
@@ -29,10 +60,9 @@ const DashboardPage = () => {
                             </div>
                             <div className="card-body">
                                 <div className="row">
-                                    <CategoriesInDB title="Bicicletas" />
-                                    <CategoriesInDB title="Accesorios" />
-                                    <CategoriesInDB title="Indumentaria" />
-                                    <CategoriesInDB title="Repuestos" />
+                                    {categories.map((category) => {
+                                        return (<ListInDB key={category.id_category} title={category.name} />)
+                                    })}
                                 </div>
                             </div>
                         </div>

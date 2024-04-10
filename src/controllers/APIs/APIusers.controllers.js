@@ -39,6 +39,7 @@ const controllersUser = {
               count: usersAll.count,
               lastUserCreated: lastUserCreated,
               url: `http://localhost:3001/api/users`,
+              count: users.length,
               method: "GET"
             },
             data: users
@@ -57,7 +58,6 @@ const controllersUser = {
             birth: userFound.birth,
             image: `http://localhost:3001/images/userProfile/${userFound.profile_img}`
         }
-    
     
         const response = {
           meta: {

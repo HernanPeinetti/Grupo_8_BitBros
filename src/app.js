@@ -5,8 +5,10 @@ const userLogged = require("./middlewares/userLogged.js")
 const currentPage = require("./middlewares/currentPage.js")
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+const cors = require('cors');
 //Configuraciones
 const app = express();
+app.use(cors());
 
 // Middlewares
 app.use(express.urlencoded({ extended: false }));
@@ -23,6 +25,7 @@ app.use(session({
 }));
 app.use(userLogged);
 app.use(currentPage)
+
 
 
 const mainRoutes = require("./routes/main.routes.js");

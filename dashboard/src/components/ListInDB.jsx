@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CategoriesInDB = ({ title }) => {
+const ListInDB = ({ title }) => {
     return (
         <div className="col-lg-6 mb-4">
             <div className="card bg-dark text-white shadow">
@@ -12,4 +12,4 @@ const CategoriesInDB = ({ title }) => {
     )
 }
 
-export default CategoriesInDB;
+export default ListInDB;

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 
 // images
-import logo from '../../../public/icon/logo.svg'
+// import logo from '../../../public/icon/logo.svg'
 const SideBar = () => {
     return (
         <>
@@ -10,7 +10,7 @@ const SideBar = () => {
 
                 <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={logo} alt="Digital House" />
+                        <img className="w-100" alt="Digital House" />
                     </div>
                 </Link>
 

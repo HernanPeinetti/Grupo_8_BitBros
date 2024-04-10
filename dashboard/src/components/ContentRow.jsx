@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ContentRowMovies = ({border, title, total, icon}) => {
+const ContentRow = ({border, title, total, icon}) => {
     return (
         <div className="col-md-4 mb-4">
             <div className={`card border-left-${border} shadow h-100 py-2`}>
@@ -20,4 +20,4 @@ const ContentRowMovies = ({border, title, total, icon}) => {
     )
 }
 
-export default ContentRowMovies
+export default ContentRow

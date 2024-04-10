@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LastProduct = ({ img, alt, link }) => {
+const CardInDB = ({ img, alt, link, desc }) => {
     return (
         <div className="col-lg-6 mb-4">
             <div className="card shadow mb-4">
@@ -11,7 +11,7 @@ const LastProduct = ({ img, alt, link }) => {
                     <div className="text-center">
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "40rem"}} src={img} alt={alt} />
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa citationem ratione aperiam voluptatum non corporis ratione aperiam voluptatum quae dolorem culpa ratione aperiam voluptatum</p>
+                    <p>{desc}</p>
                     <a className="btn btn-danger" target="_blank" rel="nofollow" href={link}>View movie detail</a>
                 </div>
             </div>
@@ -19,4 +19,4 @@ const LastProduct = ({ img, alt, link }) => {
     )
 }
 
-export default LastProduct
+export default CardInDB
