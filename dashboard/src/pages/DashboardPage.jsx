@@ -47,8 +47,8 @@ const DashboardPage = () => {
 
                 <div className="row">
                     <ContentRow title="Productos en la base de datos" border="primary" total={countProduct} icon="bi bi-box" />
-                    <ContentRow title="Total de categorías" total={79} border="success" total={countCategories} icon="bi bi-grid" />
-                    <ContentRow title="Cantidad de usuarios" total={49} border="warning" total={countUsers} icon="fas fa-user" />
+                    <ContentRow title="Total de categorías" border="success" total={countCategories} icon="bi bi-grid" />
+                    <ContentRow title="Cantidad de usuarios" border="warning" total={countUsers} icon="fas fa-user" />
                 </div>
 
                 <div className="row">
