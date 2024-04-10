@@ -16,14 +16,33 @@ const controllers = {
     const countByCategory = []
 
     for (let i = 0; i < categories.length; i++) {
-      countByCategory.push({
+      // Creamos un array para almacenar los productos de esta categoría
+      let products = [];
+
+      for (let j = 0; j < categories[i].products.length; j++) {
+        // Agregamos cada producto al array de productos
+        products.push({
+          id_product: categories[i].products[j].id_product,
+          name: categories[i].products[j].name,
+          image: `http://localhost:3001/images/products/${categories[i].products[j].image}`,
+          price: categories[i].products[j].price,
+          stock: categories[i].products[j].stock,
+          description: categories[i].products[j].description,
+          url: `http://localhost:3001/api/products/detail/${categories[i].products[j].id_product}`
+        });
+      }
+
+      // Creamos un objeto para la categoría actual y agregamos los productos
+      let newCategory = {
         id_category: categories[i].id_category,
         name: categories[i].name,
         count: categories[i].products.length,
         url: `http://localhost:3001/api/products/${categories[i].name}`,
-        products: categories[i].products
-      })
+        products: products // Agregamos los productos al objeto de categoría
+      };
 
+      // Agregamos la categoría al array de resultados
+      countByCategory.push(newCategory);
     }
     const data = []
 
@@ -31,7 +50,7 @@ const controllers = {
       data.push({
         id_product: productsAll.rows[i].id_product,
         name: productsAll.rows[i].name,
-        image: productsAll.rows[i].image,
+        image: `http://localhost:3001/images/products/${productsAll.rows[i].image}`,
         price: productsAll.rows[i].price,
         stock: productsAll.rows[i].stock,
         description: productsAll.rows[i].description,
@@ -57,23 +76,37 @@ const controllers = {
   },
 
   categories: async (req, res) => {
-    const categories = await Category.findAll({
+    const category = await Category.findOne({
       include: [{ association: "products" }],
       where: {
         name: req.params.category
       },
     });
 
+    const category_products = []
+
+    for (let i = 0; i < category.products.length; i++) {
+      category_products.push({
+        id_product: category.products[i].id_product,
+        name: category.products[i].name,
+        image: `http://localhost:3001/images/products/${category.products[i].image}`,
+        price: category.products[i].price,
+        stock: category.products[i].stock,
+        description: category.products[i].description,
+        url: `http://localhost:3001/api/products/detail/${category.products[i].id_product}`
+      })
+    }
+
     const response = {
       meta: {
         status: 200,
-        count: categories[0].products.length,
-        name: categories[0].name,
+        count: category_products.length,
+        name: category.name,
         url: `http://localhost:3001/api/products/${req.params.category}`,
         method: "GET"
       },
 
-      data: categories[0]
+      data: category_products
     }
 
     res.json(response);
@@ -101,7 +134,6 @@ const controllers = {
         status: 200,
         url: `http://localhost:3001/api/products/detail/${req.params.id_product}`,
         method: "GET",
-        id: product.id_product,
       },
       data: product
     }
