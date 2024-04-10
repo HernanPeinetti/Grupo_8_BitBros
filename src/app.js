@@ -31,8 +31,7 @@ const usersRoutes = require("./routes/users.routes.js");
 
 /* APIS routes*/
 const APIproductsRoutes = require("./routes/APIs/APIproducts.routes.js");
-// const APIproductsRoutes = require("./routes/products.routes.js"); COMPLETAR
-// const APIusersRoutes = require("./routes/APIs/APIusers.routes.js");
+const APIusersRoutes = require("./routes/APIs/APIusers.routes.js");
 
 
 app.use("/", mainRoutes, usersRoutes);
@@ -40,7 +39,7 @@ app.use("/productos", productsRoutes);
 
 /* APIS use*/
 app.use("/api/products", APIproductsRoutes);
-// app.use("/api/users", APIusersRoutes);
+app.use("/api/users", APIusersRoutes);
 
 
 app.listen(3001, () => {
