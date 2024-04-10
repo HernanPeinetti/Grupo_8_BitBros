@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('../partials/head', {titulo: product.name , estilo: ['detail', 'carousel'] }) %>
+<%- include('../partials/head', {titulo: product.name , estilo: ['detail', 'carousel' ] }) %>
 
     <body>
         <%- include('../partials/header', {user: locals.user ? locals.user : undefined}) %>
             <main class="mainDetail">
 
                 <div class="titleContainer">
-                    <h2 class="nombre"><%= product.name %></h2>
+                    <h2 class="nombre">
+                        <%= product.name %>
+                    </h2>
                     <form>
                         <input id="heart" type="checkbox" />
                         <label for="heart"><i class="fa-solid fa-heart"></i></i></label>
@@ -17,13 +19,14 @@
 
                 <div class="section1">
                     <div class="imageContainer">
-                        <img src="/images/products/<%=product.image%>"  alt="inflador" >
+                        <img src="/images/products/<%=product.image%>" alt="inflador">
                     </div>
 
                     <div class="detailSection">
 
                         <div class="precio">
-                            <p>$<%= thousand?thousand(product.price): product.price %></p>
+                            <p>$<%= thousand?thousand(product.price): product.price %>
+                            </p>
                         </div>
 
                         <div class="stars">
@@ -39,63 +42,69 @@
                             <div class="Color">
                                 <p class="p-product-select">Color:</p>
                             </div>
-                            <% if (product.color.id_color == 1) { %>
+                            <% if (product.color.id_color==1) { %>
                                 <p class="p-color" style="background-color: red;" title="Rojo"></p>
-                            <% } else if (product.color.id_color == 2) { %>
-                                <p class="p-color" style="background-color: blue;" title="Azul"></p>
-                            <% } else if (product.color.id_color == 3) { %> 
-                                <p class="p-color" style="background-color: green;" title="Verde"></p>
-                            <% } else if (product.color.id_color == 4) { %> 
-                                <p class="p-color" style="background-color: whitesmoke;" title="Blanco"></p>
-                            <% } else if (product.color.id_color == 5) { %> 
-                                <p class="p-color" style="background-color: black;" title="Negro"></p>
-                            <% } else if (product.color.id_color == 6) { %> 
-                                <p class="p-color" style="background-color: grey;" title="Gris"></p>
-                            <% } else if (product.color.id_color == 7) { %> 
-                                <p class="p-color" style="background-color: orange;" title="Naranja"></p>
-                            <% } else if (product.color.id_color == 8) { %> 
-                                <p class="p-color" style="background-color: yellow;" title="Amarillo"></p>
-                            <% } else if (product.color.id_color == 9) { %> 
-                                <p class="p-color" style="background-color: skyblue;" title="Celeste"></p>
-                            <% } %>
+                                <% } else if (product.color.id_color==2) { %>
+                                    <p class="p-color" style="background-color: blue;" title="Azul"></p>
+                                    <% } else if (product.color.id_color==3) { %>
+                                        <p class="p-color" style="background-color: green;" title="Verde"></p>
+                                        <% } else if (product.color.id_color==4) { %>
+                                            <p class="p-color" style="background-color: whitesmoke;" title="Blanco"></p>
+                                            <% } else if (product.color.id_color==5) { %>
+                                                <p class="p-color" style="background-color: black;" title="Negro"></p>
+                                                <% } else if (product.color.id_color==6) { %>
+                                                    <p class="p-color" style="background-color: grey;" title="Gris"></p>
+                                                    <% } else if (product.color.id_color==7) { %>
+                                                        <p class="p-color" style="background-color: orange;"
+                                                            title="Naranja"></p>
+                                                        <% } else if (product.color.id_color==8) { %>
+                                                            <p class="p-color" style="background-color: yellow;"
+                                                                title="Amarillo"></p>
+                                                            <% } else if (product.color.id_color==9) { %>
+                                                                <p class="p-color" style="background-color: skyblue;"
+                                                                    title="Celeste"></p>
+                                                                <% } %>
                         </div>
 
-                        <!-- <form id="form-cart" action="/"> -->
-                            <div class="stockSection">
-                                <p class="p-product-select">Cantidad</p>
-                                <div class="cantidad">
-                                    <input type="number" value="1" step="1" min="1" max="<%= product.stock %>" id="number" />
-                                </div>
+
+                        <div class="stockSection">
+                            <p class="p-product-select">Cantidad</p>
+                            <div class="cantidad">
+                                <input id="count-product" type="number" value="1" step="1" min="1"
+                                    max="<%= product.stock %>" id="number" />
                             </div>
-    
-                            <div class="mt-5">
-                                <button onclick="alertCart()" class="btnAddToCart" type="submit">
-                                    <i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-                                </button>
-                            </div>
-                        <!-- </form> -->
-                       
-                        <% if (user && user.user_type && user.user_type.name=="admin") { %>
+                        </div>
+
+                        <div>
+                            <button onclick="addCart('<%= product.id_product %>')" class="btnAddToCart">
+                                <i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
+                            </button>
+                        </div>
+
+
+                        <% if (user && user.user_type && user.user_type.name=="admin" ) { %>
                             <a href="/productos/editar/<%= product.id_product %>">
                                 <button class="btnProduct productEdit">EDITAR PRODUCTO</button>
                             </a>
-                            <form class="formAlert" action="/productos/eliminar/<%= product.id_product %>?_method=DELETE" method="POST">
-                                <button type="submit" class="btnProduct productDelete btnAlert">ELIMINAR PRODUCTO</button>
+                            <form class="formAlert"
+                                action="/productos/eliminar/<%= product.id_product %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btnProduct productDelete btnAlert">ELIMINAR
+                                    PRODUCTO</button>
                             </form>
-                        <% } %>
+                            <% } %>
 
-                        <div class="infoContainer">
-                            <p class="available">
-                                <i class="fa-solid fa-circle-check"></i> Disponible: <%= product.stock %>
-                            </p>
-                            <p>
-                                <i class="fa-solid fa-truck"></i> Envío de 3 a 4 días hábiles
-                            </p>
-                        </div>
+                                <div class="infoContainer">
+                                    <p class="available">
+                                        <i class="fa-solid fa-circle-check"></i> Disponible: <%= product.stock %>
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-truck"></i> Envío de 3 a 4 días hábiles
+                                    </p>
+                                </div>
                     </div>
 
                 </div>
-                
+
 
                 <div class="acordeon">
                     <details class="productDetailContainer">
@@ -106,9 +115,14 @@
 
                         </summary>
                         <div class="contenido">
-                            <li><strong>Marca: </strong><%= product.brand.name %></li>
-                            <li><strong>Categoría: </strong><%= product.category.name %></li>
-                            <p><strong>Descripción:</strong><%= product.description %>
+                            <li><strong>Marca: </strong>
+                                <%= product.brand.name %>
+                            </li>
+                            <li><strong>Categoría: </strong>
+                                <%= product.category.name %>
+                            </li>
+                            <p><strong>Descripción:</strong>
+                                <%= product.description %>
                             </p>
                         </div>
                     </details>
@@ -162,31 +176,34 @@
 
                 <div class="prodRelacionados">
                     <div class="encabezados">
-                        <% if (productsRelated && productsRelated > 0) { %>
+                        <% if (productsRelated && productsRelated> 0) { %>
                             <h2>Productos relacionados</h2>
-                        <% } %>
+                            <% } %>
                     </div>
                     <div class="grupo-articulos">
                         <div class="featured-carousel owl-carousel">
-                                <% productsRelated.forEach(product=> { %>
-                                    <div class="item">
-                                        <div class="work">
-                                            <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
-                                                <div class="img d-flex align-items-end justify-content-center"
-                                                    style="background-image: url('/images/products/<%= product.image %>');">
-                                                    <div class="text w-100">
-                                                        <span class="cat"><%= product.brand.name %></span>
-                                                        <h3>
-                                                            <%= product.name %>
-                                                        </h3>
-                                                        <p>$ <%= thousand?thousand(product.price): product.price %> </p>
-                                                    </div>
+                            <% productsRelated.forEach(product=> { %>
+                                <div class="item">
+                                    <div class="work">
+                                        <a class="a-carrousel" href="/productos/detalle/<%= product.id_product %>">
+                                            <div class="img d-flex align-items-end justify-content-center"
+                                                style="background-image: url('/images/products/<%= product.image %>');">
+                                                <div class="text w-100">
+                                                    <span class="cat">
+                                                        <%= product.brand.name %>
+                                                    </span>
+                                                    <h3>
+                                                        <%= product.name %>
+                                                    </h3>
+                                                    <p>$ <%= thousand?thousand(product.price): product.price %>
+                                                    </p>
                                                 </div>
-                                            </a>
-                                        </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <% }) %>
-                            
+                                </div>
+                                <% }) %>
+
                         </div>
                     </div>
 
@@ -195,7 +212,7 @@
 
             <%- include('../partials/footer.ejs') %>
 
-            <script src="/js/cart.js"></script>
+                <script src="/js/cart.js"></script>
     </body>
 
 </html>
