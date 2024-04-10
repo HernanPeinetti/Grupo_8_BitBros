@@ -22,11 +22,12 @@
                         </div>
                         <div class="col-sm-6 col-12">
                             <label for="image" class="form-label">Imagen:</label>
-                            <div id="product-data" class="form-control input-image" data-product='<%- JSON.stringify(product.image) %>'>
+                            <div id="input-image" class="form-control input-image" data-product='<%- JSON.stringify(product.image) %>'>
                                 <input type="file" name="image" id="image" class="form-control d-none" onchange="updateFileName(this)">
                                 <button type="button" class="btn-image text-dark" id="btn-image" onclick="document.getElementById('image').click()"><%= product && product.image !== "default-product.jpg" ? "Cambiar imagen" : "Seleccionar una imagen" %></button>
                                 <span id="file-selected"><%= product && product.image !== "default-product.jpg" ? " |  " + product.image : "" %></span>
                             </div>
+                            <div id="div-image-product"></div>
                         </div>
                         <div class="col-sm-6 col-12">
                             <label for="category" class="form-label">Categoría</label>
@@ -66,7 +67,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-12 d-flex flex-row flex-wrap">
-                            <label class="col-12" for="colors">Color:</label>
+                            <label class="form-label" for="colors">Color:</label>
                                 <select name="color" id="color" class="form-select select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>">
                                     <option <%= locals.old && old.color == "" ? "selected" : "" %> value="">...</option>
                                     <% colors.forEach(color => { %>
@@ -80,7 +81,6 @@
                                     </div>
                                 <% } %>
                                 <div id="div-color"></div>
-                            
                         </div>
                         <div class="col-sm-6 col-12">
                             <label for="brand" class="form-label">Marca:</label>
@@ -104,7 +104,7 @@
                             <div id="div-description"></div>
                         </div>
                         <div class="col-sm-12 m-auto mt-3">
-                            <button id="btn-submit" class="btn btn-dark col-12 p-2 btnAlertEditCreate" type="submit">Actualizar producto</button>
+                            <button id="btnAlert" class="btn btn-dark col-12 p-2" type="submit">Actualizar producto</button>
                         </div>
                       </form>
                     

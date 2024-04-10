@@ -143,6 +143,9 @@ button a {
 .option-form::first-letter {
     text-transform: uppercase!important;
 }
+#btn-image {
+    text-align: start!important;
+}
 
 @media (min-width: 768px) {
     .input-image {
