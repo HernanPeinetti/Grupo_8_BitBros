@@ -388,3 +388,34 @@ Debido a un corte de electricidad en la fecha originalmente programada para la r
 
 - Nos comprometimos a seguir avanzando en las tareas asignadas.
 - Acordamos reunirnos nuevamente al día siguiente para mantener el impulso y revisar el progreso realizado.
+
+
+
+## 09/04/2024
+
+### Detalles de la Reunión
+
+- **Fecha:** 09/04/2024
+- **Plataforma:** Discord (canal de voz)
+
+### Agenda
+
+1. **Continuación del Trabajo en Conjunto**
+   - Nos reunimos para seguir colaborando en las actividades pendientes.
+
+2. **Planificación de la Exposición Final**
+   - Discutimos los detalles de la exposición final del proyecto.
+
+3. **Simulacro de Exposición**
+   - Realizamos un simulacro para asegurarnos de que todo salga bien durante la exposición.
+
+### Acciones Tomadas
+
+- Se continuó trabajando en conjunto en las tareas pendientes del proyecto.
+- Se planificó la exposición final, incluyendo la estructura de la presentación y los puntos clave a destacar.
+- Se llevó a cabo un simulacro para practicar la presentación y garantizar que todo esté bajo control.
+
+### Próximos Pasos
+
+- Nos comprometimos a seguir preparándonos para la exposición final, revisando y ajustando según sea necesario.
+- Se acordó mantener la comunicación y colaboración para garantizar el éxito de la presentación.
