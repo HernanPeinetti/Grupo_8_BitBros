@@ -1,31 +1,21 @@
 // Obtén el formulario y el botón de submit
 document.addEventListener("DOMContentLoaded", function (e) {
-    const formularios = document.getElementsByClassName("formAlertEditCreate");
-    const botones = document.getElementsByClassName("btnAlertEditCreate");
+    const form = document.getElementById('formulario');
+    const btn = document.getElementById('btnAlert');
 
-    // Convierte las colecciones HTML en arrays
-    const arrayDeFormularios = Array.from(formularios);
-    const arrayDeBotones = Array.from(botones);
-
-    // Verifica si hay al menos un formulario y un botón
-    if (arrayDeFormularios.length > 0 && arrayDeBotones.length > 0) {
-        arrayDeFormularios.forEach(function (form, index) {
-            const btn = arrayDeBotones[index];
-
-            btn.addEventListener("click", function (e) {
-                e.preventDefault();
-                Swal.fire({
-                    text: "¿Estás seguro de realizar esta acción?",
-                    icon: "question",
-                    showCancelButton: true,
-                    confirmButtonText: "Confirmar",
-                    cancelButtonText: "Cancelar",
-                }).then((result) => {
-                    if (result.value) {
-                        validateEditCreate(form)
-                    }
-                });
-            });
+    // sweet alert para confirmar ya sea el crear o al editar un producto
+    btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        Swal.fire({
+            text: "¿Estás seguro de realizar esta acción?",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "Cancelar",
+        }).then((result) => {
+            if (result.value) {
+                validateEditCreate(form) //si presiono en confirmar el usuario, valida el form y recien lo envia
+            }
         });
-    }
+    });
 });

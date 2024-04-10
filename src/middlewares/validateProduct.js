@@ -8,7 +8,7 @@ module.exports = [
         .withMessage("Tienes que ingresar un nombre para el producto")
         .bail()
         .isLength({ min: 5 })
-        .withMessage("El nombre debe contener al menos 5 caracteres"),
+        .withMessage("El nombre del producto debe contener al menos 5 caracteres"),
     body("image").custom((value, { req }) => {
         let file = req.file;
         let extensions = [".jpg", ".jpeg", ".png", ".gif"];

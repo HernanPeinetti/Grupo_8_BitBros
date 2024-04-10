@@ -8,7 +8,7 @@
             <div class="container-market">
                 <h2 class="title-market">Creando un producto</h2>
 
-                <form id="formulario" action="/productos/crear" method="POST" class="formAlertEditCreate row d-flex flex-row g-2 needs-validation" enctype="multipart/form-data">
+                <form id="formulario" action="/productos/crear" method="POST" class="row d-flex flex-row g-2 needs-validation" enctype="multipart/form-data">
                     <div class="col-sm-6 col-12">
                         <label for="name" class="form-label">Nombre del producto:</label>
                         <input type="text" name="name" value="<%= locals.old && old.name ? old.name : "" %>" id="name" class="form-control <%= locals.errors && errors.name ? "is-invalid" : "" %>" />
@@ -21,11 +21,12 @@
                     </div>
                     <div class="col-sm-6 col-12">
                         <label for="image" class="form-label">Imagen:</label>
-                        <div class="form-control input-image">
+                        <div id="input-image" class="form-control input-image">
                             <input type="file" name="image" id="image" class="form-control d-none" onchange="updateFileName(this)">
                             <button type="button" class="btn-image text-dark" id="btn-image" onclick="document.getElementById('image').click()">Seleccionar una imagen</button>
                             <span id="file-selected"></span>
                         </div>
+                        <div id="div-image-product"></div>
                     </div>
                     <div class="col-sm-6 col-12">
                         <label for="category" class="form-label">Categoría</label>
@@ -65,7 +66,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-12 d-flex flex-row flex-wrap">
-                        <label class="col-12" for="colors">Color:</label>
+                        <label class="form-label" for="colors">Color:</label>
                             <select name="color" id="color" class="form-select select-colors <%= locals.errors && errors.colors ? "is-invalid" : ""  %>">
                                 <option <%= locals.old && old.color == "" ? "selected" : "" %> value="">...</option>
                                 <% colors.forEach(color => { %>
@@ -78,7 +79,6 @@
                                 </div>
                             <% } %>
                             <div id="div-color"></div>
-                        
                     </div>
                     <div class="col-sm-6 col-12">
                         <label for="brand" class="form-label">Marca:</label>
@@ -102,7 +102,7 @@
                         <div id="div-description"></div>
                     </div>
                     <div class="col-sm-12 m-auto mt-3">
-                        <button class="btn btn-dark col-12 p-2 btnAlertEditCreate" type="submit">Crear producto</button>
+                        <button id="btnAlert" class="btn btn-dark col-12 p-2" type="submit">Crear producto</button>
                     </div>
                     <div class="col-sm-12 m-auto mt-2">
                         <button class="btn btn-danger col-12 p-2" type="reset">Vaciar datos</button>
