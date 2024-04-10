@@ -30,6 +30,9 @@ module.exports = (sequelize, dataTypes) =>{
         id_brand : {
             type : dataTypes.INTEGER.UNSIGNED
         },
+        id_color : {
+            type : dataTypes.INTEGER.UNSIGNED
+        },
         created_at : {
             type : dataTypes.DATE
         },
@@ -61,11 +64,9 @@ module.exports = (sequelize, dataTypes) =>{
             foreignKey: "id_category"
         }),
         
-        Product.belongsToMany(models.Color, {
-            as: "colors",
-            through: "products_colors",
-            foreignKey: "id_product",
-            otherKey: "id_color",
+        Product.belongsTo(models.Color, {
+            as: "color",
+            foreignKey: "id_color"
         })
     }
 

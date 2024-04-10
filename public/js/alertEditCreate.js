@@ -1,7 +1,7 @@
 // Obtén el formulario y el botón de submit
 document.addEventListener("DOMContentLoaded", function (e) {
-    const formularios = document.getElementsByClassName("formAlert");
-    const botones = document.getElementsByClassName("btnAlert");
+    const formularios = document.getElementsByClassName("formAlertEditCreate");
+    const botones = document.getElementsByClassName("btnAlertEditCreate");
 
     // Convierte las colecciones HTML en arrays
     const arrayDeFormularios = Array.from(formularios);
