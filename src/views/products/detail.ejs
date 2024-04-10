@@ -7,7 +7,7 @@
         <%- include('../partials/header', {user: locals.user ? locals.user : undefined}) %>
             <main class="mainDetail">
                 <!-- 
-            <nav class="sub-Section">
+            <nav class="sub-Section"> 
                 <a href=""> Productos </a>
                 <span class="divider"> > </span>
                 <a href="">Categoria</a>
@@ -43,13 +43,6 @@
                             <span>(12)</span>
                         </div>
 
-                        <div class="stockSection">
-                            <p class="p-product-select">Cantidad</p>
-                            <div class="cantidad">
-                                <input type="number" value="1" step="1" min="1" max="<%= product.stock %>" id="number" />
-                            </div>
-                        </div>
-
                         <div class="pickColorContainer">
                             <div class="Color">
                                 <p class="p-product-select">Color:</p>
@@ -73,16 +66,23 @@
                             <% } else if (product.color.id_color == 9) { %> 
                                 <p class="p-color" style="background-color: skyblue;" title="Celeste"></p>
                             <% } %>
-                            
-                             
                         </div>
 
-                        <a href="/carrito">
-                            <button class="btnAddToCart">
-                                <i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
-                            </button>
-                        </a>
-
+                        <!-- <form id="form-cart" action="/"> -->
+                            <div class="stockSection">
+                                <p class="p-product-select">Cantidad</p>
+                                <div class="cantidad">
+                                    <input type="number" value="1" step="1" min="1" max="<%= product.stock %>" id="number" />
+                                </div>
+                            </div>
+    
+                            <div class="mt-5">
+                                <button onclick="alertCart()" class="btnAddToCart" type="submit">
+                                    <i class="fa-solid fa-cart-shopping"></i> AGREGAR AL CARRITO
+                                </button>
+                            </div>
+                        <!-- </form> -->
+                       
                         <% if (user && user.user_type && user.user_type.name=="admin") { %>
                             <a href="/productos/editar/<%= product.id_product %>">
                                 <button class="btnProduct productEdit">EDITAR PRODUCTO</button>
@@ -210,6 +210,8 @@
             </main>
 
             <%- include('../partials/footer.ejs') %>
+
+            <script src="/js/cart.js"></script>
     </body>
 
 </html>
