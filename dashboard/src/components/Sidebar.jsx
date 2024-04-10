@@ -23,25 +23,25 @@ const SideBar = () => {
 
                 <hr className="sidebar-divider" />
 
-                <div className="sidebar-heading">Actions</div>
+                <div className="sidebar-heading">Páginas</div>
 
                 <li className="nav-item">
                     <Link className="nav-link collapsed" to="/products">
                         <i className="fas fa-fw fa-cubes"></i>
-                        <span>Products</span>
+                        <span>Productos</span>
                     </Link>
                 </li>
 
                 <li className="nav-item">
                     <Link className="nav-link" to="/users">
                         <i className="fa-solid fa-users"></i>
-                        <span>Users</span></Link>
+                        <span>Usuarios</span></Link>
                 </li>
 
                 <li className="nav-item">
                     <Link className="nav-link" to="/categories">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Categories</span></Link>
+                        <span>Categorías</span></Link>
                 </li>
 
                 <hr className="sidebar-divider d-none d-md-block" />
