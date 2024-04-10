@@ -48,10 +48,6 @@ const controllers = {
     });
   },
 
-  cart: (req, res) => {
-    res.render("cart.ejs");
-  },
-
   search: async (req, res) => {
     if (req.query?.q) {
       let productsArray = [];

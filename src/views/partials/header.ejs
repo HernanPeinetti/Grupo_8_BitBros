@@ -13,9 +13,9 @@
             <button class="userButton">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <a href="/carrito" class="headerUserLink a-carrito">
+            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkCart" aria-controls="offcanvasDarkCart" aria-label="Toggle navigation" class="btn-carrito">
                 <i class="fa-solid fa-cart-shopping"></i>
-            </a>
+            </button>
             <% if (user) { %>
                     <div>
                         <img class="headerIconUser" src="/images/userProfile/<%= user.profile_img %>" alt="">
@@ -69,9 +69,9 @@
             <div class="headerLogo">
                 <a href="/"><img src="/icon/logo.svg" alt="logo" /></a>
             </div>
-            <a href="/carrito" class="carrito-mobile <%= currentPage && currentPage === "/carrito" ? "linkActive2" : "" %>">
+            <button data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkCart" aria-controls="offcanvasDarkCart" aria-label="Toggle navigation" class="carrito-mobile">
                 <i class="fa-solid fa-cart-shopping"></i>
-            </a>
+            </button>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
@@ -130,5 +130,6 @@
             </div>
         </div>
     </nav>
-
+    
+    <%- include('./cart') %>
 </header>
