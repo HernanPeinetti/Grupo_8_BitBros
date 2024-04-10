@@ -7,7 +7,7 @@ const controllers = {
   products: async (req, res) => {
 
     const productsAll = await Product.findAndCountAll({
-      include:[{association: "category"}, {association: "color"}, {association: "brand"}]
+      include: [{ association: "category" }, { association: "color" }, { association: "brand" }]
     });
     const categories = await Category.findAll({
       include: [{ association: "products" }]
@@ -80,12 +80,28 @@ const controllers = {
   },
 
   detail: async (req, res) => {
-    const product = await Product.findByPk(req.params.id_product);
+    const productFound = await Product.findByPk(req.params.id_product,
+      { include: [{ association: "category" }, { association: "color" }, { association: "brand" }] });
+
+    const product = {
+      id_product: productFound.id_product,
+      name: productFound.name,
+      image: `http://localhost:3001/images/products/${productFound.image}`,
+      price: productFound.price,
+      stock: productFound.stock,
+      description: productFound.description,
+      category: productFound.category.name,
+      brand: productFound.brand.name,
+      color: productFound.color.name,
+    }
+
+
     const response = {
       meta: {
         status: 200,
         url: `http://localhost:3001/api/products/detail/${req.params.id_product}`,
-        method: "GET"
+        method: "GET",
+        id: product.id_product,
       },
       data: product
     }
